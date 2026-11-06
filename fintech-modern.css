@@ -1025,24 +1025,28 @@ h1, h2, h3, h4, h5, h6,
 
 .gov-card {
   background: #FFFFFF;
-  border: 1px solid var(--vmf-border);
-  border-radius: 20px;
+  border: 1.5px solid #E2E8F0;
+  border-radius: 24px;
   overflow: hidden;
-  box-shadow: var(--vmf-shadow-card);
+  box-shadow: 0 4px 20px -2px rgba(5, 36, 79, 0.05);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  min-height: 480px; /* Increased card height for premium executive portrait framing */
 }
 
 .gov-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--vmf-shadow-hover);
-  border-color: rgba(45, 123, 57, 0.3);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px -8px rgba(5, 36, 79, 0.12);
+  border-color: #CBD5E1;
 }
 
 .gov-photo-wrap {
-  aspect-ratio: 4 / 3;
+  height: 380px !important; /* Increased photo wrap height for elegant tall framing */
   overflow: hidden;
   position: relative;
-  background: #031633;
+  background: linear-gradient(180deg, #0A2F63 0%, #031633 100%);
+  width: 100%;
 }
 
 .gov-photo-img {
@@ -1050,51 +1054,61 @@ h1, h2, h3, h4, h5, h6,
   height: 100%;
   object-fit: cover;
   object-position: top center;
-  transition: transform 0.4s ease;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .gov-card:hover .gov-photo-img {
-  transform: scale(1.04);
+  transform: scale(1.05);
 }
 
 .gov-linkedin-btn {
   position: absolute;
-  top: 16px;
-  right: 16px;
-  width: 38px;
-  height: 38px;
+  top: 18px;
+  right: 18px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(8px);
   display: flex;
   align-items: center;
   justify-content: center;
   color: #0A66C2;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.25s ease;
+  z-index: 5;
 }
 
 .gov-linkedin-btn:hover {
   background: #0A66C2;
   color: #FFFFFF;
-  transform: scale(1.08);
+  transform: scale(1.1);
 }
 
 .gov-card-body {
-  padding: 24px;
+  padding: 24px 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: #FFFFFF;
+  flex-grow: 1;
 }
 
 .gov-card-header h3 {
-  font-size: 20px;
-  font-weight: 750;
+  font-size: 22px;
+  font-weight: 800;
   color: var(--vmf-navy);
-  margin-bottom: 4px;
+  margin-bottom: 6px;
+  letter-spacing: -0.02em;
 }
 
 .gov-role {
-  font-size: 13.5px;
+  font-size: 14.5px;
   font-weight: 600;
   color: var(--vmf-green);
+  letter-spacing: 0.01em;
 }
 
 /* ==========================================================================
