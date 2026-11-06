@@ -1522,8 +1522,19 @@ h1, h2, h3, h4, h5, h6,
   color: #34D399;
 }
 
+.contact-v2-card {
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+}
+
 .contact-v2-right {
-  padding: 48px;
+  padding: 44px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 /* Modern Form Elements */
