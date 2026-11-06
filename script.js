@@ -2460,6 +2460,41 @@ function closeMobileNav() {
    ------------------------------------------------------------ */
 let isChatOpen = false;
 
+function initChatbotScrollFix() {
+  const chatMessages = document.getElementById('chatMessages');
+  const chatWindow = document.getElementById('vmfChatWindow');
+  
+  if (chatMessages) {
+    chatMessages.addEventListener('wheel', function(e) {
+      e.stopPropagation();
+      const delta = e.deltaY;
+      const atTop = this.scrollTop <= 0 && delta < 0;
+      const atBottom = this.scrollTop + this.clientHeight >= this.scrollHeight - 1 && delta > 0;
+      
+      if (!atTop && !atBottom) {
+        this.scrollTop += delta;
+        e.preventDefault();
+      }
+    }, { passive: false });
+  }
+
+  if (chatWindow) {
+    chatWindow.addEventListener('wheel', function(e) {
+      if (chatMessages && e.target !== chatMessages && !chatMessages.contains(e.target)) {
+        e.stopPropagation();
+        chatMessages.scrollTop += e.deltaY;
+        e.preventDefault();
+      }
+    }, { passive: false });
+  }
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initChatbotScrollFix);
+} else {
+  initChatbotScrollFix();
+}
+
 function toggleChatbot() {
   const win = document.getElementById('vmfChatWindow');
   const triggerIcon = document.getElementById('chatTriggerIcon');

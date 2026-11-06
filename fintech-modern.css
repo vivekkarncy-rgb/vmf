@@ -1984,6 +1984,29 @@ reveal-wrapper[mode="section"] {
   max-height: calc(100vh - 100px) !important;
   border-radius: 20px !important;
   box-shadow: 0 24px 60px rgba(5, 36, 79, 0.24), 0 0 0 1px rgba(5, 36, 79, 0.08) !important;
+  overscroll-behavior: contain !important;
+}
+
+.chat-messages {
+  flex: 1 !important;
+  overflow-y: auto !important;
+  overscroll-behavior: contain !important;
+  -webkit-overflow-scrolling: touch !important;
+  scrollbar-width: thin !important;
+  scrollbar-color: #CBD5E1 transparent !important;
+}
+
+.chat-messages::-webkit-scrollbar {
+  width: 6px !important;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+  background-color: #CBD5E1 !important;
+  border-radius: 999px !important;
 }
 
 .chat-quick-chips {
@@ -1997,13 +2020,13 @@ reveal-wrapper[mode="section"] {
 .chat-chip {
   display: flex !important;
   align-items: center !important;
-  justify-content: space-between !important;
+  justify-content: flex-start !important;
   width: 100% !important;
   background: #FFFFFF !important;
   border: 1px solid #E2E8F0 !important;
   color: #05244F !important;
-  padding: 11px 14px !important;
-  border-radius: 12px !important;
+  padding: 10px 14px !important;
+  border-radius: 10px !important;
   font-size: 13px !important;
   font-weight: 600 !important;
   cursor: pointer !important;
@@ -2017,7 +2040,7 @@ reveal-wrapper[mode="section"] {
   background: #F0FDF4 !important;
   border-color: #86EFAC !important;
   color: #15803D !important;
-  transform: translateX(3px) !important;
+  transform: translateX(4px) !important;
   box-shadow: 0 4px 12px rgba(5, 36, 79, 0.08) !important;
 }
 
@@ -2027,20 +2050,9 @@ reveal-wrapper[mode="section"] {
   gap: 10px;
 }
 
-.chat-chip-icon {
-  font-size: 15px;
-  line-height: 1;
-}
-
+.chat-chip-icon,
 .chat-chip-arrow {
-  color: #94A3B8;
-  transition: transform 0.2s ease, color 0.2s ease;
-  flex-shrink: 0;
-}
-
-.chat-chip:hover .chat-chip-arrow {
-  color: #15803D;
-  transform: translateX(2px);
+  display: none !important;
 }
 
 /* Last item: Connect with Agent Special Highlight */
@@ -2055,10 +2067,6 @@ reveal-wrapper[mode="section"] {
 .chat-chip-agent:hover {
   background: #15803D !important;
   border-color: #15803D !important;
-  color: #FFFFFF !important;
-}
-
-.chat-chip-agent:hover .chat-chip-arrow {
   color: #FFFFFF !important;
 }
 
