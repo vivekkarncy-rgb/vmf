@@ -108,15 +108,44 @@
   <section class="hero-sec" id="hero">
     <div class="container hero-grid">
       <div>
-        <h1 class="hero-h1 hero-h1-entrance">
-          <span class="hero-h1-line-1">Need Immediate Working Capital</span>
-          <span class="hero-h1-line-2 hero-h1-highlight">That Moves Your Business Forward?</span>
+        <h1 class="hero-h1 hero-h1-rotator" id="heroHeadlineRotator" aria-label="Hero Questions">
+          <!-- Question 1: Exactly 1 Question in 2 Lines -->
+          <div class="hero-h1-slide active" data-index="0">
+            <span class="hero-h1-line-1">Need Immediate Working Capital</span>
+            <span class="hero-h1-line-2 hero-h1-highlight">That Moves Your Business Forward?</span>
+          </div>
+          <!-- Question 2: Exactly 1 Question in 2 Lines -->
+          <div class="hero-h1-slide" data-index="1">
+            <span class="hero-h1-line-1">Waiting on Client Invoices to Clear</span>
+            <span class="hero-h1-line-2 hero-h1-highlight">Before You Can Take Your Next Order?</span>
+          </div>
+          <!-- Question 3: Exactly 1 Question in 2 Lines -->
+          <div class="hero-h1-slide" data-index="2">
+            <span class="hero-h1-line-1">Won a Major New Purchase Order</span>
+            <span class="hero-h1-line-2 hero-h1-highlight">Need Upfront Capital to Fulfill It?</span>
+          </div>
+          <!-- Question 4: Exactly 1 Question in 2 Lines -->
+          <div class="hero-h1-slide" data-index="3">
+            <span class="hero-h1-line-1">Facing Operational Cash Flow Gaps</span>
+            <span class="hero-h1-line-2 hero-h1-highlight">Looking for Structured Business Credit?</span>
+          </div>
         </h1>
 
-        <!-- Answer Description -->
-        <p class="hero-p hero-p-entrance">
-          Access flexible funding from ₹5 Lakhs to ₹5 Crores for verified invoices, purchase orders, and daily business needs—unlocking up to 90% liquidity within 24 to 48 hours.
-        </p>
+        <!-- Synchronized Answer Descriptions -->
+        <div class="hero-p-rotator hero-p-entrance" id="heroDescRotator">
+          <p class="hero-p hero-p-slide active" data-index="0">
+            Access flexible funding from ₹5 Lakhs to ₹5 Crores for verified invoices, purchase orders, and daily business needs—unlocking up to 90% liquidity within 24 to 48 hours.
+          </p>
+          <p class="hero-p hero-p-slide" data-index="1">
+            Unlock up to 90% of your verified invoice value within 24 to 48 hours with institutional bill discounting, eliminating 30 to 120-day client payment delays.
+          </p>
+          <p class="hero-p hero-p-slide" data-index="2">
+            Fund verified purchase orders early with specialized supplier liquidity, releasing capital to execute large manufacturing and supply contracts without equity dilution.
+          </p>
+          <p class="hero-p hero-p-slide" data-index="3">
+            Access predictable working capital facilities from ₹5 Lakhs to ₹5 Crores with transparent, documented terms tailored around your enterprise's verified trade flows.
+          </p>
+        </div>
 
         <!-- Facility Scope Text -->
         <div class="hero-scope-row hero-p-entrance">

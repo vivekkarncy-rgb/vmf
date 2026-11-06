@@ -3244,23 +3244,27 @@ function openProductFromFooter(e, key) {
 }
 
 /* ------------------------------------------------------------
-   Hero Section 3-Headline Sequential Rotating Animation
-   Order:
-   1. Finance Your Invoices, Orders, and Everyday Business Needs
-   2. Keep Cash Flowing, Orders Moving, and Business Growing
-   3. Business Finance from Purchase Orders to Payments
+   Hero Section Question & Answer Rotator (Random Transition)
+   Rotates randomly between distinct 2-line MSME financing questions
    ------------------------------------------------------------ */
 function initHeroHeadlineRotator() {
   const slides = Array.from(document.querySelectorAll('.hero-h1-slide'));
   const descSlides = Array.from(document.querySelectorAll('.hero-p-slide'));
   if (slides.length <= 1) return;
 
-  let currentIndex = 0;
-  const displayDuration = 4200; // ms visible per question/answer pair
+  const displayDuration = 4500; // ms visible per question/answer pair
 
   function nextSlide() {
-    const currentSlide = slides[currentIndex];
-    const currentDesc = descSlides[currentIndex];
+    let currentIdx = slides.findIndex(s => s.classList.contains('active'));
+    if (currentIdx === -1) currentIdx = 0;
+
+    let nextIndex;
+    do {
+      nextIndex = Math.floor(Math.random() * slides.length);
+    } while (nextIndex === currentIdx && slides.length > 1);
+
+    const currentSlide = slides[currentIdx];
+    const currentDesc = descSlides[currentIdx];
 
     currentSlide.classList.remove('active');
     currentSlide.classList.add('exiting');
@@ -3274,15 +3278,14 @@ function initHeroHeadlineRotator() {
       if (currentDesc) currentDesc.classList.remove('exiting');
     }, 650);
 
-    currentIndex = (currentIndex + 1) % slides.length;
-    const next = slides[currentIndex];
-    const nextDesc = descSlides[currentIndex];
+    const next = slides[nextIndex];
+    const nextDesc = descSlides[nextIndex];
 
     next.classList.add('active');
     if (nextDesc) nextDesc.classList.add('active');
   }
 
-  // Rotate smoothly on interval
+  // Rotate smoothly on interval with random selection
   setInterval(nextSlide, displayDuration);
 }
 
