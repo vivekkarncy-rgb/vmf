@@ -284,44 +284,84 @@ h1, h2, h3, h4, h5, h6,
   max-width: 580px;
 }
 
-.hero-highlight-point {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(8px);
-  border: 1px solid var(--vmf-border);
-  border-left: 4px solid var(--vmf-green);
-  border-radius: 12px;
-  padding: 14px 20px;
-  box-shadow: var(--vmf-shadow-subtle);
-  margin: 24px 0 28px 0;
+/* ==========================================================================
+   Modern Minimalist Scope Indicators (Replaces legacy background box)
+   ========================================================================== */
+.hero-scope-row {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 20px 0 28px 0;
+}
+
+.hero-amount-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 9999px;
+  font-size: 13.5px;
+  color: #166534;
+  box-shadow: 0 1px 2px rgba(16, 185, 129, 0.08);
+}
+
+.chip-pulse-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--vmf-emerald);
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.25);
+}
+
+.chip-label {
+  font-weight: 500;
+  color: #374151;
+}
+
+.chip-highlight {
+  font-weight: 800;
+  color: #15803d;
+  letter-spacing: -0.01em;
+}
+
+.hero-facility-tags {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   flex-wrap: wrap;
 }
 
-.hero-starting-text {
-  font-size: 14.5px;
-  color: var(--vmf-text-muted);
-}
-
-.hero-amount-val {
-  color: var(--vmf-green);
-  font-size: 16px;
-  font-weight: 750;
-}
-
-.hero-facilities-line {
+.facility-tag {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  font-size: 13.5px;
+  gap: 5px;
+  padding: 5px 12px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 9999px;
+  font-size: 12.5px;
   font-weight: 600;
-  color: var(--vmf-navy);
+  color: #334155;
+  transition: all 0.2s ease;
 }
 
-.sep-dot {
-  color: #CBD5E1;
-  font-weight: bold;
+.facility-tag svg {
+  color: var(--vmf-emerald);
+}
+
+.facility-tag:hover {
+  background: #ffffff;
+  border-color: #cbd5e1;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+/* Fallback legacy compatibility */
+.hero-highlight-point {
+  display: none !important;
 }
 
 .h-badge-item {
