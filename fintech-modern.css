@@ -744,10 +744,10 @@ h1, h2, h3, h4, h5, h6,
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 380px;
+  min-height: 410px;
   box-shadow: 0 4px 20px -2px rgba(5, 36, 79, 0.05);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  overflow: hidden; /* Clips the bottom blue container flush to the 32px rounded corners */
+  overflow: visible; /* Allows the solid green circular badge to pop out top-left */
 }
 
 .prod-modern-card:hover {
@@ -781,7 +781,7 @@ h1, h2, h3, h4, h5, h6,
 .prod-modern-body {
   text-align: center;
   margin: auto 0;
-  padding: 60px 32px 36px 32px;
+  padding: 56px 28px 30px 28px;
 }
 
 .prod-modern-title {
@@ -790,14 +790,24 @@ h1, h2, h3, h4, h5, h6,
   color: #05244F;
   letter-spacing: -0.03em;
   line-height: 1.15;
-  margin: 0 0 12px 0;
+  margin: 0 0 10px 0;
 }
 
 .prod-modern-tagline {
-  font-size: 15px;
-  color: #64748B;
-  font-weight: 500;
+  font-size: 14.5px;
+  color: #15803D; /* Deep growth green for high contrast brand accent */
+  font-weight: 600;
+  letter-spacing: 0.01em;
   margin: 0;
+}
+
+.prod-modern-desc {
+  font-size: 14px;
+  line-height: 1.55;
+  color: #475569; /* WCAG AA balanced slate */
+  font-weight: 450;
+  margin: 14px auto 0 auto;
+  max-width: 290px;
 }
 
 /* Dark Navy Action Button - Covers All the Way Till the End Inside Card */
@@ -806,8 +816,8 @@ h1, h2, h3, h4, h5, h6,
   background: #05244F;
   color: #FFFFFF;
   border: none;
-  border-radius: 0 0 30px 30px; /* Flush to bottom edge */
-  padding: 22px 24px;
+  border-radius: 0 0 30px 30px; /* Precise inner radius matching 32px card border */
+  padding: 20px 24px;
   font-size: 16px;
   font-weight: 700;
   letter-spacing: -0.01em;
