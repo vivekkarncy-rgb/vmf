@@ -690,115 +690,117 @@ h1, h2, h3, h4, h5, h6,
 }
 
 /* ==========================================================================
-   4. PRODUCT CARDS (POWER YOUR BUSINESS WITH THE RIGHT FINANCE)
+   4. PRODUCT CARDS (MODERN MINIMALIST STYLE MATCHING USER SPECIFICATION)
    ========================================================================== */
-.prod-3d-grid {
+.prod-modern-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
-  margin-top: 36px;
+  gap: 36px;
+  margin-top: 50px;
+  padding-top: 25px; /* Space for the top-left overlapping badge */
 }
 
-@media (max-width: 900px) {
-  .prod-3d-grid {
+@media (max-width: 960px) {
+  .prod-modern-grid {
     grid-template-columns: 1fr;
+    max-width: 440px;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 50px;
   }
 }
 
-.prod-3d-card {
-  background: #FFFFFF;
-  border: 1px solid var(--vmf-border);
-  border-radius: 20px;
-  padding: 36px 30px;
-  box-shadow: var(--vmf-shadow-card);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+.prod-modern-card {
   position: relative;
+  background: #FFFFFF;
+  border: 1.5px solid #E2E8F0;
+  border-radius: 32px;
+  padding: 50px 32px 32px 32px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  min-height: 380px;
+  box-shadow: 0 4px 20px -2px rgba(5, 36, 79, 0.05);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.prod-3d-card:hover {
+.prod-modern-card:hover {
   transform: translateY(-6px);
-  box-shadow: var(--vmf-shadow-hover);
-  border-color: rgba(45, 123, 57, 0.4);
+  border-color: #CBD5E1;
+  box-shadow: 0 16px 32px -6px rgba(5, 36, 79, 0.08);
 }
 
-.prod-badge-pill {
+/* Overlapping Top-Left Solid Green Circular Badge */
+.prod-modern-badge {
   position: absolute;
-  top: 24px;
-  right: 24px;
-  background: rgba(45, 123, 57, 0.1);
-  color: var(--vmf-green);
-  border: 1px solid rgba(45, 123, 57, 0.2);
-  border-radius: 9999px;
-  padding: 4px 10px;
-  font-size: 11.5px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-}
-
-.prod-icon-box {
-  width: 64px;
-  height: 64px;
-  border-radius: 16px;
-  background: linear-gradient(135deg, rgba(5, 36, 79, 0.06) 0%, rgba(45, 123, 57, 0.08) 100%);
+  top: -24px;
+  left: -12px;
+  width: 78px;
+  height: 78px;
+  border-radius: 50%;
+  background: #3B7E48; /* Authentic VMF Growth Forest Green */
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 22px;
-  border: 1px solid rgba(226, 232, 240, 0.8);
+  box-shadow: 0 6px 16px rgba(59, 126, 72, 0.28);
+  z-index: 2;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.prod-3d-card h3 {
-  font-size: 22px;
-  font-weight: 750;
-  color: var(--vmf-navy);
-  margin-bottom: 8px;
-  line-height: 1.25;
+.prod-modern-card:hover .prod-modern-badge {
+  transform: scale(1.06);
 }
 
-.prod-desc {
+/* Center Content: Big Navy Title & Minimal Subtitle */
+.prod-modern-body {
+  text-align: center;
+  margin: auto 0;
+  padding: 24px 0 16px 0;
+}
+
+.prod-modern-title {
+  font-size: clamp(26px, 2.2vw, 32px);
+  font-weight: 800;
+  color: #05244F;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  margin: 0 0 12px 0;
+}
+
+.prod-modern-tagline {
   font-size: 15px;
-  color: var(--vmf-text-muted);
-  line-height: 1.55;
-  margin-bottom: 20px;
+  color: #64748B;
+  font-weight: 500;
+  margin: 0;
 }
 
-.prod-feature-checklist {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 28px 0;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  flex-grow: 1;
-}
-
-.prod-feature-checklist li {
+/* Full-Width Dark Navy Action Button */
+.prod-modern-btn {
+  width: 100%;
+  background: #05244F;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 18px;
+  padding: 16px 24px;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 13.5px;
-  color: var(--vmf-text-body);
-  font-weight: 500;
-}
-
-.prod-feature-checklist svg {
-  color: var(--vmf-green);
-  flex-shrink: 0;
-}
-
-.prod-btn-group {
-  display: flex;
-  gap: 10px;
-}
-
-.prod-btn-group .btn-cta {
-  flex: 1;
   justify-content: center;
-  font-size: 13.5px;
-  padding: 10px 16px;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 12px rgba(5, 36, 79, 0.15);
+}
+
+.prod-modern-btn:hover {
+  background: #031633;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(5, 36, 79, 0.25);
+}
+
+.prod-modern-btn:active {
+  transform: translateY(0);
 }
 
 /* ==========================================================================
