@@ -804,91 +804,132 @@ h1, h2, h3, h4, h5, h6,
 }
 
 /* ==========================================================================
-   5. HOW OUR FINANCING WORKS (6-STEP PIPELINE)
+   5. HOW OUR FINANCING WORKS (UI/UX PRO MAX PIPELINE BENTO ARCHITECTURE)
    ========================================================================== */
-.flow-pill-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+.pro-pipeline-wrap {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
 }
 
-@media (max-width: 900px) {
-  .flow-pill-grid {
+.pro-pipeline-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 1024px) {
+  .pro-pipeline-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 600px) {
-  .flow-pill-grid {
+@media (max-width: 680px) {
+  .pro-pipeline-grid {
     grid-template-columns: 1fr;
+    gap: 18px;
   }
 }
 
-.flow-pill-capsule {
-  background: #FFFFFF;
-  border: 1px solid var(--vmf-border);
-  border-radius: 18px;
-  padding: 20px 22px;
-  box-shadow: 0 4px 12px rgba(5, 36, 79, 0.04);
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  transition: all 0.25s ease;
+.pro-pipeline-card {
   position: relative;
+  background: #FFFFFF;
+  border: 1.5px solid #E2E8F0;
+  border-radius: 24px;
+  padding: 28px 24px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 220px;
+  box-shadow: 0 4px 16px -2px rgba(5, 36, 79, 0.04);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   overflow: hidden;
 }
 
-.flow-pill-capsule::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 3px;
-  height: 100%;
-  background: var(--vmf-green);
-  opacity: 0;
-  transition: opacity 0.2s ease;
+.pro-pipeline-card:hover {
+  transform: translateY(-5px);
+  border-color: #CBD5E1;
+  box-shadow: 0 16px 32px -4px rgba(5, 36, 79, 0.08);
 }
 
-.flow-pill-capsule:hover {
-  transform: translateY(-3px);
-  border-color: rgba(45, 123, 57, 0.35);
-  box-shadow: 0 10px 24px -4px rgba(5, 36, 79, 0.09);
+/* Card Header: Icon + Step Pill Badge */
+.pro-step-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
 }
 
-.flow-pill-capsule:hover::before {
-  opacity: 1;
-}
-
-.flow-step-num {
-  font-family: var(--vmf-font-display);
-  font-weight: 800;
-  font-size: 13px;
-  color: var(--vmf-green);
-  background: rgba(45, 123, 57, 0.1);
-  padding: 4px 8px;
-  border-radius: 6px;
-  margin-bottom: 6px;
-  display: inline-block;
-}
-
-.flow-pill-head {
-  font-size: 16px;
-  font-weight: 700;
-  color: var(--vmf-navy);
-  line-height: 1.25;
-}
-
-.flow-pill-endcap {
+.pro-step-icon-box {
   width: 52px;
   height: 52px;
+  border-radius: 16px;
   background: #F8FAFC;
-  border-radius: 12px;
+  border: 1.5px solid #E2E8F0;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
-  border: 1px solid rgba(226, 232, 240, 0.8);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.pro-pipeline-card:hover .pro-step-icon-box {
+  transform: scale(1.08);
+  background: #F1F5F9;
+  border-color: #CBD5E1;
+}
+
+.pro-step-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 12px;
+  background: #F0FDF4;
+  border: 1px solid #BBF7D0;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #166534;
+  letter-spacing: 0.02em;
+}
+
+/* Card Content: Title & Description */
+.pro-step-content {
+  flex: 1;
+}
+
+.pro-step-title {
+  font-size: 19px;
+  font-weight: 800;
+  color: #05244F;
+  letter-spacing: -0.02em;
+  margin: 0 0 8px 0;
+  line-height: 1.25;
+}
+
+.pro-step-desc {
+  font-size: 14px;
+  color: #64748B;
+  line-height: 1.55;
+  margin: 0;
+  font-weight: 450;
+}
+
+/* Subtle Animated Bottom Accent Bar on Hover */
+.pro-step-progress-indicator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #10B981, #05244F);
+  opacity: 0;
+  transform: scaleX(0.2);
+  transform-origin: left center;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pro-pipeline-card:hover .pro-step-progress-indicator {
+  opacity: 1;
+  transform: scaleX(1);
 }
 
 /* ==========================================================================
