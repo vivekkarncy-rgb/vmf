@@ -3296,3 +3296,124 @@ if (document.readyState === 'loading') {
 } else {
   updateWorkingCapitalCalc();
 }
+
+/* ------------------------------------------------------------
+   Desktop Background Pipeline Flow Track (1 -> 2 -> 3 -> 6 -> 5 -> 4)
+   ------------------------------------------------------------ */
+function updatePipelineFlowTrack() {
+  const wrap = document.querySelector('.pro-pipeline-wrap');
+  const svg = document.querySelector('.pro-pipeline-flow-svg');
+  if (!wrap || !svg) return;
+
+  // Desktop only: check window width
+  if (window.innerWidth <= 1024) {
+    svg.style.display = 'none';
+    return;
+  }
+  svg.style.display = 'block';
+
+  const c1 = wrap.querySelector('.pro-pipeline-card[data-step="1"]');
+  const c2 = wrap.querySelector('.pro-pipeline-card[data-step="2"]');
+  const c3 = wrap.querySelector('.pro-pipeline-card[data-step="3"]');
+  const c6 = wrap.querySelector('.pro-pipeline-card[data-step="6"]');
+  const c5 = wrap.querySelector('.pro-pipeline-card[data-step="5"]');
+  const c4 = wrap.querySelector('.pro-pipeline-card[data-step="4"]');
+
+  if (!c1 || !c2 || !c3 || !c6 || !c5 || !c4) return;
+
+  const wrapRect = wrap.getBoundingClientRect();
+  const getBox = (el) => {
+    const r = el.getBoundingClientRect();
+    return {
+      x: r.left + r.width / 2 - wrapRect.left,
+      y: r.top + r.height / 2 - wrapRect.top,
+      left: r.left - wrapRect.left,
+      right: r.right - wrapRect.left,
+      top: r.top - wrapRect.top,
+      bottom: r.bottom - wrapRect.top,
+      width: r.width,
+      height: r.height
+    };
+  };
+
+  const p1 = getBox(c1);
+  const p2 = getBox(c2);
+  const p3 = getBox(c3);
+  const p6 = getBox(c6);
+  const p5 = getBox(c5);
+  const p4 = getBox(c4);
+
+  svg.setAttribute('width', wrapRect.width);
+  svg.setAttribute('height', wrapRect.height);
+  svg.setAttribute('viewBox', `0 0 ${wrapRect.width} ${wrapRect.height}`);
+
+  const row1Y = p1.y;
+  const row2Y = p6.y;
+  const turnX = Math.min(wrapRect.width - 12, Math.max(p3.right + 26, p6.right + 26));
+  const radius = Math.min(32, Math.abs(row2Y - row1Y) / 2);
+
+  // Serpentine Path: 1 -> 2 -> 3 -> 6 -> 5 -> 4
+  const d = `
+    M ${p1.x} ${row1Y}
+    L ${turnX - radius} ${row1Y}
+    Q ${turnX} ${row1Y} ${turnX} ${row1Y + radius}
+    L ${turnX} ${row2Y - radius}
+    Q ${turnX} ${row2Y} ${turnX - radius} ${row2Y}
+    L ${p4.x} ${row2Y}
+  `.replace(/\s+/g, ' ').trim();
+
+  const basePath = svg.querySelector('.pro-pipeline-flow-base');
+  const flowPath = svg.querySelector('.pro-pipeline-flow-path');
+  const arrowsGroup = svg.querySelector('.pro-pipeline-flow-arrows');
+
+  if (basePath) basePath.setAttribute('d', d);
+  if (flowPath) flowPath.setAttribute('d', d);
+
+  // Directional Arrow Badges in each gap
+  if (arrowsGroup) {
+    const arrows = [
+      // Gap 1 -> 2 (Right)
+      { x: (p1.right + p2.left) / 2, y: row1Y, dir: 'right' },
+      // Gap 2 -> 3 (Right)
+      { x: (p2.right + p3.left) / 2, y: row1Y, dir: 'right' },
+      // Right Curve Turn (Down)
+      { x: turnX, y: (row1Y + row2Y) / 2, dir: 'down' },
+      // Gap 6 -> 5 (Left)
+      { x: (p6.left + p5.right) / 2, y: row2Y, dir: 'left' },
+      // Gap 5 -> 4 (Left)
+      { x: (p5.left + p4.right) / 2, y: row2Y, dir: 'left' }
+    ];
+
+    arrowsGroup.innerHTML = arrows.map(a => {
+      let icon = '';
+      if (a.dir === 'right') {
+        icon = `<path d="M ${a.x - 3} ${a.y - 4} L ${a.x + 3} ${a.y} L ${a.x - 3} ${a.y + 4}" stroke="#15803D" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>`;
+      } else if (a.dir === 'down') {
+        icon = `<path d="M ${a.x - 4} ${a.y - 3} L ${a.x} ${a.y + 3} L ${a.x + 4} ${a.y - 3}" stroke="#15803D" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>`;
+      } else if (a.dir === 'left') {
+        icon = `<path d="M ${a.x + 3} ${a.y - 4} L ${a.x - 3} ${a.y} L ${a.x + 3} ${a.y + 4}" stroke="#15803D" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>`;
+      }
+      return `
+        <g class="pro-pipeline-arrow-marker">
+          <circle cx="${a.x}" cy="${a.y}" r="11" fill="#FFFFFF" stroke="#BBF7D0" stroke-width="1.5" filter="drop-shadow(0 2px 4px rgba(5,36,79,0.06))"/>
+          ${icon}
+        </g>
+      `;
+    }).join('');
+  }
+}
+
+let pipelineResizeTimer = null;
+window.addEventListener('resize', () => {
+  clearTimeout(pipelineResizeTimer);
+  pipelineResizeTimer = setTimeout(updatePipelineFlowTrack, 80);
+});
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(updatePipelineFlowTrack, 150);
+  });
+} else {
+  setTimeout(updatePipelineFlowTrack, 150);
+}
+window.updatePipelineFlowTrack = updatePipelineFlowTrack;

@@ -844,12 +844,58 @@ h1, h2, h3, h4, h5, h6,
   width: 100%;
   max-width: 1240px;
   margin: 0 auto;
+  position: relative;
+}
+
+/* Background connecting pipeline flow track (Desktop Only: 1 -> 2 -> 3 -> 6 -> 5 -> 4) */
+.pro-pipeline-flow-svg {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: visible;
+}
+
+@media (min-width: 1025px) {
+  .pro-pipeline-flow-svg {
+    display: block;
+  }
+}
+
+.pro-pipeline-flow-base {
+  fill: none;
+  stroke: #E2E8F0;
+  stroke-width: 3px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.pro-pipeline-flow-path {
+  fill: none;
+  stroke: #3B7E48; /* VMF Signature Growth Emerald Green */
+  stroke-width: 3px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 8 8;
+  animation: proFlowPulse 20s linear infinite;
+}
+
+@keyframes proFlowPulse {
+  to {
+    stroke-dashoffset: -320;
+  }
 }
 
 .pro-pipeline-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  gap: 36px;
+  position: relative;
+  z-index: 1; /* Keeps cards crisply layered above the background flow line */
 }
 
 @media (max-width: 1024px) {
