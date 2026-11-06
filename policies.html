@@ -51,7 +51,7 @@
     <!-- Fixed Navbar (Transparent Background, Persistent on Scroll) -->
     <header class="main-nav" id="mainNavbar">
       <div class="container nav-flex">
-        <a href="index.html" class="brand" title="VMF Finance Limited">
+        <a href="index.html" class="brand" title="VMF Finance Limited" aria-label="VMF Finance Limited Home">
           <img src="assets/vmf-logo-transparent.png" alt="VMF Finance Limited" class="brand-logo-img">
         </a>
         <nav class="nav-links" id="mainNavLinks">
@@ -461,34 +461,34 @@
 
       <form onsubmit="handleModalSubmit(event)">
         <div class="form-group">
-          <label>Selected Facility</label>
-          <input type="text" id="modalFacilityInput" class="form-control" readonly style="font-weight: 700; color: var(--navy); background: #EEF2F6;">
+          <label for="modalFacilityInput">Selected Facility</label>
+          <input type="text" id="modalFacilityInput" class="form-control" readonly aria-label="Selected Financing Facility" style="font-weight: 700; color: var(--navy); background: #EEF2F6;">
         </div>
 
         <div class="form-row">
           <div class="form-group">
-            <label>Business Name *</label>
+            <label for="mBusinessName">Business Name *</label>
             <input type="text" id="mBusinessName" class="form-control" placeholder="Company Legal Name" required>
           </div>
           <div class="form-group">
-            <label>Contact Person *</label>
+            <label for="mContactPerson">Contact Person *</label>
             <input type="text" id="mContactPerson" class="form-control" placeholder="Full Name" required>
           </div>
         </div>
 
         <div class="form-row">
           <div class="form-group">
-            <label>Phone Number *</label>
+            <label for="mPhone">Phone Number *</label>
             <input type="tel" id="mPhone" class="form-control" placeholder="+91 98765 43210" required>
           </div>
           <div class="form-group">
-            <label>Required Funding Amount *</label>
+            <label for="mFundingAmt">Required Funding Amount *</label>
             <input type="text" id="mFundingAmt" class="form-control" placeholder="e.g. ₹ 45 Lakhs" required>
           </div>
         </div>
 
         <div class="form-group">
-          <label>City / State</label>
+          <label for="mCity">City / State</label>
           <input type="text" id="mCity" class="form-control" placeholder="e.g. Hyderabad, Telangana">
         </div>
 
