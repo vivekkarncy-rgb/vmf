@@ -1068,17 +1068,17 @@
                 <div class="contact-v2-row">
                   <!-- Full Name -->
                   <div class="contact-v2-group">
-                    <label for="contactFullName" class="modern-label">Full Name *</label>
+                    <label for="contactFullName" class="sr-only">Full Name</label>
                     <input type="text" id="contactFullName" name="name" class="contact-v2-input"
-                      placeholder="e.g. Ramesh Kumar" aria-label="Full Name" required autocomplete="name">
+                      placeholder="Full Name *" aria-label="Full Name" required autocomplete="name">
                     <div class="field-error-msg" id="errorFullName">Please enter your full legal name (at least 2 characters).</div>
                   </div>
 
                   <!-- Email Address -->
                   <div class="contact-v2-group">
-                    <label for="contactEmail" class="modern-label">Work Email *</label>
+                    <label for="contactEmail" class="sr-only">Work Email</label>
                     <input type="email" id="contactEmail" name="email" class="contact-v2-input"
-                      placeholder="e.g. ramesh@company.com" aria-label="Email Address" required autocomplete="email">
+                      placeholder="Work Email *" aria-label="Work Email" required autocomplete="email">
                     <div class="field-error-msg" id="errorEmail">Please enter a valid corporate or business email.</div>
                   </div>
                 </div>
@@ -1086,7 +1086,7 @@
                 <div class="contact-v2-row">
                   <!-- Phone Number -->
                   <div class="contact-v2-group">
-                    <label for="contactPhone" class="modern-label">Phone Number *</label>
+                    <label for="contactPhone" class="sr-only">Phone Number</label>
                     <div class="contact-v2-phone-wrap">
                       <div class="contact-v2-country-wrap">
                         <select id="contactCountryCode" name="countryCode" class="contact-v2-country-select" aria-label="Country Code">
@@ -1122,26 +1122,26 @@
                         </svg>
                       </div>
                       <input type="tel" id="contactPhone" name="phone" class="contact-v2-input contact-v2-phone-input"
-                        placeholder="10-digit mobile number" aria-label="Phone Number" pattern="[0-9]{6,15}" maxlength="16" minlength="6" required autocomplete="tel">
+                        placeholder="Phone Number (10 digits) *" aria-label="Phone Number" pattern="[0-9]{6,15}" maxlength="16" minlength="6" required autocomplete="tel">
                     </div>
                     <div class="field-error-msg" id="errorPhone">Please enter a valid 10-digit mobile number.</div>
                   </div>
 
                   <!-- Business Name (Optional) -->
                   <div class="contact-v2-group">
-                    <label for="contactBusiness" class="modern-label">Business / Entity Name</label>
+                    <label for="contactBusiness" class="sr-only">Business / Entity Name</label>
                     <input type="text" id="contactBusiness" name="company" class="contact-v2-input"
-                      placeholder="e.g. Acme Tech Pvt Ltd" aria-label="Business Name (Optional)" autocomplete="organization">
+                      placeholder="Business / Entity Name (Optional)" aria-label="Business / Entity Name (Optional)" autocomplete="organization">
                   </div>
                 </div>
 
                 <!-- Full-width fields -->
                 <!-- Enquiry Type -->
                 <div class="contact-v2-group">
-                  <label for="contactEnquiryType" class="modern-label">Financing Facility Needed *</label>
+                  <label for="contactEnquiryType" class="sr-only">Financing Facility Needed</label>
                   <div class="contact-v2-select-wrap">
-                    <select id="contactEnquiryType" name="enquiryType" class="contact-v2-select" aria-label="Enquiry Type" required>
-                      <option value="" disabled selected>Select Financing Facility *</option>
+                    <select id="contactEnquiryType" name="enquiryType" class="contact-v2-select" aria-label="Financing Facility Needed" required>
+                      <option value="" disabled selected>Select Financing Facility Needed *</option>
                       <option value="Invoice Financing">Invoice Financing (Bill Discounting)</option>
                       <option value="Purchase Order Financing">Purchase Order (PO) Financing</option>
                       <option value="Working Capital Loan">Working Capital Business Loan</option>
@@ -1157,9 +1157,9 @@
 
                 <!-- How Can We Help? -->
                 <div class="contact-v2-group">
-                  <label for="contactMessage" class="modern-label">Funding Requirement Details *</label>
+                  <label for="contactMessage" class="sr-only">Funding Requirement Details</label>
                   <textarea id="contactMessage" name="message" class="contact-v2-textarea" rows="4"
-                    placeholder="Briefly state your expected ticket size, monthly turnover, and financing timeline..." aria-label="Funding Requirement Details" required></textarea>
+                    placeholder="Funding Requirement Details (e.g. ticket size, monthly turnover, timeline) *" aria-label="Funding Requirement Details" required></textarea>
                   <div class="field-error-msg" id="errorMessage">Please describe your financing requirement (at least 10 characters).</div>
                 </div>
 
