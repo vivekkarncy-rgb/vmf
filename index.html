@@ -325,109 +325,6 @@
   <main class="main-content-flow" id="mainContentFlow">
 
     <!-- ============================================================
-         INTERACTIVE WORKING CAPITAL ESTIMATOR (FINTECH ENGINE)
-         ============================================================ -->
-    <reveal-wrapper mode="section">
-      <section class="wc-calc-section" id="calculator">
-        <div class="wc-calc-container">
-          <div class="wc-calc-card">
-            <div class="wc-calc-grid">
-              <!-- Left Column: Inputs & Sliders -->
-              <div>
-                <div class="wc-calc-heading-area">
-                  <h2 class="wc-calc-title">Indicative Working Capital Estimator</h2>
-                  <p class="wc-calc-subtitle">Estimate available advance liquidity, tenor options, and pricing tailored to your trade cycle.</p>
-                </div>
-
-                <!-- Facility Selector Tabs -->
-                <div class="wc-facility-tabs" id="wcFacilityTabs">
-                  <button type="button" class="wc-tab-btn active" data-facility="Invoice Financing" onclick="setCalcFacility(this, 'Invoice Financing')">Invoice Financing</button>
-                  <button type="button" class="wc-tab-btn" data-facility="Purchase Order Financing" onclick="setCalcFacility(this, 'Purchase Order Financing')">PO Financing</button>
-                  <button type="button" class="wc-tab-btn" data-facility="Working Capital Loan" onclick="setCalcFacility(this, 'Working Capital Loan')">Working Capital</button>
-                </div>
-
-                <!-- Slider 1: Facility Amount -->
-                <div class="wc-slider-block">
-                  <div class="wc-slider-top">
-                    <span class="wc-slider-label">Required Facility Amount</span>
-                    <span class="wc-slider-value" id="calcAmountDisplay">₹ 50 Lakhs</span>
-                  </div>
-                  <input type="range" id="calcAmountSlider" class="wc-range-input" min="500000" max="50000000" step="500000" value="5000000" oninput="updateWorkingCapitalCalc()">
-                  <div style="display: flex; justify-content: space-between; font-size: 12px; color: var(--vmf-text-muted); margin-top: 6px;">
-                    <span>₹5 Lakhs</span>
-                    <span>₹2.5 Crores</span>
-                    <span>₹5 Crores+</span>
-                  </div>
-                </div>
-
-                <!-- Slider 2: Rate of Interest (ROI) -->
-                <div class="wc-slider-block">
-                  <div class="wc-slider-top">
-                    <span class="wc-slider-label">Indicative Interest Rate (p.a.)</span>
-                    <span class="wc-slider-value" id="calcRoiDisplay" style="color: #15803D; font-weight: 800;">12.0% p.a.</span>
-                  </div>
-                  <input type="range" id="calcRoiSlider" class="wc-range-input" min="9" max="20" step="0.5" value="12" oninput="updateWorkingCapitalCalc()">
-                  <div style="display: flex; justify-content: space-between; font-size: 12px; color: var(--vmf-text-muted); margin-top: 6px;">
-                    <span>9% Min</span>
-                    <span>14.5% Mid</span>
-                    <span>20% Max</span>
-                  </div>
-                </div>
-
-                <!-- Slider 3: Tenor Duration -->
-                <div class="wc-slider-block" style="margin-bottom: 0;">
-                  <div class="wc-slider-top">
-                    <span class="wc-slider-label">Expected Payment Cycle (Tenor)</span>
-                    <span class="wc-slider-value" id="calcTenorDisplay" style="font-size: 18px; color: var(--vmf-navy);">60 Days</span>
-                  </div>
-                  <input type="range" id="calcTenorSlider" class="wc-range-input" min="30" max="120" step="15" value="60" oninput="updateWorkingCapitalCalc()">
-                  <div style="display: flex; justify-content: space-between; font-size: 12px; color: var(--vmf-text-muted); margin-top: 6px;">
-                    <span>30 Days</span>
-                    <span>60 Days</span>
-                    <span>90 Days</span>
-                    <span>120 Days</span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Right Column: Results & Instant Action -->
-              <div class="wc-calc-results-card">
-                <div class="wc-result-row">
-                  <div class="wc-res-label">Estimated Immediate Advance (Up to 90%)</div>
-                  <div class="wc-res-value highlight-emerald" id="calcAdvanceDisplay">₹ 45,00,000</div>
-                  <div class="wc-res-meta">
-                    <span>⚡ Liquidity released immediately</span>
-                  </div>
-                </div>
-
-                <div class="wc-result-row">
-                  <div class="wc-res-label">Estimated Financing Cost for Cycle</div>
-                  <div class="wc-res-value" id="calcCostDisplay">₹ 88,767</div>
-                  <div class="wc-res-meta">
-                    <span>• Transparent documented terms</span>
-                  </div>
-                </div>
-
-                <div class="wc-result-row">
-                  <div class="wc-res-label">Approval Turnaround</div>
-                  <div class="wc-res-value" style="font-size: 20px;">24 to 48 Hours</div>
-                  <div class="wc-res-meta">
-                    <span>Direct disbursement to verified account</span>
-                  </div>
-                </div>
-
-                <button type="button" class="wc-calc-apply-btn" onclick="applyWithCalculatorEstimate()">
-                  <span>Check eligibility</span>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </reveal-wrapper>
-
-    <!-- ============================================================
          SECTION 2: PRODUCTS - STRUCTURED FINANCING SOLUTIONS
          ============================================================ -->
     <reveal-wrapper mode="section">
@@ -865,6 +762,110 @@
             </div>
           </div>
 
+        </div>
+      </div>
+    </section>
+  </reveal-wrapper>
+
+  <!-- ============================================================
+       INTERACTIVE WORKING CAPITAL ESTIMATOR (FINTECH ENGINE)
+       Placed after "Who We Are"
+       ============================================================ -->
+  <reveal-wrapper mode="section">
+    <section class="wc-calc-section" id="calculator">
+      <div class="wc-calc-container">
+        <div class="wc-calc-card">
+          <div class="wc-calc-grid">
+            <!-- Left Column: Inputs & Sliders -->
+            <div>
+              <div class="wc-calc-heading-area">
+                <h2 class="wc-calc-title">Indicative Working Capital Estimator</h2>
+                <p class="wc-calc-subtitle">Estimate available advance liquidity, tenor options, and pricing tailored to your trade cycle.</p>
+              </div>
+
+              <!-- Facility Selector Tabs -->
+              <div class="wc-facility-tabs" id="wcFacilityTabs">
+                <button type="button" class="wc-tab-btn active" data-facility="Invoice Financing" onclick="setCalcFacility(this, 'Invoice Financing')">Invoice Financing</button>
+                <button type="button" class="wc-tab-btn" data-facility="Purchase Order Financing" onclick="setCalcFacility(this, 'Purchase Order Financing')">PO Financing</button>
+                <button type="button" class="wc-tab-btn" data-facility="Working Capital Loan" onclick="setCalcFacility(this, 'Working Capital Loan')">Working Capital</button>
+              </div>
+
+              <!-- Slider 1: Facility Amount -->
+              <div class="wc-slider-block">
+                <div class="wc-slider-top">
+                  <span class="wc-slider-label">Required Facility Amount</span>
+                  <span class="wc-slider-value" id="calcAmountDisplay">₹ 50 Lakhs</span>
+                </div>
+                <input type="range" id="calcAmountSlider" class="wc-range-input" min="500000" max="50000000" step="500000" value="5000000" oninput="updateWorkingCapitalCalc()">
+                <div style="display: flex; justify-content: space-between; font-size: 12px; color: var(--vmf-text-muted); margin-top: 6px;">
+                  <span>₹5 Lakhs</span>
+                  <span>₹2.5 Crores</span>
+                  <span>₹5 Crores+</span>
+                </div>
+              </div>
+
+              <!-- Slider 2: Rate of Interest (ROI) -->
+              <div class="wc-slider-block">
+                <div class="wc-slider-top">
+                  <span class="wc-slider-label">Indicative Interest Rate (p.a.)</span>
+                  <span class="wc-slider-value" id="calcRoiDisplay" style="color: #15803D; font-weight: 800;">12.0% p.a.</span>
+                </div>
+                <input type="range" id="calcRoiSlider" class="wc-range-input" min="9" max="20" step="0.5" value="12" oninput="updateWorkingCapitalCalc()">
+                <div style="display: flex; justify-content: space-between; font-size: 12px; color: var(--vmf-text-muted); margin-top: 6px;">
+                  <span>9% Min</span>
+                  <span>14.5% Mid</span>
+                  <span>20% Max</span>
+                </div>
+              </div>
+
+              <!-- Slider 3: Tenor Duration -->
+              <div class="wc-slider-block" style="margin-bottom: 0;">
+                <div class="wc-slider-top">
+                  <span class="wc-slider-label">Expected Payment Cycle (Tenor)</span>
+                  <span class="wc-slider-value" id="calcTenorDisplay" style="font-size: 18px; color: var(--vmf-navy);">60 Days</span>
+                </div>
+                <input type="range" id="calcTenorSlider" class="wc-range-input" min="30" max="120" step="15" value="60" oninput="updateWorkingCapitalCalc()">
+                <div style="display: flex; justify-content: space-between; font-size: 12px; color: var(--vmf-text-muted); margin-top: 6px;">
+                  <span>30 Days</span>
+                  <span>60 Days</span>
+                  <span>90 Days</span>
+                  <span>120 Days</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Column: Results & Instant Action -->
+            <div class="wc-calc-results-card">
+              <div class="wc-result-row">
+                <div class="wc-res-label">Estimated Immediate Advance (Up to 90%)</div>
+                <div class="wc-res-value highlight-emerald" id="calcAdvanceDisplay">₹ 45,00,000</div>
+                <div class="wc-res-meta">
+                  <span>⚡ Liquidity released immediately</span>
+                </div>
+              </div>
+
+              <div class="wc-result-row">
+                <div class="wc-res-label">Estimated Financing Cost for Cycle</div>
+                <div class="wc-res-value" id="calcCostDisplay">₹ 88,767</div>
+                <div class="wc-res-meta">
+                  <span>• Transparent documented terms</span>
+                </div>
+              </div>
+
+              <div class="wc-result-row">
+                <div class="wc-res-label">Approval Turnaround</div>
+                <div class="wc-res-value" style="font-size: 20px;">24 to 48 Hours</div>
+                <div class="wc-res-meta">
+                  <span>Direct disbursement to verified account</span>
+                </div>
+              </div>
+
+              <button type="button" class="wc-calc-apply-btn" onclick="applyWithCalculatorEstimate()">
+                <span>Check eligibility</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
