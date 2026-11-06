@@ -6077,7 +6077,7 @@ scramble-text {
   display: grid;
   grid-template-columns: 1fr 1.15fr;
   gap: 64px;
-  align-items: start;
+  align-items: stretch;
 }
 
 /* Left Column: Contact Information */
@@ -6508,7 +6508,11 @@ scramble-text {
 @media (max-width: 900px) {
   .contact-v2-grid {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 0;
+  }
+
+  .contact-v2-right {
+    padding: 40px 24px !important;
   }
 
   .contact-v2-card {
