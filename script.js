@@ -2961,41 +2961,49 @@ function setCalcFacility(btn, facilityName) {
 
 function updateWorkingCapitalCalc() {
   const amountSlider = document.getElementById('calcAmountSlider');
+  const roiSlider = document.getElementById('calcRoiSlider');
   const tenorSlider = document.getElementById('calcTenorSlider');
+  
   const amountDisplay = document.getElementById('calcAmountDisplay');
+  const roiDisplay = document.getElementById('calcRoiDisplay');
   const tenorDisplay = document.getElementById('calcTenorDisplay');
   const advanceDisplay = document.getElementById('calcAdvanceDisplay');
-  const rateDisplay = document.getElementById('calcRateDisplay');
+  const costDisplay = document.getElementById('calcCostDisplay');
 
   if (!amountSlider || !advanceDisplay) return;
 
   const amount = parseFloat(amountSlider.value) || 5000000;
+  const roi = parseFloat(roiSlider ? roiSlider.value : 12);
   const tenor = parseInt(tenorSlider ? tenorSlider.value : 60, 10);
 
   if (amountDisplay) amountDisplay.textContent = formatIndianCurrency(amount);
+  if (roiDisplay) roiDisplay.textContent = `${roi.toFixed(1)}% p.a.`;
   if (tenorDisplay) tenorDisplay.textContent = `${tenor} Days`;
 
   // Advance percentage based on facility
   let advanceRate = 0.90; // Default 90% for Invoice Financing
-  let rateRange = '1.15% – 1.35%';
-
   if (currentCalcFacility === 'Purchase Order Financing') {
     advanceRate = 0.80; // 80% on PO
-    rateRange = '1.25% – 1.45%';
   } else if (currentCalcFacility === 'Working Capital Loan') {
     advanceRate = 0.85; // 85% on WC
-    rateRange = '1.20% – 1.40%';
   }
 
   const estimatedAdvance = Math.round(amount * advanceRate);
   advanceDisplay.textContent = formatIndianCurrency(estimatedAdvance);
-  if (rateDisplay) rateDisplay.textContent = rateRange;
+
+  // Interest cost for the cycle = (Advance * (ROI / 100) * (Tenor / 365))
+  const interestCost = Math.round(estimatedAdvance * (roi / 100) * (tenor / 365));
+  if (costDisplay) {
+    costDisplay.textContent = formatIndianCurrency(interestCost);
+  }
 }
 
 function applyWithCalculatorEstimate() {
   const amountSlider = document.getElementById('calcAmountSlider');
+  const roiSlider = document.getElementById('calcRoiSlider');
   const tenorSlider = document.getElementById('calcTenorSlider');
   const amount = amountSlider ? formatIndianCurrency(parseFloat(amountSlider.value)) : '₹ 50 Lakhs';
+  const roi = roiSlider ? `${parseFloat(roiSlider.value).toFixed(1)}% p.a.` : '12.0% p.a.';
   const tenor = tenorSlider ? tenorSlider.value : '60';
 
   scrollToContactForm();
@@ -3008,7 +3016,7 @@ function applyWithCalculatorEstimate() {
     }
     const messageBox = document.getElementById('contactMessage');
     if (messageBox) {
-      messageBox.value = `Estimated Facility Requirement: ${amount}\nFacility Type: ${currentCalcFacility}\nExpected Tenor: ${tenor} Days\n\nPlease contact me with indicative term sheet details.`;
+      messageBox.value = `Eligibility Assessment Request:\n- Required Facility: ${amount}\n- Facility Type: ${currentCalcFacility}\n- Desired ROI: ${roi}\n- Expected Tenor: ${tenor} Days\n\nPlease check our eligibility and contact me with preliminary terms.`;
     }
   }, 400);
 }
