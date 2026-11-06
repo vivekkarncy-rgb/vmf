@@ -2134,6 +2134,7 @@ reveal-wrapper[mode="section"] {
 }
 
 .chat-action-btn-outline {
+  display: none !important;
   background: #FFFFFF;
   color: #05244F;
   border: 1.5px solid #CBD5E1;

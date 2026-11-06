@@ -2540,8 +2540,7 @@ function handleQuickChip(topic) {
     &bull; <strong>Tenure Flexibility:</strong> 30 to 120 days aligned with corporate buyer credit terms.<br>
     &bull; <strong>Rapid Appraisal:</strong> Approval and sanction within 24–48 business hours.<br>
     &bull; <strong>Repayment Mechanism:</strong> Automatic settlement upon buyer invoice payment.<br><br>
-    <button class="chat-action-btn" onclick="scrollToContactForm()">Apply for Invoice Financing</button>
-    <button class="chat-action-btn chat-action-btn-outline" onclick="scrollToCalculator()">Estimate Facility</button>`;
+    <button class="chat-action-btn" onclick="scrollToContactForm()">Apply for Invoice Financing</button>`;
   } else if (topic === 'po') {
     userText = "How does Purchase Order (PO) Financing work?";
     botReply = `<strong>Purchase Order (PO) Financing:</strong><br>
@@ -2550,8 +2549,7 @@ function handleQuickChip(topic) {
     &bull; <strong>Supplier Direct Disbursement:</strong> Funds can be disbursed directly to approved material vendors to eliminate production lag.<br>
     &bull; <strong>Collateral Structure:</strong> Primarily underwritten against buyer creditworthiness and purchase order validity.<br>
     &bull; <strong>Target Borrowers:</strong> MSME manufacturers, EPC contractors, and corporate suppliers.<br><br>
-    <button class="chat-action-btn" onclick="scrollToContactForm()">Apply for PO Financing</button>
-    <button class="chat-action-btn chat-action-btn-outline" onclick="handleQuickChip('agent')">Talk to Underwriter</button>`;
+    <button class="chat-action-btn" onclick="scrollToContactForm()">Apply for PO Financing</button>`;
   } else if (topic === 'wc') {
     userText = "What are your Working Capital Loans?";
     botReply = `<strong>Structured Working Capital Loans:</strong><br>
@@ -2656,8 +2654,7 @@ function handleChatSubmit(e) {
   } else if (lower.includes('invoice') || lower.includes('bill') || lower.includes('receivable') || lower.includes('discount')) {
     botReply = `<strong>Invoice Financing (Receivables Discounting):</strong><br>
     Advance up to 90% against verified invoices from approved buyers, bridging 30–120 day payment terms with 24–48h disbursal.<br><br>
-    <button class="chat-action-btn" onclick="scrollToContactForm()">Apply for Invoice Financing</button>
-    <button class="chat-action-btn chat-action-btn-outline" onclick="scrollToCalculator()">Estimate Rate &amp; Tenure</button>`;
+    <button class="chat-action-btn" onclick="scrollToContactForm()">Apply for Invoice Financing</button>`;
   } else if (lower.includes('purchase order') || lower.includes('po') || lower.includes('order') || lower.includes('procure') || lower.includes('supplier')) {
     botReply = `<strong>Purchase Order (PO) Financing:</strong><br>
     Advance capital up to 80% to procure raw materials and execute verified client contracts without straining cash flow.<br><br>
@@ -2701,8 +2698,7 @@ function handleChatSubmit(e) {
   } else {
     botReply = `Thank you for your inquiry! VMF Finance Limited provides <strong>Invoice Financing</strong>, <strong>PO Financing</strong>, and <strong>Working Capital Loans</strong> for MSMEs.<br><br>
     You can explore our facilities, check documents, or connect directly with our advisory desk.<br><br>
-    <button class="chat-action-btn" onclick="scrollToContactForm()">Check Eligibility</button>
-    <button class="chat-action-btn chat-action-btn-outline" onclick="handleQuickChip('agent')">Call Agent Now</button>`;
+    <button class="chat-action-btn" onclick="scrollToContactForm()">Check Eligibility</button>`;
   }
 
   setTimeout(() => {
