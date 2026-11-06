@@ -318,10 +318,225 @@ function applyFromExploreModal() {
   openApplyModal(facName);
 }
 
-// Backward compatibility helper
-function viewProductDetails(key) {
-  openExploreStepsModal(key);
+// ==========================================================================
+// Institutional Policy Modal Controller (Popup System)
+// ==========================================================================
+const policyRegistry = {
+  'underwriting-policy': {
+    title: 'Credit & Underwriting Policy',
+    content: `
+      <div class="arc-inner-clause">
+        <strong style="color: #05244F; display: block; margin-bottom: 6px;">Cash-Flow &amp; Transaction Discipline:</strong>
+        A business's ability to generate cash flow, fulfil orders, collect receivables and meet repayment obligations is central to a sound credit assessment. VMF evaluates relevant commercial transactions, financial performance, banking conduct, buyer relationships and other applicable credit parameters.
+      </div>
+      <div class="arc-inner-clause">
+        <strong style="color: #05244F; display: block; margin-bottom: 6px;">Multi-Factor Evaluation Criteria:</strong>
+        We assess genuine commercial delivery proof, debtor creditworthiness, 12-month banking conduct, and cash-flow turnaround speed rather than relying solely on arbitrary physical real-estate collateral.
+      </div>
+      <div class="arc-inner-clause" style="font-size: 13px; color: #64748B; background: #F8FAFC; padding: 14px; border-radius: 12px; border: 1px dashed #CBD5E1; line-height: 1.55;">
+        *Security, personal/corporate guarantees, receivable assignment and other credit support may be required depending on the facility structure. Every financing proposal is subject to due diligence, eligibility criteria, credit sanction, and mutually agreed documentation.
+      </div>
+    `
+  },
+  'fair-practices-code': {
+    title: 'Fair Practices Code (FPC) & Transparent Sanctions',
+    content: `
+      <div class="arc-inner-clause">
+        <strong style="color: #05244F; display: block; margin-bottom: 6px;">Transparent Sanction Terms Mandate:</strong>
+        Prior to executing any credit arrangement, every eligible borrower receives an individualized sanction schedule disclosing the sanctioned limit, effective Annual Percentage Rate (APR), itemized fees, tenure, and transparent repayment schedules. There are zero hidden costs.
+      </div>
+      <div class="arc-inner-clause">
+        <strong style="color: #05244F; display: block; margin-bottom: 6px;">Non-Discriminatory &amp; Transparent Lending:</strong>
+        VMF does not discriminate on grounds of gender, caste, religion, or community. Loan terms and communications are provided in clear, understandable language.
+      </div>
+      <div class="arc-inner-clause">
+        <strong style="color: #05244F; display: block; margin-bottom: 6px;">Ethical Recovery Standards:</strong>
+        All collections and client communications are conducted strictly during standard business hours (08:00 to 19:00). We adhere to non-coercive recovery practices that strictly respect borrower dignity and personal privacy.
+      </div>
+    `
+  },
+  'interest-rate-policy': {
+    title: 'Interest Rate Model & Schedule of Charges',
+    content: `
+      <div class="arc-inner-clause">
+        <strong style="color: #05244F; display: block; margin-bottom: 6px;">Risk-Graduated Pricing Framework:</strong>
+        Interest rates are determined using a disciplined risk-based pricing framework incorporating cost of funds, borrower risk rating, transaction liquidity, and underlying debtor credit enhancement.
+      </div>
+      <div class="arc-inner-clause">
+        <strong style="color: #05244F; display: block; margin-bottom: 8px;">Schedule of Indicative Charges:</strong>
+        <table>
+          <thead>
+            <tr>
+              <th>Component</th>
+              <th>Computation Basis</th>
+              <th>Disclosure Standard</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Interest Rate</strong></td>
+              <td>Annualized percentage tied to risk tier</td>
+              <td>Disclosed in Sanction Letter</td>
+            </tr>
+            <tr>
+              <td><strong>Processing Fee</strong></td>
+              <td>One-time upfront fee on sanctioned facility</td>
+              <td>Deducted upon disbursement or paid pre-closing</td>
+            </tr>
+            <tr>
+              <td><strong>Statutory Charges</strong></td>
+              <td>Stamp duty, Franking &amp; ROC filing</td>
+              <td>At actuals backed by statutory receipts</td>
+            </tr>
+            <tr>
+              <td><strong>Default Charges</strong></td>
+              <td>Reasonable penal charges on overdue amounts</td>
+              <td>Non-compounded; no capitalization into principal</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="arc-inner-clause">
+        <strong style="color: #05244F; display: block; margin-bottom: 6px;">Fair Lending Regulatory Compliance:</strong>
+        In strict compliance with RBI circulars on Fair Lending Practice, penalty for delayed payment is levied strictly as 'penal charges' and not as compounded penal interest added to the loan balance.
+      </div>
+    `
+  },
+  'grievance-redressal': {
+    title: 'Customer Grievance Redressal Mechanism & 3-Tier Escalation',
+    content: `
+      <div class="arc-inner-clause">
+        <strong style="color: #05244F; display: block; margin-bottom: 6px;">Structured 3-Tier Escalation Architecture:</strong>
+        Borrowers may escalate unresolved queries, service issues, or dispute matters through our formal escalation framework:
+      </div>
+      <div class="arc-inner-clause">
+        <table>
+          <thead>
+            <tr>
+              <th>Escalation Level</th>
+              <th>Designated Authority &amp; Contact</th>
+              <th>Resolution SLA</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Level 1: Operations Support</strong></td>
+              <td>Branch Desk / Operations Email:<br><code style="color: #15803D; font-weight: 700; background: #DCFCE7; padding: 2px 6px; border-radius: 4px;">operations@vmffinance.com</code></td>
+              <td>Within 7 Working Days</td>
+            </tr>
+            <tr>
+              <td><strong>Level 2: Principal Nodal Officer</strong></td>
+              <td>
+                <strong>Mr. Srinivasa Rao Palla</strong> (Head of Credit &amp; Compliance Officer)<br>
+                Email: <code style="color: #15803D; font-weight: 700; background: #DCFCE7; padding: 2px 6px; border-radius: 4px;">compliance@vmffinance.com</code><br>
+                5th Floor, The Park View, Gachibowli, Hyderabad – 500032
+              </td>
+              <td>Within 15 Working Days</td>
+            </tr>
+            <tr>
+              <td><strong>Level 3: RBI Ombudsman</strong></td>
+              <td>
+                Reserve Bank of India Integrated Ombudsman Scheme<br>
+                CMS Portal: <a href="https://cms.rbi.org.in" target="_blank" rel="noopener" style="color: #05244F; text-decoration: underline; font-weight: 700;">https://cms.rbi.org.in</a>
+              </td>
+              <td>If unresolved within 30 days</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    `
+  },
+  'kyc-aml-policy': {
+    title: 'KYC & Anti-Money Laundering (AML) Compliance',
+    content: `
+      <div class="arc-inner-clause">
+        <strong style="color: #05244F; display: block; margin-bottom: 6px;">Customer Due Diligence (CDD) Standards:</strong>
+        VMF complies with the Prevention of Money Laundering Act (PMLA), 2002 and RBI KYC Master Directions. Prior to credit sanction, all applicants must submit verified business registration (Certificate of Incorporation / Partnership Deed / Udyam Certificate), PAN, GSTIN, registered address proof, and identify Natural Persons qualifying as Ultimate Beneficial Owners (UBO).
+      </div>
+      <div class="arc-inner-clause">
+        <strong style="color: #05244F; display: block; margin-bottom: 6px;">Ongoing Transaction Monitoring:</strong>
+        Credit facilities are disbursed and repaid solely through verifiable institutional banking channels to prevent financial fraud and ensure complete commercial authenticity.
+      </div>
+    `
+  },
+  'privacy-policy': {
+    title: 'Privacy, Data Protection & Commercial Confidentiality',
+    content: `
+      <div class="arc-inner-clause">
+        <strong style="color: #05244F; display: block; margin-bottom: 6px;">Confidentiality of Commercial Information:</strong>
+        We understand that trade invoices, supplier contracts, purchase orders, buyer lists, and bank statements represent sensitive commercial property. VMF maintains rigorous physical, technical, and operational safeguards to protect customer data.
+      </div>
+      <div class="arc-inner-clause">
+        <strong style="color: #05244F; display: block; margin-bottom: 6px;">Restricted Information Sharing:</strong>
+        Borrower financial records are accessed strictly for credit appraisal, facility servicing, statutory reporting to authorized Credit Information Companies (CIBIL, Experian, CRIF High Mark, Equifax), and compliance with judicial or regulatory authorities under applicable laws.
+      </div>
+    `
+  },
+  'statutory-declarations': {
+    title: 'Statutory Regulatory Declarations & Caveat',
+    content: `
+      <div class="arc-inner-clause">
+        <strong style="color: #05244F; display: block; margin-bottom: 6px;">Corporate Identity &amp; Statutory Registration:</strong>
+        &bull; <strong>Legal Name:</strong> VMF Finance Limited<br>
+        &bull; <strong>Corporate Identity Number (CIN):</strong> U67120TG1994PLC168008<br>
+        &bull; <strong>RBI Certificate of Registration (CoR):</strong> N-09.00484<br>
+        &bull; <strong>Date of Registration:</strong> 09 February 1994<br>
+        &bull; <strong>Classification:</strong> Non-Banking Financial Company – Investment &amp; Credit Company (NBFC-ICC), Non-Deposit Taking<br>
+        &bull; <strong>Regulatory Layer:</strong> Base Layer under RBI Scale-Based Regulation
+      </div>
+      <div class="arc-inner-clause" style="background: #F8FAFC; padding: 14px; border-radius: 12px; border: 1px solid #E2E8F0; font-size: 13px; color: #64748B; line-height: 1.6;">
+        <strong style="color: #05244F; display: block; margin-bottom: 4px;">Statutory Regulatory Oversight:</strong>
+        Operating in strict adherence to Section 45-IA of the RBI Act, 1934 and Master Directions for Base Layer NBFC-ICCs. Formal regulatory disclaimers and statutory notices are permanently maintained in the institutional footnote.
+      </div>
+    `
+  }
+};
+
+function openPolicyModal(policyId) {
+  const policy = policyRegistry[policyId] || policyRegistry['underwriting-policy'];
+  const modal = document.getElementById('policyModal');
+  const titleEl = document.getElementById('policyModalTitle');
+  const bodyEl = document.getElementById('policyModalBody');
+
+  if (titleEl) titleEl.innerText = policy.title;
+  if (bodyEl) bodyEl.innerHTML = policy.content;
+
+  if (modal) {
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    if (typeof lenis !== 'undefined' && lenis) {
+      try { lenis.stop(); } catch (err) {}
+    }
+  }
 }
+
+function closePolicyModal() {
+  const modal = document.getElementById('policyModal');
+  if (modal) {
+    modal.style.display = 'none';
+    document.body.style.overflow = '';
+    if (typeof lenis !== 'undefined' && lenis) {
+      try { lenis.start(); } catch (err) {}
+    }
+  }
+}
+
+function closePolicyModalOnBackdrop(e) {
+  if (e.target && e.target.id === 'policyModal') {
+    closePolicyModal();
+  }
+}
+
+window.openPolicyModal = openPolicyModal;
+window.closePolicyModal = closePolicyModal;
+window.closePolicyModalOnBackdrop = closePolicyModalOnBackdrop;
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    closePolicyModal();
+  }
+});
+
 
 // Modal event listeners (wheel isolation & ESC key)
 document.addEventListener('DOMContentLoaded', () => {

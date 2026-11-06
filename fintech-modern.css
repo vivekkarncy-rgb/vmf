@@ -1111,8 +1111,116 @@ h1, h2, h3, h4, h5, h6,
 }
 
 /* ==========================================================================
-   8. CONTACT FORM & DOCKET
+   INSTITUTIONAL POLICY POPUP MODAL
    ========================================================================== */
+.policy-modal-dialog {
+  position: relative;
+  width: 90%;
+  max-width: 820px;
+  max-height: 85vh;
+  max-height: 85dvh;
+  background: #FFFFFF;
+  border: 1px solid #CBD5E1;
+  border-radius: 24px;
+  box-shadow: 0 25px 60px -15px rgba(5, 36, 79, 0.35);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: modalScaleIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  margin: auto;
+}
+
+@keyframes modalScaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.policy-modal-header {
+  padding: 24px 28px;
+  background: #05244F;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  flex-shrink: 0;
+}
+
+.policy-modal-title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 800;
+  color: #FFFFFF;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
+.policy-modal-close {
+  background: rgba(255, 255, 255, 0.12);
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.policy-modal-close:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: rotate(90deg);
+}
+
+.policy-modal-body {
+  padding: 32px 28px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  color: #334155;
+  font-size: 14.5px;
+  line-height: 1.68;
+}
+
+.policy-modal-body .arc-inner-clause {
+  margin-bottom: 20px;
+}
+
+.policy-modal-body .arc-inner-clause:last-child {
+  margin-bottom: 0;
+}
+
+.policy-modal-body table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 14px 0;
+  font-size: 13.5px;
+}
+
+.policy-modal-body th,
+.policy-modal-body td {
+  padding: 10px 14px;
+  border: 1px solid #E2E8F0;
+  text-align: left;
+}
+
+.policy-modal-body th {
+  background: #F8FAFC;
+  font-weight: 700;
+  color: #05244F;
+}
+
+.policy-modal-body td {
+  background: #FFFFFF;
+}
 .contact-section {
   background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
 }

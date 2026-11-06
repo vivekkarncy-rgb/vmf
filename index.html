@@ -46,7 +46,7 @@
           <a href="#products" onclick="closeMobileNav()">Products</a>
           <a href="#how-we-finance" onclick="closeMobileNav()">How It Works</a>
           <a href="#about" onclick="closeMobileNav()">About</a>
-          <a href="policies.html" onclick="closeMobileNav()">Policies</a>
+          <a href="javascript:void(0)" onclick="openPolicyModal('underwriting-policy'); closeMobileNav();">Policies</a>
           <a href="#contact" onclick="closeMobileNav()">Contact</a>
         </nav>
         <div class="nav-actions">
@@ -484,7 +484,7 @@
               business needs.
             </p>
 
-            <a href="policies.html" class="inline-policy-link" style="margin-bottom: 24px;"><span>Explore Our Credit Policy</span></a>
+            <a href="javascript:void(0)" onclick="openPolicyModal('underwriting-policy')" class="inline-policy-link" style="margin-bottom: 24px;"><span>Explore Our Credit Policy</span></a>
 
             <!-- Editorial Flow Metric SVG Illustration -->
             <div class="philosophy-svg-graphic" aria-hidden="true" style="margin-top: 24px; max-width: 420px;">
@@ -1167,7 +1167,7 @@
                 <div class="contact-v2-consent-wrap">
                   <input type="checkbox" id="contactConsent" name="consent" required class="contact-v2-checkbox">
                   <label for="contactConsent" class="contact-v2-consent-label">
-                    I agree to be contacted about my enquiry and have read the <a href="policies.html" target="_blank"
+                    I agree to be contacted about my enquiry and have read the <a href="javascript:void(0)" onclick="openPolicyModal('privacy-policy')"
                       class="contact-v2-policy-link">Privacy Policy</a>.
                   </label>
                 </div>
@@ -1392,13 +1392,13 @@
         <div>
           <div class="footer-col-title">Policies</div>
           <ul class="footer-links-list">
-            <li><a href="policies.html#underwriting-policy"><span>&bull;</span> We Look Beyond the Balance Sheet: Underwriting Policy</a></li>
-            <li><a href="policies.html#fair-practices-code"><span>&bull;</span> Fair Practices Code (FPC) &amp; Transparent Sanctions</a></li>
-            <li><a href="policies.html#interest-rate-policy"><span>&bull;</span> Interest Rate Model &amp; Schedule of Charges</a></li>
-            <li><a href="policies.html#grievance-redressal"><span>&bull;</span> Customer Grievance Redressal Mechanism &amp; 3-Tier Matrix</a></li>
-            <li><a href="policies.html#kyc-aml-policy"><span>&bull;</span> KYC &amp; Anti-Money Laundering (AML) Compliance</a></li>
-            <li><a href="policies.html#privacy-policy"><span>&bull;</span> Privacy, Data Protection &amp; Commercial Confidentiality</a></li>
-            <li><a href="policies.html#statutory-declarations"><span>&bull;</span> Statutory Regulatory Declarations &amp; RBI Section 45-IA Caveat</a></li>
+            <li><a href="javascript:void(0)" onclick="openPolicyModal('underwriting-policy')"><span>&bull;</span> We Look Beyond the Balance Sheet: Underwriting Policy</a></li>
+            <li><a href="javascript:void(0)" onclick="openPolicyModal('fair-practices-code')"><span>&bull;</span> Fair Practices Code (FPC) &amp; Transparent Sanctions</a></li>
+            <li><a href="javascript:void(0)" onclick="openPolicyModal('interest-rate-policy')"><span>&bull;</span> Interest Rate Model &amp; Schedule of Charges</a></li>
+            <li><a href="javascript:void(0)" onclick="openPolicyModal('grievance-redressal')"><span>&bull;</span> Customer Grievance Redressal Mechanism &amp; 3-Tier Matrix</a></li>
+            <li><a href="javascript:void(0)" onclick="openPolicyModal('kyc-aml-policy')"><span>&bull;</span> KYC &amp; Anti-Money Laundering (AML) Compliance</a></li>
+            <li><a href="javascript:void(0)" onclick="openPolicyModal('privacy-policy')"><span>&bull;</span> Privacy, Data Protection &amp; Commercial Confidentiality</a></li>
+            <li><a href="javascript:void(0)" onclick="openPolicyModal('statutory-declarations')"><span>&bull;</span> Statutory Regulatory Declarations &amp; RBI Section 45-IA Caveat</a></li>
           </ul>
         </div>
 
@@ -1407,7 +1407,7 @@
           <div class="footer-col-title">Customer support</div>
           <ul class="footer-links-list">
             <li><a href="#contact" onclick="document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });">Contact us</a></li>
-            <li><a href="policies.html#grievance-redressal">Grievance redressal</a></li>
+            <li><a href="javascript:void(0)" onclick="openPolicyModal('grievance-redressal')">Grievance redressal</a></li>
             <li><a href="https://cms.rbi.org.in" target="_blank" rel="noopener noreferrer">RBI CMS Portal <span style="font-family: system-ui, sans-serif; font-size: 13px; margin-left: 2px;">↗</span></a></li>
             <li><a href="https://sachet.rbi.org.in" target="_blank" rel="noopener noreferrer">Sachet Portal <span style="font-family: system-ui, sans-serif; font-size: 13px; margin-left: 2px;">↗</span></a></li>
           </ul>
@@ -1444,17 +1444,37 @@
           &copy; 2026 <strong>VMF Finance Limited</strong>. All rights reserved.
         </div>
         <div class="footer-bottom-links">
-          <a href="policies.html#fair-practices-code">Fair Practices Code</a>
+          <a href="javascript:void(0)" onclick="openPolicyModal('fair-practices-code')">Fair Practices Code</a>
           <span>&bull;</span>
-          <a href="policies.html#interest-rate-policy">Rates &amp; Charges</a>
+          <a href="javascript:void(0)" onclick="openPolicyModal('interest-rate-policy')">Rates &amp; Charges</a>
           <span>&bull;</span>
-          <a href="policies.html#privacy-policy">Privacy Policy</a>
+          <a href="javascript:void(0)" onclick="openPolicyModal('privacy-policy')">Privacy Policy</a>
           <span>&bull;</span>
-          <a href="policies.html#grievance-redressal">Grievance Redressal</a>
+          <a href="javascript:void(0)" onclick="openPolicyModal('grievance-redressal')">Grievance Redressal</a>
         </div>
       </div>
     </div>
   </footer>
+
+  <!-- ============================================================
+       INSTITUTIONAL REGULATORY POLICY POPUP (MODAL)
+       ============================================================ -->
+  <div class="modal-backdrop" id="policyModal" onclick="closePolicyModalOnBackdrop(event)" data-lenis-prevent>
+    <div class="policy-modal-dialog" data-lenis-prevent>
+      <div class="policy-modal-header">
+        <h3 id="policyModalTitle" class="policy-modal-title">Institutional Policy</h3>
+        <button class="policy-modal-close" onclick="closePolicyModal()" aria-label="Close policy dialog">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="policy-modal-body" id="policyModalBody" tabindex="0">
+        <!-- Content injected dynamically -->
+      </div>
+    </div>
+  </div>
 
   <!-- ============================================================
        EXPLORE NOW PRODUCT STEPS MODAL (w: 80%, height reduced)
@@ -1463,11 +1483,10 @@
   <div class="modal-backdrop" id="exploreStepsModal" onclick="closeExploreStepsModalOnBackdrop(event)"
     data-lenis-prevent>
     <div class="explore-steps-dialog" data-lenis-prevent>
-      <!-- Top Dark Navy Header (No switcher buttons, dedicated to clicked product) -->
+      <!-- Top Dark Navy Header (Dedicated to clicked product) -->
       <div class="exp-modal-header-bar">
         <div class="exp-modal-header-top">
           <div>
-            <span class="exp-modal-chip" id="expModalChip">Operational Framework</span>
             <h3 id="expModalTitle" class="exp-modal-title">Invoice Financing</h3>
           </div>
           <button class="exp-modal-close-btn" onclick="closeExploreStepsModal()" aria-label="Close dialog">
@@ -1510,7 +1529,6 @@
         <div class="exp-section">
           <div class="exp-section-header">
             <h4 class="exp-section-title">How Our Financing Works — Step-by-Step Process</h4>
-            <span class="exp-section-subtitle">Institutional Execution Workflow</span>
           </div>
           <div id="expModalStepsGrid">
             <!-- 5 Steps populated dynamically per Reference Timeline by script -->
@@ -1550,11 +1568,8 @@
     <div class="modal-dialog">
       <button class="modal-close" onclick="closeAppModal()">&times;</button>
       <div style="margin-bottom: 18px;">
-        <h3 id="modalFacilityTitle" style="font-size: 22px; color: var(--navy); margin-top: 0;">Apply for MSME Financing
+        <h3 id="modalFacilityTitle" style="font-size: 22px; color: var(--navy); margin-top: 0; margin-bottom: 0;">Apply for MSME Financing
         </h3>
-        <p style="font-size: 13px; color: var(--text-muted);">
-          Our credit desk will review your submission and initiate transaction evaluation.
-        </p>
       </div>
 
       <form onsubmit="handleModalSubmit(event)">
