@@ -715,13 +715,14 @@ h1, h2, h3, h4, h5, h6,
   background: #FFFFFF;
   border: 1.5px solid #E2E8F0;
   border-radius: 32px;
-  padding: 50px 32px 32px 32px;
+  padding: 0; /* Padding removed so blue footer covers all the way till the end inside card */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   min-height: 380px;
   box-shadow: 0 4px 20px -2px rgba(5, 36, 79, 0.05);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden; /* Clips the bottom blue container flush to the 32px rounded corners */
 }
 
 .prod-modern-card:hover {
@@ -755,7 +756,7 @@ h1, h2, h3, h4, h5, h6,
 .prod-modern-body {
   text-align: center;
   margin: auto 0;
-  padding: 24px 0 16px 0;
+  padding: 60px 32px 36px 32px;
 }
 
 .prod-modern-title {
@@ -774,14 +775,14 @@ h1, h2, h3, h4, h5, h6,
   margin: 0;
 }
 
-/* Full-Width Dark Navy Action Button */
+/* Dark Navy Action Button - Covers All the Way Till the End Inside Card */
 .prod-modern-btn {
   width: 100%;
   background: #05244F;
   color: #FFFFFF;
   border: none;
-  border-radius: 18px;
-  padding: 16px 24px;
+  border-radius: 0 0 30px 30px; /* Flush to bottom edge */
+  padding: 22px 24px;
   font-size: 16px;
   font-weight: 700;
   letter-spacing: -0.01em;
@@ -790,17 +791,15 @@ h1, h2, h3, h4, h5, h6,
   align-items: center;
   justify-content: center;
   transition: all 0.25s ease;
-  box-shadow: 0 4px 12px rgba(5, 36, 79, 0.15);
+  margin-top: auto;
 }
 
 .prod-modern-btn:hover {
   background: #031633;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 18px rgba(5, 36, 79, 0.25);
 }
 
 .prod-modern-btn:active {
-  transform: translateY(0);
+  background: #020f24;
 }
 
 /* ==========================================================================
