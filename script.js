@@ -2537,7 +2537,7 @@ function handleQuickChip(topic) {
     botReply = `<strong>Invoice Financing (Receivables Discounting):</strong><br>
     Convert unpaid client invoices into immediate working capital without waiting 30–120 days.<br><br>
     &bull; <strong>Immediate Advance:</strong> Up to 90% of verified invoice face value.<br>
-    &bull; <strong>Tenor Flexibility:</strong> 30 to 120 days aligned with corporate buyer credit terms.<br>
+    &bull; <strong>Tenure Flexibility:</strong> 30 to 120 days aligned with corporate buyer credit terms.<br>
     &bull; <strong>Rapid Appraisal:</strong> Approval and sanction within 24–48 business hours.<br>
     &bull; <strong>Repayment Mechanism:</strong> Automatic settlement upon buyer invoice payment.<br><br>
     <button class="chat-action-btn" onclick="scrollToContactForm()">Apply for Invoice Financing</button>
@@ -2558,7 +2558,7 @@ function handleQuickChip(topic) {
     Dependable revolving credit lines designed to bridge operational gaps, manage seasonal inventory, and support regular payroll.<br><br>
     &bull; <strong>Facility Ticket Sizes:</strong> From ₹5 Lakhs to ₹5 Crores+.<br>
     &bull; <strong>Transparent Interest:</strong> Interest calculated strictly on the utilized amount, not the sanctioned limit.<br>
-    &bull; <strong>Tenor &amp; Renewal:</strong> Flexible short-term cycles with prompt periodic renewals based on turnover.<br>
+    &bull; <strong>Tenure &amp; Renewal:</strong> Flexible short-term cycles with prompt periodic renewals based on turnover.<br>
     &bull; <strong>Zero Structural Lock-in:</strong> Repay early without punitive exit penalties.<br><br>
     <button class="chat-action-btn" onclick="scrollToContactForm()">Check Working Capital Eligibility</button>`;
   } else if (topic === 'docs') {
@@ -2657,7 +2657,7 @@ function handleChatSubmit(e) {
     botReply = `<strong>Invoice Financing (Receivables Discounting):</strong><br>
     Advance up to 90% against verified invoices from approved buyers, bridging 30–120 day payment terms with 24–48h disbursal.<br><br>
     <button class="chat-action-btn" onclick="scrollToContactForm()">Apply for Invoice Financing</button>
-    <button class="chat-action-btn chat-action-btn-outline" onclick="scrollToCalculator()">Estimate Rate &amp; Tenor</button>`;
+    <button class="chat-action-btn chat-action-btn-outline" onclick="scrollToCalculator()">Estimate Rate &amp; Tenure</button>`;
   } else if (lower.includes('purchase order') || lower.includes('po') || lower.includes('order') || lower.includes('procure') || lower.includes('supplier')) {
     botReply = `<strong>Purchase Order (PO) Financing:</strong><br>
     Advance capital up to 80% to procure raw materials and execute verified client contracts without straining cash flow.<br><br>
@@ -3411,7 +3411,7 @@ function applyWithCalculatorEstimate() {
     }
     const messageBox = document.getElementById('contactMessage');
     if (messageBox) {
-      messageBox.value = `Eligibility Assessment Request:\n- Required Facility: ${amount}\n- Facility Type: ${currentCalcFacility}\n- Desired ROI: ${roi}\n- Expected Tenor: ${tenor} Days\n\nPlease check our eligibility and contact me with preliminary terms.`;
+      messageBox.value = `Eligibility Assessment Request:\n- Required Facility: ${amount}\n- Facility Type: ${currentCalcFacility}\n- Desired ROI: ${roi}\n- Expected Tenure: ${tenor} Days\n\nPlease check our eligibility and contact me with preliminary terms.`;
     }
   }, 400);
 }
