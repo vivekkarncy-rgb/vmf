@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Corporate Policies & Governance | VMF Finance Limited</title>
+  <meta name="description" content="Official Corporate Policies, Fair Practices Code, Credit Underwriting Framework, and Grievance Redressal Mechanism of VMF Finance Limited, an RBI-registered NBFC-ICC.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="fintech-modern.css">
+  <script>
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    function handlePolicyHash() {
+      if (window.location.hash) {
+        try {
+          const target = document.querySelector(window.location.hash);
+          if (target && target.classList.contains('arc-accordion-item')) {
+            document.querySelectorAll('.arc-accordion-item.open').forEach(el => el.classList.remove('open'));
+            target.classList.add('open');
+            setTimeout(() => {
+              target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 300);
+          }
+        } catch (e) {}
+      }
+    }
+    window.addEventListener('DOMContentLoaded', handlePolicyHash);
+    window.addEventListener('hashchange', handlePolicyHash);
+  </script>
+</head>
+<body>
+
+  <!-- Fixed Header Wrapper: Transparent Navbar with Fixed Position on Scroll -->
+  <div class="site-header-fixed" id="siteHeader">
+    <!-- Top Regulatory Strip (Identical to Homepage) -->
+    <aside class="top-strip">
+      <div class="container top-flex">
+        <div class="reg-tag">
+          <span class="reg-dot"></span>
+          <span>Reserve Bank of India CoR: <strong>N-09.00484</strong> • Base Layer NBFC-ICC • CIN: <strong>U67120TG1994PLC168008</strong></span>
+        </div>
+        <div>Estd. 09 February 1994 • Non-Deposit Taking NBFC • Hyderabad, India</div>
+      </div>
+    </aside>
+
+    <!-- Fixed Navbar (Transparent Background, Persistent on Scroll) -->
+    <header class="main-nav" id="mainNavbar">
+      <div class="container nav-flex">
+        <a href="index.html" class="brand" title="VMF Finance Limited">
+          <img src="assets/vmf-logo-transparent.png" alt="VMF Finance Limited" class="brand-logo-img">
+        </a>
+        <nav class="nav-links" id="mainNavLinks">
+          <a href="index.html#products" onclick="closeMobileNav()">Products</a>
+          <a href="index.html#how-we-finance" onclick="closeMobileNav()">How It Works</a>
+          <a href="index.html#about" onclick="closeMobileNav()">About</a>
+          <a href="policies.html" class="active">Policies</a>
+          <a href="index.html#contact" onclick="closeMobileNav()">Contact Us</a>
+        </nav>
+        <div class="nav-actions">
+          <a href="index.html#contact" class="btn-cta header-enquiry-btn" style="text-decoration: none;"><span>Enquiry Now</span></a>
+          <button class="mobile-toggle-btn" id="mobileToggleBtn" onclick="toggleMobileNav()" aria-label="Toggle navigation menu">
+            <svg class="icon-hamburger" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+            <svg class="icon-close" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" style="display: none;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <!-- ============================================================
+       EXECUTIVE SPLIT ACCORDION POLICY SECTION (HOMEPAGE LIGHT STYLE)
+       ============================================================ -->
+  <main class="arc-split-section" id="policies">
+    <div class="container">
+      <div class="arc-split-grid">
+        
+        <!-- Left Column: Sticky Editorial Heading & Support Help -->
+        <div class="arc-sticky-left">
+          <h1 class="arc-headline">
+            <span class="arc-headline-line">Corporate policies,</span>
+            <span class="arc-headline-line arc-headline-highlight">without the ambiguity.</span>
+          </h1>
+          <p class="arc-subtext">
+            Have a question about our credit parameters, loan terms, or underwriting guidelines? Reach our compliance desk directly at <a href="mailto:compliance@vmffinance.com">compliance@vmffinance.com</a> or visit our Hyderabad office.
+          </p>
+
+        </div>
+
+        <!-- Right Column: Numbered Accordion List (01 to 07) (Dim-to-Bright Focus) -->
+        <reveal-wrapper mode="focus" selector=".arc-accordion-item" class="arc-accordion-list">
+
+          <!-- 01: Credit & Underwriting Policy -->
+          <div class="arc-accordion-item" id="underwriting-policy">
+            <button class="arc-accordion-header" onclick="toggleArcItem(this)">
+              <div class="arc-title-group">
+                <span class="arc-item-num">01</span>
+                <h3 class="arc-item-title">We Look Beyond the Balance Sheet: Underwriting Policy</h3>
+              </div>
+              <div class="arc-chevron">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+            </button>
+            <div class="arc-accordion-body">
+              <div class="arc-inner-clause">
+                <strong>Cash-Flow & Transaction Discipline:</strong>
+                A business's ability to generate cash flow, fulfil orders, collect receivables and meet repayment obligations is central to a sound credit assessment. VMF evaluates relevant commercial transactions, financial performance, banking conduct, buyer relationships and other applicable credit parameters.
+              </div>
+              <div class="arc-inner-clause">
+                <strong>Multi-Factor Evaluation Criteria:</strong>
+                We assess genuine commercial delivery proof, debtor creditworthiness, 12-month banking conduct, and cash-flow turnaround speed rather than relying solely on arbitrary physical real-estate collateral.
+              </div>
+              <div class="arc-inner-clause" style="font-size: 12.5px; color: var(--text-muted); background: var(--bg); padding: 12px; border-radius: 8px; border: 1px dashed var(--border); line-height: 1.5;">
+                *Security, personal/corporate guarantees, receivable assignment and other credit support may be required depending on the facility structure. Every financing proposal is subject to due diligence, eligibility criteria, credit sanction, and mutually agreed documentation.
+              </div>
+            </div>
+          </div>
+
+          <!-- 02: Fair Practices Code & Transparent Sanction Standards -->
+          <div class="arc-accordion-item" id="fair-practices-code">
+            <button class="arc-accordion-header" onclick="toggleArcItem(this)">
+              <div class="arc-title-group">
+                <span class="arc-item-num">02</span>
+                <h3 class="arc-item-title">Fair Practices Code (FPC) & Transparent Sanctions</h3>
+              </div>
+              <div class="arc-chevron">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+            </button>
+            <div class="arc-accordion-body">
+              <div class="arc-inner-clause">
+                <strong>Transparent Sanction Terms Mandate:</strong>
+                Prior to executing any credit arrangement, every eligible borrower receives an individualized sanction schedule disclosing the sanctioned limit, effective Annual Percentage Rate (APR), itemized fees, tenure, and transparent repayment schedules. There are zero hidden costs.
+              </div>
+              <div class="arc-inner-clause">
+                <strong>Non-Discriminatory & Transparent Lending:</strong>
+                VMF does not discriminate on grounds of gender, caste, religion, or community. Loan terms and communications are provided in clear, understandable language.
+              </div>
+              <div class="arc-inner-clause">
+                <strong>Ethical Recovery Standards:</strong>
+                All collections and client communications are conducted strictly during standard business hours (08:00 to 19:00). We adhere to non-coercive recovery practices that strictly respect borrower dignity and personal privacy.
+              </div>
+            </div>
+          </div>
+
+          <!-- 03: Interest Rate Model & Schedule of Charges -->
+          <div class="arc-accordion-item" id="interest-rate-policy">
+            <button class="arc-accordion-header" onclick="toggleArcItem(this)">
+              <div class="arc-title-group">
+                <span class="arc-item-num">03</span>
+                <h3 class="arc-item-title">Interest Rate Model & Schedule of Charges</h3>
+              </div>
+              <div class="arc-chevron">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+            </button>
+            <div class="arc-accordion-body">
+              <div class="arc-inner-clause">
+                <strong>Risk-Graduated Pricing:</strong>
+                Interest rates are determined using a disciplined risk-based pricing framework incorporating cost of funds, borrower risk rating, transaction liquidity, and underlying debtor credit enhancement.
+              </div>
+              <div class="arc-inner-clause">
+                <strong>Schedule of Indicative Charges:</strong>
+                <div class="arc-table-responsive">
+                  <table class="arc-table-light">
+                    <thead>
+                      <tr>
+                        <th>Component</th>
+                        <th>Computation Basis</th>
+                        <th>Disclosure Standard</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><strong>Interest Rate</strong></td>
+                        <td>Annualized percentage tied to risk tier</td>
+                        <td>Explicitly disclosed in Sanction Letter</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Processing Fee</strong></td>
+                        <td>One-time upfront fee on sanctioned facility</td>
+                        <td>Deducted upon disbursement or paid pre-closing</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Statutory Charges</strong></td>
+                        <td>Stamp duty, Franking & ROC filing</td>
+                        <td>At actuals backed by statutory receipts</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Default Charges</strong></td>
+                        <td>Reasonable penal charges on overdue amounts</td>
+                        <td>Non-compounded; no capitalization into principal</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="arc-inner-clause">
+                <strong>Fair Lending Regulatory Compliance:</strong>
+                In strict compliance with RBI circulars on Fair Lending Practice, penalty for delayed payment is levied strictly as 'penal charges' and not as compounded penal interest added to the loan balance.
+              </div>
+            </div>
+          </div>
+
+          <!-- 04: Customer Grievance Redressal Mechanism & 3-Tier Escalation -->
+          <div class="arc-accordion-item" id="grievance-redressal">
+            <button class="arc-accordion-header" onclick="toggleArcItem(this)">
+              <div class="arc-title-group">
+                <span class="arc-item-num">04</span>
+                <h3 class="arc-item-title">Customer Grievance Redressal Mechanism & 3-Tier Matrix</h3>
+              </div>
+              <div class="arc-chevron">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+            </button>
+            <div class="arc-accordion-body">
+              <div class="arc-inner-clause">
+                <strong>Structured 3-Tier Escalation Architecture:</strong>
+                Borrowers may escalate unresolved queries, service issues, or dispute matters through our formal escalation framework:
+              </div>
+              <div class="arc-inner-clause">
+                <div class="arc-table-responsive">
+                  <table class="arc-table-light">
+                    <thead>
+                      <tr>
+                        <th>Escalation Level</th>
+                        <th>Designated Authority & Contact</th>
+                        <th>Resolution SLA</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><strong>Level 1: Operations Support</strong></td>
+                        <td>Branch Desk / Operations Email:<br><code style="color: var(--green); font-weight: 700; background: var(--green-light); padding: 2px 6px; border-radius: 4px;">operations@vmffinance.com</code></td>
+                        <td>Within 7 Working Days</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Level 2: Principal Nodal Officer</strong></td>
+                        <td>
+                          <strong>Mr. Srinivasa Rao Palla</strong> (Head of Credit & Compliance Officer)<br>
+                          Email: <code style="color: var(--green); font-weight: 700; background: var(--green-light); padding: 2px 6px; border-radius: 4px;">compliance@vmffinance.com</code><br>
+                          5th Floor, The Park View, Gachibowli, Hyderabad – 500032
+                        </td>
+                        <td>Within 15 Working Days</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Level 3: RBI Ombudsman</strong></td>
+                        <td>
+                          Reserve Bank of India Integrated Ombudsman Scheme<br>
+                          Complaint Management System (CMS): <a href="https://cms.rbi.org.in" target="_blank" rel="noopener" style="color: var(--navy); text-decoration: underline; font-weight: 600;">https://cms.rbi.org.in</a>
+                        </td>
+                        <td>If unresolved within 30 days</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 05: KYC & Anti-Money Laundering (AML) Compliance -->
+          <div class="arc-accordion-item" id="kyc-aml-policy">
+            <button class="arc-accordion-header" onclick="toggleArcItem(this)">
+              <div class="arc-title-group">
+                <span class="arc-item-num">05</span>
+                <h3 class="arc-item-title">KYC & Anti-Money Laundering (AML) Compliance</h3>
+              </div>
+              <div class="arc-chevron">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+            </button>
+            <div class="arc-accordion-body">
+              <div class="arc-inner-clause">
+                <strong>Customer Due Diligence (CDD) Standards:</strong>
+                VMF complies with the Prevention of Money Laundering Act (PMLA), 2002 and RBI KYC Master Directions. Prior to credit sanction, all applicants must submit verified business registration (Certificate of Incorporation / Partnership Deed / Udyam Certificate), PAN, GSTIN, registered address proof, and identify Natural Persons qualifying as Ultimate Beneficial Owners (UBO).
+              </div>
+              <div class="arc-inner-clause">
+                <strong>Ongoing Transaction Monitoring:</strong>
+                Credit facilities are disbursed and repaid solely through verifiable institutional banking channels to prevent financial fraud and ensure complete commercial authenticity.
+              </div>
+            </div>
+          </div>
+
+          <!-- 06: Privacy, Data Protection & Commercial Confidentiality -->
+          <div class="arc-accordion-item" id="privacy-policy">
+            <button class="arc-accordion-header" onclick="toggleArcItem(this)">
+              <div class="arc-title-group">
+                <span class="arc-item-num">06</span>
+                <h3 class="arc-item-title">Privacy, Data Protection & Commercial Confidentiality</h3>
+              </div>
+              <div class="arc-chevron">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+            </button>
+            <div class="arc-accordion-body">
+              <div class="arc-inner-clause">
+                <strong>Confidentiality of Commercial Information:</strong>
+                We understand that trade invoices, supplier contracts, purchase orders, buyer lists, and bank statements represent sensitive commercial property. VMF maintains rigorous physical, technical, and operational safeguards to protect customer data.
+              </div>
+              <div class="arc-inner-clause">
+                <strong>Restricted Information Sharing:</strong>
+                Borrower financial records are accessed strictly for credit appraisal, facility servicing, statutory reporting to authorized Credit Information Companies (CIBIL, Experian, CRIF High Mark, Equifax), and compliance with judicial or regulatory authorities under applicable laws.
+              </div>
+            </div>
+          </div>
+
+          <!-- 07: Statutory RBI Regulatory Declarations & Section 45-IA Caveat -->
+          <div class="arc-accordion-item" id="statutory-declarations">
+            <button class="arc-accordion-header" onclick="toggleArcItem(this)">
+              <div class="arc-title-group">
+                <span class="arc-item-num">07</span>
+                <h3 class="arc-item-title">Statutory Regulatory Declarations & RBI Section 45-IA Caveat</h3>
+              </div>
+              <div class="arc-chevron">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+            </button>
+            <div class="arc-accordion-body">
+              <div class="arc-inner-clause">
+                <strong>Corporate Identity & Statutory Registration:</strong><br>
+                &bull; <strong>Legal Name:</strong> VMF Finance Limited<br>
+                &bull; <strong>Corporate Identity Number (CIN):</strong> U67120TG1994PLC168008<br>
+                &bull; <strong>RBI Certificate of Registration (CoR):</strong> N-09.00484<br>
+                &bull; <strong>Date of Registration:</strong> 09 February 1994<br>
+                &bull; <strong>Classification:</strong> Non-Banking Financial Company – Investment & Credit Company (NBFC-ICC), Non-Deposit Taking<br>
+                &bull; <strong>Regulatory Layer:</strong> Base Layer under RBI Scale-Based Regulation
+              </div>
+              <div class="arc-inner-clause" style="background: var(--bg); padding: 14px; border-radius: 8px; border: 1px solid var(--border); font-size: 12.5px; color: var(--text-muted); line-height: 1.6;">
+                <strong style="color: var(--navy);">Statutory Regulatory Oversight:</strong><br>
+                Operating in strict adherence to Section 45-IA of the RBI Act, 1934 and Master Directions for Base Layer NBFC-ICCs. Formal regulatory disclaimers and statutory notices are permanently maintained in the institutional footnote below.
+              </div>
+            </div>
+          </div>
+
+        </reveal-wrapper>
+      </div>
+    </div>
+  </main>
+
+  <!-- ============================================================
+       PERFECTED INSTITUTIONAL FOOTER
+       ============================================================ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1: About VMF & Company Details -->
+        <div>
+          <div class="footer-brand">
+            <img src="assets/vmf-logo-white.png" alt="VMF Finance Limited" class="footer-logo-img">
+          </div>
+          <p style="line-height: 1.6; margin-bottom: 16px; font-size: 13px; color: #94A3B8;">
+            Financing for eligible MSMEs to manage cash flow, fulfil orders, and meet business needs.
+          </p>
+          <div class="footer-col-title" style="margin-top: 14px;">Company Details</div>
+          <div style="font-size: 12px; color: #94A3B8; line-height: 1.7; margin-bottom: 10px;">
+            CIN: <strong style="color: #CBD5E1;">U67120TG1994PLC168008</strong><br>
+            RBI CoR: <strong style="color: #CBD5E1;">N-09.00484</strong>
+          </div>
+          <div style="display: inline-flex; align-items: center; gap: 6px; font-size: 11.5px; background: rgba(255,255,255,0.06); padding: 4px 10px; border-radius: 999px; color: var(--lime);">
+            <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--lime);"></span>
+            Non-Deposit Taking Base Layer NBFC
+          </div>
+        </div>
+
+        <!-- Col 2: Our Products -->
+        <div>
+          <div class="footer-col-title">Our Products</div>
+          <ul class="footer-links-list">
+            <li><a href="index.html#products"><span>&bull;</span> Invoice Financing</a></li>
+            <li><a href="index.html#products"><span>&bull;</span> Purchase Order Financing</a></li>
+            <li><a href="index.html#products"><span>&bull;</span> Working Capital Loans</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Quick Links (Down by down vertical list) -->
+        <div>
+          <div class="footer-col-title">Quick Links</div>
+          <ul class="footer-links-list">
+            <li><a href="index.html#about"><span>&bull;</span> About Us</a></li>
+            <li><a href="index.html#how-we-finance"><span>&bull;</span> How It Works</a></li>
+            <li><a href="index.html#industries"><span>&bull;</span> Industries</a></li>
+            <li><a href="index.html#faq"><span>&bull;</span> FAQs</a></li>
+            <li><a href="index.html#contact"><span>&bull;</span> Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Policies -->
+        <div>
+          <div class="footer-col-title">Policies</div>
+          <ul class="footer-links-list">
+            <li><a href="policies.html#underwriting-policy"><span>&bull;</span> We Look Beyond the Balance Sheet: Underwriting Policy</a></li>
+            <li><a href="policies.html#fair-practices-code"><span>&bull;</span> Fair Practices Code (FPC) &amp; Transparent Sanctions</a></li>
+            <li><a href="policies.html#interest-rate-policy"><span>&bull;</span> Interest Rate Model &amp; Schedule of Charges</a></li>
+            <li><a href="policies.html#grievance-redressal"><span>&bull;</span> Customer Grievance Redressal Mechanism &amp; 3-Tier Matrix</a></li>
+            <li><a href="policies.html#kyc-aml-policy"><span>&bull;</span> KYC &amp; Anti-Money Laundering (AML) Compliance</a></li>
+            <li><a href="policies.html#privacy-policy"><span>&bull;</span> Privacy, Data Protection &amp; Commercial Confidentiality</a></li>
+            <li><a href="policies.html#statutory-declarations"><span>&bull;</span> Statutory Regulatory Declarations &amp; RBI Section 45-IA Caveat</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 5: Customer Support -->
+        <div>
+          <div class="footer-col-title">Customer support</div>
+          <ul class="footer-links-list">
+            <li><a href="index.html#contact">Contact us</a></li>
+            <li><a href="#grievance-redressal">Grievance redressal</a></li>
+            <li><a href="https://cms.rbi.org.in" target="_blank" rel="noopener noreferrer">RBI CMS Portal <span style="font-family: system-ui, sans-serif; font-size: 13px; margin-left: 2px;">↗</span></a></li>
+            <li><a href="https://sachet.rbi.org.in" target="_blank" rel="noopener noreferrer">Sachet Portal <span style="font-family: system-ui, sans-serif; font-size: 13px; margin-left: 2px;">↗</span></a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- Grievance Nodal Officer Highlight Strip -->
+      <div class="footer-nodal-strip">
+        <div>
+          <strong>Principal Nodal Officer:</strong> Mr. Srinivasa Rao Palla (Head of Credit &amp; Compliance Officer) &bull; Email: <a href="mailto:compliance@vmffinance.com">compliance@vmffinance.com</a>
+        </div>
+      </div>
+
+      <!-- Statutory Disclaimers -->
+      <div class="footer-disclaimer-box">
+        <p style="margin-bottom: 8px; color: #CBD5E1; font-weight: 500;">
+          Financing is subject to eligibility, credit approval, and agreed terms.
+        </p>
+        <p style="margin-bottom: 0;">
+          <strong>Disclaimer &amp; Regulatory Statement:</strong> VMF Finance Limited is a Non-Banking Financial Company – Investment and Credit Company (NBFC-ICC) registered with the Reserve Bank of India under Section 45-IA of the Reserve Bank of India Act, 1934. The Reserve Bank of India does not accept any responsibility or guarantee about the present position as to the financial soundness of the Company or for the correctness of any of the statements or representations made or opinions expressed by the Company and for discharge of liability by the Company.
+        </p>
+      </div>
+
+      <!-- Sub-Footer Bottom Bar -->
+      <div class="footer-bottom-bar">
+        <div>
+          &copy; 2026 <strong>VMF Finance Limited</strong>. All rights reserved.
+        </div>
+        <div class="footer-bottom-links">
+          <a href="policies.html#fair-practices-code">Fair Practices Code</a>
+          <span>&bull;</span>
+          <a href="policies.html#interest-rate-policy">Rates &amp; Charges</a>
+          <span>&bull;</span>
+          <a href="policies.html#privacy-policy">Privacy Policy</a>
+          <span>&bull;</span>
+          <a href="policies.html#grievance-redressal">Grievance Redressal</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Application Modal -->
+  <div class="modal-backdrop" id="appModal" onclick="closeModalOnBackdrop(event)">
+    <div class="modal-dialog">
+      <button class="modal-close" onclick="closeAppModal()">&times;</button>
+      <div style="margin-bottom: 18px;">
+        <h3 id="modalFacilityTitle" style="font-size: 22px; color: var(--navy); margin-top: 0;">Apply for MSME Financing</h3>
+        <p style="font-size: 13px; color: var(--text-muted);">
+          Our credit desk will review your submission and initiate transaction evaluation.
+        </p>
+      </div>
+
+      <form onsubmit="handleModalSubmit(event)">
+        <div class="form-group">
+          <label>Selected Facility</label>
+          <input type="text" id="modalFacilityInput" class="form-control" readonly style="font-weight: 700; color: var(--navy); background: #EEF2F6;">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Business Name *</label>
+            <input type="text" id="mBusinessName" class="form-control" placeholder="Company Legal Name" required>
+          </div>
+          <div class="form-group">
+            <label>Contact Person *</label>
+            <input type="text" id="mContactPerson" class="form-control" placeholder="Full Name" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Phone Number *</label>
+            <input type="tel" id="mPhone" class="form-control" placeholder="+91 98765 43210" required>
+          </div>
+          <div class="form-group">
+            <label>Required Funding Amount *</label>
+            <input type="text" id="mFundingAmt" class="form-control" placeholder="e.g. ₹ 45 Lakhs" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>City / State</label>
+          <input type="text" id="mCity" class="form-control" placeholder="e.g. Hyderabad, Telangana">
+        </div>
+
+        <div style="font-size: 11.5px; color: var(--text-muted); margin-bottom: 18px;">
+          ✓ Fully compliant with RBI regulatory disclosure mandates.
+        </div>
+
+        <button type="submit" class="btn-cta" style="width: 100%; justify-content: center; padding: 12px;"><span>Submit Request to Underwriting Desk</span></button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Success Confirmation Modal -->
+  <div class="modal-backdrop" id="successModal">
+    <div class="modal-dialog" style="text-align: center; max-width: 400px; padding: 28px 24px;">
+      <div style="width: 56px; height: 56px; background: var(--green-light); color: var(--green); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; margin: 0 auto 16px auto;">
+        ✓
+      </div>
+      <h3 style="font-size: 22px; color: var(--navy); margin-bottom: 8px;">Application Registered</h3>
+      <p style="font-size: 14px; color: var(--text-muted); line-height: 1.6; margin-bottom: 16px;">
+        Thank you for submitting your funding requirement to VMF Finance Limited. Our underwriting desk will evaluate your transaction details and reach out within 24–48 hours.
+      </p>
+      <div style="background: var(--bg); border: 1px dashed var(--border); border-radius: 8px; padding: 12px; font-size: 12px; color: var(--navy); margin-bottom: 20px;">
+        Docket Reference: <strong id="successDocketId" style="color: var(--green);">VMF-APP-2026-8841</strong>
+      </div>
+      <button class="btn-cta" style="width: 100%; justify-content: center;" onclick="closeSuccessModal()">Close</button>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       FLOATING INTERACTIVE CHATBOT (VMF FINANCING ASSISTANT)
+       ============================================================ -->
+  <div class="vmf-chatbot-widget" id="vmfChatbot">
+    <!-- Trigger Button -->
+    <button class="vmf-chat-trigger" id="vmfChatTrigger" onclick="toggleChatbot()" aria-label="Open VMF Assistant">
+      <div id="chatTriggerIcon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+        </svg>
+      </div>
+      <span class="chat-trigger-pulse"></span>
+    </button>
+
+    <!-- Chat Window Modal -->
+    <div class="vmf-chat-window" id="vmfChatWindow" style="display: none;">
+      <div class="chat-header">
+        <div class="chat-header-info">
+          <div class="chat-bot-avatar">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2"><path d="M12 2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2 2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"/><rect x="4" y="8" width="16" height="12" rx="2"/><circle cx="9" cy="13" r="1.5" fill="#7BB638"/><circle cx="15" cy="13" r="1.5" fill="#7BB638"/><path d="M9 17h6"/></svg>
+          </div>
+          <div>
+            <div class="chat-bot-title">VMF Finance Assistant</div>
+            <div class="chat-bot-status"><span class="chat-online-dot"></span> Online &bull; Instant Support</div>
+          </div>
+        </div>
+        <button class="chat-close-btn" onclick="toggleChatbot()" aria-label="Close Chat">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+
+      <div class="chat-messages" id="chatMessages">
+        <div class="chat-msg bot-msg">
+          <div class="chat-bubble">
+            <strong>Hello! 👋 Welcome to VMF Finance.</strong><br>
+            How can I help you today? Explore our 3 financing products, check required documents, or ask any doubts about eligibility and process.
+          </div>
+        </div>
+
+        <div class="chat-quick-chips" id="chatQuickChips">
+          <button type="button" class="chat-chip" onclick="handleQuickChip('products')">💼 Our 3 Products</button>
+          <button type="button" class="chat-chip" onclick="handleQuickChip('invoice')">📄 Invoice Financing</button>
+          <button type="button" class="chat-chip" onclick="handleQuickChip('po')">📦 PO Financing</button>
+          <button type="button" class="chat-chip" onclick="handleQuickChip('wc')">⚡ Working Capital</button>
+          <button type="button" class="chat-chip" onclick="handleQuickChip('docs')">📑 Documents Needed</button>
+          <button type="button" class="chat-chip" onclick="handleQuickChip('eligibility')">🎯 Eligibility</button>
+          <button type="button" class="chat-chip" onclick="handleQuickChip('rates')">📈 Rates &amp; Terms</button>
+          <button type="button" class="chat-chip" onclick="handleQuickChip('apply')">🚀 Apply Now</button>
+        </div>
+      </div>
+
+      <form class="chat-input-bar" id="chatForm" onsubmit="handleChatSubmit(event)">
+        <input type="text" id="chatUserInput" placeholder="Type your question or doubt..." autocomplete="off">
+        <button type="submit" class="chat-send-btn" aria-label="Send">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Smooth Scroll & Animation Libraries (Lenis & GSAP) -->
+  <script src="assets/lenis.min.js"></script>
+  <script src="assets/gsap.min.js"></script>
+  <script src="assets/ScrollTrigger.min.js"></script>
+  <script src="assets/CustomEase.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,1746 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VMF Finance Limited | Working Capital That Moves Your Business Forward</title>
+  <meta name="description"
+    content="Practical financing solutions for India's MSMEs. Invoice Financing, Purchase Order Financing, and Working Capital Loans by VMF Finance Limited, an RBI-registered NBFC-ICC.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="fintech-modern.css">
+  <script>
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    try {
+      const navEntry = performance.getEntriesByType && performance.getEntriesByType('navigation')[0];
+      const isReload = (navEntry && navEntry.type === 'reload') || (window.performance && window.performance.navigation && window.performance.navigation.type === 1);
+      if (isReload) {
+        if (window.location.hash && history.replaceState) {
+          history.replaceState(null, null, window.location.pathname + window.location.search);
+        }
+        window.scrollTo(0, 0);
+      }
+    } catch (e) {}
+  </script>
+</head>
+
+<body>
+
+  <!-- Fixed Header Wrapper: Transparent Navbar with Fixed Position on Scroll -->
+  <div class="site-header-fixed" id="siteHeader">
+    <!-- Top Regulatory Strip -->
+    <aside class="top-strip">
+      <div class="container top-flex">
+        <div class="reg-tag">
+          <span class="reg-dot"></span>
+          <span>Reserve Bank of India CoR: <strong>N-09.00484</strong> • Base Layer NBFC-ICC • CIN:
+            <strong>U67120TG1994PLC168008</strong></span>
+        </div>
+        <div>Estd. 09 February 1994 • Non-Deposit Taking NBFC • Hyderabad, India</div>
+      </div>
+    </aside>
+
+    <!-- Fixed Navbar (Transparent Background, Persistent on Scroll) -->
+    <header class="main-nav" id="mainNavbar">
+      <div class="container nav-flex">
+        <a href="index.html" class="brand" title="VMF Finance Limited" onclick="handleLogoClick(event)">
+          <img src="assets/vmf-logo-transparent.png" alt="VMF Finance Limited" class="brand-logo-img">
+        </a>
+        <nav class="nav-links" id="mainNavLinks">
+          <a href="#products" onclick="closeMobileNav()">Products</a>
+          <a href="#how-we-finance" onclick="closeMobileNav()">How It Works</a>
+          <a href="#about" onclick="closeMobileNav()">About</a>
+          <a href="policies.html" onclick="closeMobileNav()">Policies</a>
+          <a href="#contact" onclick="closeMobileNav()">Contact</a>
+        </nav>
+        <div class="nav-actions">
+          <a href="#contact" class="btn-cta header-enquiry-btn" onclick="scrollToContactForm(event)" style="text-decoration: none;"><span>Enquiry Now</span></a>
+          <button class="mobile-toggle-btn" id="mobileToggleBtn" onclick="toggleMobileNav()"
+            aria-label="Toggle navigation menu">
+            <svg class="icon-hamburger" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2.2">
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <line x1="3" y1="12" x2="21" y2="12" />
+              <line x1="3" y1="18" x2="21" y2="18" />
+            </svg>
+            <svg class="icon-close" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2.2" style="display: none;">
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <!-- ============================================================
+       SECTION 1: HERO - INTERACTIVE CASH VELOCITY ENGINE
+       ============================================================ -->
+  <section class="hero-sec" id="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="hero-trust-tag hero-p-entrance">
+          <span class="reg-dot"></span>
+          <span>Reserve Bank of India Registered NBFC-ICC &bull; Estd. 1994</span>
+        </div>
+        <h1 class="hero-h1 hero-h1-rotator" id="heroHeadlineRotator" aria-label="Hero Headlines">
+          <!-- Headline 1: Exactly 2 Lines -->
+          <div class="hero-h1-slide active" data-index="0">
+            <span class="hero-h1-line-1">Finance Your Invoices, Orders,</span>
+            <span class="hero-h1-line-2 hero-h1-highlight">and Everyday Business Needs</span>
+          </div>
+          <!-- Headline 2: Exactly 2 Lines -->
+          <div class="hero-h1-slide" data-index="1">
+            <span class="hero-h1-line-1">Keep Cash Flowing, Orders Moving,</span>
+            <span class="hero-h1-line-2 hero-h1-highlight">and Business Growing</span>
+          </div>
+          <!-- Headline 3: Exactly 2 Lines -->
+          <div class="hero-h1-slide" data-index="2">
+            <span class="hero-h1-line-1">Business Finance from</span>
+            <span class="hero-h1-line-2 hero-h1-highlight">Purchase Orders to Payments</span>
+          </div>
+        </h1>
+        <p class="hero-p hero-p-entrance">
+          Access flexible funding for invoices, purchase orders, and daily business needs to keep your business moving
+          towards its next big opportunity.
+        </p>
+
+        <!-- Facility Range & Product Scope Highlight -->
+        <div class="hero-highlight-point hero-p-entrance">
+          <div class="hero-starting-text">
+            Starting from <strong class="hero-amount-val">₹5 lakhs</strong>
+          </div>
+          <div class="hero-facilities-line">
+            <span>Invoice</span>
+            <span class="sep-dot">&middot;</span>
+            <span>Purchase order</span>
+            <span class="sep-dot">&middot;</span>
+            <span>Working capital</span>
+          </div>
+        </div>
+
+        <div class="hero-cta-entrance" style="display: flex; gap: 14px; flex-wrap: wrap;">
+          <a href="#contact" class="btn-cta" style="padding: 12px 24px; font-size: 14px; font-weight: 700; border-radius: 999px; text-decoration: none;"
+            onclick="scrollToContactForm(event)">
+            <span>Apply Now</span>
+          </a>
+          <a href="#products" class="btn-outline"
+            style="padding: 12px 24px; font-size: 14px; font-weight: 700; border-radius: 999px;">View Products</a>
+        </div>
+
+        <div class="hero-badges-row hero-badges-entrance">
+          <div class="h-badge-item">
+            <span class="h-badge-dot" aria-hidden="true"></span>
+            <span>RBI Registered NBFC-ICC</span>
+          </div>
+          <div class="h-badge-item">
+            <span class="h-badge-dot" aria-hidden="true"></span>
+            <span>Transparent Documented Terms</span>
+          </div>
+          <div class="h-badge-item">
+            <span class="h-badge-dot" aria-hidden="true"></span>
+            <span>Since 1994</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero 3D Business Illustration Showcase with Animation -->
+      <div class="hero-graphic-wrap hero-card-entrance" id="heroGraphicWrap">
+        <!-- Ambient Glowing Aura & Orbital Rings -->
+        <div class="hero-glow-aura"></div>
+        <div class="hero-glow-ring ring-1"></div>
+        <div class="hero-glow-ring ring-2"></div>
+
+        <!-- 3D CardSwap Component (React Bits) -->
+        <div class="card-swap" id="heroCardSwap" role="region" aria-roledescription="carousel"
+          aria-label="Financing Solutions Stack" tabindex="0" data-width="680" data-height="470" data-card-distance="28"
+          data-vertical-distance="34" data-depth="55" data-skew="3" data-visible-cards="5" data-delay="4000" data-autoplay="true"
+          data-draggable="true">
+
+          <div class="card-swap-sizer" aria-hidden="true">
+            <span></span>
+          </div>
+
+          <div class="card-swap-stage">
+            <!-- Card 0: Better Cash Flow (Kept as is) -->
+            <div class="card-swap-slot" data-swap-index="0">
+              <div class="card-swap-card">
+                <div class="card-swap-item v2-style">
+                  <div class="card-swap-top-row">
+                    <div class="card-swap-symbol-badge">$</div>
+                  </div>
+                  <div class="card-swap-media">
+                    <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=900&auto=format&fit=crop&q=80" alt="Better Cash Flow" width="680" height="400" draggable="false" />
+                    <div class="card-swap-overlay-tint tint-green"></div>
+                    <div class="card-swap-hero-content">
+                      <div class="card-swap-big-headline">
+                        <span class="swap-word-green">Better</span>
+                        <span class="swap-word-navy">Cash Flow</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <span class="card-swap-card-rim" aria-hidden="true"></span>
+              </div>
+              <span class="card-swap-shade" aria-hidden="true"></span>
+            </div>
+
+            <!-- Card 1: Funding for Confirmed Orders -->
+            <div class="card-swap-slot" data-swap-index="1">
+              <div class="card-swap-card">
+                <div class="card-swap-item v2-style">
+                  <div class="card-swap-top-row">
+                    <div class="card-swap-symbol-badge badge-custom-icon"><img src="assets/hero-badge-check.png" alt="Confirmed Orders Icon" width="28" height="28" /></div>
+                  </div>
+                  <div class="card-swap-media">
+                    <img src="assets/hero-swap-2.jpg" alt="Funding for Confirmed Orders" width="680" height="400" draggable="false" />
+                    <div class="card-swap-overlay-tint tint-blue"></div>
+                    <div class="card-swap-hero-content">
+                      <div class="card-swap-big-headline">
+                        <span class="swap-word-green">Funding for</span>
+                        <span class="swap-word-navy">Confirmed Orders</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <span class="card-swap-card-rim" aria-hidden="true"></span>
+              </div>
+              <span class="card-swap-shade" aria-hidden="true"></span>
+            </div>
+
+            <!-- Card 2: Support for Daily Operations -->
+            <div class="card-swap-slot" data-swap-index="2">
+              <div class="card-swap-card">
+                <div class="card-swap-item v2-style">
+                  <div class="card-swap-top-row">
+                    <div class="card-swap-symbol-badge badge-custom-icon"><img src="assets/hero-badge-gear.png" alt="Daily Operations Icon" width="28" height="28" /></div>
+                  </div>
+                  <div class="card-swap-media">
+                    <img src="assets/hero-swap-3.jpg" alt="Support for Daily Operations" width="680" height="400" draggable="false" />
+                    <div class="card-swap-overlay-tint tint-teal"></div>
+                    <div class="card-swap-hero-content">
+                      <div class="card-swap-big-headline">
+                        <span class="swap-word-green">Support for</span>
+                        <span class="swap-word-navy">Daily Operations</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <span class="card-swap-card-rim" aria-hidden="true"></span>
+              </div>
+              <span class="card-swap-shade" aria-hidden="true"></span>
+            </div>
+
+            <!-- Card 3: Finance That Fits Your Business -->
+            <div class="card-swap-slot" data-swap-index="3">
+              <div class="card-swap-card">
+                <div class="card-swap-item v2-style">
+                  <div class="card-swap-top-row">
+                    <div class="card-swap-symbol-badge badge-custom-icon"><img src="assets/hero-badge-pulse.png" alt="Fits Your Business Icon" width="28" height="28" /></div>
+                  </div>
+                  <div class="card-swap-media">
+                    <img src="assets/hero-swap-4.jpg" alt="Finance That Fits Your Business" width="680" height="400" draggable="false" />
+                    <div class="card-swap-overlay-tint tint-navy"></div>
+                    <div class="card-swap-hero-content">
+                      <div class="card-swap-big-headline">
+                        <span class="swap-word-green">Finance That Fits</span>
+                        <span class="swap-word-navy">Your Business</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <span class="card-swap-card-rim" aria-hidden="true"></span>
+              </div>
+              <span class="card-swap-shade" aria-hidden="true"></span>
+            </div>
+
+            <!-- Card 4: Clear Terms and Charges -->
+            <div class="card-swap-slot" data-swap-index="4">
+              <div class="card-swap-card">
+                <div class="card-swap-item v2-style">
+                  <div class="card-swap-top-row">
+                    <div class="card-swap-symbol-badge badge-custom-icon"><img src="assets/hero-badge-star.png" alt="Clear Terms Icon" width="28" height="28" /></div>
+                  </div>
+                  <div class="card-swap-media">
+                    <img src="assets/hero-swap-5.jpg" alt="Clear Terms and Charges" width="680" height="400" draggable="false" />
+                    <div class="card-swap-overlay-tint tint-sage"></div>
+                    <div class="card-swap-hero-content">
+                      <div class="card-swap-big-headline">
+                        <span class="swap-word-green">Clear Terms</span>
+                        <span class="swap-word-navy">and Charges</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <span class="card-swap-card-rim" aria-hidden="true"></span>
+              </div>
+              <span class="card-swap-shade" aria-hidden="true"></span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Full-Width Seamless Blur & Gradient Transition Layer -->
+    <div class="hero-bottom-white-layer" aria-hidden="true"></div>
+  </section>
+
+  
+  <!-- ============================================================
+       MAIN CONTENT FLOW: PRODUCTS TO FAQS (ALL-IN-ONE UNIFIED BACKDROP)
+       ============================================================ -->
+  <main class="main-content-flow" id="mainContentFlow">
+
+    <!-- ============================================================
+         INTERACTIVE WORKING CAPITAL ESTIMATOR (FINTECH ENGINE)
+         ============================================================ -->
+    <reveal-wrapper mode="section">
+      <section class="wc-calc-section" id="calculator">
+        <div class="wc-calc-container">
+          <div class="wc-calc-card">
+            <div class="wc-calc-grid">
+              <!-- Left Column: Inputs & Sliders -->
+              <div>
+                <div class="wc-calc-heading-area">
+                  <div class="wc-calc-badge">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                    Interactive Estimate
+                  </div>
+                  <h2 class="wc-calc-title">Calculate Your Working Capital Facility</h2>
+                  <p class="wc-calc-subtitle">Tailored financing structures designed around your trade cycles and cash requirements.</p>
+                </div>
+
+                <!-- Facility Selector Tabs -->
+                <div class="wc-facility-tabs" id="wcFacilityTabs">
+                  <button type="button" class="wc-tab-btn active" data-facility="Invoice Financing" onclick="setCalcFacility(this, 'Invoice Financing')">Invoice Financing</button>
+                  <button type="button" class="wc-tab-btn" data-facility="Purchase Order Financing" onclick="setCalcFacility(this, 'Purchase Order Financing')">PO Financing</button>
+                  <button type="button" class="wc-tab-btn" data-facility="Working Capital Loan" onclick="setCalcFacility(this, 'Working Capital Loan')">Working Capital</button>
+                </div>
+
+                <!-- Slider 1: Facility Amount -->
+                <div class="wc-slider-block">
+                  <div class="wc-slider-top">
+                    <span class="wc-slider-label">Required Facility Amount</span>
+                    <span class="wc-slider-value" id="calcAmountDisplay">₹ 50 Lakhs</span>
+                  </div>
+                  <input type="range" id="calcAmountSlider" class="wc-range-input" min="500000" max="50000000" step="500000" value="5000000" oninput="updateWorkingCapitalCalc()">
+                  <div style="display: flex; justify-content: space-between; font-size: 12px; color: var(--vmf-text-muted); margin-top: 6px;">
+                    <span>₹5 Lakhs</span>
+                    <span>₹2.5 Crores</span>
+                    <span>₹5 Crores+</span>
+                  </div>
+                </div>
+
+                <!-- Slider 2: Tenor Duration -->
+                <div class="wc-slider-block" style="margin-bottom: 0;">
+                  <div class="wc-slider-top">
+                    <span class="wc-slider-label">Expected Payment Cycle (Tenor)</span>
+                    <span class="wc-slider-value" id="calcTenorDisplay" style="font-size: 18px; color: var(--vmf-navy);">60 Days</span>
+                  </div>
+                  <input type="range" id="calcTenorSlider" class="wc-range-input" min="30" max="120" step="15" value="60" oninput="updateWorkingCapitalCalc()">
+                  <div style="display: flex; justify-content: space-between; font-size: 12px; color: var(--vmf-text-muted); margin-top: 6px;">
+                    <span>30 Days</span>
+                    <span>60 Days</span>
+                    <span>90 Days</span>
+                    <span>120 Days</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right Column: Results & Instant Action -->
+              <div class="wc-calc-results-card">
+                <div class="wc-result-row">
+                  <div class="wc-res-label">Estimated Immediate Advance (Up to 90%)</div>
+                  <div class="wc-res-value highlight-emerald" id="calcAdvanceDisplay">₹ 45,00,000</div>
+                  <div class="wc-res-meta">
+                    <span>⚡ Liquidity released immediately</span>
+                  </div>
+                </div>
+
+                <div class="wc-result-row">
+                  <div class="wc-res-label">Indicative Monthly Rate</div>
+                  <div class="wc-res-value" id="calcRateDisplay">1.15% – 1.35%</div>
+                  <div class="wc-res-meta">
+                    <span>• Transparent documented terms</span>
+                  </div>
+                </div>
+
+                <div class="wc-result-row">
+                  <div class="wc-res-label">Approval Turnaround</div>
+                  <div class="wc-res-value" style="font-size: 20px;">24 to 48 Hours</div>
+                  <div class="wc-res-meta">
+                    <span>Direct disbursement to verified account</span>
+                  </div>
+                </div>
+
+                <button type="button" class="wc-calc-apply-btn" onclick="applyWithCalculatorEstimate()">
+                  <span>Proceed with this Estimate</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </reveal-wrapper>
+
+    <!-- ============================================================
+         SECTION 2: PRODUCTS - FINANCING SOLUTIONS BUILT FOR YOUR BUSINESS
+         ============================================================ -->
+    <reveal-wrapper mode="section">
+      <section class="section" id="products">
+        <div class="container">
+          <div style="text-align: center; max-width: 800px; margin: 0 auto 40px auto;">
+            <h2
+              style="font-size: clamp(32px, 3.8vw, 48px); font-weight: 850; color: var(--navy); margin-top: 0; margin-bottom: 12px; letter-spacing: -0.03em; line-height: 1.18;">
+              Power Your Business with the Right Finance</h2>
+            <p style="color: var(--text-muted); font-size: 18px; line-height: 1.62; max-width: 680px; margin: 0 auto;">
+              Access flexible funding for your invoices, purchase orders, and daily business needs.
+            </p>
+          </div>
+
+          <!-- 3D Elevation Product Cards -->
+          <div class="prod-3d-grid">
+            <!-- 1. Invoice Financing -->
+            <div class="prod-3d-card">
+              <span class="prod-badge-pill">Up to 90% Advance</span>
+              <div class="prod-icon-box">
+                <img src="assets/product-icon-1.png" alt="Invoice Financing Icon" width="56" height="56" class="prod-custom-icon" />
+              </div>
+              <h3 class="prod-heading-2lines">Invoice<br>Financing</h3>
+              <p class="prod-desc">
+                Unlock cash trapped in outstanding customer invoices without waiting 60–90 days for payment.
+              </p>
+              <ul class="prod-feature-checklist">
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Advance up to 90% of invoice value</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Credit decision within 24–48 hours</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Tenor matched to buyer credit terms</span>
+                </li>
+              </ul>
+              <div class="prod-btn-group">
+                <button class="btn-cta" onclick="applyForProduct('Invoice Financing')">
+                  <span>Apply Now</span>
+                </button>
+                <button class="btn-outline" onclick="openExploreStepsModal('inv')" style="padding: 10px 16px; font-size: 13px;">
+                  <span>Steps</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- 2. Purchase Order Financing -->
+            <div class="prod-3d-card">
+              <span class="prod-badge-pill">Supplier Pay</span>
+              <div class="prod-icon-box">
+                <img src="assets/product-icon-2.png" alt="Purchase Order Financing Icon" width="56" height="56" class="prod-custom-icon" />
+              </div>
+              <h3>Purchase Order Financing</h3>
+              <p class="prod-desc">
+                Secure immediate capital to procure raw materials and fulfill large confirmed client purchase orders.
+              </p>
+              <ul class="prod-feature-checklist">
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Fund up to 80% of confirmed PO value</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Direct supplier disbursement available</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Take on bigger contracts without cash strain</span>
+                </li>
+              </ul>
+              <div class="prod-btn-group">
+                <button class="btn-cta" onclick="applyForProduct('Purchase Order Financing')">
+                  <span>Apply Now</span>
+                </button>
+                <button class="btn-outline" onclick="openExploreStepsModal('po')" style="padding: 10px 16px; font-size: 13px;">
+                  <span>Steps</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- 3. Working Capital Loans -->
+            <div class="prod-3d-card">
+              <span class="prod-badge-pill">Daily Ops</span>
+              <div class="prod-icon-box">
+                <img src="assets/product-icon-3.png" alt="Working Capital Loans Icon" width="56" height="56" class="prod-custom-icon" />
+              </div>
+              <h3>Working Capital Loans</h3>
+              <p class="prod-desc">
+                Reliable liquidity facility to cover inventory, payroll, operational overhead, and business cycles.
+              </p>
+              <ul class="prod-feature-checklist">
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Facilities starting from ₹5 Lakhs</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Repayments synced with revenue streams</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Zero pre-payment penalties on clear terms</span>
+                </li>
+              </ul>
+              <div class="prod-btn-group">
+                <button class="btn-cta" onclick="applyForProduct('Working Capital Loan')">
+                  <span>Apply Now</span>
+                </button>
+                <button class="btn-outline" onclick="openExploreStepsModal('wc')" style="padding: 10px 16px; font-size: 13px;">
+                  <span>Steps</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+  </reveal-wrapper>
+
+  <!-- ============================================================
+       SECTION 3: UNDERWRITING PHILOSOPHY & CREDIT POLICIES
+       ============================================================ -->
+  <reveal-wrapper mode="section" id="philosophyWrapper" style="display: none;" aria-hidden="true">
+    <section class="section philosophy-sec" id="philosophy" style="display: none;" aria-hidden="true">
+      <div id="policies"></div>
+      <div class="container">
+        <div class="sticky-split-grid" style="align-items: center;">
+          <!-- Left Column -->
+          <div>
+            <h2 class="two-line-title" style="margin-top: 0; margin-bottom: 14px;">
+              <span class="line-nowrap">Finance That Understands</span><br>
+              <span class="line-nowrap">Your Cash Flow</span>
+            </h2>
+            <p style="font-size: 18px; color: var(--text-muted); line-height: 1.62; margin-bottom: 20px;">
+              We assess your business transactions, buyer profile and cash flow to structure financing around your
+              business needs.
+            </p>
+
+            <a href="policies.html" class="inline-policy-link" style="margin-bottom: 24px;"><span>Explore Our Credit Policy</span></a>
+
+            <!-- Editorial Flow Metric SVG Illustration -->
+            <div class="philosophy-svg-graphic" aria-hidden="true" style="margin-top: 24px; max-width: 420px;">
+              <svg viewBox="0 0 420 100" fill="none" xmlns="http://www.w3.org/2000/svg"
+                style="width: 100%; height: auto; display: block;">
+                <defs>
+                  <linearGradient id="phGradLine" x1="0" y1="0" x2="420" y2="0" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#2D7B39" stop-opacity="0.2" />
+                    <stop offset="50%" stop-color="#2D7B39" stop-opacity="0.85" />
+                    <stop offset="100%" stop-color="#05244F" stop-opacity="0.9" />
+                  </linearGradient>
+                  <linearGradient id="phGradArea" x1="0" y1="0" x2="0" y2="100" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#2D7B39" stop-opacity="0.12" />
+                    <stop offset="100%" stop-color="#2D7B39" stop-opacity="0" />
+                  </linearGradient>
+                </defs>
+                <path d="M 10,75 C 70,75 90,35 150,42 C 210,49 230,20 290,26 C 340,32 370,12 410,14 L 410,95 L 10,95 Z"
+                  fill="url(#phGradArea)" />
+                <path d="M 10,75 C 70,75 90,35 150,42 C 210,49 230,20 290,26 C 340,32 370,12 410,14"
+                  stroke="url(#phGradLine)" stroke-width="3" stroke-linecap="round" />
+                <circle cx="150" cy="42" r="4.5" fill="#2D7B39" stroke="#FFFFFF" stroke-width="2" />
+                <circle cx="290" cy="26" r="4.5" fill="#2D7B39" stroke="#FFFFFF" stroke-width="2" />
+                <circle cx="410" cy="14" r="5" fill="#05244F" stroke="#FFFFFF" stroke-width="2.5" />
+                <text x="135" y="65" fill="#64748B" font-size="10.5" font-weight="600"
+                  font-family="'DM Sans',sans-serif">Order Issued</text>
+                <text x="268" y="48" fill="#64748B" font-size="10.5" font-weight="600"
+                  font-family="'DM Sans',sans-serif">Goods Dispatched</text>
+                <text x="355" y="34" fill="#05244F" font-size="11" font-weight="750"
+                  font-family="'DM Sans',sans-serif">Capital Released</text>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Right Column - Single Approach Card -->
+          <div class="approach-col">
+            <div class="approach-card">
+              <h4>Our Lending Approach</h4>
+              <ul class="high-contrast-list">
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Assessment based on verified business transactions</span>
+                </li>
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Buyer creditworthiness and payment history</span>
+                </li>
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Repayment aligned with collection cycles</span>
+                </li>
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Clear pricing and documented terms</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </reveal-wrapper>
+
+  <!-- ============================================================
+       SECTION 5: HOW OUR FINANCING WORKS - STAGGERED SERPENTINE FLOW
+       ============================================================ -->
+  <reveal-wrapper mode="section">
+    <section class="section finance-flow-section" id="how-we-finance">
+      <div class="container flow-wide-container">
+        <!-- Section Header -->
+        <div style="text-align: center; max-width: 780px; margin: 0 auto 48px auto;">
+          <h2
+            style="font-size: clamp(32px, 3.8vw, 48px); font-weight: 850; color: var(--navy); margin-top: 0; margin-bottom: 12px; letter-spacing: -0.03em; line-height: 1.18; text-align: center;">
+            How Our Financing Works</h2>
+          <p style="color: var(--text-muted); font-size: 18px; line-height: 1.62; max-width: 680px; margin: 0 auto;">
+            Six simple steps from initial application to swift disbursement and loan closure.
+          </p>
+        </div>
+
+        <!-- 6 Steps in 3 Columns & 2 Rows Pill Capsules (Endcap Icons + 2-Line Headings + Far-End Tooltip) -->
+        <div class="flow-pill-grid-wrap">
+          <div class="flow-pill-grid">
+
+            <!-- STEP 1 -->
+            <div class="flow-pill-capsule" data-step="1">
+              <div class="flow-pill-endcap">
+                <img src="assets/flow-icon-1.png" alt="Share Requirements Icon" width="44" height="44" class="flow-custom-icon" />
+              </div>
+              <div class="flow-pill-main">
+                <div class="flow-pill-info">
+                  <span class="flow-step-num">Step 01 • 15 Mins</span>
+                  <h4 class="flow-pill-head">
+                    Share Requirements
+                  </h4>
+                  <p style="font-size: 13px; color: var(--vmf-text-muted); margin-top: 4px;">Tell us about your business and working capital requirements.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- STEP 2 -->
+            <div class="flow-pill-capsule" data-step="2">
+              <div class="flow-pill-endcap">
+                <img src="assets/flow-icon-2.png" alt="Submit Documents Icon" width="44" height="44" class="flow-custom-icon" />
+              </div>
+              <div class="flow-pill-main">
+                <div class="flow-pill-info">
+                  <span class="flow-step-num">Step 02 • Digital KYC</span>
+                  <h4 class="flow-pill-head">
+                    Submit Documents
+                  </h4>
+                  <p style="font-size: 13px; color: var(--vmf-text-muted); margin-top: 4px;">Share KYC, financials, GST returns, and bank statements.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- STEP 3 -->
+            <div class="flow-pill-capsule" data-step="3">
+              <div class="flow-pill-endcap">
+                <img src="assets/flow-icon-3.png" alt="Credit Review Icon" width="44" height="44" class="flow-custom-icon" />
+              </div>
+              <div class="flow-pill-main">
+                <div class="flow-pill-info">
+                  <span class="flow-step-num">Step 03 • 24 Hours</span>
+                  <h4 class="flow-pill-head">
+                    Credit Review
+                  </h4>
+                  <p style="font-size: 13px; color: var(--vmf-text-muted); margin-top: 4px;">Our underwriting desk assesses cash flow and buyer strength.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- STEP 4 -->
+            <div class="flow-pill-capsule" data-step="4">
+              <div class="flow-pill-endcap">
+                <img src="assets/flow-icon-4.png" alt="Sanction & Terms Icon" width="44" height="44" class="flow-custom-icon" />
+              </div>
+              <div class="flow-pill-main">
+                <div class="flow-pill-info">
+                  <span class="flow-step-num">Step 04 • Term Sheet</span>
+                  <h4 class="flow-pill-head">
+                    Sanction &amp; Terms
+                  </h4>
+                  <p style="font-size: 13px; color: var(--vmf-text-muted); margin-top: 4px;">Review transparent sanction letter, pricing, and repayment schedule.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- STEP 5 -->
+            <div class="flow-pill-capsule" data-step="5">
+              <div class="flow-pill-endcap">
+                <img src="assets/flow-icon-5.png" alt="Receive Funds Icon" width="44" height="44" class="flow-custom-icon" />
+              </div>
+              <div class="flow-pill-main">
+                <div class="flow-pill-info">
+                  <span class="flow-step-num">Step 05 • 48-Hour Credit</span>
+                  <h4 class="flow-pill-head">
+                    Receive Funds
+                  </h4>
+                  <p style="font-size: 13px; color: var(--vmf-text-muted); margin-top: 4px;">Direct disbursement straight into your verified bank account.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- STEP 6 -->
+            <div class="flow-pill-capsule" data-step="6">
+              <div class="flow-pill-endcap">
+                <img src="assets/flow-icon-6.png" alt="Repayment & Closure Icon" width="44" height="44" class="flow-custom-icon" />
+              </div>
+              <div class="flow-pill-main">
+                <div class="flow-pill-info">
+                  <span class="flow-step-num">Step 06 • Reusable Limit</span>
+                  <h4 class="flow-pill-head">
+                    Repayment &amp; Growth
+                  </h4>
+                  <p style="font-size: 13px; color: var(--vmf-text-muted); margin-top: 4px;">Repay seamlessly upon buyer settlement and reload facility.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </reveal-wrapper>
+
+  <!-- ============================================================
+       SECTION 6: INDUSTRY COVERAGE
+       Financing Across Industries (Sector-Agnostic with 10 Examples)
+       ============================================================ -->
+  <reveal-wrapper mode="section">
+    <section class="section ind-pipeline-section" id="industries">
+      <div class="container">
+        <div style="text-align: center; max-width: 800px; margin: 0 auto 36px auto;">
+          <h2
+            style="font-size: clamp(32px, 3.8vw, 48px); font-weight: 850; margin: 0 0 10px 0; color: var(--navy); letter-spacing: 1px; line-height: 1.18; text-align: center;">
+            Financing Across Industries</h2>
+          <p style="color: var(--text-muted); font-size: 14.5px; line-height: 1.55; max-width: 620px; margin: 0 auto;">
+            We consider financing proposals from eligible MSMEs across a diverse range of commercial and industrial sectors.
+          </p>
+        </div>
+
+        <!-- Circular Carousel 3D (React Bits Cylinder Engine) -->
+        <!-- Concave Carousel (React Bits Pro Gallery Wall) -->
+        <div class="concave-carousel-wrap" id="concaveCarouselWrapper">
+          <div class="concave-carousel" id="concaveCarousel" role="region" aria-label="Financing Across Industries Concave Gallery Wall" tabindex="0">
+            <div class="concave-carousel__stage" id="concaveStage">
+
+              <!-- 3D Concave Wall (Curved around viewer) -->
+              <div class="concave-carousel__wall" id="concaveWall">
+                <!-- Dynamically mounted concave panels with reflection -->
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </section>
+  </reveal-wrapper>
+
+  <!-- ============================================================
+       SECTION 7: WHO WE ARE (ABOUT VMF FINANCE)
+       Clean Minimalist Architecture - Plain White Background
+       ============================================================ -->
+  <reveal-wrapper mode="section">
+    <section class="section about-section" id="about">
+      <div class="container">
+
+        <div class="about-clean-wrap">
+
+          <!-- Section Header Centered in Middle -->
+          <div class="about-header-centered" style="text-align: center; margin-bottom: 40px;">
+            <h2 class="about-main-title" style="text-align: center; margin: 0 auto;">Who We Are</h2>
+          </div>
+
+          <!-- Top Row: Narrative on Left, Vision & Mission on Right -->
+          <div class="about-top-grid">
+
+            <!-- Left Column: Company Lead & Record -->
+            <div class="about-intro-col">
+              <p class="about-lead-text">
+                We provide invoice financing, purchase order financing and working capital loans to eligible MSMEs
+                across sectors. Our financing considers business needs, repayment ability and risk to help manage cash
+                gaps, fulfil orders and cover daily expenses.
+              </p>
+
+              <!-- Subtle Geometric Flow SVG Accent -->
+              <div class="about-svg-badge-row" aria-hidden="true"
+                style="margin-top: 22px; display: flex; align-items: center; gap: 20px;">
+                <div
+                  style="display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; color: var(--navy);">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12 6 12 12 16 14" />
+                  </svg>
+                  <span>30+ Years Lending Record</span>
+                </div>
+                <div
+                  style="display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; color: var(--navy);">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                    <polyline points="9 12 11 14 15 10" />
+                  </svg>
+                  <span>RBI Regulated Framework</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Column: Vision & Mission (Simple Text Blocks) -->
+            <div class="about-vm-col">
+              <div class="about-simple-block">
+                <h3 class="about-block-title">Our Vision</h3>
+                <p class="about-block-text">
+                  To be a trusted financing partner for India’s MSMEs, supporting sustainable growth through
+                  responsible, transparent lending.
+                </p>
+              </div>
+
+              <div class="about-simple-block">
+                <h3 class="about-block-title">Our Mission</h3>
+                <p class="about-block-text">
+                  To offer suitable financing through careful credit assessment, clear terms, responsive service and
+                  responsible lending.
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Middle Divider -->
+          <div class="about-section-divider"></div>
+
+          <!-- Middle Row: Core Values (V - M - F) Three Equal Columns, No Heavy Boxes -->
+          <div class="about-values-section" style="margin-bottom: 0;">
+            <div class="about-values-header">
+              <h3 class="about-values-title">Our Core Values</h3>
+              <p class="about-values-sub">Principles that guide our decisions and customer relationships.</p>
+            </div>
+
+            <div class="about-values-cols">
+              <div class="about-val-col">
+                <div class="about-val-badge">V</div>
+                <h4 class="about-val-name">Value</h4>
+                <p class="about-val-desc">Understand the value created by each business and its transactions.</p>
+              </div>
+
+              <div class="about-val-col">
+                <div class="about-val-badge">M</div>
+                <h4 class="about-val-name">Momentum</h4>
+                <p class="about-val-desc">Help eligible businesses manage working capital and pursue viable
+                  opportunities.</p>
+              </div>
+
+              <div class="about-val-col">
+                <div class="about-val-badge">F</div>
+                <h4 class="about-val-name">Fairness</h4>
+                <p class="about-val-desc">Explain terms and charges clearly, and treat customers fairly throughout the
+                  loan relationship.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </reveal-wrapper>
+
+  <!-- ============================================================
+       SECTION 8: GOVERNANCE & KEY MANAGEMENT PERSONNEL (KMP)
+       ============================================================ -->
+  <reveal-wrapper mode="section">
+    <section class="section" id="governance">
+      <div class="container">
+        <div style="text-align: center; max-width: 750px; margin: 0 auto 36px auto;">
+          <h2
+            style="font-size: clamp(32px, 3.8vw, 48px); font-weight: 850; color: var(--navy); margin-top: 0; margin-bottom: 12px; letter-spacing: -0.03em; line-height: 1.18;">
+            Meet Our Team</h2>
+          <p style="color: var(--text-muted); font-size: 18px; line-height: 1.62; max-width: 680px; margin: 0 auto;">
+            Guided by seasoned leadership with institutional finance, operational underwriting, and strict regulatory
+            compliance discipline.
+          </p>
+        </div>
+
+        <div class="gov-grid">
+          <!-- Leader 1: Siva Krishna Kolli -->
+          <div class="gov-card">
+            <div class="gov-photo-wrap">
+              <img src="assets/director-siva-krishna-kolli.jpg" alt="Siva Krishna Kolli - CEO &amp; Managing Director"
+                class="gov-photo-img" loading="lazy">
+              <a href="[PASTE_LINKEDIN_PROFILE_URL]" class="gov-linkedin-btn" data-member="sivaKrishnaKolli"
+                target="_blank" rel="noopener noreferrer" aria-label="View Siva Krishna Kolli on LinkedIn"
+                title="View Siva Krishna Kolli on LinkedIn">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.62 1.62 0 1 0 0-3.24 1.62 1.62 0 0 0 0 3.24m1.39 9.74v-8.37H5.07v8.37z" />
+                </svg>
+              </a>
+            </div>
+            <div class="gov-card-body">
+              <div class="gov-card-header">
+                <h3>Siva Krishna Kolli</h3>
+                <div class="gov-role">CEO &amp; Managing Director</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Leader 2: Raj Sekhar Aluri -->
+          <div class="gov-card">
+            <div class="gov-photo-wrap">
+              <img src="assets/director-raj-sekhar-aluri.jpg" alt="Raj Sekhar Aluri - Chief Operating Officer"
+                class="gov-photo-img" loading="lazy">
+              <a href="[PASTE_LINKEDIN_PROFILE_URL]" class="gov-linkedin-btn" data-member="rajSekharAluri"
+                target="_blank" rel="noopener noreferrer" aria-label="View Raj Sekhar Aluri on LinkedIn"
+                title="View Raj Sekhar Aluri on LinkedIn">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.62 1.62 0 1 0 0-3.24 1.62 1.62 0 0 0 0 3.24m1.39 9.74v-8.37H5.07v8.37z" />
+                </svg>
+              </a>
+            </div>
+            <div class="gov-card-body">
+              <div class="gov-card-header">
+                <h3>Raj Sekhar Aluri</h3>
+                <div class="gov-role">Chief Operating Officer (COO)</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Leader 3: Srinivasa Rao Palla -->
+          <div class="gov-card">
+            <div class="gov-photo-wrap">
+              <img src="assets/director-srinivasa-rao-palla.png"
+                alt="Srinivasa Rao Palla - Head of Credit &amp; Compliance Officer" class="gov-photo-img"
+                loading="lazy">
+              <a href="[PASTE_LINKEDIN_PROFILE_URL]" class="gov-linkedin-btn" data-member="srinivasaRaoPalla"
+                target="_blank" rel="noopener noreferrer" aria-label="View Srinivasa Rao Palla on LinkedIn"
+                title="View Srinivasa Rao Palla on LinkedIn">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.62 1.62 0 1 0 0-3.24 1.62 1.62 0 0 0 0 3.24m1.39 9.74v-8.37H5.07v8.37z" />
+                </svg>
+              </a>
+            </div>
+            <div class="gov-card-body">
+              <div class="gov-card-header">
+                <h3>Srinivasa Rao Palla</h3>
+                <div class="gov-role">Head of Credit &amp; Compliance Officer</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </section>
+  </reveal-wrapper>
+
+  <!-- ============================================================
+       SECTION 9: TESTIMONIALS & SOCIAL PROOF (Ref: karncy.com/live)
+       Trusted by Growing Businesses
+       ============================================================ -->
+  <reveal-wrapper mode="section">
+    <section class="section section-social-proof" id="testimonials">
+      <div class="container">
+
+        <!-- Section Header (Exact Karncy Structure) -->
+        <div class="social-proof-header">
+
+          <h2 class="social-proof-title">Trusted by growing businesses.</h2>
+          <p class="social-proof-desc">
+            From manufacturers and logistics operators to early-stage founders, VMF Finance has been the capital partner
+            behind India's quiet growth stories.
+          </p>
+        </div>
+
+        <!-- Main Testimonial Carousel Card -->
+        <div class="testimonial-carousel-wrap">
+          <div class="testimonial-card" id="testimonialCard">
+
+            <div class="testimonial-photo-wrap">
+              <div class="testimonial-logo-box" id="testiLogoBox">
+                <div class="testi-logo-badge" style="background: rgba(45, 123, 57, 0.1); color: var(--green);">QB</div>
+              </div>
+            </div>
+
+            <div class="testimonial-content">
+              <div class="testimonial-quote-box">
+                <p class="testimonial-quote" id="testiQuote">
+                  "VMF Finance played a key role in establishing our precision manufacturing facility in India. From
+                  regulatory compliance, government liaisoning, cross-border transaction advisory and end-to-end
+                  facility setup, VMF's support helped us navigate the complexities of establishing and running
+                  manufacturing operations in India. I appreciate their practical advice, professionalism and commitment
+                  to executing within time/budget."
+                </p>
+              </div>
+              <div class="testimonial-author-row">
+                <div>
+                  <p class="testimonial-author-name" id="testiAuthor">Krishna Nadella, Ph.D.</p>
+                  <p class="testimonial-author-role" id="testiRole">Co-founder &amp; CEO &bull; Qbic Materials, Inc. |
+                    United States</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Carousel Navigation Controls (Left Dots, Right Next/Prev Arrows) -->
+          <div class="testimonial-controls">
+            <div class="testimonial-dots" id="testiDots">
+              <button class="testi-dot active" onclick="goToTestimonial(0)" aria-label="Testimonial 1"></button>
+              <button class="testi-dot" onclick="goToTestimonial(1)" aria-label="Testimonial 2"></button>
+              <button class="testi-dot" onclick="goToTestimonial(2)" aria-label="Testimonial 3"></button>
+            </div>
+
+            <div class="testimonial-arrows">
+              <button class="testi-nav-btn prev-btn" onclick="prevTestimonial()" aria-label="Previous testimonial">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="m15 18-6-6 6-6" />
+                </svg>
+              </button>
+              <button class="testi-nav-btn next-btn" onclick="nextTestimonial()" aria-label="Next testimonial">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="m9 18 6-6-6-6" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </reveal-wrapper>
+
+  <!-- ============================================================
+       SECTION 11: REDESIGNED VMF CONTACT US SECTION
+       ============================================================ -->
+  <reveal-wrapper mode="section">
+    <section class="section contact-section" id="contact">
+      <div class="container contact-v2-container">
+        <div class="contact-v2-grid">
+
+          <!-- Left Column: Contact Information -->
+          <div class="contact-v2-left">
+            <div class="contact-v2-header">
+              <h2 class="contact-v2-title">
+                <span>Let’s Talk</span>
+                <span>Business Finance</span>
+              </h2>
+              <p class="contact-v2-desc">
+                Connect with our team for invoice financing, purchase order financing, and working capital enquiries.
+              </p>
+            </div>
+
+            <!-- 3 Vertically Spaced Contact Rows -->
+            <div class="contact-v2-touchpoints">
+
+              <!-- 1. Financing Enquiries -->
+              <div class="contact-v2-item">
+                <div class="contact-v2-icon-wrap" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2B8039" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="4" width="20" height="16" rx="2" />
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                  </svg>
+                </div>
+                <div class="contact-v2-item-content">
+                  <h3 class="contact-v2-item-title">Financing Enquiries</h3>
+                  <a href="mailto:credit@vmffinance.com" class="contact-v2-item-link">credit@vmffinance.com</a>
+                </div>
+              </div>
+
+              <!-- 2. Call Us -->
+              <div class="contact-v2-item">
+                <div class="contact-v2-icon-wrap" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2B8039" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                      d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                  </svg>
+                </div>
+                <div class="contact-v2-item-content">
+                  <h3 class="contact-v2-item-title">Call Us</h3>
+                  <a href="tel:+914023351234" class="contact-v2-item-link">+91 40 2335 1234</a>
+                  <p class="contact-v2-item-sub">Mon – Fri: 9:30 AM – 6:30 PM IST</p>
+                </div>
+              </div>
+
+              <!-- 3. Visit Our Office -->
+              <div class="contact-v2-item">
+                <div class="contact-v2-icon-wrap" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2B8039" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                </div>
+                <div class="contact-v2-item-content">
+                  <h3 class="contact-v2-item-title">Visit Our Office</h3>
+                  <address class="contact-v2-address">
+                    <strong>VMF Finance Limited</strong><br>
+                    5th Floor, Plot No. 43, The Park View,<br>
+                    Behind Preston Prime Mall, Lumbini Avenue,<br>
+                    Gachibowli, Hyderabad – 500032
+                  </address>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Right Column: Enquiry Form inside White Card -->
+          <div class="contact-v2-right">
+            <div class="contact-v2-card">
+
+              <form id="contactForm" onsubmit="handleContactSubmit(event)" class="contact-v2-form" novalidate>
+                <!-- First four fields in two columns -->
+                <div class="contact-v2-row">
+                  <!-- Full Name -->
+                  <div class="contact-v2-group">
+                    <label for="contactFullName" class="modern-label">Full Name *</label>
+                    <input type="text" id="contactFullName" name="name" class="contact-v2-input"
+                      placeholder="e.g. Ramesh Kumar" aria-label="Full Name" required autocomplete="name">
+                  </div>
+
+                  <!-- Email Address -->
+                  <div class="contact-v2-group">
+                    <label for="contactEmail" class="modern-label">Work Email *</label>
+                    <input type="email" id="contactEmail" name="email" class="contact-v2-input"
+                      placeholder="e.g. ramesh@company.com" aria-label="Email Address" required autocomplete="email">
+                  </div>
+                </div>
+
+                <div class="contact-v2-row">
+                  <!-- Phone Number -->
+                  <div class="contact-v2-group">
+                    <label for="contactPhone" class="modern-label">Phone Number *</label>
+                    <div class="contact-v2-phone-wrap">
+                      <div class="contact-v2-country-wrap">
+                        <select id="contactCountryCode" name="countryCode" class="contact-v2-country-select" aria-label="Country Code">
+                          <option value="+91" selected>IN +91</option>
+                          <option value="+1">US +1</option>
+                          <option value="+44">UK +44</option>
+                          <option value="+971">AE +971</option>
+                          <option value="+65">SG +65</option>
+                          <option value="+1">CA +1</option>
+                          <option value="+61">AU +61</option>
+                          <option value="+49">DE +49</option>
+                          <option value="+33">FR +33</option>
+                          <option value="+966">SA +966</option>
+                          <option value="+81">JP +81</option>
+                          <option value="+60">MY +60</option>
+                          <option value="+86">CN +86</option>
+                          <option value="+852">HK +852</option>
+                          <option value="+974">QA +974</option>
+                          <option value="+965">KW +965</option>
+                          <option value="+968">OM +968</option>
+                          <option value="+973">BH +973</option>
+                          <option value="+27">ZA +27</option>
+                          <option value="+31">NL +31</option>
+                          <option value="+41">CH +41</option>
+                          <option value="+39">IT +39</option>
+                          <option value="+880">BD +880</option>
+                          <option value="+94">LK +94</option>
+                          <option value="+977">NP +977</option>
+                        </select>
+                        <svg class="contact-v2-country-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none"
+                          stroke="currentColor" stroke-width="2.5">
+                          <polyline points="6 9 12 15 18 9" />
+                        </svg>
+                      </div>
+                      <input type="tel" id="contactPhone" name="phone" class="contact-v2-input contact-v2-phone-input"
+                        placeholder="10-digit mobile number" aria-label="Phone Number" pattern="[0-9]{6,15}" maxlength="16" minlength="6" required autocomplete="tel">
+                    </div>
+                  </div>
+
+                  <!-- Business Name (Optional) -->
+                  <div class="contact-v2-group">
+                    <label for="contactBusiness" class="modern-label">Business / Entity Name</label>
+                    <input type="text" id="contactBusiness" name="company" class="contact-v2-input"
+                      placeholder="e.g. Acme Tech Pvt Ltd" aria-label="Business Name (Optional)" autocomplete="organization">
+                  </div>
+                </div>
+
+                <!-- Full-width fields -->
+                <!-- Enquiry Type -->
+                <div class="contact-v2-group">
+                  <label for="contactEnquiryType" class="modern-label">Financing Facility Needed *</label>
+                  <div class="contact-v2-select-wrap">
+                    <select id="contactEnquiryType" name="enquiryType" class="contact-v2-select" aria-label="Enquiry Type" required>
+                      <option value="" disabled selected>Select Financing Facility *</option>
+                      <option value="Invoice Financing">Invoice Financing (Bill Discounting)</option>
+                      <option value="Purchase Order Financing">Purchase Order (PO) Financing</option>
+                      <option value="Working Capital Loan">Working Capital Business Loan</option>
+                      <option value="General Enquiry">General / Advisory Enquiry</option>
+                    </select>
+                    <svg class="contact-v2-select-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2.5">
+                      <polyline points="6 9 12 15 18 9" />
+                    </svg>
+                  </div>
+                </div>
+
+                <!-- How Can We Help? -->
+                <div class="contact-v2-group">
+                  <label for="contactMessage" class="modern-label">Funding Requirement Details *</label>
+                  <textarea id="contactMessage" name="message" class="contact-v2-textarea" rows="4"
+                    placeholder="Briefly state your expected ticket size, monthly turnover, and financing timeline..." aria-label="Funding Requirement Details" required></textarea>
+                </div>
+
+                <!-- Checkbox (Unchecked by default) -->
+                <div class="contact-v2-consent-wrap">
+                  <input type="checkbox" id="contactConsent" name="consent" required class="contact-v2-checkbox">
+                  <label for="contactConsent" class="contact-v2-consent-label">
+                    I agree to be contacted about my enquiry and have read the <a href="policies.html" target="_blank"
+                      class="contact-v2-policy-link">Privacy Policy</a>.
+                  </label>
+                </div>
+
+                <!-- Submit button -->
+                <div style="display: flex; width: 100%;">
+                  <button type="submit" class="contact-v2-submit-btn" id="contactSubmitBtn"><span>Submit</span></button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </reveal-wrapper>
+
+  <!-- ============================================================
+       SECTION 10: FREQUENTLY ASKED QUESTIONS (FAQ)
+       ============================================================ -->
+  <reveal-wrapper mode="section">
+    <section class="section faq-section" id="faq">
+      <div class="container">
+        <!-- Section Header -->
+        <div style="text-align: center; max-width: 780px; margin: 0 auto 40px auto;">
+          <h2
+            style="font-size: clamp(32px, 3.8vw, 48px); font-weight: 850; color: var(--navy); margin-top: 0; margin-bottom: 12px; letter-spacing: -0.03em; line-height: 1.18;">
+            Frequently Asked Questions</h2>
+          <p style="color: var(--text-muted); font-size: 18px; line-height: 1.62; max-width: 680px; margin: 0 auto;">
+            Clear, straightforward answers about our MSME financing facilities, eligibility, and process.
+          </p>
+        </div>
+
+        <!-- FAQ Accordion List -->
+        <div class="faq-container">
+          <!-- 01: Available Solutions -->
+          <div class="faq-item">
+            <button class="faq-header" onclick="toggleFaqItem(this)" aria-expanded="false">
+              <div class="faq-title-group">
+                <span class="faq-num">01</span>
+                <h3 class="faq-question">What financing solutions are available?</h3>
+              </div>
+              <div class="faq-chevron">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </div>
+            </button>
+            <div class="faq-body">
+              <p class="faq-answer">
+                We offer Invoice Financing, Purchase Order Financing, and Working Capital Loans to help eligible
+                businesses manage cash flow, fulfil orders, and meet daily expenses.
+              </p>
+            </div>
+          </div>
+
+          <!-- 02: Eligibility -->
+          <div class="faq-item">
+            <button class="faq-header" onclick="toggleFaqItem(this)" aria-expanded="false">
+              <div class="faq-title-group">
+                <span class="faq-num">02</span>
+                <h3 class="faq-question">Who can apply for financing?</h3>
+              </div>
+              <div class="faq-chevron">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </div>
+            </button>
+            <div class="faq-body">
+              <p class="faq-answer">
+                MSMEs across various sectors can apply. Eligibility depends on your business profile, financial
+                performance, banking history, repayment capacity, and applicable credit policies.
+              </p>
+            </div>
+          </div>
+
+          <!-- 03: Interest Rates & Charges -->
+          <div class="faq-item">
+            <button class="faq-header" onclick="toggleFaqItem(this)" aria-expanded="false">
+              <div class="faq-title-group">
+                <span class="faq-num">03</span>
+                <h3 class="faq-question">What interest rates and charges apply?</h3>
+              </div>
+              <div class="faq-chevron">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </div>
+            </button>
+            <div class="faq-body">
+              <p class="faq-answer">
+                Pricing and charges depend on the facility and assessed credit risk. Applicable interest, fees, APR, and
+                repayment terms are disclosed in the sanction documents and Key Facts Statement, wherever applicable.
+              </p>
+            </div>
+          </div>
+
+          <!-- 04: Documents Required -->
+          <div class="faq-item">
+            <button class="faq-header" onclick="toggleFaqItem(this)" aria-expanded="false">
+              <div class="faq-title-group">
+                <span class="faq-num">04</span>
+                <h3 class="faq-question">What documents are required to apply?</h3>
+              </div>
+              <div class="faq-chevron">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </div>
+            </button>
+            <div class="faq-body">
+              <p class="faq-answer">
+                Documents may include business KYC, financial statements, bank statements, and GST information.
+                Depending on the product, purchase orders, invoices, delivery evidence, and buyer confirmations may also
+                be required.
+              </p>
+            </div>
+          </div>
+
+          <!-- 05: Repayment Schedule -->
+          <div class="faq-item">
+            <button class="faq-header" onclick="toggleFaqItem(this)" aria-expanded="false">
+              <div class="faq-title-group">
+                <span class="faq-num">05</span>
+                <h3 class="faq-question">How is repayment arranged?</h3>
+              </div>
+              <div class="faq-chevron">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </div>
+            </button>
+            <div class="faq-body">
+              <p class="faq-answer">
+                Repayment follows the schedule and collection arrangement agreed for your facility. These details are
+                provided in the loan documents before you accept the terms.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </reveal-wrapper>
+  </main>
+
+  
+  <!-- ============================================================
+       PRE-FOOTER CTA RECTANGLE (OVERLAPPING FOOTER STYLE)
+       ============================================================ -->
+  <section class="prefooter-journey-sec">
+    <div class="container prefooter-container">
+      <div class="prefooter-rect-card">
+        <!-- Offset backing shadow block -->
+        <div class="prefooter-rect-shadow" aria-hidden="true"></div>
+
+        <!-- Main colored rectangle -->
+        <div class="prefooter-rect-body">
+          <div class="prefooter-rect-text">
+            <h3 class="prefooter-rect-title">Start your journey with VMF</h3>
+          </div>
+          <div class="prefooter-rect-action">
+            <a href="#contact" class="prefooter-rect-btn" onclick="document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });">Contact now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PERFECTED INSTITUTIONAL FOOTER
+       ============================================================ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1: About VMF & Company Details -->
+        <div>
+          <a href="index.html" class="footer-brand" onclick="handleLogoClick(event)"
+            style="display: inline-block; text-decoration: none;">
+            <img src="assets/vmf-logo-white.png" alt="VMF Finance Limited" class="footer-logo-img">
+          </a>
+          <p style="line-height: 1.6; margin-bottom: 16px; font-size: 13px; color: #94A3B8;">
+            Financing for eligible MSMEs to manage cash flow, fulfil orders, and meet business needs.
+          </p>
+          <div class="footer-col-title" style="margin-top: 14px;">Company Details</div>
+          <div style="font-size: 12px; color: #94A3B8; line-height: 1.7; margin-bottom: 10px;">
+            CIN: <strong style="color: #CBD5E1;">U67120TG1994PLC168008</strong><br>
+            RBI CoR: <strong style="color: #CBD5E1;">N-09.00484</strong>
+          </div>
+          <div
+            style="display: inline-flex; align-items: center; gap: 6px; font-size: 11.5px; background: rgba(255,255,255,0.06); padding: 4px 10px; border-radius: 999px; color: var(--lime);">
+            <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--lime);"></span>
+            Non-Deposit Taking Base Layer NBFC
+          </div>
+        </div>
+
+        <!-- Col 2: Our Products -->
+        <div>
+          <div class="footer-col-title">Our Products</div>
+          <ul class="footer-links-list">
+            <li><a href="#products" onclick="openProductFromFooter(event, 'inv')"><span>&bull;</span> Invoice Financing</a></li>
+            <li><a href="#products" onclick="openProductFromFooter(event, 'po')"><span>&bull;</span> Purchase Order Financing</a></li>
+            <li><a href="#products" onclick="openProductFromFooter(event, 'wc')"><span>&bull;</span> Working Capital Loans</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Quick Links (Down by down vertical list) -->
+        <div>
+          <div class="footer-col-title">Quick Links</div>
+          <ul class="footer-links-list">
+            <li><a href="#about"><span>&bull;</span> About Us</a></li>
+            <li><a href="#how-we-finance"><span>&bull;</span> How It Works</a></li>
+            <li><a href="#industries"><span>&bull;</span> Industries</a></li>
+            <li><a href="#faq"><span>&bull;</span> FAQs</a></li>
+            <li><a href="#contact"><span>&bull;</span> Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Policies -->
+        <div>
+          <div class="footer-col-title">Policies</div>
+          <ul class="footer-links-list">
+            <li><a href="policies.html#underwriting-policy"><span>&bull;</span> We Look Beyond the Balance Sheet: Underwriting Policy</a></li>
+            <li><a href="policies.html#fair-practices-code"><span>&bull;</span> Fair Practices Code (FPC) &amp; Transparent Sanctions</a></li>
+            <li><a href="policies.html#interest-rate-policy"><span>&bull;</span> Interest Rate Model &amp; Schedule of Charges</a></li>
+            <li><a href="policies.html#grievance-redressal"><span>&bull;</span> Customer Grievance Redressal Mechanism &amp; 3-Tier Matrix</a></li>
+            <li><a href="policies.html#kyc-aml-policy"><span>&bull;</span> KYC &amp; Anti-Money Laundering (AML) Compliance</a></li>
+            <li><a href="policies.html#privacy-policy"><span>&bull;</span> Privacy, Data Protection &amp; Commercial Confidentiality</a></li>
+            <li><a href="policies.html#statutory-declarations"><span>&bull;</span> Statutory Regulatory Declarations &amp; RBI Section 45-IA Caveat</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 5: Customer Support -->
+        <div>
+          <div class="footer-col-title">Customer support</div>
+          <ul class="footer-links-list">
+            <li><a href="#contact" onclick="document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });">Contact us</a></li>
+            <li><a href="policies.html#grievance-redressal">Grievance redressal</a></li>
+            <li><a href="https://cms.rbi.org.in" target="_blank" rel="noopener noreferrer">RBI CMS Portal <span style="font-family: system-ui, sans-serif; font-size: 13px; margin-left: 2px;">↗</span></a></li>
+            <li><a href="https://sachet.rbi.org.in" target="_blank" rel="noopener noreferrer">Sachet Portal <span style="font-family: system-ui, sans-serif; font-size: 13px; margin-left: 2px;">↗</span></a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- Grievance Nodal Officer Highlight Strip -->
+      <div class="footer-nodal-strip">
+        <div>
+          <strong>Principal Nodal Officer:</strong> Mr. Srinivasa Rao Palla (Head of Credit &amp; Compliance Officer)
+          &bull;
+          Email: <a href="mailto:compliance@vmffinance.com">compliance@vmffinance.com</a>
+        </div>
+      </div>
+
+      <!-- Statutory Disclaimers -->
+      <div class="footer-disclaimer-box">
+        <p style="margin-bottom: 8px; color: #CBD5E1; font-weight: 500;">
+          Financing is subject to eligibility, credit approval, and agreed terms.
+        </p>
+        <p style="margin-bottom: 0;">
+          <strong>Disclaimer &amp; Regulatory Statement:</strong> VMF Finance Limited is a Non-Banking Financial Company
+          –
+          Investment and Credit Company (NBFC-ICC) registered with the Reserve Bank of India under Section 45-IA of the
+          Reserve Bank of India Act, 1934. The Reserve Bank of India does not accept any responsibility or guarantee
+          about the present position as to the financial soundness of the Company or for the correctness of any of the
+          statements or representations made or opinions expressed by the Company and for discharge of liability by the
+          Company.
+        </p>
+      </div>
+
+      <!-- Sub-Footer Bottom Bar -->
+      <div class="footer-bottom-bar">
+        <div>
+          &copy; 2026 <strong>VMF Finance Limited</strong>. All rights reserved.
+        </div>
+        <div class="footer-bottom-links">
+          <a href="policies.html#fair-practices-code">Fair Practices Code</a>
+          <span>&bull;</span>
+          <a href="policies.html#interest-rate-policy">Rates &amp; Charges</a>
+          <span>&bull;</span>
+          <a href="policies.html#privacy-policy">Privacy Policy</a>
+          <span>&bull;</span>
+          <a href="policies.html#grievance-redressal">Grievance Redressal</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       EXPLORE NOW PRODUCT STEPS MODAL (w: 80%, height reduced)
+       Styled per Institutional Reference (Assessment, Capital & Operational Framework)
+       ============================================================ -->
+  <div class="modal-backdrop" id="exploreStepsModal" onclick="closeExploreStepsModalOnBackdrop(event)"
+    data-lenis-prevent>
+    <div class="explore-steps-dialog" data-lenis-prevent>
+      <!-- Top Dark Navy Header (No switcher buttons, dedicated to clicked product) -->
+      <div class="exp-modal-header-bar">
+        <div class="exp-modal-header-top">
+          <div>
+            <span class="exp-modal-chip" id="expModalChip">Operational Framework</span>
+            <h3 id="expModalTitle" class="exp-modal-title">Invoice Financing</h3>
+          </div>
+          <button class="exp-modal-close-btn" onclick="closeExploreStepsModal()" aria-label="Close dialog">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Scrollable Modal Body (Direct Native & Wheel Scroll Enabled) -->
+      <div class="explore-modal-body" id="expModalBody" data-lenis-prevent tabindex="0">
+        <!-- Top 2-Column Info Grid: Executive Summary & Documents -->
+        <div class="exp-top-info-grid">
+          <!-- 1. Facility Overview Box (Dark navy left accent bar) -->
+          <div class="exp-exec-box">
+            <div class="exp-label-exec">EXECUTIVE SUMMARY</div>
+            <h4 id="expModalPitch" class="exp-pitch-exec">Turn eligible invoices into working capital</h4>
+            <p id="expModalDesc" class="exp-text-exec">
+              Get funds against eligible invoices from approved corporate buyers. Cover the gap between delivery and
+              payment to keep your supply cycle moving.
+            </p>
+          </div>
+
+          <!-- 2. Documents Box (Growth Green left accent bar) -->
+          <div class="exp-docs-box">
+            <div class="exp-label-docs">INDICATIVE DOCUMENTS</div>
+            <p id="expModalDocs" class="exp-text-docs">
+              Business KYC, GST and financial details, bank statements, purchase orders, invoices, delivery proof and
+              buyer confirmation, as applicable.
+            </p>
+          </div>
+        </div>
+
+        <hr class="exp-divider" />
+
+        <!-- 3. Step-by-Step Workflow Section (Reference Style) -->
+        <div class="exp-section">
+          <div class="exp-section-header">
+            <h4 class="exp-section-title">How Our Financing Works — Step-by-Step Process</h4>
+            <span class="exp-section-subtitle">Institutional Execution Workflow</span>
+          </div>
+          <div id="expModalStepsGrid">
+            <!-- 5 Steps populated dynamically per Reference Timeline by script -->
+          </div>
+        </div>
+
+        <hr class="exp-divider" />
+
+        <!-- 4. Policy & Underwriting Guidance -->
+        <div class="exp-section">
+          <div class="exp-policy-box">
+            <div class="exp-policy-header">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              </svg>
+              <strong>Policy &amp; Underwriting Guidance</strong>
+            </div>
+            <p id="expModalPolicyNote">
+              All invoices, buyers, advance amounts, tenures and repayment arrangements are subject to VMF's eligibility
+              criteria and approval.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sticky Footer Bar with Centered CTA Button -->
+      <div class="explore-modal-footer">
+        <button class="exp-partner-btn" id="expModalApplyBtn" onclick="applyFromExploreModal()"><span id="expModalApplyBtnText">Apply Now</span></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       APPLICATION MODAL (POPUP)
+       ============================================================ -->
+  <div class="modal-backdrop" id="appModal" onclick="closeModalOnBackdrop(event)">
+    <div class="modal-dialog">
+      <button class="modal-close" onclick="closeAppModal()">&times;</button>
+      <div style="margin-bottom: 18px;">
+        <h3 id="modalFacilityTitle" style="font-size: 22px; color: var(--navy); margin-top: 0;">Apply for MSME Financing
+        </h3>
+        <p style="font-size: 13px; color: var(--text-muted);">
+          Our credit desk will review your submission and initiate transaction evaluation.
+        </p>
+      </div>
+
+      <form onsubmit="handleModalSubmit(event)">
+        <div class="form-group">
+          <label for="modalFacilityInput">Selected Facility</label>
+          <input type="text" id="modalFacilityInput" class="form-control" readonly
+            style="font-weight: 700; color: var(--navy); background: #EEF2F6;">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="mBusinessName">Business Name *</label>
+            <input type="text" id="mBusinessName" class="form-control" placeholder="Company Legal Name" required>
+          </div>
+          <div class="form-group">
+            <label for="mContactPerson">Contact Person *</label>
+            <input type="text" id="mContactPerson" class="form-control" placeholder="Full Name" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="mPhone">Phone Number *</label>
+            <input type="tel" id="mPhone" class="form-control" placeholder="+91 98765 43210" required>
+          </div>
+          <div class="form-group">
+            <label for="mFundingAmt">Required Funding Amount *</label>
+            <input type="text" id="mFundingAmt" class="form-control" placeholder="e.g. ₹ 45 Lakhs" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="mCity">City / State</label>
+          <input type="text" id="mCity" class="form-control" placeholder="e.g. Hyderabad, Telangana">
+        </div>
+
+        <div style="font-size: 11.5px; color: var(--text-muted); margin-bottom: 18px;">
+          ✓ Fully compliant with RBI regulatory disclosure mandates.
+        </div>
+
+        <div style="display: flex; justify-content: center; width: 100%;">
+          <button type="submit" class="btn-cta" style="width: auto; min-width: 140px; justify-content: center; padding: 12px 36px; border-radius: 999px;"><span>Submit</span></button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Success Confirmation Modal -->
+  <div class="modal-backdrop" id="successModal">
+    <div class="modal-dialog" style="text-align: center; max-width: 400px; padding: 28px 24px;">
+      <div
+        style="width: 56px; height: 56px; background: var(--green-light); color: var(--green); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; margin: 0 auto 16px auto;">
+        ✓
+      </div>
+      <h3 style="font-size: 22px; color: var(--navy); margin-bottom: 8px;">Application Registered</h3>
+      <p style="font-size: 14px; color: var(--text-muted); line-height: 1.6; margin-bottom: 16px;">
+        Thank you for submitting your funding requirement to VMF Finance Limited. Our underwriting desk will evaluate
+        your transaction details and reach out within 24–48 hours.
+      </p>
+      <div
+        style="background: var(--bg); border: 1px dashed var(--border); border-radius: 8px; padding: 12px; font-size: 12px; color: var(--navy); margin-bottom: 20px;">
+        Docket Reference: <strong id="successDocketId" style="color: var(--green);">VMF-APP-2026-8841</strong>
+      </div>
+      <button class="btn-cta" style="width: 100%; justify-content: center;" onclick="closeSuccessModal()">Close</button>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       FLOATING INTERACTIVE CHATBOT (VMF FINANCING ASSISTANT)
+       ============================================================ -->
+  <div class="vmf-chatbot-widget" id="vmfChatbot">
+    <!-- Trigger Button -->
+    <button class="vmf-chat-trigger" id="vmfChatTrigger" onclick="toggleChatbot()" aria-label="Open VMF Assistant">
+      <div id="chatTriggerIcon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+        </svg>
+      </div>
+      <span class="chat-trigger-pulse"></span>
+    </button>
+
+    <!-- Chat Window Modal -->
+    <div class="vmf-chat-window" id="vmfChatWindow" style="display: none;">
+      <div class="chat-header">
+        <div class="chat-header-info">
+          <div class="chat-bot-avatar">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2"><path d="M12 2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2 2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"/><rect x="4" y="8" width="16" height="12" rx="2"/><circle cx="9" cy="13" r="1.5" fill="#7BB638"/><circle cx="15" cy="13" r="1.5" fill="#7BB638"/><path d="M9 17h6"/></svg>
+          </div>
+          <div>
+            <div class="chat-bot-title">VMF Finance Assistant</div>
+            <div class="chat-bot-status"><span class="chat-online-dot"></span> Online &bull; Instant Support</div>
+          </div>
+        </div>
+        <button class="chat-close-btn" onclick="toggleChatbot()" aria-label="Close Chat">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+
+      <div class="chat-messages" id="chatMessages">
+        <div class="chat-msg bot-msg">
+          <div class="chat-bubble">
+            <strong>Hello! 👋 Welcome to VMF Finance.</strong><br>
+            How can I help you today? Explore our 3 financing products, check required documents, or ask any doubts about eligibility and process.
+          </div>
+        </div>
+
+        <div class="chat-quick-chips" id="chatQuickChips">
+          <button type="button" class="chat-chip" onclick="handleQuickChip('products')">💼 Our 3 Products</button>
+          <button type="button" class="chat-chip" onclick="handleQuickChip('invoice')">📄 Invoice Financing</button>
+          <button type="button" class="chat-chip" onclick="handleQuickChip('po')">📦 PO Financing</button>
+          <button type="button" class="chat-chip" onclick="handleQuickChip('wc')">⚡ Working Capital</button>
+          <button type="button" class="chat-chip" onclick="handleQuickChip('docs')">📑 Documents Needed</button>
+          <button type="button" class="chat-chip" onclick="handleQuickChip('eligibility')">🎯 Eligibility</button>
+          <button type="button" class="chat-chip" onclick="handleQuickChip('rates')">📈 Rates &amp; Terms</button>
+          <button type="button" class="chat-chip" onclick="handleQuickChip('apply')">🚀 Apply Now</button>
+        </div>
+      </div>
+
+      <form class="chat-input-bar" id="chatForm" onsubmit="handleChatSubmit(event)">
+        <input type="text" id="chatUserInput" placeholder="Type your question or doubt..." autocomplete="off">
+        <button type="submit" class="chat-send-btn" aria-label="Send">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Smooth Scroll & Animation Libraries (Lenis & GSAP) -->
+  <script src="assets/lenis.min.js"></script>
+  <script src="assets/gsap.min.js"></script>
+  <script src="assets/ScrollTrigger.min.js"></script>
+  <script src="assets/CustomEase.min.js"></script>
+  <!-- Linked External JavaScript File -->
+  <script src="script.js"></script>
+</body>
+
+</html>
