@@ -222,24 +222,49 @@ h1, h2, h3, h4, h5, h6,
 }
 
 /* ==========================================================================
-   2. HERO SECTION ENHANCEMENT
+   2. HERO SECTION ENHANCEMENT WITH LIGHT FADING OFFICE BUILDING BACKDROP
    ========================================================================== */
 .hero-sec {
-  background: radial-gradient(ellipse 80% 60% at 50% -10%, rgba(16, 185, 129, 0.08) 0%, rgba(5, 36, 79, 0.03) 60%, #FFFFFF 100%);
+  background-color: #FFFFFF;
   position: relative;
   overflow: hidden;
   padding-top: 50px;
   padding-bottom: 60px;
 }
 
+/* Light office building architectural backdrop fading smoothly into the next section */
 .hero-sec::before {
   content: '';
   position: absolute;
-  top: 0;
+  inset: 0;
+  background-image: 
+    linear-gradient(180deg, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0.70) 50%, #FFFFFF 100%),
+    url('assets/finance-bg.jpg');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  opacity: 0.22; /* Light subtle institutional presence */
+  pointer-events: none;
+  z-index: 0;
+  -webkit-mask-image: linear-gradient(to bottom, #000000 0%, #000000 65%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000000 0%, #000000 65%, transparent 100%);
+}
+
+.hero-sec > .container {
+  position: relative;
+  z-index: 1; /* Keep content crisp and prominent above the backdrop */
+}
+
+/* Hero Bottom Fade Layer smoothly transitioning into the 2nd section */
+.hero-bottom-white-layer {
+  position: absolute;
+  bottom: 0;
   left: 0;
   right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(45, 123, 57, 0.2), transparent);
+  height: 200px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.6) 40%, #FFFFFF 100%);
+  pointer-events: none;
+  z-index: 1;
 }
 
 /* Micro Trust Tag in Hero */
