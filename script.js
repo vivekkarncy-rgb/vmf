@@ -2658,6 +2658,11 @@ function handleChatSubmit(e) {
     botReply = `<strong>Apply Online:</strong><br>
     Click below to navigate directly to our quick online application form.<br><br>
     <button class="chat-action-btn" onclick="scrollToContactForm()">Go to Application Form</button>`;
+  } else if (lower.includes('career') || lower.includes('job') || lower.includes('hiring') || lower.includes('work with us') || lower.includes('resume') || lower.includes('cv')) {
+    botReply = `<strong>Careers at VMF Finance:</strong><br>
+    We are always seeking talented professionals across credit underwriting, enterprise sales, risk management, and fintech engineering.<br><br>
+    &bull; Select <strong>Careers</strong> in the enquiry form or email your profile to <a href="mailto:careers@vmffinance.com" style="color: #2D7B39; font-weight: 600;">careers@vmffinance.com</a>.<br><br>
+    <button class="chat-action-btn" onclick="(() => { scrollToContactForm(); const s = document.getElementById('contactEnquiryType'); if(s) s.value = 'Careers'; })()">Submit Profile in Form</button>`;
   } else {
     botReply = `Thank you for your inquiry! VMF Finance Limited provides <strong>Invoice Financing</strong>, <strong>PO Financing</strong>, and <strong>Working Capital Loans</strong> for MSMEs.<br><br>
     You can explore our facilities, check documents, or connect directly with our advisory desk.<br><br>
