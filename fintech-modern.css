@@ -379,11 +379,65 @@ h1, h2, h3, h4, h5, h6,
   background-color: var(--vmf-emerald);
 }
 
-/* CardSwap 3D Container Elevation */
+/* ==========================================================================
+   CardSwap Hero 3D Component - Full Visibility & Crisp Clean Border (No Shadows)
+   ========================================================================== */
+.hero-graphic-wrap,
+#heroGraphicWrap {
+  position: relative;
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow: visible !important; /* Allow card deck to be fully visible without clipping */
+  contain: none !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: none !important; /* Remove harsh right shift that pushed cards off-screen */
+  margin: 0 !important;
+}
+
+@media (min-width: 992px) {
+  .hero-graphic-wrap,
+  #heroGraphicWrap {
+    transform: none !important;
+    margin-left: 0 !important;
+  }
+}
+
+/* CardSwap Slots & Cards: Remove heavy shadows, add thin light crisp border */
+.card-swap {
+  --swap-shadow: none !important;
+  overflow: visible !important;
+}
+
+.card-swap-slot {
+  box-shadow: none !important;
+  border: 1px solid #e2e8f0 !important; /* Light thin border for each card */
+  border-radius: 18px !important;
+  background: #ffffff !important;
+  transition: border-color 0.2s ease, transform 0.2s ease !important;
+}
+
+.card-swap-slot:hover {
+  box-shadow: none !important;
+  border-color: #cbd5e1 !important;
+}
+
 .card-swap-card {
-  border-radius: 20px !important;
-  box-shadow: 0 20px 40px -10px rgba(5, 36, 79, 0.18), 0 0 0 1px rgba(255, 255, 255, 0.6) inset !important;
+  border-radius: 18px !important;
+  box-shadow: none !important;
+  border: 1px solid rgba(0, 0, 0, 0.06) !important; /* Subtle inner containment border */
   overflow: hidden;
+  background: #ffffff !important;
+}
+
+.card-swap-card-rim {
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.card-swap-shade {
+  display: none !important; /* Remove dark shading layer on stacked cards */
 }
 
 /* ==========================================================================
@@ -1295,9 +1349,7 @@ reveal-wrapper[mode="section"] {
   box-sizing: border-box;
 }
 
-/* Contain all 3D transforms strictly within screen width */
-.hero-graphic-wrap,
-#heroGraphicWrap,
+/* Contain carousel sections strictly within screen width */
 .concave-carousel-wrap,
 #concaveCarouselWrapper,
 .concave-carousel,
