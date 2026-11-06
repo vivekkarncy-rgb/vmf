@@ -262,9 +262,12 @@ h1, h2, h3, h4, h5, h6,
   left: 0;
   right: 0;
   height: 200px;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.6) 40%, #FFFFFF 100%);
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.80) 50%, #FFFFFF 100%) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
   pointer-events: none;
-  z-index: 1;
+  z-index: 2;
+  border: none !important;
 }
 
 /* Micro Trust Tag in Hero */
@@ -470,7 +473,7 @@ h1, h2, h3, h4, h5, h6,
    ========================================================================== */
 .wc-calc-section {
   padding: 40px 0 60px 0;
-  background: #FFFFFF;
+  background: transparent !important;
   position: relative;
 }
 
@@ -1440,7 +1443,7 @@ h1, h2, h3, h4, h5, h6,
   background: #FFFFFF;
 }
 .contact-section {
-  background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
+  background: transparent !important;
 }
 
 .contact-v2-grid {

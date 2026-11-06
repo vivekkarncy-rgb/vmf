@@ -683,19 +683,18 @@ a:hover {
   bottom: 0;
   left: 0;
   right: 0;
-  height: 160px;
+  height: 200px;
   background: linear-gradient(
     to bottom,
     rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.40) 30%,
-    rgba(255, 255, 255, 0.75) 60%,
-    rgba(224, 238, 248, 0.28) 85%,
-    rgba(224, 238, 248, 0.40) 100%
-  );
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+    rgba(255, 255, 255, 0.80) 50%,
+    #FFFFFF 100%
+  ) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
   pointer-events: none;
   z-index: 2;
+  border: none !important;
 }
 
 /* Hero Bottom Glow Blur Divider */
@@ -7099,7 +7098,7 @@ reveal-wrapper[mode="section"]>.section,
 
 /* ============================================================
    MAIN CONTENT FLOW: ALL-IN-ONE CONTINUOUS SOFT GRADIENT (PRODUCTS TO FAQS)
-   Decreased gradient opacity over clean white base; no separate card sections.
+   Decreased gradient opacity over clean white base; zero harsh seams or line cuts.
    ============================================================ */
 .main-content-flow {
   position: relative;
@@ -7107,12 +7106,17 @@ reveal-wrapper[mode="section"]>.section,
   background-color: #FFFFFF !important;
   background-image: linear-gradient(
     180deg,
-    rgba(224, 238, 248, 0.40) 0%,     /* Gentle pale icy blue at Products */
-    rgba(226, 242, 238, 0.30) 20%,    /* How Our Financing Works */
-    rgba(216, 235, 226, 0.28) 45%,    /* Industries & About */
-    rgba(206, 228, 215, 0.32) 70%,    /* Governance & Testimonials */
-    rgba(196, 221, 205, 0.38) 90%,    /* Contact Us */
-    rgba(190, 216, 199, 0.44) 100%    /* FAQ */
+    #FFFFFF 0%,                               /* 100% pure seamless match with hero bottom */
+    #FFFFFF 5%,                               /* Pure white holds smoothly through top spacing */
+    rgba(240, 247, 252, 0.25) 12%,           /* Gentle easing begins imperceptibly */
+    rgba(224, 238, 248, 0.35) 22%,           /* Products & Structured Solutions */
+    rgba(226, 242, 238, 0.28) 36%,           /* How Our Financing Works */
+    rgba(216, 235, 226, 0.25) 50%,           /* Who We Are */
+    rgba(216, 235, 226, 0.25) 64%,           /* Working Capital Calculator */
+    rgba(206, 228, 215, 0.28) 78%,           /* Leadership & Governance */
+    rgba(196, 221, 205, 0.32) 88%,           /* Testimonials & Contact */
+    rgba(240, 246, 250, 0.35) 96%,           /* FAQ seamless easing */
+    #F8FAFC 100%                              /* 100% seamless match with pre-footer banner */
   ) !important;
 }
 
@@ -7125,6 +7129,8 @@ reveal-wrapper[mode="section"]>.section,
 #industries,
 .about-section,
 #about,
+.wc-calc-section,
+#calculator,
 #governance,
 .governance-section,
 .section-social-proof,
@@ -7135,6 +7141,8 @@ reveal-wrapper[mode="section"]>.section,
 #faq {
   background: transparent !important;
   background-image: none !important;
+  border-top: none !important;
+  border-bottom: none !important;
 }
 
 
