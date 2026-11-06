@@ -3298,7 +3298,7 @@ if (document.readyState === 'loading') {
 }
 
 /* ------------------------------------------------------------
-   Desktop Background Pipeline Flow Track (1 -> 2 -> 3 -> 6 -> 5 -> 4)
+   Desktop Background Pipeline Flow Track (1 -> 2 -> 3 -> 4 -> 5 -> 6)
    ------------------------------------------------------------ */
 function updatePipelineFlowTrack() {
   const wrap = document.querySelector('.pro-pipeline-wrap');
@@ -3315,11 +3315,11 @@ function updatePipelineFlowTrack() {
   const c1 = wrap.querySelector('.pro-pipeline-card[data-step="1"]');
   const c2 = wrap.querySelector('.pro-pipeline-card[data-step="2"]');
   const c3 = wrap.querySelector('.pro-pipeline-card[data-step="3"]');
-  const c6 = wrap.querySelector('.pro-pipeline-card[data-step="6"]');
-  const c5 = wrap.querySelector('.pro-pipeline-card[data-step="5"]');
   const c4 = wrap.querySelector('.pro-pipeline-card[data-step="4"]');
+  const c5 = wrap.querySelector('.pro-pipeline-card[data-step="5"]');
+  const c6 = wrap.querySelector('.pro-pipeline-card[data-step="6"]');
 
-  if (!c1 || !c2 || !c3 || !c6 || !c5 || !c4) return;
+  if (!c1 || !c2 || !c3 || !c4 || !c5 || !c6) return;
 
   const wrapRect = wrap.getBoundingClientRect();
   const getBox = (el) => {
@@ -3339,27 +3339,27 @@ function updatePipelineFlowTrack() {
   const p1 = getBox(c1);
   const p2 = getBox(c2);
   const p3 = getBox(c3);
-  const p6 = getBox(c6);
-  const p5 = getBox(c5);
   const p4 = getBox(c4);
+  const p5 = getBox(c5);
+  const p6 = getBox(c6);
 
   svg.setAttribute('width', wrapRect.width);
   svg.setAttribute('height', wrapRect.height);
   svg.setAttribute('viewBox', `0 0 ${wrapRect.width} ${wrapRect.height}`);
 
   const row1Y = p1.y;
-  const row2Y = p6.y;
-  const turnX = Math.min(wrapRect.width - 12, Math.max(p3.right + 26, p6.right + 26));
+  const row2Y = p4.y;
+  const turnX = Math.min(wrapRect.width - 12, Math.max(p3.right + 26, p4.right + 26));
   const radius = Math.min(32, Math.abs(row2Y - row1Y) / 2);
 
-  // Serpentine Path: 1 -> 2 -> 3 -> 6 -> 5 -> 4
+  // Serpentine Path: 1 -> 2 -> 3 -> 4 -> 5 -> 6
   const d = `
     M ${p1.x} ${row1Y}
     L ${turnX - radius} ${row1Y}
     Q ${turnX} ${row1Y} ${turnX} ${row1Y + radius}
     L ${turnX} ${row2Y - radius}
     Q ${turnX} ${row2Y} ${turnX - radius} ${row2Y}
-    L ${p4.x} ${row2Y}
+    L ${p6.x} ${row2Y}
   `.replace(/\s+/g, ' ').trim();
 
   const basePath = svg.querySelector('.pro-pipeline-flow-base');
@@ -3376,12 +3376,12 @@ function updatePipelineFlowTrack() {
       { x: (p1.right + p2.left) / 2, y: row1Y, dir: 'right' },
       // Gap 2 -> 3 (Right)
       { x: (p2.right + p3.left) / 2, y: row1Y, dir: 'right' },
-      // Right Curve Turn (Down)
+      // Right Curve Turn (Down from 3 to 4)
       { x: turnX, y: (row1Y + row2Y) / 2, dir: 'down' },
-      // Gap 6 -> 5 (Left)
-      { x: (p6.left + p5.right) / 2, y: row2Y, dir: 'left' },
-      // Gap 5 -> 4 (Left)
-      { x: (p5.left + p4.right) / 2, y: row2Y, dir: 'left' }
+      // Gap 4 -> 5 (Left from 4 to 5)
+      { x: (p4.left + p5.right) / 2, y: row2Y, dir: 'left' },
+      // Gap 5 -> 6 (Left from 5 to 6)
+      { x: (p5.left + p6.right) / 2, y: row2Y, dir: 'left' }
     ];
 
     arrowsGroup.innerHTML = arrows.map(a => {
