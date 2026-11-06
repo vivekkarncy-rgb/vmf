@@ -395,6 +395,23 @@ h1, h2, h3, h4, h5, h6,
   }
 }
 
+@media (max-width: 600px) {
+  .wc-calc-card {
+    padding: 24px 16px;
+    border-radius: 18px;
+  }
+  .wc-calc-results-card {
+    padding: 24px 18px;
+  }
+  .wc-facility-tabs {
+    flex-direction: column;
+    gap: 6px;
+  }
+  .wc-calc-title {
+    font-size: 22px;
+  }
+}
+
 .wc-calc-heading-area {
   margin-bottom: 24px;
 }
@@ -1111,6 +1128,154 @@ h1, h2, h3, h4, h5, h6,
   align-items: center;
   flex-wrap: wrap;
   gap: 16px;
+}
+
+/* ==========================================================================
+   10. 100% VH VIEWPORT ARCHITECTURE & SECTION FRAMING
+   Every section expands to 100vh with seamless vertical centering
+   ========================================================================== */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+reveal-wrapper[mode="section"] {
+  display: flex !important;
+  flex-direction: column;
+  width: 100% !important;
+  min-height: 100vh;
+}
+
+.hero-sec {
+  min-height: 100vh !important;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 100px !important;
+  padding-bottom: 50px !important;
+  box-sizing: border-box;
+}
+
+.wc-calc-section {
+  min-height: 100vh;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 0;
+  box-sizing: border-box;
+}
+
+.section,
+.finance-flow-section,
+.ind-pipeline-section,
+.about-section,
+.contact-section,
+.faq-section {
+  min-height: 100vh;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 70px 0;
+  width: 100%;
+}
+
+.prefooter-journey-sec {
+  min-height: 70vh;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 60px 0;
+  width: 100%;
+}
+
+/* Ensure inner containers span nicely inside 100vh sections */
+.hero-sec > .container,
+.wc-calc-section > .container,
+.wc-calc-container,
+.section > .container,
+.finance-flow-section > .container,
+.ind-pipeline-section > .container,
+.about-section > .container,
+.contact-section > .container,
+.faq-section > .container,
+.prefooter-journey-sec > .container {
+  width: 100%;
+  margin: auto 0;
+}
+
+/* ==========================================================================
+   11. REAL-TIME FORM VALIDATION SYSTEM & ERROR TOOLTIPS
+   ========================================================================== */
+.contact-v2-input.is-valid,
+.contact-v2-select.is-valid,
+.contact-v2-textarea.is-valid,
+.form-control.is-valid {
+  border-color: #10B981 !important;
+  background-color: #F0FDF4 !important;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15) !important;
+}
+
+.contact-v2-input.is-invalid,
+.contact-v2-select.is-invalid,
+.contact-v2-textarea.is-invalid,
+.form-control.is-invalid {
+  border-color: #EF4444 !important;
+  background-color: #FEF2F2 !important;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15) !important;
+}
+
+.field-error-msg {
+  display: none;
+  color: #DC2626;
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: 5px;
+  animation: vmfFadeInDown 0.2s ease-out forwards;
+}
+
+.field-error-msg.visible {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.field-error-msg svg {
+  flex-shrink: 0;
+}
+
+@keyframes vmfFadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Contact Spinner for Active Submission */
+.contact-spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #FFFFFF;
+  animation: vmfSpin 0.7s linear infinite;
+  vertical-align: middle;
+}
+
+@keyframes vmfSpin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* Smooth Transitions & Accessibility Focus */

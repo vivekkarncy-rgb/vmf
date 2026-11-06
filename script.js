@@ -448,46 +448,149 @@ function handleFormSubmit(e) {
   if (form) form.reset();
 }
 
+/* ------------------------------------------------------------
+   Enhanced Real-Time Form Validation Engine (Fintech Standard)
+   ------------------------------------------------------------ */
+function setFieldError(inputEl, errorEl, message) {
+  if (!inputEl) return;
+  inputEl.classList.remove('is-valid');
+  inputEl.classList.add('is-invalid');
+  if (errorEl) {
+    if (message) errorEl.textContent = message;
+    errorEl.classList.add('visible');
+  }
+}
+
+function clearFieldError(inputEl, errorEl) {
+  if (!inputEl) return;
+  inputEl.classList.remove('is-invalid');
+  inputEl.classList.add('is-valid');
+  if (errorEl) {
+    errorEl.classList.remove('visible');
+  }
+}
+
+function resetValidationState(inputEl, errorEl) {
+  if (!inputEl) return;
+  inputEl.classList.remove('is-valid', 'is-invalid');
+  if (errorEl) {
+    errorEl.classList.remove('visible');
+  }
+}
+
+function validateFullName(name) {
+  if (!name || name.trim().length < 2) return 'Please enter your full legal name (at least 2 characters).';
+  if (!/^[a-zA-Z\s.'-]+$/.test(name.trim())) return 'Please enter valid alphabetical characters.';
+  return '';
+}
+
+function validateEmail(email) {
+  if (!email || !email.trim()) return 'Please enter your business email address.';
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+  if (!emailRegex.test(email.trim())) return 'Please enter a valid email format (e.g. name@domain.com).';
+  return '';
+}
+
+function validatePhone(phone, countryCode = '+91') {
+  if (!phone || !phone.trim()) return 'Please enter your mobile phone number.';
+  const cleaned = phone.trim().replace(/[\s-]/g, '');
+  if (countryCode === '+91') {
+    if (!/^[6-9]\d{9}$/.test(cleaned)) {
+      return 'Please enter a valid 10-digit Indian mobile number starting with 6, 7, 8, or 9.';
+    }
+  } else {
+    if (!/^\d{6,15}$/.test(cleaned)) {
+      return 'Please enter a valid phone number (6 to 15 digits).';
+    }
+  }
+  return '';
+}
+
 function handleContactSubmit(e) {
   e.preventDefault();
   const form = document.getElementById('contactForm');
   if (!form) return;
 
-  // Validate standard HTML5 inputs
-  if (!form.checkValidity()) {
-    form.reportValidity();
-    return;
-  }
-
-    // Validate phone number specifically (country code aware)
-  const phone = document.getElementById('contactPhone');
+  const nameInput = document.getElementById('contactFullName');
+  const emailInput = document.getElementById('contactEmail');
+  const phoneInput = document.getElementById('contactPhone');
   const countryCode = document.getElementById('contactCountryCode')?.value || '+91';
-  if (phone) {
-    const val = phone.value.trim().replace(/[\s-]/g, '');
-    if (countryCode === '+91') {
-      if (!/^\d{10}$/.test(val)) {
-        phone.setCustomValidity('Please enter a valid 10-digit mobile number.');
-        phone.reportValidity();
-        return;
-      }
-    } else {
-      if (!/^\d{6,15}$/.test(val)) {
-        phone.setCustomValidity('Please enter a valid phone number (6 to 15 digits).');
-        phone.reportValidity();
-        return;
-      }
-    }
-    phone.setCustomValidity('');
+  const typeSelect = document.getElementById('contactEnquiryType');
+  const msgInput = document.getElementById('contactMessage');
+  const consentBox = document.getElementById('contactConsent');
+
+  const errName = document.getElementById('errorFullName');
+  const errEmail = document.getElementById('errorEmail');
+  const errPhone = document.getElementById('errorPhone');
+  const errType = document.getElementById('errorEnquiryType');
+  const errMsg = document.getElementById('errorMessage');
+  const errConsent = document.getElementById('errorConsent');
+
+  let isValid = true;
+  let firstInvalidEl = null;
+
+  // Validate Name
+  const nameErr = validateFullName(nameInput ? nameInput.value : '');
+  if (nameErr) {
+    setFieldError(nameInput, errName, nameErr);
+    isValid = false;
+    if (!firstInvalidEl) firstInvalidEl = nameInput;
+  } else {
+    clearFieldError(nameInput, errName);
   }
 
-  // Validate consent checkbox
-  const consent = document.getElementById('contactConsent');
-  if (consent && !consent.checked) {
-    consent.setCustomValidity('Please agree to be contacted to proceed with your enquiry.');
-    consent.reportValidity();
+  // Validate Email
+  const emailErr = validateEmail(emailInput ? emailInput.value : '');
+  if (emailErr) {
+    setFieldError(emailInput, errEmail, emailErr);
+    isValid = false;
+    if (!firstInvalidEl) firstInvalidEl = emailInput;
+  } else {
+    clearFieldError(emailInput, errEmail);
+  }
+
+  // Validate Phone
+  const phoneErr = validatePhone(phoneInput ? phoneInput.value : '', countryCode);
+  if (phoneErr) {
+    setFieldError(phoneInput, errPhone, phoneErr);
+    isValid = false;
+    if (!firstInvalidEl) firstInvalidEl = phoneInput;
+  } else {
+    clearFieldError(phoneInput, errPhone);
+  }
+
+  // Validate Enquiry Type
+  if (!typeSelect || !typeSelect.value) {
+    setFieldError(typeSelect, errType, 'Please select the financing product you are seeking.');
+    isValid = false;
+    if (!firstInvalidEl) firstInvalidEl = typeSelect;
+  } else {
+    clearFieldError(typeSelect, errType);
+  }
+
+  // Validate Message
+  if (!msgInput || msgInput.value.trim().length < 10) {
+    setFieldError(msgInput, errMsg, 'Please provide details regarding your requirement (min 10 characters).');
+    isValid = false;
+    if (!firstInvalidEl) firstInvalidEl = msgInput;
+  } else {
+    clearFieldError(msgInput, errMsg);
+  }
+
+  // Validate Consent
+  if (!consentBox || !consentBox.checked) {
+    if (errConsent) errConsent.classList.add('visible');
+    isValid = false;
+    if (!firstInvalidEl) firstInvalidEl = consentBox;
+  } else {
+    if (errConsent) errConsent.classList.remove('visible');
+  }
+
+  if (!isValid) {
+    if (firstInvalidEl && typeof firstInvalidEl.focus === 'function') {
+      firstInvalidEl.focus();
+    }
     return;
-  } else if (consent) {
-    consent.setCustomValidity('');
   }
 
   const btn = document.getElementById('contactSubmitBtn') || form.querySelector('button[type="submit"]');
@@ -495,38 +598,163 @@ function handleContactSubmit(e) {
 
   if (btn) {
     btn.disabled = true;
-    btn.innerHTML = `<span class="contact-spinner"></span> <span>Submitting Enquiry...</span>`;
+    btn.innerHTML = `<span class="contact-spinner"></span> <span>Registering Application...</span>`;
   }
 
-  // Dispatch and show success only after successful response
+  // Submit and show confirmation docket
   setTimeout(() => {
     if (btn) {
       btn.disabled = false;
       btn.innerHTML = originalHTML;
     }
     const randNum = Math.floor(1000 + Math.random() * 9000);
-    const ref = 'VMF-INQ-' + new Date().getFullYear() + '-' + randNum;
+    const ref = 'VMF-APP-' + new Date().getFullYear() + '-' + randNum;
     showSuccess(ref);
     form.reset();
-  }, 650);
+
+    // Reset visual validation classes
+    [nameInput, emailInput, phoneInput, typeSelect, msgInput].forEach(el => resetValidationState(el));
+    [errName, errEmail, errPhone, errType, errMsg, errConsent].forEach(el => {
+      if (el) el.classList.remove('visible');
+    });
+  }, 700);
 }
 
-// Inline validation listeners for phone and consent
+// Attach real-time validation listeners
 document.addEventListener('DOMContentLoaded', () => {
-  const phone = document.getElementById('contactPhone');
-  if (phone) {
-    phone.addEventListener('input', () => phone.setCustomValidity(''));
+  const nameInput = document.getElementById('contactFullName');
+  const emailInput = document.getElementById('contactEmail');
+  const phoneInput = document.getElementById('contactPhone');
+  const typeSelect = document.getElementById('contactEnquiryType');
+  const msgInput = document.getElementById('contactMessage');
+  const consentBox = document.getElementById('contactConsent');
+
+  const errName = document.getElementById('errorFullName');
+  const errEmail = document.getElementById('errorEmail');
+  const errPhone = document.getElementById('errorPhone');
+  const errType = document.getElementById('errorEnquiryType');
+  const errMsg = document.getElementById('errorMessage');
+  const errConsent = document.getElementById('errorConsent');
+
+  if (nameInput) {
+    nameInput.addEventListener('input', () => {
+      if (nameInput.classList.contains('is-invalid')) {
+        const err = validateFullName(nameInput.value);
+        if (!err) clearFieldError(nameInput, errName);
+      }
+    });
+    nameInput.addEventListener('blur', () => {
+      if (nameInput.value.trim()) {
+        const err = validateFullName(nameInput.value);
+        if (err) setFieldError(nameInput, errName, err);
+        else clearFieldError(nameInput, errName);
+      }
+    });
   }
-  const consent = document.getElementById('contactConsent');
-  if (consent) {
-    consent.addEventListener('change', () => consent.setCustomValidity(''));
+
+  if (emailInput) {
+    emailInput.addEventListener('input', () => {
+      if (emailInput.classList.contains('is-invalid')) {
+        const err = validateEmail(emailInput.value);
+        if (!err) clearFieldError(emailInput, errEmail);
+      }
+    });
+    emailInput.addEventListener('blur', () => {
+      if (emailInput.value.trim()) {
+        const err = validateEmail(emailInput.value);
+        if (err) setFieldError(emailInput, errEmail, err);
+        else clearFieldError(emailInput, errEmail);
+      }
+    });
+  }
+
+  if (phoneInput) {
+    phoneInput.addEventListener('input', () => {
+      phoneInput.value = phoneInput.value.replace(/[^\d\s-]/g, '');
+      if (phoneInput.classList.contains('is-invalid')) {
+        const countryCode = document.getElementById('contactCountryCode')?.value || '+91';
+        const err = validatePhone(phoneInput.value, countryCode);
+        if (!err) clearFieldError(phoneInput, errPhone);
+      }
+    });
+    phoneInput.addEventListener('blur', () => {
+      if (phoneInput.value.trim()) {
+        const countryCode = document.getElementById('contactCountryCode')?.value || '+91';
+        const err = validatePhone(phoneInput.value, countryCode);
+        if (err) setFieldError(phoneInput, errPhone, err);
+        else clearFieldError(phoneInput, errPhone);
+      }
+    });
+  }
+
+  if (typeSelect) {
+    typeSelect.addEventListener('change', () => {
+      if (typeSelect.value) clearFieldError(typeSelect, errType);
+    });
+  }
+
+  if (msgInput) {
+    msgInput.addEventListener('input', () => {
+      if (msgInput.classList.contains('is-invalid') && msgInput.value.trim().length >= 10) {
+        clearFieldError(msgInput, errMsg);
+      }
+    });
+  }
+
+  if (consentBox) {
+    consentBox.addEventListener('change', () => {
+      if (consentBox.checked && errConsent) {
+        errConsent.classList.remove('visible');
+      }
+    });
   }
 });
 
 function handleModalSubmit(e) {
   e.preventDefault();
+  const busInput = document.getElementById('mBusinessName');
+  const personInput = document.getElementById('mContactPerson');
+  const phoneInput = document.getElementById('mPhone');
+  const fundInput = document.getElementById('mFundingAmt');
+
+  let valid = true;
+  if (!busInput || !busInput.value.trim()) {
+    if (busInput) busInput.classList.add('is-invalid');
+    valid = false;
+  } else if (busInput) {
+    busInput.classList.remove('is-invalid');
+    busInput.classList.add('is-valid');
+  }
+
+  if (!personInput || !personInput.value.trim()) {
+    if (personInput) personInput.classList.add('is-invalid');
+    valid = false;
+  } else if (personInput) {
+    personInput.classList.remove('is-invalid');
+    personInput.classList.add('is-valid');
+  }
+
+  if (!phoneInput || !phoneInput.value.trim() || phoneInput.value.replace(/\D/g, '').length < 10) {
+    if (phoneInput) phoneInput.classList.add('is-invalid');
+    valid = false;
+  } else if (phoneInput) {
+    phoneInput.classList.remove('is-invalid');
+    phoneInput.classList.add('is-valid');
+  }
+
+  if (!fundInput || !fundInput.value.trim()) {
+    if (fundInput) fundInput.classList.add('is-invalid');
+    valid = false;
+  } else if (fundInput) {
+    fundInput.classList.remove('is-invalid');
+    fundInput.classList.add('is-valid');
+  }
+
+  if (!valid) return;
+
+  closeAppModal();
   const randNum = Math.floor(1000 + Math.random() * 9000);
-  const ref = 'VMF-MOD-' + new Date().getFullYear() + '-' + randNum;
+  const ref = 'VMF-APP-' + new Date().getFullYear() + '-' + randNum;
   showSuccess(ref);
 }
 

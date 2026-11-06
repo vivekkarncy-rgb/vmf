@@ -1129,6 +1129,7 @@
                     <label for="contactFullName" class="modern-label">Full Name *</label>
                     <input type="text" id="contactFullName" name="name" class="contact-v2-input"
                       placeholder="e.g. Ramesh Kumar" aria-label="Full Name" required autocomplete="name">
+                    <div class="field-error-msg" id="errorFullName">Please enter your full legal name (at least 2 characters).</div>
                   </div>
 
                   <!-- Email Address -->
@@ -1136,6 +1137,7 @@
                     <label for="contactEmail" class="modern-label">Work Email *</label>
                     <input type="email" id="contactEmail" name="email" class="contact-v2-input"
                       placeholder="e.g. ramesh@company.com" aria-label="Email Address" required autocomplete="email">
+                    <div class="field-error-msg" id="errorEmail">Please enter a valid corporate or business email.</div>
                   </div>
                 </div>
 
@@ -1180,6 +1182,7 @@
                       <input type="tel" id="contactPhone" name="phone" class="contact-v2-input contact-v2-phone-input"
                         placeholder="10-digit mobile number" aria-label="Phone Number" pattern="[0-9]{6,15}" maxlength="16" minlength="6" required autocomplete="tel">
                     </div>
+                    <div class="field-error-msg" id="errorPhone">Please enter a valid 10-digit mobile number.</div>
                   </div>
 
                   <!-- Business Name (Optional) -->
@@ -1207,6 +1210,7 @@
                       <polyline points="6 9 12 15 18 9" />
                     </svg>
                   </div>
+                  <div class="field-error-msg" id="errorEnquiryType">Please select the financing product you are seeking.</div>
                 </div>
 
                 <!-- How Can We Help? -->
@@ -1214,6 +1218,7 @@
                   <label for="contactMessage" class="modern-label">Funding Requirement Details *</label>
                   <textarea id="contactMessage" name="message" class="contact-v2-textarea" rows="4"
                     placeholder="Briefly state your expected ticket size, monthly turnover, and financing timeline..." aria-label="Funding Requirement Details" required></textarea>
+                  <div class="field-error-msg" id="errorMessage">Please describe your financing requirement (at least 10 characters).</div>
                 </div>
 
                 <!-- Checkbox (Unchecked by default) -->
@@ -1224,6 +1229,7 @@
                       class="contact-v2-policy-link">Privacy Policy</a>.
                   </label>
                 </div>
+                <div class="field-error-msg" id="errorConsent" style="margin-top: -12px; margin-bottom: 14px;">Please agree to the privacy policy to proceed.</div>
 
                 <!-- Submit button -->
                 <div style="display: flex; width: 100%;">
