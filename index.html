@@ -1737,14 +1737,69 @@
         </div>
 
         <div class="chat-quick-chips" id="chatQuickChips">
-          <button type="button" class="chat-chip" onclick="handleQuickChip('products')">Financing Products</button>
-          <button type="button" class="chat-chip" onclick="handleQuickChip('invoice')">Invoice Discounting</button>
-          <button type="button" class="chat-chip" onclick="handleQuickChip('po')">Purchase Order Financing</button>
-          <button type="button" class="chat-chip" onclick="handleQuickChip('wc')">Working Capital Loans</button>
-          <button type="button" class="chat-chip" onclick="handleQuickChip('docs')">Required Documents</button>
-          <button type="button" class="chat-chip" onclick="handleQuickChip('eligibility')">Eligibility Parameters</button>
-          <button type="button" class="chat-chip" onclick="handleQuickChip('rates')">Indicative Pricing</button>
-          <button type="button" class="chat-chip" onclick="handleQuickChip('apply')">Apply for Facility</button>
+          <button type="button" class="chat-chip" onclick="handleQuickChip('invoice')">
+            <span class="chat-chip-left">
+              <span class="chat-chip-icon">📄</span>
+              <span>Invoice Financing</span>
+            </span>
+            <svg class="chat-chip-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
+
+          <button type="button" class="chat-chip" onclick="handleQuickChip('po')">
+            <span class="chat-chip-left">
+              <span class="chat-chip-icon">📦</span>
+              <span>Purchase Order Financing</span>
+            </span>
+            <svg class="chat-chip-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
+
+          <button type="button" class="chat-chip" onclick="handleQuickChip('wc')">
+            <span class="chat-chip-left">
+              <span class="chat-chip-icon">💼</span>
+              <span>Working Capital Loans</span>
+            </span>
+            <svg class="chat-chip-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
+
+          <button type="button" class="chat-chip" onclick="handleQuickChip('docs')">
+            <span class="chat-chip-left">
+              <span class="chat-chip-icon">📑</span>
+              <span>Required Documents Checklist</span>
+            </span>
+            <svg class="chat-chip-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
+
+          <button type="button" class="chat-chip" onclick="handleQuickChip('eligibility')">
+            <span class="chat-chip-left">
+              <span class="chat-chip-icon">✓</span>
+              <span>Eligibility &amp; Facility Limits</span>
+            </span>
+            <svg class="chat-chip-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
+
+          <button type="button" class="chat-chip" onclick="handleQuickChip('rates')">
+            <span class="chat-chip-left">
+              <span class="chat-chip-icon">⏱️</span>
+              <span>Pricing &amp; Sanction Turnaround</span>
+            </span>
+            <svg class="chat-chip-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
+
+          <button type="button" class="chat-chip" onclick="handleQuickChip('apply')">
+            <span class="chat-chip-left">
+              <span class="chat-chip-icon">⚡</span>
+              <span>Check Eligibility / Apply Online</span>
+            </span>
+            <svg class="chat-chip-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
+
+          <button type="button" class="chat-chip chat-chip-agent" onclick="handleQuickChip('agent')">
+            <span class="chat-chip-left">
+              <span class="chat-chip-icon">📞</span>
+              <span>Connect with Agent (+91 40 2335 1234)</span>
+            </span>
+            <svg class="chat-chip-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
         </div>
       </div>
 

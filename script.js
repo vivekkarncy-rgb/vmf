@@ -2491,70 +2491,95 @@ function handleQuickChip(topic) {
   let userText = "";
   let botReply = "";
 
-  if (topic === 'products') {
-    userText = "Tell me about your 3 financing products";
-    botReply = `<strong>We provide 3 specialized financing solutions:</strong><br><br>
-    <strong>1. Invoice Financing:</strong> Advance up to 85% against unpaid invoices from approved buyers to bridge payment terms (30-90 days).<br><br>
-    <strong>2. Purchase Order Financing:</strong> Fund material & production costs for confirmed client orders without locking up daily cash.<br><br>
-    <strong>3. Working Capital Loans:</strong> Short-term credit tailored to inventory, payroll, and seasonal business needs.<br>
-    <button class="chat-action-btn" onclick="openApplyModal('General Working Capital')">Apply for Financing</button>`;
-  } else if (topic === 'invoice') {
-    userText = "How does Invoice Financing work?";
+  if (topic === 'invoice') {
+    userText = "Tell me about Invoice Financing (Receivables Discounting)";
     botReply = `<strong>Invoice Financing (Receivables Discounting):</strong><br>
-    &bull; <strong>Advance:</strong> Up to 80%–85% of verified invoice value.<br>
-    &bull; <strong>Turnaround:</strong> Swift disbursement in 48–72 hours.<br>
-    &bull; <strong>Collateral:</strong> Secured against verified receivables & buyer creditworthiness.<br>
-    &bull; <strong>Repayment:</strong> Cleared directly upon buyer settlement.<br>
-    <button class="chat-action-btn" onclick="openApplyModal('Invoice Financing')">Explore Invoice Financing</button>`;
+    Convert unpaid client invoices into immediate working capital without waiting 30–120 days.<br><br>
+    &bull; <strong>Immediate Advance:</strong> Up to 90% of verified invoice face value.<br>
+    &bull; <strong>Tenor Flexibility:</strong> 30 to 120 days aligned with corporate buyer credit terms.<br>
+    &bull; <strong>Rapid Appraisal:</strong> Approval and sanction within 24–48 business hours.<br>
+    &bull; <strong>Repayment Mechanism:</strong> Automatic settlement upon buyer invoice payment.<br><br>
+    <button class="chat-action-btn" onclick="scrollToContactForm()">Apply for Invoice Financing</button>
+    <button class="chat-action-btn chat-action-btn-outline" onclick="scrollToCalculator()">Estimate Facility</button>`;
   } else if (topic === 'po') {
     userText = "How does Purchase Order (PO) Financing work?";
-    botReply = `<strong>Purchase Order Financing:</strong><br>
-    &bull; <strong>Purpose:</strong> Procure raw materials, cover production, and fulfill confirmed corporate/institutional orders.<br>
-    &bull; <strong>Advantage:</strong> Execute large high-value orders without straining daily working capital.<br>
-    &bull; <strong>Eligible Borrowers:</strong> Manufacturers, traders, and contractors with confirmed POs.<br>
-    <button class="chat-action-btn" onclick="openApplyModal('Purchase Order Financing')">Explore PO Financing</button>`;
+    botReply = `<strong>Purchase Order (PO) Financing:</strong><br>
+    Secure upfront funding to procure raw materials, fulfill verified corporate orders, and scale contract execution.<br><br>
+    &bull; <strong>Funding Quantum:</strong> Up to 80% of confirmed purchase order value.<br>
+    &bull; <strong>Supplier Direct Disbursement:</strong> Funds can be disbursed directly to approved material vendors to eliminate production lag.<br>
+    &bull; <strong>Collateral Structure:</strong> Primarily underwritten against buyer creditworthiness and purchase order validity.<br>
+    &bull; <strong>Target Borrowers:</strong> MSME manufacturers, EPC contractors, and corporate suppliers.<br><br>
+    <button class="chat-action-btn" onclick="scrollToContactForm()">Apply for PO Financing</button>
+    <button class="chat-action-btn chat-action-btn-outline" onclick="handleQuickChip('agent')">Talk to Underwriter</button>`;
   } else if (topic === 'wc') {
     userText = "What are your Working Capital Loans?";
-    botReply = `<strong>Working Capital Loans:</strong><br>
-    &bull; Flexible short-term credit structured around your operational cash-flow cycle.<br>
-    &bull; Use for supplier advances, bulk inventory discounts, or temporary cash gaps.<br>
-    &bull; Structured repayment schedules with zero hidden charges.<br>
-    <button class="chat-action-btn" onclick="openApplyModal('Working Capital Loans')">Explore Working Capital Loans</button>`;
+    botReply = `<strong>Structured Working Capital Loans:</strong><br>
+    Dependable revolving credit lines designed to bridge operational gaps, manage seasonal inventory, and support regular payroll.<br><br>
+    &bull; <strong>Facility Ticket Sizes:</strong> From ₹5 Lakhs to ₹5 Crores+.<br>
+    &bull; <strong>Transparent Interest:</strong> Interest calculated strictly on the utilized amount, not the sanctioned limit.<br>
+    &bull; <strong>Tenor &amp; Renewal:</strong> Flexible short-term cycles with prompt periodic renewals based on turnover.<br>
+    &bull; <strong>Zero Structural Lock-in:</strong> Repay early without punitive exit penalties.<br><br>
+    <button class="chat-action-btn" onclick="scrollToContactForm()">Check Working Capital Eligibility</button>`;
   } else if (topic === 'docs') {
-    userText = "What documents are required?";
+    userText = "What documents are required to apply?";
     botReply = `<strong>Standard Documentation Checklist:</strong><br>
-    &bull; <strong>Business KYC:</strong> PAN, Certificate of Incorporation / Udyam, Promoters KYC.<br>
-    &bull; <strong>Financial Records:</strong> 12 months GST returns, 6–12 months bank statements.<br>
-    &bull; <strong>Financial Statements:</strong> Audited balance sheets & P&L (last 2 years).<br>
-    &bull; <strong>Transaction Proof:</strong> Confirmed Purchase Orders, buyer invoices, delivery challans.`;
+    &bull; <strong>1. Entity KYC:</strong> PAN, Certificate of Incorporation / Partnership Deed, Udyam MSME Registration.<br>
+    &bull; <strong>2. Promoter KYC:</strong> PAN, Aadhaar, and residential address proof of Directors / Partners.<br>
+    &bull; <strong>3. Financial Records:</strong> Last 12 months GST returns (GSTR-3B &amp; GSTR-1), 6–12 months primary bank statements.<br>
+    &bull; <strong>4. Financial Statements:</strong> Audited Balance Sheets and P&amp;L accounts for the last 2 financial years.<br>
+    &bull; <strong>5. Commercial Trade Proof:</strong> Invoices with proof of delivery or verified Purchase Orders from buyers.<br><br>
+    <button class="chat-action-btn" onclick="scrollToContactForm()">Submit Documents Online</button>`;
   } else if (topic === 'eligibility') {
-    userText = "What are the eligibility criteria?";
-    botReply = `<strong>Eligibility Criteria:</strong><br>
-    &bull; Registered entity in India (MSME, Pvt Ltd, Partnership, LLP).<br>
-    &bull; Minimum 1–2 years of active commercial operations.<br>
-    &bull; Verified business transactions with established corporate or institutional buyers.<br>
-    &bull; Satisfactory banking conduct and sound repayment history.`;
+    userText = "What are the eligibility criteria and parameters?";
+    botReply = `<strong>Eligibility &amp; Appraisal Parameters:</strong><br>
+    &bull; <strong>Entity Form:</strong> MSMEs, Private Limited Companies, LLPs, and registered Partnerships.<br>
+    &bull; <strong>Operational Vintage:</strong> Minimum 1–2 years of continuous commercial operations.<br>
+    &bull; <strong>Buyer Quality:</strong> Regular transactions with established corporate, institutional, or government buyers.<br>
+    &bull; <strong>Banking Discipline:</strong> Clean repayment conduct with healthy cash flow velocity.<br><br>
+    <button class="chat-action-btn" onclick="scrollToContactForm()">Check Your Eligibility Now</button>`;
   } else if (topic === 'rates') {
-    userText = "What are the interest rates and charges?";
-    botReply = `<strong>Pricing & Terms Transparency:</strong><br>
-    &bull; Pricing is risk-based, calculated on transaction quality, buyer credit strength, and facility tenure.<br>
-    &bull; All rates, APR, processing fees, and repayment terms are fully documented in your sanction letter before acceptance.<br>
-    &bull; Zero hidden fees, zero surprise deductions.`;
+    userText = "What are the interest rates, charges, and turnaround times?";
+    botReply = `<strong>Pricing &amp; Sanction Transparency:</strong><br>
+    &bull; <strong>Indicative Interest Rates (ROI):</strong> 9.0% to 20.0% p.a., customized according to transaction risk and buyer credit rating.<br>
+    &bull; <strong>Sanction Turnaround:</strong> In-principle terms within 24 to 48 hours upon documentation receipt.<br>
+    &bull; <strong>Disbursement:</strong> Immediate credit into verified bank account once agreement is executed.<br>
+    &bull; <strong>Full Disclosure:</strong> Zero hidden charges; all fees and processing terms are clearly detailed in your sanction letter.<br><br>
+    <button class="chat-action-btn" onclick="scrollToCalculator()">Open ROI Calculator</button>`;
   } else if (topic === 'apply') {
-    userText = "How do I apply for funding?";
-    botReply = `<strong>Applying is simple and 100% digital:</strong><br>
-    1. Click the button below to submit your business requirement.<br>
-    2. Our underwriting desk will review your details within 24–48 hours.<br>
-    3. Review sanction terms and receive funds directly to your account.<br>
-    <button class="chat-action-btn" onclick="openApplyModal('Application via Chat')">Open Application Form</button>`;
+    userText = "How do I apply for financing online?";
+    botReply = `<strong>Quick 3-Step Online Application:</strong><br>
+    1. Fill in your business details in our application form below.<br>
+    2. Upload basic KYC and banking statements for instant appraisal.<br>
+    3. Review transparent sanction terms and draw down funds directly.<br><br>
+    <button class="chat-action-btn" onclick="scrollToContactForm()">Go to Application Form</button>`;
+  } else if (topic === 'agent') {
+    userText = "Connect me with an Underwriting Desk Officer";
+    botReply = `<strong>Connecting to VMF Credit &amp; Underwriting Desk:</strong><br>
+    Our commercial lending advisors are available to assist your business requirement directly.<br><br>
+    <div class="chat-advisor-card">
+      <div style="font-weight: 700; color: #05244F; font-size: 14.5px; margin-bottom: 4px;">Commercial Credit &amp; Underwriting Desk</div>
+      <div class="chat-advisor-row">📞 <strong>Phone:</strong> <a href="tel:+914023351234" style="color: #15803D; font-weight: 700; text-decoration: underline;">+91 40 2335 1234</a></div>
+      <div class="chat-advisor-row">✉️ <strong>Email:</strong> <a href="mailto:credit@vmffinance.com" style="color: #05244F; font-weight: 600;">credit@vmffinance.com</a></div>
+      <div class="chat-advisor-row">🕒 <strong>Operating Hours:</strong> Mon – Fri: 9:30 AM – 6:30 PM IST</div>
+      <div class="chat-advisor-row">📍 <strong>Corporate Office:</strong> Lumbini Avenue, Gachibowli, Hyderabad – 500032</div>
+    </div>
+    <a href="tel:+914023351234" class="chat-call-direct-btn">
+      <span class="call-btn-icon">📞</span>
+      <span>Call +91 40 2335 1234 Now</span>
+    </a>`;
+
+    // Immediately trigger the phone dialer
+    try {
+      window.location.href = 'tel:+914023351234';
+    } catch (err) {}
   }
 
   appendChatMsg('user', userText);
 
-  // Bot response with subtle delay
+  // Bot response with natural conversational delay
   setTimeout(() => {
     appendChatMsg('bot', botReply);
-  }, 300);
+  }, 250);
 }
 
 function handleChatSubmit(e) {
@@ -2570,29 +2595,73 @@ function handleChatSubmit(e) {
   const lower = q.toLowerCase();
   let botReply = '';
 
-  if (lower.includes('invoice') || lower.includes('bill') || lower.includes('receivable')) {
-    botReply = `<strong>Invoice Financing:</strong> We advance up to 85% of eligible invoices from approved buyers, bridging 30–90 day payment cycles.<br><button class="chat-action-btn" onclick="openApplyModal('Invoice Financing')">Apply for Invoice Financing</button>`;
-  } else if (lower.includes('order') || lower.includes('purchase order') || lower.includes('po')) {
-    botReply = `<strong>Purchase Order Financing:</strong> Covers upfront material and production costs for confirmed client orders so you can fulfill contracts on time.<br><button class="chat-action-btn" onclick="openApplyModal('Purchase Order Financing')">Apply for PO Financing</button>`;
-  } else if (lower.includes('working capital') || lower.includes('loan') || lower.includes('daily')) {
-    botReply = `<strong>Working Capital Loans:</strong> Short-term financing for cash gaps, bulk stock purchases, vendor payments, and operational expenses.<br><button class="chat-action-btn" onclick="openApplyModal('Working Capital Loans')">Apply for Working Capital</button>`;
-  } else if (lower.includes('document') || lower.includes('kyc') || lower.includes('paper') || lower.includes('gst')) {
-    botReply = `<strong>Required Documents:</strong><br>&bull; Business KYC (PAN, GSTIN, Udyam)<br>&bull; 6–12 months bank statements<br>&bull; GST returns (last 12 months)<br>&bull; Invoices or Confirmed Purchase Orders.`;
+  // Direct Agent / Call recognition
+  if (lower.includes('agent') || lower.includes('human') || lower.includes('call') || lower.includes('phone') || lower.includes('talk') || lower.includes('speak') || lower.includes('number') || lower.includes('officer')) {
+    botReply = `<strong>Connecting to VMF Credit &amp; Underwriting Desk:</strong><br>
+    Our lending advisors are ready to assist you directly:<br><br>
+    <div class="chat-advisor-card">
+      <div style="font-weight: 700; color: #05244F; font-size: 14.5px;">Commercial Credit &amp; Underwriting Desk</div>
+      <div class="chat-advisor-row">📞 <strong>Direct Line:</strong> <a href="tel:+914023351234" style="color: #15803D; font-weight: 700;">+91 40 2335 1234</a></div>
+      <div class="chat-advisor-row">✉️ <strong>Email:</strong> <a href="mailto:credit@vmffinance.com" style="color: #05244F;">credit@vmffinance.com</a></div>
+      <div class="chat-advisor-row">🕒 <strong>Desk Hours:</strong> Mon – Fri: 9:30 AM – 6:30 PM IST</div>
+    </div>
+    <a href="tel:+914023351234" class="chat-call-direct-btn">
+      <span class="call-btn-icon">📞</span>
+      <span>Call +91 40 2335 1234 Now</span>
+    </a>`;
+    try {
+      window.location.href = 'tel:+914023351234';
+    } catch (err) {}
+  } else if (lower.includes('invoice') || lower.includes('bill') || lower.includes('receivable') || lower.includes('discount')) {
+    botReply = `<strong>Invoice Financing (Receivables Discounting):</strong><br>
+    Advance up to 90% against verified invoices from approved buyers, bridging 30–120 day payment terms with 24–48h disbursal.<br><br>
+    <button class="chat-action-btn" onclick="scrollToContactForm()">Apply for Invoice Financing</button>
+    <button class="chat-action-btn chat-action-btn-outline" onclick="scrollToCalculator()">Estimate Rate &amp; Tenor</button>`;
+  } else if (lower.includes('purchase order') || lower.includes('po') || lower.includes('order') || lower.includes('procure') || lower.includes('supplier')) {
+    botReply = `<strong>Purchase Order (PO) Financing:</strong><br>
+    Advance capital up to 80% to procure raw materials and execute verified client contracts without straining cash flow.<br><br>
+    <button class="chat-action-btn" onclick="scrollToContactForm()">Apply for PO Financing</button>`;
+  } else if (lower.includes('working capital') || lower.includes('revolving') || lower.includes('cash flow') || lower.includes('daily') || lower.includes('limit')) {
+    botReply = `<strong>Working Capital Loans:</strong><br>
+    Revolving facility from ₹5 Lakhs to ₹5 Crores+ structured around your operational turnover with transparent interest charged only on drawn limits.<br><br>
+    <button class="chat-action-btn" onclick="scrollToContactForm()">Check Eligibility</button>`;
+  } else if (lower.includes('document') || lower.includes('kyc') || lower.includes('paper') || lower.includes('gst') || lower.includes('bank statement')) {
+    botReply = `<strong>Required Documentation Checklist:</strong><br>
+    &bull; Business KYC (PAN, GSTIN, Udyam Registration)<br>
+    &bull; Promoter KYC (PAN, Aadhaar)<br>
+    &bull; 12 months GST returns (GSTR-3B &amp; GSTR-1)<br>
+    &bull; 6–12 months primary bank statements<br>
+    &bull; Audited balance sheets (2 years) &amp; Trade invoices/POs.<br><br>
+    <button class="chat-action-btn" onclick="scrollToContactForm()">Upload / Apply</button>`;
   } else if (lower.includes('eligib') || lower.includes('qualif') || lower.includes('criteria') || lower.includes('who can')) {
-    botReply = `<strong>Eligibility:</strong> Registered Indian MSMEs, LLPs, or Pvt Ltd companies with at least 1–2 years operational vintage and active commercial orders from reputable buyers.`;
-  } else if (lower.includes('rate') || lower.includes('interest') || lower.includes('charge') || lower.includes('fee') || lower.includes('cost')) {
-    botReply = `<strong>Interest Rates & Charges:</strong> We offer competitive, risk-based pricing tailored to your buyer credit and transaction tenure. Transparent sanction terms with zero hidden fees.`;
-  } else if (lower.includes('apply') || lower.includes('contact') || lower.includes('call') || lower.includes('phone') || lower.includes('office') || lower.includes('hyderabad')) {
-    botReply = `<strong>Reach Out or Apply:</strong><br>Our corporate desk is at Gachibowli, Hyderabad.<br>&bull; Email: <a href="mailto:compliance@vmffinance.com" style="color:var(--green); font-weight:700;">compliance@vmffinance.com</a><br>&bull; Working Hours: Mon–Fri: 9:30 AM – 6:30 PM.<br><button class="chat-action-btn" onclick="openApplyModal('Support Inquiry')">Start Application</button>`;
-  } else if (lower.includes('fast') || lower.includes('time') || lower.includes('turnaround') || lower.includes('disburs')) {
-    botReply = `<strong>Fast Turnaround:</strong> Our credit appraisal takes 24–48 business hours upon document submission. Approved funds are disbursed promptly upon document execution.`;
+    botReply = `<strong>Eligibility Parameters:</strong><br>
+    &bull; Registered Indian MSME, Pvt Ltd, or LLP with 1–2+ years operational vintage.<br>
+    &bull; Verified commercial trade with established corporate or institutional buyers.<br>
+    &bull; Satisfactory banking record and prompt repayment conduct.<br><br>
+    <button class="chat-action-btn" onclick="scrollToContactForm()">Assess My Eligibility</button>`;
+  } else if (lower.includes('rate') || lower.includes('interest') || lower.includes('roi') || lower.includes('charge') || lower.includes('fee') || lower.includes('cost') || lower.includes('percent')) {
+    botReply = `<strong>Pricing &amp; Rates (ROI):</strong><br>
+    &bull; Competitive risk-based ROI ranging from <strong>9.0% to 20.0% p.a.</strong><br>
+    &bull; Transparent documented sanction letter with zero hidden charges.<br><br>
+    <button class="chat-action-btn" onclick="scrollToCalculator()">Open Working Capital Calculator</button>`;
+  } else if (lower.includes('time') || lower.includes('fast') || lower.includes('turnaround') || lower.includes('how long') || lower.includes('disburs')) {
+    botReply = `<strong>Sanction &amp; Disbursement Speed:</strong><br>
+    &bull; Initial appraisal turnaround within <strong>24 to 48 business hours</strong> upon complete documentation.<br>
+    &bull; Direct disbursal into your verified business bank account promptly upon agreement signing.`;
+  } else if (lower.includes('apply') || lower.includes('form') || lower.includes('register') || lower.includes('start')) {
+    botReply = `<strong>Apply Online:</strong><br>
+    Click below to navigate directly to our quick online application form.<br><br>
+    <button class="chat-action-btn" onclick="scrollToContactForm()">Go to Application Form</button>`;
   } else {
-    botReply = `Thank you for asking! VMF Finance provides <strong>Invoice Financing</strong>, <strong>PO Financing</strong>, and <strong>Working Capital Loans</strong> for MSMEs.<br><br>Would you like to explore products, check documents, or apply now?<br><button class="chat-action-btn" onclick="openApplyModal('General Inquiry')">Submit Application</button>`;
+    botReply = `Thank you for your inquiry! VMF Finance Limited provides <strong>Invoice Financing</strong>, <strong>PO Financing</strong>, and <strong>Working Capital Loans</strong> for MSMEs.<br><br>
+    You can explore our facilities, check documents, or connect directly with our advisory desk.<br><br>
+    <button class="chat-action-btn" onclick="scrollToContactForm()">Check Eligibility</button>
+    <button class="chat-action-btn chat-action-btn-outline" onclick="handleQuickChip('agent')">Call Agent Now</button>`;
   }
 
   setTimeout(() => {
     appendChatMsg('bot', botReply);
-  }, 350);
+  }, 300);
 }
 
 /* ============================================================
@@ -3127,6 +3196,21 @@ function scrollToContactForm(e) {
   }
 }
 window.scrollToContactForm = scrollToContactForm;
+
+function scrollToCalculator(e) {
+  if (e) e.preventDefault();
+  const calcSection = document.getElementById('calculator');
+  if (calcSection) {
+    if (typeof lenis !== 'undefined' && lenis) {
+      lenis.scrollTo(calcSection, { offset: -60, duration: 1.1 });
+    } else {
+      calcSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  } else {
+    window.location.href = 'index.html#calculator';
+  }
+}
+window.scrollToCalculator = scrollToCalculator;
 
 /* ------------------------------------------------------------
    Open Product Modal from Footer (Smooth Scroll to #products + Open Modal)

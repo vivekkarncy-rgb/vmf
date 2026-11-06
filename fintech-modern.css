@@ -1917,3 +1917,168 @@ reveal-wrapper[mode="section"] {
   outline: 2px solid var(--vmf-green);
   outline-offset: 2px;
 }
+
+/* ==========================================================================
+   12. ENHANCED LINE-BY-LINE CHATBOT & DIRECT AGENT CALLING
+   ========================================================================== */
+.vmf-chat-window {
+  width: 380px !important;
+  max-width: calc(100vw - 28px) !important;
+  height: 560px !important;
+  max-height: calc(100vh - 100px) !important;
+  border-radius: 20px !important;
+  box-shadow: 0 24px 60px rgba(5, 36, 79, 0.24), 0 0 0 1px rgba(5, 36, 79, 0.08) !important;
+}
+
+.chat-quick-chips {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+  margin-top: 12px !important;
+  width: 100% !important;
+}
+
+.chat-chip {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+  background: #FFFFFF !important;
+  border: 1px solid #E2E8F0 !important;
+  color: #05244F !important;
+  padding: 11px 14px !important;
+  border-radius: 12px !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  box-shadow: 0 1px 3px rgba(5, 36, 79, 0.04) !important;
+  text-align: left !important;
+  box-sizing: border-box !important;
+}
+
+.chat-chip:hover {
+  background: #F0FDF4 !important;
+  border-color: #86EFAC !important;
+  color: #15803D !important;
+  transform: translateX(3px) !important;
+  box-shadow: 0 4px 12px rgba(5, 36, 79, 0.08) !important;
+}
+
+.chat-chip-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.chat-chip-icon {
+  font-size: 15px;
+  line-height: 1;
+}
+
+.chat-chip-arrow {
+  color: #94A3B8;
+  transition: transform 0.2s ease, color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.chat-chip:hover .chat-chip-arrow {
+  color: #15803D;
+  transform: translateX(2px);
+}
+
+/* Last item: Connect with Agent Special Highlight */
+.chat-chip-agent {
+  background: linear-gradient(135deg, #F0FDF4 0%, #DCFCE7 100%) !important;
+  border: 1.5px solid #86EFAC !important;
+  color: #15803D !important;
+  font-weight: 700 !important;
+  margin-top: 4px;
+}
+
+.chat-chip-agent:hover {
+  background: #15803D !important;
+  border-color: #15803D !important;
+  color: #FFFFFF !important;
+}
+
+.chat-chip-agent:hover .chat-chip-arrow {
+  color: #FFFFFF !important;
+}
+
+/* Direct Agent Call Button inside chat bubbles */
+.chat-call-direct-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  background: #15803D;
+  color: #FFFFFF !important;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 12px 18px;
+  border-radius: 12px;
+  text-decoration: none;
+  margin-top: 12px;
+  box-shadow: 0 4px 14px rgba(21, 128, 61, 0.3);
+  transition: all 0.2s ease;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.chat-call-direct-btn:hover {
+  background: #166534;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(21, 128, 61, 0.4);
+}
+
+.chat-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #05244F;
+  color: #FFFFFF;
+  border: none;
+  padding: 9px 15px;
+  border-radius: 8px;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-right: 6px;
+  transition: all 0.2s ease;
+}
+
+.chat-action-btn:hover {
+  background: #031633;
+  transform: translateY(-1px);
+}
+
+.chat-action-btn-outline {
+  background: #FFFFFF;
+  color: #05244F;
+  border: 1.5px solid #CBD5E1;
+}
+
+.chat-action-btn-outline:hover {
+  background: #F1F5F9;
+  border-color: #94A3B8;
+}
+
+.chat-advisor-card {
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 14px;
+  padding: 14px;
+  margin-top: 10px;
+}
+
+.chat-advisor-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #334155;
+  margin-top: 6px;
+}
