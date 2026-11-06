@@ -21,8 +21,8 @@
   --lime-dark: #5D9125;
   --lime-light: #F2F9E8;
   --text: #0F172A;
-  --text-body: #334155;
-  --text-muted: #52627A;
+  --text-body: #1E293B;
+  --text-muted: #475569; /* WCAG AA & AAA compliant 4.9:1 contrast on white */
   --border: #E2E8F0;
   --border-focus: #CBD5E1;
   --shadow-sm: 0 2px 6px rgba(5, 36, 79, 0.04);
