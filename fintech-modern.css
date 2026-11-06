@@ -1513,16 +1513,59 @@ reveal-wrapper[mode="section"] {
   box-sizing: border-box;
 }
 
-/* Contain carousel sections strictly within screen width */
+/* Contain carousel sections strictly within screen width with seamless gradient edge fading */
 .concave-carousel-wrap,
-#concaveCarouselWrapper,
+#concaveCarouselWrapper {
+  max-width: 100% !important;
+  position: relative;
+  overflow: hidden;
+  /* Smooth edge fading on left and right borders to eliminate harsh edge cutting */
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000000 12%, #000000 88%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, #000000 12%, #000000 88%, transparent 100%);
+}
+
 .concave-carousel,
-#concaveCarousel,
+#concaveCarousel {
+  max-width: 100% !important;
+  overflow: visible !important;
+}
+
 .ind-pipeline-section,
 #industries {
   max-width: 100% !important;
   overflow: hidden !important;
   contain: paint !important;
+  position: relative;
+}
+
+/* Gradient Fade Overlay Vignettes for Left and Right Carousel Edges */
+.concave-carousel-wrap::before,
+.concave-carousel-wrap::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 140px;
+  pointer-events: none;
+  z-index: 10;
+  transition: opacity 0.3s ease;
+}
+
+.concave-carousel-wrap::before {
+  left: 0;
+  background: linear-gradient(to right, #FFFFFF 0%, rgba(255, 255, 255, 0.8) 40%, rgba(255, 255, 255, 0) 100%);
+}
+
+.concave-carousel-wrap::after {
+  right: 0;
+  background: linear-gradient(to left, #FFFFFF 0%, rgba(255, 255, 255, 0.8) 40%, rgba(255, 255, 255, 0) 100%);
+}
+
+@media (max-width: 768px) {
+  .concave-carousel-wrap::before,
+  .concave-carousel-wrap::after {
+    width: 60px;
+  }
 }
 
 /* Responsive Breakpoints & Mobile Overflow Fixes */
