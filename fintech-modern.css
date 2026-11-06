@@ -312,6 +312,50 @@ h1, h2, h3, h4, h5, h6,
   max-width: 580px;
 }
 
+.hero-p-rotator {
+  display: grid !important;
+  grid-template-areas: "hero-desc" !important;
+  align-items: start !important;
+  min-height: 82px;
+  position: relative !important;
+  margin-top: 14px;
+  margin-bottom: 20px;
+}
+
+.hero-p-slide {
+  grid-area: hero-desc !important;
+  margin: 0 !important;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(8px);
+  pointer-events: none;
+}
+
+.hero-p-slide.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.hero-p-slide.exiting {
+  opacity: 0;
+  transform: translateY(-8px);
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .hero-p-rotator {
+    min-height: 105px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero-p-slide {
+    text-align: center !important;
+  }
+}
+
 /* ==========================================================================
    Modern Minimalist Scope Indicators (Replaces legacy background box)
    ========================================================================== */

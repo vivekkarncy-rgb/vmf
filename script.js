@@ -3252,23 +3252,34 @@ function openProductFromFooter(e, key) {
    ------------------------------------------------------------ */
 function initHeroHeadlineRotator() {
   const slides = Array.from(document.querySelectorAll('.hero-h1-slide'));
+  const descSlides = Array.from(document.querySelectorAll('.hero-p-slide'));
   if (slides.length <= 1) return;
 
   let currentIndex = 0;
-  const displayDuration = 3800; // ms visible per headline
+  const displayDuration = 4200; // ms visible per question/answer pair
 
   function nextSlide() {
     const currentSlide = slides[currentIndex];
+    const currentDesc = descSlides[currentIndex];
+
     currentSlide.classList.remove('active');
     currentSlide.classList.add('exiting');
+    if (currentDesc) {
+      currentDesc.classList.remove('active');
+      currentDesc.classList.add('exiting');
+    }
 
     setTimeout(() => {
       currentSlide.classList.remove('exiting');
+      if (currentDesc) currentDesc.classList.remove('exiting');
     }, 650);
 
     currentIndex = (currentIndex + 1) % slides.length;
     const next = slides[currentIndex];
+    const nextDesc = descSlides[currentIndex];
+
     next.classList.add('active');
+    if (nextDesc) nextDesc.classList.add('active');
   }
 
   // Rotate smoothly on interval
