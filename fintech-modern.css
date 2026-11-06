@@ -1716,15 +1716,14 @@ reveal-wrapper[mode="section"] {
 }
 
 .prefooter-journey-sec {
-  min-height: 70vh;
-  min-height: 70dvh;
-  display: flex !important;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  box-sizing: border-box;
-  padding: 60px 0;
-  width: 100%;
+  min-height: auto !important;
+  height: auto !important;
+  display: block !important;
+  box-sizing: border-box !important;
+  padding: 40px 0 60px 0 !important;
+  width: 100% !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 /* Ensure inner containers span nicely inside 100vh sections */

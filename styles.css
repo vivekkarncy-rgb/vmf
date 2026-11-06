@@ -6870,159 +6870,212 @@ scramble-text {
 }
 
 /* ============================================================
-   PRE-FOOTER CTA RECTANGLE (PERFECT 50/50 SPLIT STYLE)
+   PRE-FOOTER CTA BANNER (INSTITUTIONAL FINTECH STYLE)
    ============================================================ */
 .prefooter-journey-sec {
-  width: 100%;
-  padding: 45px 0;
-  margin: 0;
-  /* Top 50% seamlessly matches the bottom of the content flow (soft sage-mint #E2EDE6), bottom 50% is footer dark navy (#031633) */
-  background: linear-gradient(180deg, #E2EDE6 50%, var(--navy-dark) 50%) !important;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  z-index: 10;
+  width: 100% !important;
+  padding: 40px 0 60px 0 !important;
+  margin: 0 !important;
+  background: #F8FAFC !important;
+  display: block !important;
+  position: relative !important;
+  z-index: 10 !important;
   min-height: auto !important;
-  box-sizing: border-box;
+  height: auto !important;
+  box-sizing: border-box !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 .prefooter-container {
-  width: 100%;
-  max-width: 1240px;
-  margin: 0 auto;
-  padding: 0 24px;
+  width: 100% !important;
+  max-width: 1240px !important;
+  margin: 0 auto !important;
+  padding: 0 24px !important;
+  box-sizing: border-box !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 .prefooter-rect-card {
-  position: relative;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
+  position: relative !important;
+  width: 100% !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  background: linear-gradient(135deg, #05244F 0%, #0B3366 52%, #1A5E33 100%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-radius: 20px !important;
+  box-shadow: 0 20px 48px rgba(5, 36, 79, 0.22) !important;
+  padding: 42px 48px !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
-/* Offset backing shadow block (shifted up and left for punchy 3D layered card effect) */
 .prefooter-rect-shadow {
-  position: absolute;
-  top: -18px;
-  left: -18px;
-  width: 100%;
-  height: 100%;
-  background: #CBD5E1;
-  border-radius: 4px;
-  z-index: 1;
-  pointer-events: none;
+  display: none !important;
 }
 
-/* Main colored rectangle with increased size & VMF brand colors */
 .prefooter-rect-body {
-  position: relative;
-  z-index: 2;
-  background: linear-gradient(90deg, #05244F 0%, #0E3C75 58%, #1A6038 100%);
-  border-radius: 4px;
-  padding: 46px 64px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 40px;
-  box-shadow: 0 20px 48px rgba(5, 36, 79, 0.35);
+  position: relative !important;
+  z-index: 2 !important;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 36px !important;
+  box-shadow: none !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 .prefooter-rect-text {
-  flex: 1;
-  min-width: 0;
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 .prefooter-rect-title {
-  font-family: var(--font-h, 'DM Sans', sans-serif);
-  font-size: clamp(28px, 3.2vw, 36px);
-  font-weight: 800;
-  color: #FFFFFF;
-  margin: 0 0 10px 0;
-  letter-spacing: -0.02em;
-  line-height: 1.25;
+  font-family: var(--font-h, 'DM Sans', sans-serif) !important;
+  font-size: clamp(24px, 2.6vw, 32px) !important;
+  font-weight: 800 !important;
+  color: #FFFFFF !important;
+  margin: 0 0 10px 0 !important;
+  letter-spacing: -0.02em !important;
+  line-height: 1.25 !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 .prefooter-rect-desc {
-  font-family: var(--font-b, 'DM Sans', sans-serif);
-  font-size: 16.5px;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.9);
-  margin: 0;
-  max-width: 720px;
+  font-family: var(--font-b, 'DM Sans', sans-serif) !important;
+  font-size: 15.5px !important;
+  line-height: 1.6 !important;
+  color: rgba(255, 255, 255, 0.88) !important;
+  margin: 0 !important;
+  max-width: 680px !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 .prefooter-rect-action {
-  flex-shrink: 0;
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  flex-shrink: 0 !important;
+  flex-wrap: wrap !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 .prefooter-rect-btn {
   background: #FFFFFF !important;
-  color: var(--navy) !important;
-  font-family: var(--font-b, 'DM Sans', sans-serif);
-  font-size: 16px;
-  font-weight: 700;
-  padding: 16px 38px;
-  border-radius: 4px;
-  border: 1px solid #FFFFFF;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  white-space: nowrap;
-  cursor: pointer;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-  transition: all 0.25s ease;
+  color: #05244F !important;
+  font-family: var(--font-b, 'DM Sans', sans-serif) !important;
+  font-size: 15px !important;
+  font-weight: 750 !important;
+  padding: 14px 28px !important;
+  border-radius: 999px !important;
+  border: 1px solid #FFFFFF !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  white-space: nowrap !important;
+  cursor: pointer !important;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15) !important;
+  transition: all 0.22s ease !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 .prefooter-rect-btn:hover,
-.prefooter-rect-btn:focus,
-.prefooter-rect-btn.hover {
-  background: #000000 !important;
-  border-color: #000000 !important;
-  color: #FFFFFF !important;
-  transform: translateY(-2px);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
+.prefooter-rect-btn:focus {
+  background: #34D399 !important;
+  border-color: #34D399 !important;
+  color: #05244F !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 10px 24px rgba(52, 211, 153, 0.35) !important;
 }
 
-/* Adjust footer top padding since card no longer uses fragile negative margin */
+.prefooter-call-btn {
+  background: rgba(255, 255, 255, 0.12) !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  color: #FFFFFF !important;
+  font-family: var(--font-b, 'DM Sans', sans-serif) !important;
+  font-size: 14.5px !important;
+  font-weight: 700 !important;
+  padding: 13px 22px !important;
+  border-radius: 999px !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  white-space: nowrap !important;
+  cursor: pointer !important;
+  transition: all 0.22s ease !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.prefooter-call-btn:hover,
+.prefooter-call-btn:focus {
+  background: rgba(255, 255, 255, 0.22) !important;
+  border-color: rgba(255, 255, 255, 0.45) !important;
+  color: #FFFFFF !important;
+  transform: translateY(-2px) !important;
+}
+
 .site-footer {
   padding-top: 55px !important;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .prefooter-journey-sec {
-    padding: 30px 0;
+    padding: 30px 0 45px 0 !important;
   }
 
-  .prefooter-rect-shadow {
-    top: -12px;
-    left: -12px;
+  .prefooter-rect-card {
+    padding: 32px 24px !important;
+    border-radius: 16px !important;
   }
 
   .prefooter-rect-body {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 36px 28px;
-    gap: 24px;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 24px !important;
   }
 
   .prefooter-rect-title {
-    font-size: 26px;
+    font-size: 24px !important;
+    text-align: center !important;
   }
 
   .prefooter-rect-desc {
-    font-size: 15px;
+    font-size: 14.5px !important;
+    text-align: center !important;
+    margin: 0 auto !important;
   }
 
   .prefooter-rect-action {
-    width: 100%;
+    width: 100% !important;
+    justify-content: center !important;
+    flex-direction: column !important;
+    gap: 12px !important;
   }
 
-  .prefooter-rect-btn {
-    width: 100%;
-    padding: 15px 28px;
-    font-size: 15px;
+  .prefooter-rect-btn,
+  .prefooter-call-btn {
+    width: 100% !important;
+    max-width: 320px !important;
+    justify-content: center !important;
   }
 }
 

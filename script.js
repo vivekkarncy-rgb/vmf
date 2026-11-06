@@ -1273,26 +1273,32 @@ class Reveal {
 
     // Reset any unwanted filter
     section.style.filter = 'none';
+    section.style.visibility = 'visible';
 
-    // Entrance Scrub: Clean fade in + gentle slide up
+    // Entrance Scrub: High base visibility + smooth settle
     gsap.fromTo(section,
-      { opacity: 0.15, y: 35 },
+      { opacity: 0.85, y: 15 },
       {
         opacity: 1,
         y: 0,
         ease: 'none',
         scrollTrigger: {
           trigger: section,
-          start: 'top 95%',
-          end: 'top 65%',
-          scrub: 0.6,
+          start: 'top 98%',
+          end: 'top 70%',
+          scrub: 0.3,
           onUpdate: (self) => {
-            if (self.progress >= 0.999) {
+            if (self.progress >= 0.85) {
               section.style.transform = '';
+              section.style.opacity = '1';
             }
           },
           onLeave: () => {
             section.style.transform = '';
+            section.style.opacity = '1';
+          },
+          onEnterBack: () => {
+            section.style.opacity = '1';
           }
         }
       }
