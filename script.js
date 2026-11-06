@@ -527,6 +527,42 @@ function closePolicyModalOnBackdrop(e) {
   }
 }
 
+// Policies Nav Dropdown Controller
+function initPolicyDropdown() {
+  const dropdown = document.getElementById('policyNavDropdown');
+  const trigger = document.getElementById('policyDropdownTrigger');
+
+  if (!dropdown || !trigger) return;
+
+  trigger.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isOpen = dropdown.classList.toggle('open');
+    trigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!dropdown.contains(e.target)) {
+      dropdown.classList.remove('open');
+      trigger.setAttribute('aria-expanded', 'false');
+    }
+  });
+}
+
+function closeDropdowns() {
+  const dropdown = document.getElementById('policyNavDropdown');
+  const trigger = document.getElementById('policyDropdownTrigger');
+  if (dropdown) dropdown.classList.remove('open');
+  if (trigger) trigger.setAttribute('aria-expanded', 'false');
+}
+
+window.closeDropdowns = closeDropdowns;
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initPolicyDropdown);
+} else {
+  initPolicyDropdown();
+}
+
 window.openPolicyModal = openPolicyModal;
 window.closePolicyModal = closePolicyModal;
 window.closePolicyModalOnBackdrop = closePolicyModalOnBackdrop;

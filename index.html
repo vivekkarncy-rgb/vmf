@@ -46,8 +46,47 @@
           <a href="#products" onclick="closeMobileNav()">Products</a>
           <a href="#how-we-finance" onclick="closeMobileNav()">How It Works</a>
           <a href="#about" onclick="closeMobileNav()">About</a>
-          <a href="javascript:void(0)" onclick="openPolicyModal('underwriting-policy'); closeMobileNav();">Policies</a>
           <a href="#contact" onclick="closeMobileNav()">Contact</a>
+          
+          <!-- Policies Dropdown Menu (Moved to last, opens popup on click) -->
+          <div class="nav-dropdown" id="policyNavDropdown">
+            <button type="button" class="nav-dropdown-trigger" id="policyDropdownTrigger" aria-expanded="false" aria-haspopup="true">
+              <span>Policies</span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="nav-dropdown-chevron">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="nav-dropdown-menu" id="policyDropdownMenu" role="menu">
+              <a href="javascript:void(0)" role="menuitem" class="nav-dropdown-item" onclick="openPolicyModal('underwriting-policy'); closeDropdowns(); closeMobileNav();">
+                <span class="dropdown-item-num">01</span>
+                <span>Credit &amp; Underwriting Policy</span>
+              </a>
+              <a href="javascript:void(0)" role="menuitem" class="nav-dropdown-item" onclick="openPolicyModal('fair-practices-code'); closeDropdowns(); closeMobileNav();">
+                <span class="dropdown-item-num">02</span>
+                <span>Fair Practices Code (FPC)</span>
+              </a>
+              <a href="javascript:void(0)" role="menuitem" class="nav-dropdown-item" onclick="openPolicyModal('interest-rate-policy'); closeDropdowns(); closeMobileNav();">
+                <span class="dropdown-item-num">03</span>
+                <span>Rates &amp; Schedule of Charges</span>
+              </a>
+              <a href="javascript:void(0)" role="menuitem" class="nav-dropdown-item" onclick="openPolicyModal('grievance-redressal'); closeDropdowns(); closeMobileNav();">
+                <span class="dropdown-item-num">04</span>
+                <span>Customer Grievance Redressal</span>
+              </a>
+              <a href="javascript:void(0)" role="menuitem" class="nav-dropdown-item" onclick="openPolicyModal('kyc-aml-policy'); closeDropdowns(); closeMobileNav();">
+                <span class="dropdown-item-num">05</span>
+                <span>KYC &amp; AML Compliance</span>
+              </a>
+              <a href="javascript:void(0)" role="menuitem" class="nav-dropdown-item" onclick="openPolicyModal('privacy-policy'); closeDropdowns(); closeMobileNav();">
+                <span class="dropdown-item-num">06</span>
+                <span>Privacy &amp; Data Protection</span>
+              </a>
+              <a href="javascript:void(0)" role="menuitem" class="nav-dropdown-item" onclick="openPolicyModal('statutory-declarations'); closeDropdowns(); closeMobileNav();">
+                <span class="dropdown-item-num">07</span>
+                <span>Statutory Declarations &amp; Caveat</span>
+              </a>
+            </div>
+          </div>
         </nav>
         <div class="nav-actions">
           <a href="#contact" class="btn-cta header-enquiry-btn" onclick="scrollToContactForm(event)" style="text-decoration: none;"><span>Enquiry Now</span></a>
