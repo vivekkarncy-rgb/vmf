@@ -1291,12 +1291,6 @@ h1, h2, h3, h4, h5, h6,
   gap: 24px;
 }
 
-@media (max-width: 768px) {
-  .about-values-cols {
-    grid-template-columns: 1fr;
-  }
-}
-
 .about-val-col {
   background: #F8FAFC;
   border: 1px solid var(--vmf-border);
@@ -1335,6 +1329,90 @@ h1, h2, h3, h4, h5, h6,
 .about-val-col:nth-child(3) .about-val-badge {
   background: linear-gradient(135deg, #7BB638 0%, #5D9125 100%);
   box-shadow: 0 4px 10px rgba(123, 182, 56, 0.2);
+}
+
+@media (max-width: 900px) {
+  #about .about-clean-wrap {
+    padding: 28px 16px !important;
+    border-radius: 20px !important;
+  }
+
+  .about-values-section {
+    margin-top: 14px !important;
+    margin-bottom: 0 !important;
+  }
+
+  .about-values-header {
+    margin-bottom: 18px !important;
+    text-align: center !important;
+  }
+
+  .about-values-title {
+    font-size: clamp(20px, 5.2vw, 24px) !important;
+    margin-bottom: 4px !important;
+    text-align: center !important;
+  }
+
+  .about-values-sub {
+    font-size: 14px !important;
+    line-height: 1.45 !important;
+    text-align: center !important;
+  }
+
+  .about-values-cols {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+
+  /* Compact Horizontal Value Card (Left side: V/M/F badge, Right side: Value/Momentum/Fairness name) */
+  .about-val-col {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 16px !important;
+    padding: 14px 20px !important;
+    background: #FFFFFF !important;
+    border: 1px solid var(--vmf-border, #E2E8F0) !important;
+    border-radius: 14px !important;
+    box-shadow: 0 2px 8px rgba(5, 36, 79, 0.04) !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+  }
+
+  .about-val-col:active,
+  .about-val-col:hover {
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 14px rgba(5, 36, 79, 0.08) !important;
+  }
+
+  .about-val-badge {
+    width: 44px !important;
+    height: 44px !important;
+    min-width: 44px !important;
+    margin-bottom: 0 !important;
+    border-radius: 12px !important;
+    font-size: 19px !important;
+    font-weight: 800 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+  }
+
+  .about-val-name {
+    font-size: 18px !important;
+    font-weight: 800 !important;
+    color: var(--vmf-navy, #05244F) !important;
+    margin: 0 !important;
+    letter-spacing: -0.01em !important;
+    text-align: left !important;
+  }
+
+  .about-val-desc {
+    display: none !important;
+  }
 }
 
 /* ==========================================================================
