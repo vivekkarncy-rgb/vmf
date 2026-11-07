@@ -1278,7 +1278,7 @@ h1, h2, h3, h4, h5, h6,
   height: 380px !important; /* Increased photo wrap height for elegant tall framing */
   overflow: hidden;
   position: relative;
-  background: linear-gradient(180deg, #0A2F63 0%, #031633 100%);
+  background: #F1F5F9 !important; /* Clean light grey studio background for team photos */
   width: 100%;
 }
 
