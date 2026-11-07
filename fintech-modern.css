@@ -2354,7 +2354,11 @@ reveal-wrapper[mode="section"] {
     letter-spacing: -0.02em !important;
   }
 
-  /* Mobile Footer: Make Logo Bigger, Centered & Consistent Margins */
+  /* Mobile Footer: Make Logo Bigger, Centered, Consistent Margins & Clearance above Floating Chatbot */
+  .site-footer {
+    padding-bottom: calc(115px + env(safe-area-inset-bottom, 20px)) !important;
+  }
+
   .site-footer > .container {
     padding-left: 32px !important;
     padding-right: 32px !important;
@@ -2409,6 +2413,9 @@ reveal-wrapper[mode="section"] {
   .prefooter-rect-title {
     font-size: clamp(20px, 5.2vw, 23px) !important;
     line-height: 1.22 !important;
+  }
+  .site-footer {
+    padding-bottom: calc(125px + env(safe-area-inset-bottom, 20px)) !important;
   }
   .site-footer .footer-logo-img {
     height: 72px !important;
