@@ -1340,18 +1340,15 @@ h1, h2, h3, h4, h5, h6,
 /* ==========================================================================
    7. GOVERNANCE & TEAM
    ========================================================================== */
+#governance .container {
+  padding-left: 32px !important;
+  padding-right: 32px !important;
+}
+
 .gov-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 28px;
-}
-
-@media (max-width: 900px) {
-  .gov-grid {
-    grid-template-columns: 1fr;
-    max-width: 420px;
-    margin: 0 auto;
-  }
 }
 
 .gov-card {
@@ -1363,7 +1360,7 @@ h1, h2, h3, h4, h5, h6,
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   display: flex;
   flex-direction: column;
-  min-height: 480px; /* Increased card height for premium executive portrait framing */
+  min-height: 420px;
 }
 
 .gov-card:hover {
@@ -1373,11 +1370,51 @@ h1, h2, h3, h4, h5, h6,
 }
 
 .gov-photo-wrap {
-  height: 380px !important; /* Increased photo wrap height for elegant tall framing */
+  height: 320px !important;
   overflow: hidden;
   position: relative;
   background: #F1F5F9 !important; /* Clean light grey studio background for team photos */
   width: 100%;
+}
+
+@media (max-width: 900px) {
+  #governance h2 {
+    font-size: 26px !important;
+    line-height: 1.25 !important;
+  }
+  .gov-grid {
+    grid-template-columns: 1fr;
+    max-width: 100% !important;
+    margin: 0 auto;
+    gap: 24px !important;
+  }
+  .gov-card {
+    min-height: 330px !important;
+    border-radius: 20px !important;
+  }
+  .gov-photo-wrap {
+    height: 250px !important;
+  }
+  .gov-card-body {
+    padding: 16px 20px 18px 20px !important;
+  }
+  .gov-card-header h3 {
+    font-size: 19px !important;
+    margin-bottom: 4px !important;
+  }
+  .gov-role {
+    font-size: 13.5px !important;
+  }
+  .gov-linkedin-btn {
+    width: 36px !important;
+    height: 36px !important;
+    top: 14px !important;
+    right: 14px !important;
+  }
+  .gov-linkedin-btn svg {
+    width: 18px !important;
+    height: 18px !important;
+  }
 }
 
 .gov-photo-img {
