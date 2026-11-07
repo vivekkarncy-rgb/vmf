@@ -7330,10 +7330,10 @@ reveal-wrapper[mode="section"]>.section,
   }
 
   .hero-badges-row {
-    flex-direction: column !important;
+    flex-direction: row !important;
     align-items: center !important;
-    justify-content: center !important;
-    gap: 12px !important;
+    justify-content: flex-start !important;
+    gap: 16px !important;
     margin-top: 24px !important;
     padding-top: 0 !important;
     width: 100% !important;
@@ -7867,6 +7867,18 @@ section {
     text-align: center !important;
     max-width: 680px !important;
     margin: 0 auto !important;
+    min-width: 0 !important;
+    width: 100% !important;
+  }
+  .hero-sec .hero-grid > div:first-child {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    overflow: hidden !important;
   }
   .hero-h1-rotator {
     min-height: 140px !important;

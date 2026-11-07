@@ -433,6 +433,27 @@ h1, h2, h3, h4, h5, h6,
   display: none !important;
 }
 
+/* ==========================================================================
+   Hero Badges Marquee (Infinite Single-Line Flow)
+   ========================================================================== */
+.hero-badges-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.hero-badges-track {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+.hero-badges-track[aria-hidden="true"] {
+  display: none;
+}
+
 .h-badge-item {
   background: #FFFFFF;
   border: 1px solid var(--vmf-border);
@@ -446,6 +467,70 @@ h1, h2, h3, h4, h5, h6,
 
 .h-badge-dot {
   background-color: var(--vmf-emerald);
+}
+
+@media (max-width: 991px) {
+  .hero-sec .hero-grid > div:first-child {
+    min-width: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    overflow: hidden !important;
+  }
+
+  .hero-badges-row {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    overflow: hidden !important;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    gap: 16px !important;
+    padding: 8px 0 !important;
+    margin: 22px auto 0 auto !important;
+    mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 1) 12%, rgba(0, 0, 0, 1) 88%, transparent 100%) !important;
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 1) 12%, rgba(0, 0, 0, 1) 88%, transparent 100%) !important;
+  }
+
+  .hero-badges-track {
+    display: flex !important;
+    flex-shrink: 0 !important;
+    align-items: center !important;
+    gap: 16px !important;
+    animation: heroBadgesMarquee 16s linear infinite !important;
+    will-change: transform;
+  }
+
+  .hero-badges-track[aria-hidden="true"] {
+    display: flex !important;
+  }
+
+  .h-badge-item {
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+  }
+
+  .hero-badges-row:hover .hero-badges-track,
+  .hero-badges-row:active .hero-badges-track {
+    animation-play-state: paused !important;
+  }
+}
+
+@keyframes heroBadgesMarquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100% - 16px));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-badges-track {
+    animation: none !important;
+  }
 }
 
 /* ==========================================================================
