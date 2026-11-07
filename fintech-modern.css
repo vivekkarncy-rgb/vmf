@@ -355,6 +355,14 @@ h1, h2, h3, h4, h5, h6,
   .hero-p-slide {
     text-align: center !important;
   }
+  .contact-v2-submit-btn {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 14px 24px !important;
+    font-size: 16px !important;
+  }
 }
 
 /* ==========================================================================
