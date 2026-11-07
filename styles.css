@@ -6039,6 +6039,12 @@ scramble-text {
     padding: 60px 0;
   }
 
+  .section-social-proof .container,
+  #testimonials .container {
+    padding-left: 32px !important;
+    padding-right: 32px !important;
+  }
+
   .testimonial-card {
     flex-direction: column;
     gap: 20px;

@@ -1480,6 +1480,35 @@ h1, h2, h3, h4, h5, h6,
 }
 
 /* ==========================================================================
+   8. TESTIMONIALS & SOCIAL PROOF
+   ========================================================================== */
+#testimonials .container,
+.section-social-proof .container {
+  padding-left: 32px !important;
+  padding-right: 32px !important;
+}
+
+@media (max-width: 900px) {
+  #testimonials h2,
+  .social-proof-title {
+    font-size: 26px !important;
+    line-height: 1.25 !important;
+  }
+
+  .testimonial-carousel-wrap {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+  }
+
+  .testimonial-card {
+    border-radius: 20px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+}
+
+/* ==========================================================================
    POLICIES NAVBAR DROPDOWN MENU
    ========================================================================== */
 .nav-dropdown {
