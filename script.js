@@ -323,7 +323,7 @@ function applyFromExploreModal() {
 // ==========================================================================
 const policyRegistry = {
   'underwriting-policy': {
-    title: 'Credit & Underwriting Policy',
+    title: 'Underwriting Policy',
     content: `
       <div class="arc-inner-clause">
         <strong style="color: #05244F; display: block; margin-bottom: 6px;">Cash-Flow &amp; Transaction Discipline:</strong>
