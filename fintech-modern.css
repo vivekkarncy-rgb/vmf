@@ -2218,6 +2218,25 @@ reveal-wrapper[mode="section"] {
   #heroCardSwap {
     display: none !important;
   }
+
+  /* Mobile Footer: Make Logo Bigger & Centered */
+  .site-footer .footer-brand {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    margin: 0 auto 18px auto !important;
+    text-align: center !important;
+  }
+
+  .site-footer .footer-logo-img {
+    height: 76px !important;
+    max-width: 280px !important;
+    width: auto !important;
+    display: block !important;
+    margin: 0 auto !important;
+    object-fit: contain !important;
+  }
 }
 
 @media (max-width: 480px) {
@@ -2230,6 +2249,10 @@ reveal-wrapper[mode="section"] {
   .hero-h1 {
     font-size: clamp(20px, 5.2vw, 24px) !important;
     text-align: left !important;
+  }
+  .site-footer .footer-logo-img {
+    height: 72px !important;
+    max-width: 260px !important;
   }
 }
 
