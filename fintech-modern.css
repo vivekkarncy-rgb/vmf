@@ -347,9 +347,10 @@ h1, h2, h3, h4, h5, h6,
 
 @media (max-width: 768px) {
   .hero-p-rotator {
-    min-height: 105px;
+    min-height: 115px;
     margin-left: auto;
     margin-right: auto;
+    max-width: 540px;
   }
   .hero-p-slide {
     text-align: center !important;
@@ -1887,29 +1888,24 @@ reveal-wrapper[mode="section"] {
     line-height: 1.4;
   }
 
-  /* Scale CardSwap smoothly without blowing viewport width */
-  .hero-graphic-wrap {
-    min-height: 310px !important;
-    max-height: 390px !important;
-  }
+  /* Mobile: Hide Hero Section Cards as requested */
+  .hero-graphic-wrap,
+  #heroGraphicWrap,
   .card-swap,
   #heroCardSwap {
-    transform: scale(0.72);
-    transform-origin: center center;
-    max-width: 100% !important;
-    min-height: 320px !important;
+    display: none !important;
   }
 }
 
 @media (max-width: 480px) {
+  .hero-graphic-wrap,
+  #heroGraphicWrap,
   .card-swap,
   #heroCardSwap {
-    transform: scale(0.60);
-    transform-origin: center center;
-    min-height: 280px !important;
+    display: none !important;
   }
   .hero-h1 {
-    font-size: 30px !important;
+    font-size: clamp(26px, 7.5vw, 32px) !important;
   }
 }
 
