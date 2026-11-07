@@ -1912,6 +1912,11 @@ h1, h2, h3, h4, h5, h6,
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
+.site-footer > .container {
+  padding-left: 32px !important;
+  padding-right: 32px !important;
+}
+
 .footer-col h4 {
   color: #FFFFFF;
   font-family: var(--vmf-font-display);
@@ -2248,7 +2253,12 @@ reveal-wrapper[mode="section"] {
     display: none !important;
   }
 
-  /* Mobile Footer: Make Logo Bigger & Centered */
+  /* Mobile Footer: Make Logo Bigger, Centered & Consistent Margins */
+  .site-footer > .container {
+    padding-left: 32px !important;
+    padding-right: 32px !important;
+  }
+
   .site-footer .footer-brand {
     display: flex !important;
     justify-content: center !important;
