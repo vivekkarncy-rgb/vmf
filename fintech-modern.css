@@ -347,13 +347,16 @@ h1, h2, h3, h4, h5, h6,
 
 @media (max-width: 768px) {
   .hero-p-rotator {
-    min-height: 115px;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 540px;
+    min-height: 85px;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    max-width: 100%;
+    text-align: left !important;
   }
-  .hero-p-slide {
-    text-align: center !important;
+  .hero-p-slide,
+  .hero-p {
+    text-align: left !important;
+    margin-left: 0 !important;
   }
   .contact-v2-submit-btn {
     width: 100% !important;
@@ -497,7 +500,7 @@ h1, h2, h3, h4, h5, h6,
     align-items: center !important;
     gap: 16px !important;
     padding: 8px 0 !important;
-    margin: 22px auto 0 auto !important;
+    margin: 20px 0 0 0 !important;
     mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 1) 12%, rgba(0, 0, 0, 1) 88%, transparent 100%) !important;
     -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 1) 12%, rgba(0, 0, 0, 1) 88%, transparent 100%) !important;
   }
@@ -873,12 +876,58 @@ h1, h2, h3, h4, h5, h6,
 }
 
 @media (max-width: 960px) {
+  #products h2 {
+    font-size: 26px !important;
+    line-height: 1.25 !important;
+  }
+  #products .container {
+    padding-left: 32px !important;
+    padding-right: 32px !important;
+  }
   .prod-modern-grid {
     grid-template-columns: 1fr;
-    max-width: 440px;
-    margin-left: auto;
-    margin-right: auto;
-    gap: 50px;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    gap: 36px !important;
+    margin-top: 36px !important;
+    padding-top: 20px !important;
+  }
+  .prod-modern-card {
+    min-height: 290px !important;
+    border-radius: 24px !important;
+  }
+  .prod-modern-badge {
+    width: 56px !important;
+    height: 56px !important;
+    top: -16px !important;
+    left: -8px !important;
+  }
+  .prod-modern-badge svg {
+    width: 22px !important;
+    height: 22px !important;
+  }
+  .prod-modern-body {
+    padding: 36px 18px 18px 18px !important;
+  }
+  .prod-modern-title {
+    font-size: 22px !important;
+    line-height: 1.2 !important;
+    margin: 0 0 6px 0 !important;
+  }
+  .prod-modern-tagline {
+    font-size: 13px !important;
+  }
+  .prod-modern-desc {
+    font-size: 13.5px !important;
+    line-height: 1.5 !important;
+    margin-top: 10px !important;
+    max-width: 100% !important;
+  }
+  .prod-modern-btn {
+    padding: 13px 18px !important;
+    font-size: 14.5px !important;
+    border-radius: 0 0 22px 22px !important;
   }
 }
 
@@ -987,16 +1036,41 @@ h1, h2, h3, h4, h5, h6,
 /* ==========================================================================
    5. HOW OUR FINANCING WORKS (UI/UX PRO MAX PIPELINE BENTO ARCHITECTURE)
    ========================================================================== */
+.finance-flow-section {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Ambient Fluid Flow Line Backdrop */
+.finance-flow-bg-lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.finance-flow-ambient-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  opacity: 0.85;
+}
+
 .pro-pipeline-wrap {
   width: 100%;
   max-width: 1240px;
   margin: 0 auto;
   position: relative;
+  z-index: 1;
 }
 
-/* Background connecting pipeline flow track (Desktop Only: 1 -> 2 -> 3 -> 6 -> 5 -> 4) */
+/* Background connecting pipeline flow track (1 -> 2 -> 3 -> 6 -> 5 -> 4) */
 .pro-pipeline-flow-svg {
-  display: none;
+  display: block;
   position: absolute;
   top: 0;
   left: 0;
@@ -1007,28 +1081,23 @@ h1, h2, h3, h4, h5, h6,
   overflow: visible;
 }
 
-@media (min-width: 1025px) {
-  .pro-pipeline-flow-svg {
-    display: block;
-  }
-}
-
 .pro-pipeline-flow-base {
   fill: none;
   stroke: #E2E8F0;
-  stroke-width: 3px;
+  stroke-width: 3.5px;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
 
 .pro-pipeline-flow-path {
   fill: none;
-  stroke: #3B7E48; /* VMF Signature Growth Emerald Green */
-  stroke-width: 3px;
+  stroke: url(#pipelineLineGrad);
+  stroke-width: 3.5px;
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-dasharray: 8 8;
   animation: proFlowPulse 20s linear infinite;
+  filter: drop-shadow(0 2px 6px rgba(16, 185, 129, 0.45));
 }
 
 @keyframes proFlowPulse {
@@ -1060,7 +1129,22 @@ h1, h2, h3, h4, h5, h6,
 @media (max-width: 680px) {
   .pro-pipeline-grid {
     grid-template-columns: 1fr;
-    gap: 18px;
+    gap: 24px !important;
+    position: relative;
+  }
+
+  /* Continuous Vertical Flow Line connecting mobile cards */
+  .pro-pipeline-grid::before {
+    content: '';
+    position: absolute;
+    top: 50px;
+    bottom: 50px;
+    left: 49px; /* Precisely centered through the 52px icon boxes */
+    width: 3.5px;
+    background: linear-gradient(180deg, #3B7E48 0%, #10B981 50%, #05244F 100%);
+    border-radius: 999px;
+    z-index: 0;
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.45), 0 0 20px rgba(59, 126, 72, 0.25);
   }
 }
 
@@ -1998,7 +2082,8 @@ reveal-wrapper[mode="section"] {
     display: none !important;
   }
   .hero-h1 {
-    font-size: clamp(26px, 7.5vw, 32px) !important;
+    font-size: clamp(20px, 5.2vw, 24px) !important;
+    text-align: left !important;
   }
 }
 

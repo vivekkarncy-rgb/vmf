@@ -3445,13 +3445,6 @@ function updatePipelineFlowTrack() {
   const svg = document.querySelector('.pro-pipeline-flow-svg');
   if (!wrap || !svg) return;
 
-  // Desktop only: check window width
-  if (window.innerWidth <= 1024) {
-    svg.style.display = 'none';
-    return;
-  }
-  svg.style.display = 'block';
-
   const c1 = wrap.querySelector('.pro-pipeline-card[data-step="1"]');
   const c2 = wrap.querySelector('.pro-pipeline-card[data-step="2"]');
   const c3 = wrap.querySelector('.pro-pipeline-card[data-step="3"]');
@@ -3487,6 +3480,50 @@ function updatePipelineFlowTrack() {
   svg.setAttribute('height', wrapRect.height);
   svg.setAttribute('viewBox', `0 0 ${wrapRect.width} ${wrapRect.height}`);
 
+  const basePath = svg.querySelector('.pro-pipeline-flow-base');
+  const flowPath = svg.querySelector('.pro-pipeline-flow-path');
+  const arrowsGroup = svg.querySelector('.pro-pipeline-flow-arrows');
+
+  // Mobile Single-Column Flow Line (1 -> 2 -> 3 -> 4 -> 5 -> 6)
+  if (window.innerWidth <= 680) {
+    svg.style.display = 'block';
+    const cards = [c1, c2, c3, c4, c5, c6];
+    const boxes = cards.map(getBox);
+    const lineX = boxes[0].left + 50;
+    const startY = boxes[0].top + 50;
+    const endY = boxes[boxes.length - 1].bottom - 30;
+
+    const d = `M ${lineX} ${startY} L ${lineX} ${endY}`;
+    if (basePath) basePath.setAttribute('d', d);
+    if (flowPath) flowPath.setAttribute('d', d);
+
+    if (arrowsGroup) {
+      const arrows = [];
+      for (let i = 0; i < boxes.length - 1; i++) {
+        arrows.push({
+          x: lineX,
+          y: (boxes[i].bottom + boxes[i + 1].top) / 2,
+          dir: 'down'
+        });
+      }
+      arrowsGroup.innerHTML = arrows.map(a => `
+        <g class="pro-pipeline-arrow-marker">
+          <circle cx="${a.x}" cy="${a.y}" r="11" fill="#FFFFFF" stroke="#BBF7D0" stroke-width="1.5" filter="drop-shadow(0 2px 4px rgba(5,36,79,0.08))"/>
+          <path d="M ${a.x - 4} ${a.y - 3} L ${a.x} ${a.y + 3} L ${a.x + 4} ${a.y - 3}" stroke="#15803D" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+      `).join('');
+    }
+    return;
+  }
+
+  // Tablet: Hide complex serpentine on intermediate widths
+  if (window.innerWidth <= 1024) {
+    svg.style.display = 'none';
+    return;
+  }
+
+  svg.style.display = 'block';
+
   const row1Y = p1.y;
   const row2Y = p4.y;
   const turnX = Math.min(wrapRect.width - 12, Math.max(p3.right + 26, p4.right + 26));
@@ -3501,10 +3538,6 @@ function updatePipelineFlowTrack() {
     Q ${turnX} ${row2Y} ${turnX - radius} ${row2Y}
     L ${p6.x} ${row2Y}
   `.replace(/\s+/g, ' ').trim();
-
-  const basePath = svg.querySelector('.pro-pipeline-flow-base');
-  const flowPath = svg.querySelector('.pro-pipeline-flow-path');
-  const arrowsGroup = svg.querySelector('.pro-pipeline-flow-arrows');
 
   if (basePath) basePath.setAttribute('d', d);
   if (flowPath) flowPath.setAttribute('d', d);
