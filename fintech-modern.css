@@ -2253,6 +2253,29 @@ reveal-wrapper[mode="section"] {
     display: none !important;
   }
 
+  /* Mobile: Reduced Font Size for All Section Headings */
+  .section h2,
+  section h2,
+  #products h2,
+  #how-we-finance h2,
+  #industries h2,
+  #about h2,
+  .about-main-title,
+  #calculator h2,
+  .wc-calc-title,
+  #governance h2,
+  #testimonials h2,
+  .social-proof-title,
+  #contact h2,
+  .contact-v2-title,
+  #faq h2,
+  .prefooter-journey-sec h2,
+  .prefooter-rect-title {
+    font-size: clamp(21px, 5.5vw, 24px) !important;
+    line-height: 1.22 !important;
+    letter-spacing: -0.02em !important;
+  }
+
   /* Mobile Footer: Make Logo Bigger, Centered & Consistent Margins */
   .site-footer > .container {
     padding-left: 32px !important;
@@ -2288,6 +2311,26 @@ reveal-wrapper[mode="section"] {
   .hero-h1 {
     font-size: clamp(20px, 5.2vw, 24px) !important;
     text-align: left !important;
+  }
+  .section h2,
+  section h2,
+  #products h2,
+  #how-we-finance h2,
+  #industries h2,
+  #about h2,
+  .about-main-title,
+  #calculator h2,
+  .wc-calc-title,
+  #governance h2,
+  #testimonials h2,
+  .social-proof-title,
+  #contact h2,
+  .contact-v2-title,
+  #faq h2,
+  .prefooter-journey-sec h2,
+  .prefooter-rect-title {
+    font-size: clamp(20px, 5.2vw, 23px) !important;
+    line-height: 1.22 !important;
   }
   .site-footer .footer-logo-img {
     height: 72px !important;

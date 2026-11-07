@@ -3255,23 +3255,14 @@ function scrollToCalculator(e) {
 window.scrollToCalculator = scrollToCalculator;
 
 /* ------------------------------------------------------------
-   Open Product Modal from Footer (Smooth Scroll to #products + Open Modal)
+   Open Product Modal from Footer (Directly Opens Modal Without Scroll)
    ------------------------------------------------------------ */
 function openProductFromFooter(e, key) {
-  if (e) e.preventDefault();
-  const prodSec = document.getElementById('products');
-  if (prodSec) {
-    if (typeof lenis !== 'undefined' && lenis) {
-      lenis.scrollTo(prodSec, { offset: -70, duration: 1.0 });
-    } else {
-      prodSec.scrollIntoView({ behavior: 'smooth' });
-    }
-    setTimeout(() => {
-      openExploreStepsModal(key);
-    }, 450);
-  } else {
-    openExploreStepsModal(key);
+  if (e) {
+    e.preventDefault();
+    e.stopPropagation();
   }
+  openExploreStepsModal(key);
 }
 
 /* ------------------------------------------------------------
