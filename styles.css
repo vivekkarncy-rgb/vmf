@@ -5512,8 +5512,8 @@ scramble-text {
 
 .about-lead-text {
   font-family: var(--font-b);
-  font-size: 18px;
-  line-height: 1.62;
+  font-size: 15px;
+  line-height: 1.48;
   color: var(--text-muted);
   margin: 0;
 }
@@ -5544,8 +5544,8 @@ scramble-text {
 
 .about-block-text {
   font-family: var(--font-b);
-  font-size: 16.5px;
-  line-height: 1.62;
+  font-size: 15px;
+  line-height: 1.48;
   color: var(--text-muted);
   margin: 0;
 }
@@ -5688,7 +5688,8 @@ scramble-text {
   }
 
   .about-lead-text {
-    font-size: 17px;
+    font-size: 15px;
+    line-height: 1.45;
   }
 
   .about-responsible-line {

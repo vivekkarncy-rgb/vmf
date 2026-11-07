@@ -1271,6 +1271,20 @@ h1, h2, h3, h4, h5, h6,
   color: var(--vmf-navy);
 }
 
+.about-lead-text,
+.about-block-text {
+  font-size: 15px !important;
+  line-height: 1.48 !important;
+}
+
+@media (max-width: 768px) {
+  .about-lead-text,
+  .about-block-text {
+    font-size: 15px !important;
+    line-height: 1.45 !important;
+  }
+}
+
 .about-values-cols {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
