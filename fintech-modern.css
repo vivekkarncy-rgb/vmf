@@ -2008,6 +2008,101 @@ reveal-wrapper[mode="section"] {
   overflow: visible !important;
 }
 
+/* ==========================================================================
+   MOBILE INDUSTRY CARDS (MATCHING USER REFERENCE DESIGN)
+   ========================================================================== */
+.ind-mobile-grid {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .ind-pipeline-section,
+  #industries {
+    min-height: auto !important;
+    height: auto !important;
+    padding: 60px 0 !important;
+  }
+
+  #industries h2 {
+    font-size: 26px !important;
+    line-height: 1.25 !important;
+  }
+
+  #industries .container {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  .concave-carousel-wrap,
+  #concaveCarouselWrapper,
+  .concave-carousel,
+  #concaveCarousel {
+    display: none !important;
+  }
+
+  .ind-mobile-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 14px !important;
+    width: 100% !important;
+    margin-top: 24px !important;
+    box-sizing: border-box !important;
+  }
+
+  .ind-mobile-card {
+    background: #FFFFFF !important;
+    border: 1.5px solid #E2E8F0 !important;
+    border-radius: 18px !important;
+    padding: 22px 12px 18px 12px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    min-height: 125px !important;
+    box-shadow: 0 4px 14px -2px rgba(5, 36, 79, 0.05) !important;
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease, border-color 0.2s ease !important;
+    box-sizing: border-box !important;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .ind-mobile-card:hover,
+  .ind-mobile-card:active {
+    transform: translateY(-2px) scale(0.99) !important;
+    border-color: #CBD5E1 !important;
+    box-shadow: 0 8px 20px -3px rgba(5, 36, 79, 0.09) !important;
+  }
+
+  .ind-mobile-icon {
+    width: 44px;
+    height: 44px;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-bottom: 12px !important;
+    color: #2D7B39 !important;
+    flex-shrink: 0;
+  }
+
+  .ind-mobile-icon svg {
+    width: 36px !important;
+    height: 36px !important;
+    display: block !important;
+  }
+
+  .ind-mobile-title {
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    color: #05244F !important; /* Authentic VMF Blue Title */
+    line-height: 1.3 !important;
+    margin: 0 !important;
+    letter-spacing: -0.01em !important;
+    text-align: center !important;
+    font-family: inherit !important;
+  }
+}
+
 .ind-pipeline-section,
 #industries {
   max-width: 100% !important;
