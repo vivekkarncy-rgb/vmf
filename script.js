@@ -2797,9 +2797,53 @@ function resetTestimonialAutoScroll() {
   startTestimonialAutoScroll();
 }
 
+function equalizeTestimonialsHeight() {
+  const card = document.getElementById('testimonialCard');
+  const quoteEl = document.getElementById('testiQuote');
+  const authorEl = document.getElementById('testiAuthor');
+  const roleEl = document.getElementById('testiRole');
+  if (!card || !quoteEl) return;
+
+  const prevMinHeight = card.style.minHeight;
+  card.style.minHeight = '0px';
+
+  const origIdx = currentTestimonialIdx;
+  let maxH = 0;
+
+  testimonialsData.forEach(item => {
+    quoteEl.innerText = item.quote;
+    if (authorEl) authorEl.innerText = item.author;
+    if (roleEl) roleEl.innerText = item.role;
+    const h = card.offsetHeight;
+    if (h > maxH) maxH = h;
+  });
+
+  const currentItem = testimonialsData[origIdx];
+  quoteEl.innerText = currentItem.quote;
+  if (authorEl) authorEl.innerText = currentItem.author;
+  if (roleEl) roleEl.innerText = currentItem.role;
+
+  if (maxH > 0) {
+    card.style.minHeight = maxH + 'px';
+  } else if (prevMinHeight) {
+    card.style.minHeight = prevMinHeight;
+  }
+}
+
 function initTestimonialsAutoScroll() {
   const card = document.getElementById('testimonialCard');
   const controls = document.querySelector('.testimonial-controls');
+
+  equalizeTestimonialsHeight();
+
+  window.addEventListener('resize', () => {
+    clearTimeout(window.__testiResizeTimer);
+    window.__testiResizeTimer = setTimeout(equalizeTestimonialsHeight, 150);
+  });
+
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(equalizeTestimonialsHeight).catch(() => {});
+  }
 
   if (card) {
     card.addEventListener('mouseenter', stopTestimonialAutoScroll);
