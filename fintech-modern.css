@@ -568,9 +568,9 @@ section:not(.prefooter-journey-sec):not(.contact-section) h2,
     overflow: hidden !important;
   }
 
-  /* Bring badges row to the top on mobile version with full opacity */
+  /* Badges row position reverted below CTAs with full opacity and continuous marquee */
   .hero-badges-row {
-    order: -1 !important;
+    order: 0 !important;
     width: 100% !important;
     max-width: 100% !important;
     min-width: 0 !important;
@@ -581,8 +581,8 @@ section:not(.prefooter-journey-sec):not(.contact-section) h2,
     justify-content: flex-start !important;
     align-items: center !important;
     gap: 14px !important;
-    padding: 4px 0 !important;
-    margin: 0 0 24px 0 !important;
+    padding: 6px 0 !important;
+    margin: 24px 0 0 0 !important;
     opacity: 1 !important;
     mask-image: none !important;
     -webkit-mask-image: none !important;
