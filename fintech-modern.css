@@ -295,7 +295,7 @@ section:not(.prefooter-journey-sec):not(.contact-section) h2,
    2. HERO SECTION ENHANCEMENT WITH LIGHT FADING OFFICE BUILDING BACKDROP
    ========================================================================== */
 .hero-sec {
-  background-color: #FFFFFF;
+  background-color: transparent;
   position: relative;
   overflow: hidden;
   padding-top: 50px;
@@ -2862,11 +2862,17 @@ reveal-wrapper[mode="section"] {
 }
 
 /* ==========================================================================
-   Desktop Halftone Dot Side Rail (Section 2 to Last Section)
+   Desktop Halftone Dot Side Rails (In the Back Behind All Sections)
    ========================================================================== */
 .desktop-side-rails {
   display: block;
   pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0; /* Layered in the back behind all section content */
 }
 
 @media (max-width: 1199px) {
@@ -2882,13 +2888,13 @@ reveal-wrapper[mode="section"] {
   width: clamp(280px, 24vw, 440px);
   height: 100vh;
   pointer-events: none;
-  z-index: 3;
+  z-index: 0; /* Placed in the back, behind all sections and cards */
   background-image: url('assets/halftone-dots.png');
   background-repeat: no-repeat;
   background-size: cover;
   mix-blend-mode: multiply;
-  opacity: 0;
-  visibility: hidden;
+  opacity: 0.8 !important; /* 80% opacity */
+  visibility: visible !important;
   transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.45s;
   will-change: opacity;
 }
@@ -2896,24 +2902,53 @@ reveal-wrapper[mode="section"] {
 .fixed-side-rail-left {
   left: 0;
   background-position: left center;
-  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%), linear-gradient(to right, black 40%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%), linear-gradient(to right, black 40%, transparent 100%);
   -webkit-mask-composite: source-in;
-  mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%), linear-gradient(to right, black 40%, transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%), linear-gradient(to right, black 40%, transparent 100%);
   mask-composite: intersect;
 }
 
 .fixed-side-rail-right {
   right: 0;
   background-position: right center;
-  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%), linear-gradient(to left, black 40%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%), linear-gradient(to left, black 40%, transparent 100%);
   -webkit-mask-composite: source-in;
-  mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%), linear-gradient(to left, black 40%, transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%), linear-gradient(to left, black 40%, transparent 100%);
   mask-composite: intersect;
 }
 
 .fixed-side-rail.visible {
   opacity: 0.8 !important;
-  visibility: visible;
+  visibility: visible !important;
+}
+
+.fixed-side-rail.rail-hidden {
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+/* Ensure all section content layers cleanly in front of background side rails */
+.section,
+section,
+.hero-sec,
+.about-section,
+.finance-flow-section,
+.ind-pipeline-section,
+.wc-calc-section,
+.contact-section,
+.faq-section,
+.prefooter-journey-sec {
+  position: relative;
+  z-index: 1;
+}
+
+.site-header-fixed {
+  z-index: 1000 !important;
+}
+
+.site-footer {
+  position: relative;
+  z-index: 2 !important;
 }
 
 /* ==========================================================================

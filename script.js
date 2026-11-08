@@ -4119,29 +4119,35 @@ window.updatePipelineFlowTrack = updatePipelineFlowTrack;
 
 /* ============================================================
    Desktop Halftone Side Rails Scroll Controller
-   Activates from Section 2 (#products) down through the last section
+   Active across all sections from top of page through to footer
    ============================================================ */
 function initDesktopSideRails() {
   const rails = document.querySelectorAll('.fixed-side-rail');
-  const sec2 = document.getElementById('products');
   const footer = document.querySelector('.site-footer');
-  if (!rails.length || !sec2 || !footer) return;
+  if (!rails.length) return;
 
   function updateSideRails() {
     if (window.innerWidth < 1200) {
-      rails.forEach(r => r.classList.remove('visible'));
+      rails.forEach(r => {
+        r.classList.remove('visible');
+        r.classList.add('rail-hidden');
+      });
       return;
     }
-    const sec2Rect = sec2.getBoundingClientRect();
-    const footerRect = footer.getBoundingClientRect();
 
-    // Start showing when Section 2 begins entering viewport
-    const entered = sec2Rect.top <= window.innerHeight * 0.75;
-    // Hide when footer enters the screen
-    const exited = footerRect.top <= window.innerHeight * 0.65;
+    // Active across all sections from top of page; fades out when reaching footer
+    let isVisible = true;
+    if (footer) {
+      const footerRect = footer.getBoundingClientRect();
+      if (footerRect.top <= window.innerHeight * 0.7) {
+        isVisible = false;
+      }
+    }
 
-    const isVisible = entered && !exited;
-    rails.forEach(r => r.classList.toggle('visible', isVisible));
+    rails.forEach(r => {
+      r.classList.toggle('visible', isVisible);
+      r.classList.toggle('rail-hidden', !isVisible);
+    });
   }
 
   window.addEventListener('scroll', updateSideRails, { passive: true });
