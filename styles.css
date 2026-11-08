@@ -7349,6 +7349,8 @@ reveal-wrapper[mode="section"]>.section,
   }
 
   .hero-badges-row {
+    position: relative !important;
+    z-index: 10 !important;
     order: 0 !important;
     flex-direction: row !important;
     align-items: center !important;

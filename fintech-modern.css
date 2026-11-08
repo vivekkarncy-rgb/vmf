@@ -322,7 +322,7 @@ section:not(.prefooter-journey-sec):not(.contact-section) h2,
 
 .hero-sec > .container {
   position: relative;
-  z-index: 1; /* Keep content crisp and prominent above the backdrop */
+  z-index: 5 !important; /* Keep content crisp and prominent in the front above bottom white fade and backdrops */
 }
 
 /* Hero Bottom Fade Layer smoothly transitioning into the 2nd section */
@@ -520,6 +520,8 @@ section:not(.prefooter-journey-sec):not(.contact-section) h2,
    Hero Badges Marquee (Infinite Single-Line Flow - Top Placement on Mobile)
    ========================================================================== */
 .hero-badges-row {
+  position: relative;
+  z-index: 10 !important; /* Bring to front in front of all backdrops and fade layers */
   display: flex;
   align-items: center;
   gap: 16px;
@@ -568,8 +570,10 @@ section:not(.prefooter-journey-sec):not(.contact-section) h2,
     overflow: hidden !important;
   }
 
-  /* Badges row position reverted below CTAs with full opacity and continuous marquee */
+  /* Badges row position reverted below CTAs, brought to the front with full opacity and continuous marquee */
   .hero-badges-row {
+    position: relative !important;
+    z-index: 10 !important; /* Brought to the front in mobile */
     order: 0 !important;
     width: 100% !important;
     max-width: 100% !important;
