@@ -3532,21 +3532,9 @@ function updatePipelineFlowTrack() {
     if (basePath) basePath.setAttribute('d', d);
     if (flowPath) flowPath.setAttribute('d', d);
 
+    // Mobile: hide arrow icons, keep only the connection line
     if (arrowsGroup) {
-      const arrows = [];
-      for (let i = 0; i < boxes.length - 1; i++) {
-        arrows.push({
-          x: lineX,
-          y: (boxes[i].bottom + boxes[i + 1].top) / 2,
-          dir: 'down'
-        });
-      }
-      arrowsGroup.innerHTML = arrows.map(a => `
-        <g class="pro-pipeline-arrow-marker">
-          <circle cx="${a.x}" cy="${a.y}" r="11" fill="#FFFFFF" stroke="#BBF7D0" stroke-width="1.5" filter="drop-shadow(0 2px 4px rgba(5,36,79,0.08))"/>
-          <path d="M ${a.x - 4} ${a.y - 3} L ${a.x} ${a.y + 3} L ${a.x + 4} ${a.y - 3}" stroke="#15803D" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-        </g>
-      `).join('');
+      arrowsGroup.innerHTML = '';
     }
     return;
   }

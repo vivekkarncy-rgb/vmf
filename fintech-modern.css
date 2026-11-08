@@ -2387,6 +2387,12 @@ reveal-wrapper[mode="section"] {
     display: none !important;
   }
 
+  /* Mobile: Hide Arrow Icons on Financing Works Cards, keep only connecting line */
+  .pro-pipeline-flow-arrows,
+  .pro-pipeline-arrow-marker {
+    display: none !important;
+  }
+
   /* Mobile: Increased Hero Heading Size */
   .hero-h1 {
     font-size: clamp(28px, 7.5vw, 38px) !important;
