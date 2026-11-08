@@ -1052,6 +1052,7 @@ h1, h2, h3, h4, h5, h6,
 
 /* Ambient Fluid Flow Line Backdrop */
 .finance-flow-bg-lines {
+  display: none !important;
   position: absolute;
   top: 0;
   left: 0;
@@ -1357,7 +1358,7 @@ h1, h2, h3, h4, h5, h6,
   }
 
   .about-values-title {
-    font-size: clamp(20px, 5.2vw, 24px) !important;
+    font-size: clamp(23px, 5.8vw, 26px) !important;
     margin-bottom: 4px !important;
     text-align: center !important;
   }
@@ -2340,14 +2341,23 @@ reveal-wrapper[mode="section"] {
     display: none !important;
   }
 
-  /* Mobile: Reduced Font Size for All Section Headings */
+  /* Mobile: Increased Hero Heading Size */
+  .hero-h1 {
+    font-size: clamp(28px, 7.5vw, 38px) !important;
+    line-height: 1.18 !important;
+    text-align: left !important;
+  }
+
+  /* Mobile: Section Headings increased slightly */
   .section h2,
   section h2,
+  #why-vmf h2,
   #products h2,
   #how-we-finance h2,
   #industries h2,
   #about h2,
   .about-main-title,
+  .about-values-title,
   #calculator h2,
   .wc-calc-title,
   #governance h2,
@@ -2358,8 +2368,8 @@ reveal-wrapper[mode="section"] {
   #faq h2,
   .prefooter-journey-sec h2,
   .prefooter-rect-title {
-    font-size: clamp(21px, 5.5vw, 24px) !important;
-    line-height: 1.22 !important;
+    font-size: clamp(24px, 5.8vw, 28px) !important;
+    line-height: 1.24 !important;
     letter-spacing: -0.02em !important;
   }
 
@@ -2400,16 +2410,19 @@ reveal-wrapper[mode="section"] {
     display: none !important;
   }
   .hero-h1 {
-    font-size: clamp(20px, 5.2vw, 24px) !important;
+    font-size: clamp(28px, 7.5vw, 36px) !important;
+    line-height: 1.18 !important;
     text-align: left !important;
   }
   .section h2,
   section h2,
+  #why-vmf h2,
   #products h2,
   #how-we-finance h2,
   #industries h2,
   #about h2,
   .about-main-title,
+  .about-values-title,
   #calculator h2,
   .wc-calc-title,
   #governance h2,
@@ -2420,8 +2433,8 @@ reveal-wrapper[mode="section"] {
   #faq h2,
   .prefooter-journey-sec h2,
   .prefooter-rect-title {
-    font-size: clamp(20px, 5.2vw, 23px) !important;
-    line-height: 1.22 !important;
+    font-size: clamp(23px, 5.8vw, 26px) !important;
+    line-height: 1.24 !important;
   }
   .site-footer {
     padding-bottom: calc(125px + env(safe-area-inset-bottom, 20px)) !important;
