@@ -2879,7 +2879,6 @@ reveal-wrapper[mode="section"] {
   position: fixed;
   top: 0;
   bottom: 0;
-  right: 0;
   width: clamp(280px, 24vw, 440px);
   height: 100vh;
   pointer-events: none;
@@ -2887,19 +2886,33 @@ reveal-wrapper[mode="section"] {
   background-image: url('assets/halftone-dots.png');
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center right;
   mix-blend-mode: multiply;
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.45s;
   will-change: opacity;
+}
+
+.fixed-side-rail-left {
+  left: 0;
+  background-position: left center;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%), linear-gradient(to right, black 40%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%), linear-gradient(to right, black 40%, transparent 100%);
+  mask-composite: intersect;
+}
+
+.fixed-side-rail-right {
+  right: 0;
+  background-position: right center;
   -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%), linear-gradient(to left, black 40%, transparent 100%);
   -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%), linear-gradient(to left, black 40%, transparent 100%);
   mask-composite: intersect;
 }
 
 .fixed-side-rail.visible {
-  opacity: 0.5 !important;
+  opacity: 0.8 !important;
   visibility: visible;
 }
 
