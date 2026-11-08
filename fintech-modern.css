@@ -547,7 +547,7 @@ section:not(.prefooter-journey-sec):not(.contact-section) h2,
   font-size: 13px;
   font-weight: 700;
   color: #05244F;
-  box-shadow: 0 2px 6px rgba(5, 36, 79, 0.08);
+  box-shadow: none !important;
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -617,7 +617,7 @@ section:not(.prefooter-journey-sec):not(.contact-section) h2,
     font-size: 13px !important;
     padding: 7px 15px !important;
     border-radius: 999px !important;
-    box-shadow: 0 2px 8px rgba(5, 36, 79, 0.09) !important;
+    box-shadow: none !important;
   }
 
   .h-badge-dot {
