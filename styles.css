@@ -4664,25 +4664,19 @@ scramble-text {
   background: #94A3B8;
 }
 
-/* Executive Summary Box (Clean border, no thick left bar) */
+/* Executive Summary Box (Clean, no background, no border) */
 .exp-exec-box {
-  background: #F8FAFC;
-  border-radius: 10px;
-  border: 1px solid #E2E8F0;
-  padding: 18px 20px;
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
 }
 
 .exp-label-exec {
-  font-size: 11px;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.8px;
-  color: #05244F;
-  margin-bottom: 6px;
+  display: none !important;
 }
 
 .exp-pitch-exec {
-  font-size: clamp(19px, 2.2vw, 22px);
+  font-size: clamp(20px, 2.2vw, 23px);
   font-weight: 800;
   color: #05244F;
   line-height: 1.35;
@@ -4690,18 +4684,17 @@ scramble-text {
 }
 
 .exp-text-exec {
-  font-size: 13.5px;
-  line-height: 1.6;
+  font-size: 14px;
+  line-height: 1.65;
   color: #334155;
   margin: 0;
 }
 
-/* Indicative Documents Box (Clean border, no thick left bar) */
+/* Indicative Documents Box (Clean, no background, no border) */
 .exp-docs-box {
-  background: #FAFDF8;
-  border-radius: 10px;
-  border: 1px solid #E2E8F0;
-  padding: 18px 20px;
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
 }
 
 .exp-label-docs {
@@ -4714,8 +4707,8 @@ scramble-text {
 }
 
 .exp-text-docs {
-  font-size: 13px;
-  line-height: 1.6;
+  font-size: 13.5px;
+  line-height: 1.65;
   color: #1E293B;
   margin: 0;
 }
@@ -4830,12 +4823,11 @@ scramble-text {
   margin: 0;
 }
 
-/* Policy Guidance Note Box (Clean border, no thick left bar) */
+/* Policy Guidance Note Box (Clean, no background, no border) */
 .exp-policy-box {
-  background: #F8FAFC;
-  border: 1px solid #E2E8F0;
-  border-radius: 12px;
-  padding: 16px 20px;
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
 }
 
 .exp-policy-header {
