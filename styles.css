@@ -7127,7 +7127,7 @@ reveal-wrapper[mode="section"]>.section,
 .main-content-flow {
   position: relative;
   width: 100%;
-  background-color: #FFFFFF !important;
+  background-color: transparent !important;
   background-image: linear-gradient(
     180deg,
     #FFFFFF 0%,                               /* 100% pure seamless match with hero bottom */

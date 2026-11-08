@@ -2862,7 +2862,7 @@ reveal-wrapper[mode="section"] {
 }
 
 /* ==========================================================================
-   Desktop Halftone Dot Side Rails (Left & Right with Flip, Fixed Position & Blend)
+   Desktop Halftone Dot Side Rails (In the Back of All Sections, 60% Opacity)
    Starts at Section 2 (#products) and ends at last section with smooth blend
    ========================================================================== */
 .desktop-side-rails {
@@ -2873,7 +2873,7 @@ reveal-wrapper[mode="section"] {
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 2; /* Sits in fixed position, blending into the page sections */
+  z-index: 0; /* Placed in the back, behind all sections */
 }
 
 @media (max-width: 1199px) {
@@ -2889,7 +2889,7 @@ reveal-wrapper[mode="section"] {
   width: clamp(280px, 24vw, 440px);
   height: 100vh;
   pointer-events: none;
-  z-index: 2;
+  z-index: 0; /* In the back of all sections */
   background-image: url('assets/halftone-dots.png');
   background-repeat: no-repeat;
   background-size: cover;
@@ -2923,7 +2923,7 @@ reveal-wrapper[mode="section"] {
 }
 
 .fixed-side-rail.visible {
-  opacity: 0.8 !important;
+  opacity: 0.6 !important; /* 60% opacity */
   visibility: visible !important;
 }
 
