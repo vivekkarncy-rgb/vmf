@@ -2967,7 +2967,7 @@ function handleChatSubmit(e) {
       setChatPlaceholder("Type your financing requirement or message...");
 
       const botReply = `<strong>Step 4 of 4: Your Query / Requirement</strong><br>
-      Almost done! Please share your <strong>Message or Financing Requirement</strong> (e.g., funding amount needed, invoice discounting tenure, order details, or specific question):`;
+      Almost done! Please share your <strong>Message or Financing Requirement</strong> (e.g., funding amount needed, invoice financing tenure, order details, or specific question):`;
 
       sendBotReply(botReply, [
         { action: 'cancel_query', label: 'Cancel & Back to List' }
