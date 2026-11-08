@@ -2862,7 +2862,8 @@ reveal-wrapper[mode="section"] {
 }
 
 /* ==========================================================================
-   Desktop Halftone Dot Side Rails (In the Back Behind All Sections)
+   Desktop Halftone Dot Side Rails (Left & Right with Flip, Fixed Position & Blend)
+   Starts at Section 2 (#products) and ends at last section with smooth blend
    ========================================================================== */
 .desktop-side-rails {
   display: block;
@@ -2872,7 +2873,7 @@ reveal-wrapper[mode="section"] {
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 0; /* Layered in the back behind all section content */
+  z-index: 2; /* Sits in fixed position, blending into the page sections */
 }
 
 @media (max-width: 1199px) {
@@ -2888,32 +2889,36 @@ reveal-wrapper[mode="section"] {
   width: clamp(280px, 24vw, 440px);
   height: 100vh;
   pointer-events: none;
-  z-index: 0; /* Placed in the back, behind all sections and cards */
+  z-index: 2;
   background-image: url('assets/halftone-dots.png');
   background-repeat: no-repeat;
   background-size: cover;
   mix-blend-mode: multiply;
-  opacity: 0.8 !important; /* 80% opacity */
-  visibility: visible !important;
-  transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.45s;
-  will-change: opacity;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.5s ease;
+  will-change: opacity, transform;
 }
 
 .fixed-side-rail-left {
   left: 0;
+  right: auto;
   background-position: left center;
-  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%), linear-gradient(to right, black 40%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%), linear-gradient(to right, black 35%, transparent 100%);
   -webkit-mask-composite: source-in;
-  mask-image: linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%), linear-gradient(to right, black 40%, transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%), linear-gradient(to right, black 35%, transparent 100%);
   mask-composite: intersect;
 }
 
 .fixed-side-rail-right {
   right: 0;
-  background-position: right center;
-  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%), linear-gradient(to left, black 40%, transparent 100%);
+  left: auto;
+  background-position: left center;
+  transform: scaleX(-1);
+  transform-origin: center center;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%), linear-gradient(to right, black 35%, transparent 100%);
   -webkit-mask-composite: source-in;
-  mask-image: linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%), linear-gradient(to left, black 40%, transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%), linear-gradient(to right, black 35%, transparent 100%);
   mask-composite: intersect;
 }
 
@@ -2940,6 +2945,18 @@ section,
 .prefooter-journey-sec {
   position: relative;
   z-index: 1;
+}
+
+.section > .container,
+.finance-flow-section > .container,
+.ind-pipeline-section > .container,
+.about-section > .container,
+.wc-calc-section > .container,
+.contact-section > .container,
+.faq-section > .container,
+.prefooter-journey-sec > .container {
+  position: relative;
+  z-index: 3;
 }
 
 .site-header-fixed {

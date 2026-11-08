@@ -4158,10 +4158,11 @@ window.updatePipelineFlowTrack = updatePipelineFlowTrack;
 
 /* ============================================================
    Desktop Halftone Side Rails Scroll Controller
-   Active across all sections from top of page through to footer
+   Starts at Section 2 (#products) and ends at last section with smooth blend
    ============================================================ */
 function initDesktopSideRails() {
   const rails = document.querySelectorAll('.fixed-side-rail');
+  const sec2 = document.getElementById('products');
   const footer = document.querySelector('.site-footer');
   if (!rails.length) return;
 
@@ -4174,11 +4175,22 @@ function initDesktopSideRails() {
       return;
     }
 
-    // Active across all sections from top of page; fades out when reaching footer
-    let isVisible = true;
+    let isVisible = false;
+
+    // Starts when user scrolls down to Section 2 (#products)
+    if (sec2) {
+      const sec2Rect = sec2.getBoundingClientRect();
+      if (sec2Rect.top <= window.innerHeight * 0.75) {
+        isVisible = true;
+      }
+    } else if (window.scrollY >= 500) {
+      isVisible = true;
+    }
+
+    // Ends when reaching the footer after the last section
     if (footer) {
       const footerRect = footer.getBoundingClientRect();
-      if (footerRect.top <= window.innerHeight * 0.7) {
+      if (footerRect.top <= window.innerHeight * 0.75) {
         isVisible = false;
       }
     }
