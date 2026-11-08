@@ -56,6 +56,29 @@ h1, h2, h3, h4, h5, h6,
   font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
 }
 
+/* All Section Headings: Signature VMF Deep Navy to Growth Green Gradient Blend */
+.section h2,
+section h2,
+#why-vmf h2,
+#products h2,
+#how-we-finance h2,
+#industries h2,
+#about h2,
+.about-main-title,
+.about-values-title,
+#calculator h2,
+.wc-calc-title,
+#governance h2,
+#testimonials h2,
+.social-proof-title,
+#faq h2 {
+  background: linear-gradient(135deg, #05244F 10%, #15542C 55%, #2D7B39 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  color: transparent !important;
+}
+
 /* ==========================================================================
    1. FIXED HEADER & REGULATORY STRIP
    ========================================================================== */
@@ -2428,10 +2451,10 @@ reveal-wrapper[mode="section"] {
     display: none !important;
   }
 
-  /* Mobile: Increased Hero Heading Size */
+  /* Mobile: Hero Heading Size set to 26px */
   .hero-h1 {
-    font-size: clamp(28px, 7.5vw, 38px) !important;
-    line-height: 1.18 !important;
+    font-size: 26px !important;
+    line-height: 1.22 !important;
     text-align: left !important;
   }
 
@@ -2497,8 +2520,8 @@ reveal-wrapper[mode="section"] {
     display: none !important;
   }
   .hero-h1 {
-    font-size: clamp(28px, 7.5vw, 36px) !important;
-    line-height: 1.18 !important;
+    font-size: 26px !important;
+    line-height: 1.22 !important;
     text-align: left !important;
   }
   .section h2,
