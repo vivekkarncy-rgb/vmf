@@ -58,7 +58,7 @@ h1, h2, h3, h4, h5, h6,
 
 /* All Section Headings: Signature VMF Deep Navy to Growth Green Gradient Blend */
 .section h2,
-section h2,
+section:not(.prefooter-journey-sec) h2,
 #why-vmf h2,
 #products h2,
 #how-we-finance h2,
@@ -77,6 +77,16 @@ section h2,
   -webkit-text-fill-color: transparent !important;
   background-clip: text !important;
   color: transparent !important;
+}
+
+/* Pre-footer Callout Card Title: Pure White for High Contrast on Dark Background */
+.prefooter-rect-title,
+.prefooter-journey-sec h2 {
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  background-clip: unset !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+  color: #FFFFFF !important;
 }
 
 /* ==========================================================================
