@@ -2516,58 +2516,217 @@ function toggleChatbot() {
   }
 }
 
+function getChatTimestamp() {
+  const now = new Date();
+  let hours = now.getHours();
+  const minutes = now.getMinutes().toString().padStart(2, '0');
+  const ampm = hours >= 12 ? 'PM' : 'AM';
+  hours = hours % 12 || 12;
+  return `${hours}:${minutes} ${ampm}`;
+}
+
 function appendChatMsg(sender, htmlContent) {
   const msgContainer = document.getElementById('chatMessages');
   if (!msgContainer) return;
   
   const msgDiv = document.createElement('div');
   msgDiv.className = `chat-msg ${sender === 'user' ? 'user-msg' : 'bot-msg'}`;
-  msgDiv.innerHTML = `<div class="chat-bubble">${htmlContent}</div>`;
+  msgDiv.innerHTML = `
+    <div class="chat-bubble">
+      ${htmlContent}
+      <span class="chat-time">${getChatTimestamp()}</span>
+    </div>
+  `;
   
   msgContainer.appendChild(msgDiv);
-  msgContainer.scrollTop = msgContainer.scrollHeight;
+  msgContainer.scrollTo({ top: msgContainer.scrollHeight, behavior: 'smooth' });
+}
+
+function showTypingIndicator() {
+  const msgContainer = document.getElementById('chatMessages');
+  if (!msgContainer || document.getElementById('chatTypingIndicator')) return;
+
+  const typingDiv = document.createElement('div');
+  typingDiv.className = 'chat-msg bot-msg';
+  typingDiv.id = 'chatTypingIndicator';
+  typingDiv.innerHTML = `
+    <div class="chat-typing-bubble" aria-label="Underwriting Desk is typing">
+      <span class="chat-typing-dot"></span>
+      <span class="chat-typing-dot"></span>
+      <span class="chat-typing-dot"></span>
+    </div>
+  `;
+  msgContainer.appendChild(typingDiv);
+  msgContainer.scrollTo({ top: msgContainer.scrollHeight, behavior: 'smooth' });
+
+  const statusEl = document.querySelector('.chat-bot-status');
+  if (statusEl) {
+    statusEl.innerHTML = `<span class="chat-online-dot typing-pulse"></span> Typing...`;
+  }
+}
+
+function removeTypingIndicator() {
+  const typingEl = document.getElementById('chatTypingIndicator');
+  if (typingEl) typingEl.remove();
+
+  const statusEl = document.querySelector('.chat-bot-status');
+  if (statusEl) {
+    statusEl.innerHTML = `<span class="chat-online-dot"></span> Online`;
+  }
+}
+
+function appendInteractiveOptions(options) {
+  const msgContainer = document.getElementById('chatMessages');
+  if (!msgContainer || !options || !options.length) return;
+
+  const chipsDiv = document.createElement('div');
+  chipsDiv.className = 'chat-quick-chips chat-followup-chips';
+  
+  chipsDiv.innerHTML = options.map(opt => {
+    if (opt.action === 'call') {
+      return `<button type="button" class="chat-chip chat-chip-call" onclick="handleQuickChip('agent')">
+        <span>📞 Call Now (+91 40 2335 1234)</span>
+      </button>`;
+    }
+    if (opt.action === 'main_menu') {
+      return `<button type="button" class="chat-chip chat-chip-back" onclick="showChatMainMenu(true)">
+        <span>↩️ Back to List</span>
+      </button>`;
+    }
+    if (opt.action === 'apply') {
+      return `<button type="button" class="chat-chip chat-chip-action" onclick="(() => { scrollToContactForm(); toggleChatbot(); })()">
+        <span>📝 ${opt.label || 'Apply Online'}</span>
+      </button>`;
+    }
+    if (opt.action === 'calc') {
+      return `<button type="button" class="chat-chip chat-chip-action" onclick="(() => { scrollToCalculator(); toggleChatbot(); })()">
+        <span>🧮 ${opt.label || 'Open Calculator'}</span>
+      </button>`;
+    }
+    return `<button type="button" class="chat-chip" onclick="handleQuickChip('${opt.key}')">
+      <span>${opt.label}</span>
+    </button>`;
+  }).join('');
+
+  msgContainer.appendChild(chipsDiv);
+  msgContainer.scrollTo({ top: msgContainer.scrollHeight, behavior: 'smooth' });
+}
+
+function sendBotReply(htmlContent, followUps = [], delayMs = 500) {
+  showTypingIndicator();
+  setTimeout(() => {
+    removeTypingIndicator();
+    appendChatMsg('bot', htmlContent);
+
+    if (followUps && followUps.length > 0) {
+      appendInteractiveOptions(followUps);
+    }
+  }, delayMs);
+}
+
+function showChatMainMenu(echoUser = true) {
+  if (echoUser) {
+    appendChatMsg('user', '↩️ Back to List');
+  }
+  
+  const botIntro = `<strong>VMF Credit &amp; Underwriting Desk:</strong><br>
+  Select any credit solution or support topic below, or type your custom inquiry:`;
+
+  const mainFollowUps = [
+    { key: 'invoice', label: '📋 Invoice Financing' },
+    { key: 'po', label: '📦 PO Financing' },
+    { key: 'wc', label: '💼 Working Capital Loans' },
+    { key: 'docs', label: '📑 Required Documents' },
+    { key: 'eligibility', label: '⚖️ Eligibility & Limits' },
+    { key: 'rates', label: '📊 Pricing & Interest Rates' },
+    { key: 'turnaround', label: '⏱️ Sanction Turnaround' },
+    { action: 'apply', label: '📝 Apply Online' },
+    { action: 'call', label: '📞 Call Now (+91 40 2335 1234)' }
+  ];
+
+  sendBotReply(botIntro, mainFollowUps, 450);
+}
+
+function copyChatPhone(text, btn) {
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(() => {
+      if (btn) {
+        const prev = btn.innerText;
+        btn.innerText = 'Copied!';
+        setTimeout(() => { btn.innerText = prev; }, 1800);
+      }
+    }).catch(() => {});
+  }
 }
 
 function handleQuickChip(topic) {
   let userText = "";
   let botReply = "";
+  let followUps = [];
 
   if (topic === 'invoice') {
     userText = "Tell me about Invoice Financing (Receivables Discounting)";
     botReply = `<strong>Invoice Financing (Receivables Discounting):</strong><br>
-    Convert unpaid client invoices into immediate working capital without waiting 30–120 days.<br><br>
+    Convert verified receivables from corporate buyers into immediate capital without waiting 30–120 days.<br><br>
     &bull; <strong>Immediate Advance:</strong> Up to 90% of verified invoice face value.<br>
     &bull; <strong>Tenure Flexibility:</strong> 30 to 120 days aligned with corporate buyer credit terms.<br>
-    &bull; <strong>Rapid Appraisal:</strong> Approval and sanction within 24–48 business hours.<br>
-    &bull; <strong>Repayment Mechanism:</strong> Automatic settlement upon buyer invoice payment.<br><br>
+    &bull; <strong>Rapid Appraisal:</strong> In-principle sanction within 24–48 business hours.<br>
+    &bull; <strong>Repayment Mechanism:</strong> Automatic settlement upon buyer invoice realization.<br><br>
     <button class="chat-action-btn" onclick="scrollToContactForm()">Apply for Invoice Financing</button>`;
+    
+    followUps = [
+      { key: 'docs', label: '📑 Required Documents' },
+      { action: 'calc', label: '🧮 Calculate Advance' },
+      { action: 'call', label: '📞 Call Now' },
+      { action: 'main_menu', label: '↩️ Back to List' }
+    ];
   } else if (topic === 'po') {
     userText = "How does Purchase Order (PO) Financing work?";
     botReply = `<strong>Purchase Order (PO) Financing:</strong><br>
-    Secure upfront funding to procure raw materials, fulfill verified corporate orders, and scale contract execution.<br><br>
+    Secure upfront funding to procure raw materials and execute verified corporate orders without capital lag.<br><br>
     &bull; <strong>Funding Quantum:</strong> Up to 80% of confirmed purchase order value.<br>
-    &bull; <strong>Supplier Direct Disbursement:</strong> Funds can be disbursed directly to approved material vendors to eliminate production lag.<br>
-    &bull; <strong>Collateral Structure:</strong> Primarily underwritten against buyer creditworthiness and purchase order validity.<br>
+    &bull; <strong>Supplier Direct Disbursement:</strong> Capital disbursed directly to approved material vendors.<br>
+    &bull; <strong>Collateral Structure:</strong> Primarily underwritten against buyer creditworthiness and PO validity.<br>
     &bull; <strong>Target Borrowers:</strong> MSME manufacturers, EPC contractors, and corporate suppliers.<br><br>
     <button class="chat-action-btn" onclick="scrollToContactForm()">Apply for PO Financing</button>`;
+
+    followUps = [
+      { key: 'docs', label: '📑 PO Document Checklist' },
+      { action: 'apply', label: '📝 Apply for PO Financing' },
+      { action: 'call', label: '📞 Call Now' },
+      { action: 'main_menu', label: '↩️ Back to List' }
+    ];
   } else if (topic === 'wc') {
     userText = "What are your Working Capital Loans?";
     botReply = `<strong>Structured Working Capital Loans:</strong><br>
     Dependable revolving credit lines designed to bridge operational gaps, manage seasonal inventory, and support regular payroll.<br><br>
     &bull; <strong>Facility Ticket Sizes:</strong> From ₹5 Lakhs to ₹5 Crores+.<br>
     &bull; <strong>Transparent Interest:</strong> Interest calculated strictly on the utilized amount, not the sanctioned limit.<br>
-    &bull; <strong>Tenure &amp; Renewal:</strong> Flexible short-term cycles with prompt periodic renewals based on turnover.<br>
+    &bull; <strong>Tenure &amp; Renewal:</strong> Flexible short-term cycles with prompt periodic renewals.<br>
     &bull; <strong>Zero Structural Lock-in:</strong> Repay early without punitive exit penalties.<br><br>
     <button class="chat-action-btn" onclick="scrollToContactForm()">Check Working Capital Eligibility</button>`;
+
+    followUps = [
+      { action: 'calc', label: '🧮 Open Working Capital Calculator' },
+      { key: 'eligibility', label: '⚖️ Who is Eligible?' },
+      { action: 'call', label: '📞 Call Now' },
+      { action: 'main_menu', label: '↩️ Back to List' }
+    ];
   } else if (topic === 'docs') {
     userText = "What documents are required to apply?";
     botReply = `<strong>Standard Documentation Checklist:</strong><br>
     &bull; <strong>1. Entity KYC:</strong> PAN, Certificate of Incorporation / Partnership Deed, Udyam MSME Registration.<br>
-    &bull; <strong>2. Promoter KYC:</strong> PAN, Aadhaar, and residential address proof of Directors / Partners.<br>
+    &bull; <strong>2. Promoter KYC:</strong> PAN, Aadhaar of Directors / Partners.<br>
     &bull; <strong>3. Financial Records:</strong> Last 12 months GST returns (GSTR-3B &amp; GSTR-1), 6–12 months primary bank statements.<br>
     &bull; <strong>4. Financial Statements:</strong> Audited Balance Sheets and P&amp;L accounts for the last 2 financial years.<br>
     &bull; <strong>5. Commercial Trade Proof:</strong> Invoices with proof of delivery or verified Purchase Orders from buyers.<br><br>
     <button class="chat-action-btn" onclick="scrollToContactForm()">Submit Documents Online</button>`;
+
+    followUps = [
+      { action: 'apply', label: '📝 Start Application' },
+      { action: 'call', label: '📞 Have Documentation Doubt? Call Now' },
+      { action: 'main_menu', label: '↩️ Back to List' }
+    ];
   } else if (topic === 'eligibility') {
     userText = "What are the eligibility criteria and parameters?";
     botReply = `<strong>Eligibility &amp; Appraisal Parameters:</strong><br>
@@ -2576,6 +2735,12 @@ function handleQuickChip(topic) {
     &bull; <strong>Buyer Quality:</strong> Regular transactions with established corporate, institutional, or government buyers.<br>
     &bull; <strong>Banking Discipline:</strong> Clean repayment conduct with healthy cash flow velocity.<br><br>
     <button class="chat-action-btn" onclick="scrollToContactForm()">Check Your Eligibility Now</button>`;
+
+    followUps = [
+      { action: 'apply', label: '📝 Fill Eligibility Form' },
+      { action: 'call', label: '📞 Speak with Underwriting Officer' },
+      { action: 'main_menu', label: '↩️ Back to List' }
+    ];
   } else if (topic === 'rates') {
     userText = "What are the interest rates, charges, and turnaround times?";
     botReply = `<strong>Pricing &amp; Sanction Transparency:</strong><br>
@@ -2584,6 +2749,24 @@ function handleQuickChip(topic) {
     &bull; <strong>Disbursement:</strong> Immediate credit into verified bank account once agreement is executed.<br>
     &bull; <strong>Full Disclosure:</strong> Zero hidden charges; all fees and processing terms are clearly detailed in your sanction letter.<br><br>
     <button class="chat-action-btn" onclick="scrollToCalculator()">Open ROI Calculator</button>`;
+
+    followUps = [
+      { action: 'calc', label: '🧮 Calculate Terms in Calculator' },
+      { action: 'call', label: '📞 Call Now for Custom Quote' },
+      { action: 'main_menu', label: '↩️ Back to List' }
+    ];
+  } else if (topic === 'turnaround') {
+    userText = "How fast is sanction and disbursement?";
+    botReply = `<strong>Sanction &amp; Disbursal Speed:</strong><br>
+    &bull; <strong>In-Principle Sanction:</strong> Delivered within <strong>24 to 48 business hours</strong> upon receipt of primary banking &amp; GST records.<br>
+    &bull; <strong>Quick Disbursement:</strong> Funds disbursed directly into your business account promptly after verification.<br>
+    &bull; <strong>Digital Processing:</strong> Minimum paperwork friction via streamlined underwriting.`;
+
+    followUps = [
+      { action: 'apply', label: '📝 Apply for Rapid Sanction' },
+      { action: 'call', label: '📞 Call Now' },
+      { action: 'main_menu', label: '↩️ Back to List' }
+    ];
   } else if (topic === 'apply') {
     userText = "How do I apply for financing online?";
     botReply = `<strong>Quick 3-Step Online Application:</strong><br>
@@ -2591,13 +2774,22 @@ function handleQuickChip(topic) {
     2. Upload basic KYC and banking statements for instant appraisal.<br>
     3. Review transparent sanction terms and draw down funds directly.<br><br>
     <button class="chat-action-btn" onclick="scrollToContactForm()">Go to Application Form</button>`;
-  } else if (topic === 'agent') {
-    userText = "Connect me with an Underwriting Desk Officer";
-    botReply = `<strong>Connecting to VMF Credit &amp; Underwriting Desk:</strong><br>
-    Our commercial lending advisors are available to assist your business requirement directly.<br><br>
+
+    followUps = [
+      { action: 'apply', label: '📝 Open Application Form' },
+      { action: 'call', label: '📞 Need Application Guidance? Call Now' },
+      { action: 'main_menu', label: '↩️ Back to List' }
+    ];
+  } else if (topic === 'agent' || topic === 'call') {
+    userText = "📞 Connect me with Underwriting Desk / Call Now";
+    botReply = `<strong>VMF Commercial Credit &amp; Underwriting Desk:</strong><br>
+    Our commercial credit officers are on duty to review your business requirement directly.<br><br>
     <div class="chat-advisor-card">
-      <div style="font-weight: 700; color: #05244F; font-size: 14.5px; margin-bottom: 4px;">Commercial Credit &amp; Underwriting Desk</div>
-      <div class="chat-advisor-row">📞 <strong>Phone:</strong> <a href="tel:+914023351234" style="color: #15803D; font-weight: 700; text-decoration: underline;">+91 40 2335 1234</a></div>
+      <div style="font-weight: 700; color: #05244F; font-size: 14.5px; margin-bottom: 4px;">Direct Underwriting Line</div>
+      <div class="chat-advisor-row">
+        📞 <strong>Phone:</strong> <a href="tel:+914023351234" style="color: #15803D; font-weight: 700; text-decoration: underline;">+91 40 2335 1234</a>
+        <button class="chat-copy-btn" onclick="copyChatPhone('+914023351234', this)">Copy</button>
+      </div>
       <div class="chat-advisor-row">✉️ <strong>Email:</strong> <a href="mailto:credit@vmffinance.com" style="color: #05244F; font-weight: 600;">credit@vmffinance.com</a></div>
       <div class="chat-advisor-row">🕒 <strong>Operating Hours:</strong> Mon – Fri: 9:30 AM – 6:30 PM IST</div>
       <div class="chat-advisor-row">📍 <strong>Corporate Office:</strong> Lumbini Avenue, Gachibowli, Hyderabad – 500032</div>
@@ -2607,18 +2799,14 @@ function handleQuickChip(topic) {
       <span>Call +91 40 2335 1234 Now</span>
     </a>`;
 
-    // Immediately trigger the phone dialer
-    try {
-      window.location.href = 'tel:+914023351234';
-    } catch (err) {}
+    followUps = [
+      { action: 'main_menu', label: '↩️ Back to List' },
+      { action: 'apply', label: '📝 Fill Online Application' }
+    ];
   }
 
   appendChatMsg('user', userText);
-
-  // Bot response with natural conversational delay
-  setTimeout(() => {
-    appendChatMsg('bot', botReply);
-  }, 250);
+  sendBotReply(botReply, followUps, 550);
 }
 
 function handleChatSubmit(e) {
@@ -2633,14 +2821,24 @@ function handleChatSubmit(e) {
 
   const lower = q.toLowerCase();
   let botReply = '';
+  let followUps = [];
 
-  // Direct Agent / Call recognition
-  if (lower.includes('agent') || lower.includes('human') || lower.includes('call') || lower.includes('phone') || lower.includes('talk') || lower.includes('speak') || lower.includes('number') || lower.includes('officer')) {
+  // Conditional Logic Branch 1: Back to list / Menu
+  if (lower.includes('back') || lower.includes('list') || lower.includes('menu') || lower.includes('option') || lower.includes('topics') || lower.includes('start') || lower.includes('restart')) {
+    showChatMainMenu(false);
+    return;
+  }
+
+  // Conditional Logic Branch 2: Call / Agent / Phone / Human
+  if (lower.includes('call') || lower.includes('agent') || lower.includes('human') || lower.includes('phone') || lower.includes('talk') || lower.includes('speak') || lower.includes('number') || lower.includes('officer') || lower.includes('dial') || lower.includes('contact')) {
     botReply = `<strong>Connecting to VMF Credit &amp; Underwriting Desk:</strong><br>
-    Our lending advisors are ready to assist you directly:<br><br>
+    Our commercial credit officers are ready to assist you directly:<br><br>
     <div class="chat-advisor-card">
-      <div style="font-weight: 700; color: #05244F; font-size: 14.5px;">Commercial Credit &amp; Underwriting Desk</div>
-      <div class="chat-advisor-row">📞 <strong>Direct Line:</strong> <a href="tel:+914023351234" style="color: #15803D; font-weight: 700;">+91 40 2335 1234</a></div>
+      <div style="font-weight: 700; color: #05244F; font-size: 14.5px;">Underwriting &amp; Commercial Lending Desk</div>
+      <div class="chat-advisor-row">
+        📞 <strong>Direct Line:</strong> <a href="tel:+914023351234" style="color: #15803D; font-weight: 700;">+91 40 2335 1234</a>
+        <button class="chat-copy-btn" onclick="copyChatPhone('+914023351234', this)">Copy</button>
+      </div>
       <div class="chat-advisor-row">✉️ <strong>Email:</strong> <a href="mailto:credit@vmffinance.com" style="color: #05244F;">credit@vmffinance.com</a></div>
       <div class="chat-advisor-row">🕒 <strong>Desk Hours:</strong> Mon – Fri: 9:30 AM – 6:30 PM IST</div>
     </div>
@@ -2648,62 +2846,159 @@ function handleChatSubmit(e) {
       <span class="call-btn-icon">📞</span>
       <span>Call +91 40 2335 1234 Now</span>
     </a>`;
-    try {
-      window.location.href = 'tel:+914023351234';
-    } catch (err) {}
-  } else if (lower.includes('invoice') || lower.includes('bill') || lower.includes('receivable') || lower.includes('discount')) {
+
+    followUps = [
+      { action: 'call', label: '📞 Call Now' },
+      { action: 'apply', label: '📝 Fill Application Form' },
+      { action: 'main_menu', label: '↩️ Back to List' }
+    ];
+  }
+  // Conditional Logic Branch 3: Invoice Financing
+  else if (lower.includes('invoice') || lower.includes('bill') || lower.includes('receivable') || lower.includes('discount')) {
     botReply = `<strong>Invoice Financing (Receivables Discounting):</strong><br>
-    Advance up to 90% against verified invoices from approved buyers, bridging 30–120 day payment terms with 24–48h disbursal.<br><br>
+    Advance up to 90% against verified invoices from approved corporate buyers, bridging 30–120 day payment terms with 24–48h disbursal.<br><br>
     <button class="chat-action-btn" onclick="scrollToContactForm()">Apply for Invoice Financing</button>`;
-  } else if (lower.includes('purchase order') || lower.includes('po') || lower.includes('order') || lower.includes('procure') || lower.includes('supplier')) {
+
+    followUps = [
+      { key: 'docs', label: '📑 Invoice Documents' },
+      { action: 'calc', label: '🧮 Calculate Advance' },
+      { action: 'call', label: '📞 Call Now' },
+      { action: 'main_menu', label: '↩️ Back to List' }
+    ];
+  }
+  // Conditional Logic Branch 4: PO Financing
+  else if (lower.includes('purchase order') || lower.includes('po') || lower.includes('order') || lower.includes('procure') || lower.includes('supplier')) {
     botReply = `<strong>Purchase Order (PO) Financing:</strong><br>
     Advance capital up to 80% to procure raw materials and execute verified client contracts without straining cash flow.<br><br>
     <button class="chat-action-btn" onclick="scrollToContactForm()">Apply for PO Financing</button>`;
-  } else if (lower.includes('working capital') || lower.includes('revolving') || lower.includes('cash flow') || lower.includes('daily') || lower.includes('limit')) {
+
+    followUps = [
+      { key: 'docs', label: '📑 Required PO Documents' },
+      { action: 'apply', label: '📝 Apply for PO Financing' },
+      { action: 'call', label: '📞 Call Now' },
+      { action: 'main_menu', label: '↩️ Back to List' }
+    ];
+  }
+  // Conditional Logic Branch 5: Working Capital
+  else if (lower.includes('working capital') || lower.includes('revolving') || lower.includes('cash flow') || lower.includes('daily') || lower.includes('limit')) {
     botReply = `<strong>Working Capital Loans:</strong><br>
     Revolving facility from ₹5 Lakhs to ₹5 Crores+ structured around your operational turnover with transparent interest charged only on drawn limits.<br><br>
     <button class="chat-action-btn" onclick="scrollToContactForm()">Check Eligibility</button>`;
-  } else if (lower.includes('document') || lower.includes('kyc') || lower.includes('paper') || lower.includes('gst') || lower.includes('bank statement')) {
+
+    followUps = [
+      { action: 'calc', label: '🧮 Open Working Capital Calculator' },
+      { key: 'eligibility', label: '⚖️ Eligibility Parameters' },
+      { action: 'call', label: '📞 Call Now' },
+      { action: 'main_menu', label: '↩️ Back to List' }
+    ];
+  }
+  // Conditional Logic Branch 6: Documents & KYC
+  else if (lower.includes('document') || lower.includes('kyc') || lower.includes('paper') || lower.includes('gst') || lower.includes('bank statement')) {
     botReply = `<strong>Required Documentation Checklist:</strong><br>
-    &bull; Business KYC (PAN, GSTIN, Udyam Registration)<br>
+    &bull; Business KYC (PAN, GSTIN, Udyam MSME Registration)<br>
     &bull; Promoter KYC (PAN, Aadhaar)<br>
     &bull; 12 months GST returns (GSTR-3B &amp; GSTR-1)<br>
     &bull; 6–12 months primary bank statements<br>
     &bull; Audited balance sheets (2 years) &amp; Trade invoices/POs.<br><br>
     <button class="chat-action-btn" onclick="scrollToContactForm()">Upload / Apply</button>`;
-  } else if (lower.includes('eligib') || lower.includes('qualif') || lower.includes('criteria') || lower.includes('who can')) {
+
+    followUps = [
+      { action: 'apply', label: '📝 Submit Documents Online' },
+      { action: 'call', label: '📞 Have Document Doubt? Call Now' },
+      { action: 'main_menu', label: '↩️ Back to List' }
+    ];
+  }
+  // Conditional Logic Branch 7: Eligibility Criteria
+  else if (lower.includes('eligib') || lower.includes('qualif') || lower.includes('criteria') || lower.includes('who can') || lower.includes('am i eligible')) {
     botReply = `<strong>Eligibility Parameters:</strong><br>
     &bull; Registered Indian MSME, Pvt Ltd, or LLP with 1–2+ years operational vintage.<br>
     &bull; Verified commercial trade with established corporate or institutional buyers.<br>
     &bull; Satisfactory banking record and prompt repayment conduct.<br><br>
     <button class="chat-action-btn" onclick="scrollToContactForm()">Assess My Eligibility</button>`;
-  } else if (lower.includes('rate') || lower.includes('interest') || lower.includes('roi') || lower.includes('charge') || lower.includes('fee') || lower.includes('cost') || lower.includes('percent')) {
+
+    followUps = [
+      { action: 'apply', label: '📝 Fill Eligibility Form' },
+      { action: 'call', label: '📞 Call Underwriting Desk' },
+      { action: 'main_menu', label: '↩️ Back to List' }
+    ];
+  }
+  // Conditional Logic Branch 8: Rates & Pricing
+  else if (lower.includes('rate') || lower.includes('interest') || lower.includes('roi') || lower.includes('charge') || lower.includes('fee') || lower.includes('cost') || lower.includes('percent')) {
     botReply = `<strong>Pricing &amp; Rates (ROI):</strong><br>
     &bull; Competitive risk-based ROI ranging from <strong>9.0% to 20.0% p.a.</strong><br>
     &bull; Transparent documented sanction letter with zero hidden charges.<br><br>
     <button class="chat-action-btn" onclick="scrollToCalculator()">Open Working Capital Calculator</button>`;
-  } else if (lower.includes('time') || lower.includes('fast') || lower.includes('turnaround') || lower.includes('how long') || lower.includes('disburs')) {
+
+    followUps = [
+      { action: 'calc', label: '🧮 Calculate Interest & Terms' },
+      { action: 'call', label: '📞 Call Now for Custom Quote' },
+      { action: 'main_menu', label: '↩️ Back to List' }
+    ];
+  }
+  // Conditional Logic Branch 9: Sanction Turnaround / Time
+  else if (lower.includes('time') || lower.includes('fast') || lower.includes('turnaround') || lower.includes('how long') || lower.includes('disburs') || lower.includes('speed')) {
     botReply = `<strong>Sanction &amp; Disbursement Speed:</strong><br>
     &bull; Initial appraisal turnaround within <strong>24 to 48 business hours</strong> upon complete documentation.<br>
     &bull; Direct disbursal into your verified business bank account promptly upon agreement signing.`;
-  } else if (lower.includes('apply') || lower.includes('form') || lower.includes('register') || lower.includes('start')) {
-    botReply = `<strong>Apply Online:</strong><br>
+
+    followUps = [
+      { action: 'apply', label: '📝 Apply for Rapid Sanction' },
+      { action: 'call', label: '📞 Call Now' },
+      { action: 'main_menu', label: '↩️ Back to List' }
+    ];
+  }
+  // Conditional Logic Branch 10: Apply / Online Form
+  else if (lower.includes('apply') || lower.includes('form') || lower.includes('register') || lower.includes('submit')) {
+    botReply = `<strong>Apply Online for Facility:</strong><br>
     Click below to navigate directly to our quick online application form.<br><br>
     <button class="chat-action-btn" onclick="scrollToContactForm()">Go to Application Form</button>`;
-  } else if (lower.includes('career') || lower.includes('job') || lower.includes('hiring') || lower.includes('work with us') || lower.includes('resume') || lower.includes('cv')) {
+
+    followUps = [
+      { action: 'apply', label: '📝 Open Application Form' },
+      { action: 'call', label: '📞 Call Now' },
+      { action: 'main_menu', label: '↩️ Back to List' }
+    ];
+  }
+  // Conditional Logic Branch 11: Greetings
+  else if (lower.includes('hi') || lower.includes('hello') || lower.includes('hey') || lower.includes('morning') || lower.includes('afternoon') || lower.includes('evening') || lower.includes('namaste')) {
+    botReply = `<strong>Hello! Welcome to VMF Finance Limited.</strong><br>
+    How can our commercial credit and underwriting team assist your business today? Select an option below or type your question:`;
+
+    followUps = [
+      { key: 'invoice', label: '📋 Invoice Financing' },
+      { key: 'po', label: '📦 PO Financing' },
+      { key: 'wc', label: '💼 Working Capital Loans' },
+      { key: 'docs', label: '📑 Required Documents' },
+      { action: 'call', label: '📞 Call Now' },
+      { action: 'main_menu', label: '↩️ Back to List' }
+    ];
+  }
+  // Conditional Logic Branch 12: Careers
+  else if (lower.includes('career') || lower.includes('job') || lower.includes('hiring') || lower.includes('work with us') || lower.includes('resume') || lower.includes('cv')) {
     botReply = `<strong>Careers at VMF Finance:</strong><br>
     We are always seeking talented professionals across credit underwriting, enterprise sales, risk management, and fintech engineering.<br><br>
-    &bull; Select <strong>Careers</strong> in the enquiry form or email your profile to <a href="mailto:careers@vmffinance.com" style="color: #2D7B39; font-weight: 600;">careers@vmffinance.com</a>.<br><br>
-    <button class="chat-action-btn" onclick="(() => { scrollToContactForm(); const s = document.getElementById('contactEnquiryType'); if(s) s.value = 'Careers'; })()">Submit Profile in Form</button>`;
-  } else {
-    botReply = `Thank you for your inquiry! VMF Finance Limited provides <strong>Invoice Financing</strong>, <strong>PO Financing</strong>, and <strong>Working Capital Loans</strong> for MSMEs.<br><br>
-    You can explore our facilities, check documents, or connect directly with our advisory desk.<br><br>
-    <button class="chat-action-btn" onclick="scrollToContactForm()">Check Eligibility</button>`;
+    &bull; Select <strong>Careers</strong> in the enquiry form or email your profile to <a href="mailto:careers@vmffinance.com" style="color: #2D7B39; font-weight: 600;">careers@vmffinance.com</a>.`;
+
+    followUps = [
+      { action: 'apply', label: '📝 Open Enquiry Form' },
+      { action: 'main_menu', label: '↩️ Back to List' }
+    ];
+  }
+  // Fallback
+  else {
+    botReply = `Thank you for your inquiry! VMF Finance Limited provides institutional <strong>Invoice Financing</strong>, <strong>PO Financing</strong>, and <strong>Working Capital Loans</strong> for MSMEs.<br><br>
+    Please select an option below, call our underwriting desk directly, or return to the main list:`;
+
+    followUps = [
+      { key: 'invoice', label: '📋 Invoice Financing' },
+      { key: 'po', label: '📦 PO Financing' },
+      { key: 'docs', label: '📑 Check Documents' },
+      { action: 'call', label: '📞 Call Now (+91 40 2335 1234)' },
+      { action: 'main_menu', label: '↩️ Back to List' }
+    ];
   }
 
-  setTimeout(() => {
-    appendChatMsg('bot', botReply);
-  }, 300);
+  sendBotReply(botReply, followUps, 600);
 }
 
 /* ============================================================

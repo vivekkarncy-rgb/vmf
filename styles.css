@@ -7846,7 +7846,7 @@ section {
   display: block !important;
   white-space: nowrap !important;
   font-family: var(--font-h, 'DM Sans', sans-serif) !important;
-  font-size: clamp(38px, 4.4vw, 54px) !important;
+  font-size: clamp(42px, 4.6vw, 58px) !important;
   font-weight: 850 !important;
   line-height: 1.15 !important;
   letter-spacing: -0.03em !important;
@@ -7913,7 +7913,7 @@ section {
   }
   .hero-h1-line-1,
   .hero-h1-line-2 {
-    font-size: 28px !important;
+    font-size: 32px !important;
     line-height: 1.22 !important;
     letter-spacing: -0.025em !important;
     white-space: normal !important;
@@ -7960,7 +7960,7 @@ section {
   }
   .hero-h1-line-1,
   .hero-h1-line-2 {
-    font-size: 28px !important;
+    font-size: 30px !important;
     line-height: 1.22 !important;
     white-space: normal !important;
     text-wrap: balance !important;
