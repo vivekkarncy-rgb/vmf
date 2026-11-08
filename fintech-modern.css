@@ -1068,11 +1068,13 @@ h1, h2, h3, h4, h5, h6,
 }
 
 .prod-modern-btn:hover {
-  background: #031633;
+  background: linear-gradient(135deg, #2D7B39 0%, #1E5B27 100%) !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 16px rgba(45, 123, 57, 0.3);
 }
 
 .prod-modern-btn:active {
-  background: #020f24;
+  background: #1E5B27 !important;
 }
 
 /* ==========================================================================
