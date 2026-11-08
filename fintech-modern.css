@@ -517,7 +517,7 @@ section:not(.prefooter-journey-sec):not(.contact-section) h2,
 }
 
 /* ==========================================================================
-   Hero Badges Marquee (Infinite Single-Line Flow)
+   Hero Badges Marquee (Infinite Single-Line Flow - Top Placement on Mobile)
    ========================================================================== */
 .hero-badges-row {
   display: flex;
@@ -539,17 +539,25 @@ section:not(.prefooter-journey-sec):not(.contact-section) h2,
 
 .h-badge-item {
   background: #FFFFFF;
-  border: 1px solid var(--vmf-border);
-  border-radius: 8px;
-  padding: 6px 12px;
-  font-size: 12.5px;
-  font-weight: 600;
-  color: var(--vmf-navy);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  border: 1.5px solid #CBD5E1;
+  border-radius: 999px;
+  padding: 7px 15px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #05244F;
+  box-shadow: 0 2px 6px rgba(5, 36, 79, 0.08);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  opacity: 1 !important;
 }
 
 .h-badge-dot {
-  background-color: var(--vmf-emerald);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #16A34A;
+  flex-shrink: 0;
 }
 
 @media (max-width: 991px) {
@@ -560,7 +568,9 @@ section:not(.prefooter-journey-sec):not(.contact-section) h2,
     overflow: hidden !important;
   }
 
+  /* Bring badges row to the top on mobile version with full opacity */
   .hero-badges-row {
+    order: -1 !important;
     width: 100% !important;
     max-width: 100% !important;
     min-width: 0 !important;
@@ -570,19 +580,21 @@ section:not(.prefooter-journey-sec):not(.contact-section) h2,
     flex-wrap: nowrap !important;
     justify-content: flex-start !important;
     align-items: center !important;
-    gap: 16px !important;
-    padding: 8px 0 !important;
-    margin: 20px 0 0 0 !important;
-    mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 1) 12%, rgba(0, 0, 0, 1) 88%, transparent 100%) !important;
-    -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 1) 12%, rgba(0, 0, 0, 1) 88%, transparent 100%) !important;
+    gap: 14px !important;
+    padding: 4px 0 !important;
+    margin: 0 0 24px 0 !important;
+    opacity: 1 !important;
+    mask-image: none !important;
+    -webkit-mask-image: none !important;
+    touch-action: pan-y;
   }
 
   .hero-badges-track {
     display: flex !important;
     flex-shrink: 0 !important;
     align-items: center !important;
-    gap: 16px !important;
-    animation: heroBadgesMarquee 16s linear infinite !important;
+    gap: 14px !important;
+    animation: heroBadgesMarquee 13s linear infinite !important;
     will-change: transform;
   }
 
@@ -593,11 +605,21 @@ section:not(.prefooter-journey-sec):not(.contact-section) h2,
   .h-badge-item {
     white-space: nowrap !important;
     flex-shrink: 0 !important;
+    opacity: 1 !important;
+    background: #FFFFFF !important;
+    border: 1.5px solid #CBD5E1 !important;
+    color: #05244F !important;
+    font-weight: 700 !important;
+    font-size: 13px !important;
+    padding: 7px 15px !important;
+    border-radius: 999px !important;
+    box-shadow: 0 2px 8px rgba(5, 36, 79, 0.09) !important;
   }
 
-  .hero-badges-row:hover .hero-badges-track,
-  .hero-badges-row:active .hero-badges-track {
-    animation-play-state: paused !important;
+  .h-badge-dot {
+    width: 8px !important;
+    height: 8px !important;
+    background-color: #16A34A !important;
   }
 }
 
@@ -606,13 +628,14 @@ section:not(.prefooter-journey-sec):not(.contact-section) h2,
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-100% - 16px));
+    transform: translateX(calc(-100% - 14px));
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .hero-badges-track {
-    animation: none !important;
+/* Pause on hover only for desktop pointer devices, never on touch mobile */
+@media (hover: hover) and (pointer: fine) {
+  .hero-badges-row:hover .hero-badges-track {
+    animation-play-state: paused;
   }
 }
 

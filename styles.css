@@ -3813,10 +3813,9 @@ a:hover {
   }
 
   .hero-badges-row {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-    margin-top: 24px;
+    order: -1;
+    margin-top: 0;
+    margin-bottom: 24px;
     padding-top: 0;
   }
 
@@ -7350,11 +7349,12 @@ reveal-wrapper[mode="section"]>.section,
   }
 
   .hero-badges-row {
+    order: -1 !important;
     flex-direction: row !important;
     align-items: center !important;
     justify-content: flex-start !important;
-    gap: 16px !important;
-    margin-top: 24px !important;
+    gap: 14px !important;
+    margin: 0 0 24px 0 !important;
     padding-top: 0 !important;
     width: 100% !important;
   }
