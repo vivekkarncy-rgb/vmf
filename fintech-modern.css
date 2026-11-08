@@ -2857,3 +2857,56 @@ reveal-wrapper[mode="section"] {
   color: #334155;
   margin-top: 6px;
 }
+
+/* ==========================================================================
+   Desktop Halftone Dot Side Rails (Section 2 to Last Section)
+   ========================================================================== */
+.desktop-side-rails {
+  display: block;
+  pointer-events: none;
+}
+
+@media (max-width: 1199px) {
+  .desktop-side-rails {
+    display: none !important;
+  }
+}
+
+.fixed-side-rail {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: clamp(140px, 12.5vw, 220px);
+  height: 100vh;
+  pointer-events: none;
+  z-index: 3;
+  background-image: url('assets/halftone-dots.png');
+  background-repeat: repeat-y;
+  background-size: 100% auto;
+  mix-blend-mode: multiply;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.45s;
+  will-change: opacity;
+}
+
+.fixed-side-rail.visible {
+  opacity: 0.65;
+  visibility: visible;
+}
+
+.fixed-side-rail-left {
+  left: 0;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%), linear-gradient(to right, black 50%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+}
+
+.fixed-side-rail-right {
+  right: 0;
+  transform: scaleX(-1);
+  transform-origin: center center;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%), linear-gradient(to right, black 50%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+}

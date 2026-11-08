@@ -3613,3 +3613,44 @@ if (document.readyState === 'loading') {
   setTimeout(updatePipelineFlowTrack, 150);
 }
 window.updatePipelineFlowTrack = updatePipelineFlowTrack;
+
+/* ============================================================
+   Desktop Halftone Side Rails Scroll Controller
+   Activates from Section 2 (#products) down through the last section
+   ============================================================ */
+function initDesktopSideRails() {
+  const rails = document.querySelectorAll('.fixed-side-rail');
+  const sec2 = document.getElementById('products');
+  const footer = document.querySelector('.site-footer');
+  if (!rails.length || !sec2 || !footer) return;
+
+  function updateSideRails() {
+    if (window.innerWidth < 1200) {
+      rails.forEach(r => r.classList.remove('visible'));
+      return;
+    }
+    const sec2Rect = sec2.getBoundingClientRect();
+    const footerRect = footer.getBoundingClientRect();
+
+    // Start showing when Section 2 begins entering viewport
+    const entered = sec2Rect.top <= window.innerHeight * 0.75;
+    // Hide when footer enters the screen
+    const exited = footerRect.top <= window.innerHeight * 0.65;
+
+    const isVisible = entered && !exited;
+    rails.forEach(r => r.classList.toggle('visible', isVisible));
+  }
+
+  window.addEventListener('scroll', updateSideRails, { passive: true });
+  window.addEventListener('resize', updateSideRails, { passive: true });
+  if (typeof lenis !== 'undefined' && lenis) {
+    lenis.on('scroll', updateSideRails);
+  }
+  updateSideRails();
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initDesktopSideRails);
+} else {
+  initDesktopSideRails();
+}
