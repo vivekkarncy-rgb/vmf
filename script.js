@@ -2239,11 +2239,11 @@ function initHeroCardSwap() {
   const el = document.getElementById('heroCardSwap');
   if (el && !heroCardSwapInstance) {
     heroCardSwapInstance = new CardSwap(el, {
-      width: 500,
-      height: 340,
-      cardDistance: 22,
-      verticalDistance: 26,
-      depth: 42,
+      width: 390,
+      height: 270,
+      cardDistance: 16,
+      verticalDistance: 20,
+      depth: 36,
       skewAmount: 3,
       delay: 4000,
       autoplay: true,

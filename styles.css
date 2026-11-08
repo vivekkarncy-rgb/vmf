@@ -6605,16 +6605,16 @@ scramble-text {
 
 #heroCardSwap {
   width: 100%;
-  max-width: 600px;
-  height: 480px;
-  min-height: 480px;
-  --swap-w: 500px;
-  --swap-h: 340px;
-  --swap-radius: 20px;
+  max-width: 460px;
+  height: 400px;
+  min-height: 400px;
+  --swap-w: 390px;
+  --swap-h: 270px;
+  --swap-radius: 18px;
   --swap-tile: linear-gradient(180deg, #ffffff 0%, #f6f8fb 100%);
   --swap-tile-edge: rgba(5, 36, 79, 0.12);
   --swap-tile-highlight: rgba(255, 255, 255, 1);
-  --swap-shadow: 0 28px 56px -18px rgba(5, 36, 79, 0.28), 0 12px 24px -10px rgba(5, 36, 79, 0.15);
+  --swap-shadow: 0 20px 40px -14px rgba(5, 36, 79, 0.2), 0 8px 18px -8px rgba(5, 36, 79, 0.1);
   --swap-media-edge: rgba(255, 255, 255, 0.18);
   --swap-ink: #05244F;
   --swap-badge: rgba(5, 36, 79, 0.06);
@@ -6630,8 +6630,8 @@ scramble-text {
 .card-swap-sizer>span {
   display: block;
   width: 100%;
-  max-width: var(--swap-stage-w, 530px);
-  aspect-ratio: var(--swap-ratio, 530 / 460);
+  max-width: var(--swap-stage-w, 420px);
+  aspect-ratio: var(--swap-ratio, 420 / 360);
 }
 
 .card-swap-stage {
@@ -7803,15 +7803,15 @@ section {
 }
 
 .hero-grid {
-  grid-template-columns: 1.15fr 0.85fr !important;
-  gap: 32px !important;
+  grid-template-columns: 1.3fr 0.7fr !important;
+  gap: 36px !important;
 }
 
 .hero-h1-rotator {
   display: grid !important;
   grid-template-areas: "hero-title" !important;
   align-items: start !important;
-  min-height: 122px !important;
+  min-height: 110px !important;
   position: relative !important;
   margin-top: 16px !important;
   margin-bottom: 20px !important;
@@ -7846,10 +7846,10 @@ section {
   display: block !important;
   white-space: nowrap !important;
   font-family: var(--font-h, 'DM Sans', sans-serif) !important;
-  font-size: clamp(42px, 4.6vw, 58px) !important;
-  font-weight: 850 !important;
-  line-height: 1.15 !important;
-  letter-spacing: -0.03em !important;
+  font-size: clamp(34px, 3.4vw, 44px) !important;
+  font-weight: 800 !important;
+  line-height: 1.18 !important;
+  letter-spacing: -0.025em !important;
 }
 
 .hero-h1-line-1 {
@@ -7862,11 +7862,11 @@ section {
 
 @media (max-width: 1300px) {
   .hero-h1-rotator {
-    min-height: 118px !important;
+    min-height: 104px !important;
   }
   .hero-h1-line-1,
   .hero-h1-line-2 {
-    font-size: clamp(32px, 3.5vw, 44px) !important;
+    font-size: clamp(30px, 3.0vw, 38px) !important;
   }
 }
 
