@@ -4664,12 +4664,12 @@ scramble-text {
   background: #94A3B8;
 }
 
-/* Executive Summary Box (with Navy vertical accent bar) */
+/* Executive Summary Box (Clean border, no thick left bar) */
 .exp-exec-box {
   background: #F8FAFC;
-  border-radius: 8px;
-  border-left: 4px solid #05244F;
-  padding: 16px 20px;
+  border-radius: 10px;
+  border: 1px solid #E2E8F0;
+  padding: 18px 20px;
 }
 
 .exp-label-exec {
@@ -4682,10 +4682,11 @@ scramble-text {
 }
 
 .exp-pitch-exec {
-  font-size: 15.5px;
-  font-weight: 700;
-  color: #0F172A;
-  margin: 0 0 6px 0;
+  font-size: clamp(19px, 2.2vw, 22px);
+  font-weight: 800;
+  color: #05244F;
+  line-height: 1.35;
+  margin: 0 0 8px 0;
 }
 
 .exp-text-exec {
@@ -4695,21 +4696,21 @@ scramble-text {
   margin: 0;
 }
 
-/* Indicative Documents Box (with Growth Green vertical accent bar) */
+/* Indicative Documents Box (Clean border, no thick left bar) */
 .exp-docs-box {
   background: #FAFDF8;
-  border-radius: 8px;
-  border-left: 4px solid #2D7B39;
-  padding: 14px 20px;
+  border-radius: 10px;
+  border: 1px solid #E2E8F0;
+  padding: 18px 20px;
 }
 
 .exp-label-docs {
-  font-size: 11px;
+  font-size: 13.5px;
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.8px;
+  letter-spacing: 0.6px;
   color: #2D7B39;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 .exp-text-docs {
@@ -4728,9 +4729,9 @@ scramble-text {
 
 /* Section Headings */
 .exp-section-title {
-  font-size: 17px;
+  font-size: 20px;
   font-weight: 800;
-  color: #0F172A;
+  color: #05244F;
   margin: 0;
   letter-spacing: -0.2px;
 }
@@ -4812,8 +4813,8 @@ scramble-text {
 
 .exp-step-row-title {
   font-family: var(--font-h, 'DM Sans', sans-serif);
-  font-size: 16px;
-  font-weight: 700;
+  font-size: 17.5px;
+  font-weight: 750;
   color: #05244F;
   margin: 0;
   line-height: 1.35;
@@ -4829,11 +4830,10 @@ scramble-text {
   margin: 0;
 }
 
-/* Policy Guidance Note Box */
+/* Policy Guidance Note Box (Clean border, no thick left bar) */
 .exp-policy-box {
   background: #F8FAFC;
   border: 1px solid #E2E8F0;
-  border-left: 4px solid #2D7B39;
   border-radius: 12px;
   padding: 16px 20px;
 }
@@ -4842,9 +4842,9 @@ scramble-text {
   display: flex;
   align-items: center;
   gap: 8px;
+  font-size: 15.5px;
+  font-weight: 750;
   color: #2D7B39;
-  font-size: 14px;
-  font-weight: 700;
   margin-bottom: 6px;
 }
 
