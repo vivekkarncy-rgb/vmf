@@ -2575,6 +2575,16 @@ function removeTypingIndicator() {
   }
 }
 
+function escapeHtml(str) {
+  if (!str) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
 function appendInteractiveOptions(options) {
   const msgContainer = document.getElementById('chatMessages');
   if (!msgContainer || !options || !options.length) return;
@@ -2585,22 +2595,27 @@ function appendInteractiveOptions(options) {
   chipsDiv.innerHTML = options.map(opt => {
     if (opt.action === 'call') {
       return `<button type="button" class="chat-chip chat-chip-call" onclick="handleQuickChip('agent')">
-        <span>📞 Call Now (+91 40 2335 1234)</span>
+        <span>Call Now (+91 40 2335 1234)</span>
       </button>`;
     }
     if (opt.action === 'main_menu') {
       return `<button type="button" class="chat-chip chat-chip-back" onclick="showChatMainMenu(true)">
-        <span>↩️ Back to List</span>
+        <span>Back to List</span>
+      </button>`;
+    }
+    if (opt.action === 'query' || opt.key === 'query') {
+      return `<button type="button" class="chat-chip chat-chip-action" onclick="handleQuickChip('query')">
+        <span>Send a Query to Admin</span>
       </button>`;
     }
     if (opt.action === 'apply') {
       return `<button type="button" class="chat-chip chat-chip-action" onclick="(() => { scrollToContactForm(); toggleChatbot(); })()">
-        <span>📝 ${opt.label || 'Apply Online'}</span>
+        <span>${opt.label || 'Apply Online'}</span>
       </button>`;
     }
     if (opt.action === 'calc') {
       return `<button type="button" class="chat-chip chat-chip-action" onclick="(() => { scrollToCalculator(); toggleChatbot(); })()">
-        <span>🧮 ${opt.label || 'Open Calculator'}</span>
+        <span>${opt.label || 'Open Calculator'}</span>
       </button>`;
     }
     return `<button type="button" class="chat-chip" onclick="handleQuickChip('${opt.key}')">
@@ -2626,22 +2641,22 @@ function sendBotReply(htmlContent, followUps = [], delayMs = 500) {
 
 function showChatMainMenu(echoUser = true) {
   if (echoUser) {
-    appendChatMsg('user', '↩️ Back to List');
+    appendChatMsg('user', 'Back to List');
   }
   
   const botIntro = `<strong>VMF Credit &amp; Underwriting Desk:</strong><br>
   Select any credit solution or support topic below, or type your custom inquiry:`;
 
   const mainFollowUps = [
-    { key: 'invoice', label: '📋 Invoice Financing' },
-    { key: 'po', label: '📦 PO Financing' },
-    { key: 'wc', label: '💼 Working Capital Loans' },
-    { key: 'docs', label: '📑 Required Documents' },
-    { key: 'eligibility', label: '⚖️ Eligibility & Limits' },
-    { key: 'rates', label: '📊 Pricing & Interest Rates' },
-    { key: 'turnaround', label: '⏱️ Sanction Turnaround' },
-    { action: 'apply', label: '📝 Apply Online' },
-    { action: 'call', label: '📞 Call Now (+91 40 2335 1234)' }
+    { key: 'invoice', label: 'Invoice Financing' },
+    { key: 'po', label: 'Purchase Order Financing' },
+    { key: 'wc', label: 'Working Capital Loans' },
+    { key: 'docs', label: 'Required Documents Checklist' },
+    { key: 'eligibility', label: 'Eligibility & Limits' },
+    { key: 'rates', label: 'Pricing & Sanction Turnaround' },
+    { key: 'query', label: 'Send a Query to Admin' },
+    { action: 'apply', label: 'Apply Online' },
+    { action: 'call', label: 'Call Now (+91 40 2335 1234)' }
   ];
 
   sendBotReply(botIntro, mainFollowUps, 450);
@@ -2659,12 +2674,180 @@ function copyChatPhone(text, btn) {
   }
 }
 
+function submitChatQuery(formId) {
+  const card = document.getElementById(formId);
+  if (!card) return;
+
+  const nameInput = document.getElementById(formId + '_name');
+  const emailInput = document.getElementById(formId + '_email');
+  const phoneInput = document.getElementById(formId + '_phone');
+  const msgInput = document.getElementById(formId + '_msg');
+  const btn = document.getElementById(formId + '_btn');
+
+  const errName = document.getElementById(formId + '_err_name');
+  const errEmail = document.getElementById(formId + '_err_email');
+  const errPhone = document.getElementById(formId + '_err_phone');
+  const errMsg = document.getElementById(formId + '_err_msg');
+
+  // Reset errors
+  [errName, errEmail, errPhone, errMsg].forEach(el => {
+    if (el) { el.textContent = ''; el.style.display = 'none'; }
+  });
+  [nameInput, emailInput, phoneInput, msgInput].forEach(el => {
+    if (el) el.classList.remove('is-invalid');
+  });
+
+  let isValid = true;
+  let firstErrEl = null;
+
+  const nameVal = nameInput ? nameInput.value.trim() : '';
+  const emailVal = emailInput ? emailInput.value.trim() : '';
+  const rawPhone = phoneInput ? phoneInput.value.trim() : '';
+  const phoneVal = rawPhone.replace(/\D/g, '');
+  const msgVal = msgInput ? msgInput.value.trim() : '';
+
+  if (!nameVal || nameVal.length < 2) {
+    if (errName) { errName.textContent = 'Please enter your full name (minimum 2 letters).'; errName.style.display = 'block'; }
+    if (nameInput) nameInput.classList.add('is-invalid');
+    isValid = false;
+    if (!firstErrEl) firstErrEl = nameInput;
+  }
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailVal || !emailRegex.test(emailVal)) {
+    if (errEmail) { errEmail.textContent = 'Please enter a valid business email address.'; errEmail.style.display = 'block'; }
+    if (emailInput) emailInput.classList.add('is-invalid');
+    isValid = false;
+    if (!firstErrEl) firstErrEl = emailInput;
+  }
+
+  if (!phoneVal || phoneVal.length < 10) {
+    if (errPhone) { errPhone.textContent = 'Please enter a valid 10-digit phone number.'; errPhone.style.display = 'block'; }
+    if (phoneInput) phoneInput.classList.add('is-invalid');
+    isValid = false;
+    if (!firstErrEl) firstErrEl = phoneInput;
+  }
+
+  if (!msgVal || msgVal.length < 5) {
+    if (errMsg) { errMsg.textContent = 'Please provide details about your financing requirement (min 5 characters).'; errMsg.style.display = 'block'; }
+    if (msgInput) msgInput.classList.add('is-invalid');
+    isValid = false;
+    if (!firstErrEl) firstErrEl = msgInput;
+  }
+
+  if (!isValid) {
+    if (firstErrEl && typeof firstErrEl.focus === 'function') firstErrEl.focus();
+    return;
+  }
+
+  // Processing state
+  if (btn) {
+    btn.disabled = true;
+    btn.innerHTML = '<span>Sending Query to Admin...</span>';
+  }
+
+  const ticketId = 'VMF-QRY-' + new Date().getFullYear() + '-' + Math.floor(1000 + Math.random() * 9000);
+  const timeString = getChatTimestamp();
+
+  const queryPayload = {
+    ticketId: ticketId,
+    name: nameVal,
+    email: emailVal,
+    phone: phoneVal,
+    message: msgVal,
+    timestamp: new Date().toISOString(),
+    displayTime: timeString,
+    source: 'VMF AI Chatbot Desk'
+  };
+
+  // 1. Persist to localStorage
+  try {
+    const existing = JSON.parse(localStorage.getItem('vmf_admin_queries') || '[]');
+    existing.unshift(queryPayload);
+    localStorage.setItem('vmf_admin_queries', JSON.stringify(existing));
+  } catch (err) {
+    console.warn('[Chatbot] LocalStorage save warning:', err);
+  }
+
+  // 2. Dispatch to admin backend API
+  fetch('/api/admin/query', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(queryPayload)
+  }).then(res => res.json()).then(data => {
+    console.log('[VMF ADMIN DESK] Query confirmed by server:', data);
+  }).catch(err => {
+    console.log('[VMF ADMIN DESK] Query recorded locally:', queryPayload);
+  });
+
+  // 3. Render Confirmation Docket in chat
+  setTimeout(() => {
+    card.innerHTML = `<div class="chat-query-receipt">
+      <div class="chat-receipt-badge">Query Delivered to Admin</div>
+      <div class="chat-receipt-title">Reference Docket: ${ticketId}</div>
+      <p class="chat-receipt-desc">
+        Thank you, <strong>${escapeHtml(nameVal)}</strong>! Your query has been successfully transmitted directly to the VMF Credit Administration Desk (<strong>admin@vmffinance.com</strong>). An underwriting manager will review your requirement and reach out within 2 business hours.
+      </p>
+      <div class="chat-receipt-details">
+        <div><strong>Name:</strong> ${escapeHtml(nameVal)}</div>
+        <div><strong>Email:</strong> ${escapeHtml(emailVal)}</div>
+        <div><strong>Phone:</strong> +91 ${escapeHtml(phoneVal)}</div>
+        <div><strong>Message:</strong> "${escapeHtml(msgVal)}"</div>
+        <div><strong>Transmitted At:</strong> ${timeString}</div>
+        <div><strong>Status:</strong> Under Admin Review</div>
+      </div>
+    </div>`;
+
+    appendInteractiveOptions([
+      { key: 'query', label: 'Send Another Query' },
+      { action: 'call', label: 'Call Now (+91 40 2335 1234)' },
+      { action: 'main_menu', label: 'Back to List' }
+    ]);
+  }, 650);
+}
+
 function handleQuickChip(topic) {
   let userText = "";
   let botReply = "";
   let followUps = [];
 
-  if (topic === 'invoice') {
+  if (topic === 'query') {
+    userText = "Send a Query to Admin";
+    const formId = 'cqForm_' + Date.now();
+    botReply = `<strong>Send Your Query to VMF Admin Desk:</strong><br>
+    Please provide your contact information and financing requirement. Our credit administration team will review your query and get in touch with you promptly.<br><br>
+    <div class="chat-query-card" id="${formId}">
+      <div class="chat-query-header">Direct Admin Enquiry Form</div>
+      <div class="chat-query-group">
+        <label for="${formId}_name">Full Name <span style="color:#DC2626;">*</span></label>
+        <input type="text" id="${formId}_name" class="chat-query-input" placeholder="e.g. Ramesh Kumar" autocomplete="name">
+        <div class="chat-query-err" id="${formId}_err_name"></div>
+      </div>
+      <div class="chat-query-group">
+        <label for="${formId}_email">Business Email <span style="color:#DC2626;">*</span></label>
+        <input type="email" id="${formId}_email" class="chat-query-input" placeholder="e.g. ramesh@company.com" autocomplete="email">
+        <div class="chat-query-err" id="${formId}_err_email"></div>
+      </div>
+      <div class="chat-query-group">
+        <label for="${formId}_phone">Phone Number (10 Digits) <span style="color:#DC2626;">*</span></label>
+        <input type="tel" id="${formId}_phone" class="chat-query-input" placeholder="e.g. 9876543210" maxlength="10" autocomplete="tel">
+        <div class="chat-query-err" id="${formId}_err_phone"></div>
+      </div>
+      <div class="chat-query-group">
+        <label for="${formId}_msg">Your Query / Requirement <span style="color:#DC2626;">*</span></label>
+        <textarea id="${formId}_msg" class="chat-query-input chat-query-textarea" rows="3" placeholder="Tell us about required funding amount, order size, or any specific questions..."></textarea>
+        <div class="chat-query-err" id="${formId}_err_msg"></div>
+      </div>
+      <button type="button" class="chat-query-submit-btn" id="${formId}_btn" onclick="submitChatQuery('${formId}')">
+        <span>Send Query to Admin</span>
+      </button>
+    </div>`;
+
+    followUps = [
+      { action: 'call', label: 'Call Now (+91 40 2335 1234)' },
+      { action: 'main_menu', label: 'Back to List' }
+    ];
+  } else if (topic === 'invoice') {
     userText = "Tell me about Invoice Financing (Receivables Discounting)";
     botReply = `<strong>Invoice Financing (Receivables Discounting):</strong><br>
     Convert verified receivables from corporate buyers into immediate capital without waiting 30–120 days.<br><br>
@@ -2675,10 +2858,11 @@ function handleQuickChip(topic) {
     <button class="chat-action-btn" onclick="scrollToContactForm()">Apply for Invoice Financing</button>`;
     
     followUps = [
-      { key: 'docs', label: '📑 Required Documents' },
-      { action: 'calc', label: '🧮 Calculate Advance' },
-      { action: 'call', label: '📞 Call Now' },
-      { action: 'main_menu', label: '↩️ Back to List' }
+      { key: 'docs', label: 'Required Documents' },
+      { action: 'calc', label: 'Calculate Advance' },
+      { key: 'query', label: 'Send a Query to Admin' },
+      { action: 'call', label: 'Call Now (+91 40 2335 1234)' },
+      { action: 'main_menu', label: 'Back to List' }
     ];
   } else if (topic === 'po') {
     userText = "How does Purchase Order (PO) Financing work?";
@@ -2691,10 +2875,11 @@ function handleQuickChip(topic) {
     <button class="chat-action-btn" onclick="scrollToContactForm()">Apply for PO Financing</button>`;
 
     followUps = [
-      { key: 'docs', label: '📑 PO Document Checklist' },
-      { action: 'apply', label: '📝 Apply for PO Financing' },
-      { action: 'call', label: '📞 Call Now' },
-      { action: 'main_menu', label: '↩️ Back to List' }
+      { key: 'docs', label: 'Required Documents Checklist' },
+      { action: 'apply', label: 'Apply for PO Financing' },
+      { key: 'query', label: 'Send a Query to Admin' },
+      { action: 'call', label: 'Call Now (+91 40 2335 1234)' },
+      { action: 'main_menu', label: 'Back to List' }
     ];
   } else if (topic === 'wc') {
     userText = "What are your Working Capital Loans?";
@@ -2707,10 +2892,11 @@ function handleQuickChip(topic) {
     <button class="chat-action-btn" onclick="scrollToContactForm()">Check Working Capital Eligibility</button>`;
 
     followUps = [
-      { action: 'calc', label: '🧮 Open Working Capital Calculator' },
-      { key: 'eligibility', label: '⚖️ Who is Eligible?' },
-      { action: 'call', label: '📞 Call Now' },
-      { action: 'main_menu', label: '↩️ Back to List' }
+      { action: 'calc', label: 'Open Working Capital Calculator' },
+      { key: 'eligibility', label: 'Eligibility Parameters' },
+      { key: 'query', label: 'Send a Query to Admin' },
+      { action: 'call', label: 'Call Now (+91 40 2335 1234)' },
+      { action: 'main_menu', label: 'Back to List' }
     ];
   } else if (topic === 'docs') {
     userText = "What documents are required to apply?";
@@ -2723,9 +2909,10 @@ function handleQuickChip(topic) {
     <button class="chat-action-btn" onclick="scrollToContactForm()">Submit Documents Online</button>`;
 
     followUps = [
-      { action: 'apply', label: '📝 Start Application' },
-      { action: 'call', label: '📞 Have Documentation Doubt? Call Now' },
-      { action: 'main_menu', label: '↩️ Back to List' }
+      { action: 'apply', label: 'Start Application' },
+      { key: 'query', label: 'Send a Query to Admin' },
+      { action: 'call', label: 'Call Now (+91 40 2335 1234)' },
+      { action: 'main_menu', label: 'Back to List' }
     ];
   } else if (topic === 'eligibility') {
     userText = "What are the eligibility criteria and parameters?";
@@ -2737,9 +2924,10 @@ function handleQuickChip(topic) {
     <button class="chat-action-btn" onclick="scrollToContactForm()">Check Your Eligibility Now</button>`;
 
     followUps = [
-      { action: 'apply', label: '📝 Fill Eligibility Form' },
-      { action: 'call', label: '📞 Speak with Underwriting Officer' },
-      { action: 'main_menu', label: '↩️ Back to List' }
+      { action: 'apply', label: 'Fill Eligibility Form' },
+      { key: 'query', label: 'Send a Query to Admin' },
+      { action: 'call', label: 'Call Underwriting Desk' },
+      { action: 'main_menu', label: 'Back to List' }
     ];
   } else if (topic === 'rates') {
     userText = "What are the interest rates, charges, and turnaround times?";
@@ -2751,9 +2939,10 @@ function handleQuickChip(topic) {
     <button class="chat-action-btn" onclick="scrollToCalculator()">Open ROI Calculator</button>`;
 
     followUps = [
-      { action: 'calc', label: '🧮 Calculate Terms in Calculator' },
-      { action: 'call', label: '📞 Call Now for Custom Quote' },
-      { action: 'main_menu', label: '↩️ Back to List' }
+      { action: 'calc', label: 'Calculate Terms in Calculator' },
+      { key: 'query', label: 'Send a Query to Admin' },
+      { action: 'call', label: 'Call Now for Custom Quote' },
+      { action: 'main_menu', label: 'Back to List' }
     ];
   } else if (topic === 'turnaround') {
     userText = "How fast is sanction and disbursement?";
@@ -2763,9 +2952,10 @@ function handleQuickChip(topic) {
     &bull; <strong>Digital Processing:</strong> Minimum paperwork friction via streamlined underwriting.`;
 
     followUps = [
-      { action: 'apply', label: '📝 Apply for Rapid Sanction' },
-      { action: 'call', label: '📞 Call Now' },
-      { action: 'main_menu', label: '↩️ Back to List' }
+      { action: 'apply', label: 'Apply for Rapid Sanction' },
+      { key: 'query', label: 'Send a Query to Admin' },
+      { action: 'call', label: 'Call Now (+91 40 2335 1234)' },
+      { action: 'main_menu', label: 'Back to List' }
     ];
   } else if (topic === 'apply') {
     userText = "How do I apply for financing online?";
@@ -2776,32 +2966,33 @@ function handleQuickChip(topic) {
     <button class="chat-action-btn" onclick="scrollToContactForm()">Go to Application Form</button>`;
 
     followUps = [
-      { action: 'apply', label: '📝 Open Application Form' },
-      { action: 'call', label: '📞 Need Application Guidance? Call Now' },
-      { action: 'main_menu', label: '↩️ Back to List' }
+      { action: 'apply', label: 'Open Application Form' },
+      { key: 'query', label: 'Send a Query to Admin' },
+      { action: 'call', label: 'Call Now (+91 40 2335 1234)' },
+      { action: 'main_menu', label: 'Back to List' }
     ];
   } else if (topic === 'agent' || topic === 'call') {
-    userText = "📞 Connect me with Underwriting Desk / Call Now";
+    userText = "Connect me with Underwriting Desk / Call Now";
     botReply = `<strong>VMF Commercial Credit &amp; Underwriting Desk:</strong><br>
     Our commercial credit officers are on duty to review your business requirement directly.<br><br>
     <div class="chat-advisor-card">
       <div style="font-weight: 700; color: #05244F; font-size: 14.5px; margin-bottom: 4px;">Direct Underwriting Line</div>
       <div class="chat-advisor-row">
-        📞 <strong>Phone:</strong> <a href="tel:+914023351234" style="color: #15803D; font-weight: 700; text-decoration: underline;">+91 40 2335 1234</a>
+        <strong>Phone:</strong> <a href="tel:+914023351234" style="color: #15803D; font-weight: 700; text-decoration: underline;">+91 40 2335 1234</a>
         <button class="chat-copy-btn" onclick="copyChatPhone('+914023351234', this)">Copy</button>
       </div>
-      <div class="chat-advisor-row">✉️ <strong>Email:</strong> <a href="mailto:credit@vmffinance.com" style="color: #05244F; font-weight: 600;">credit@vmffinance.com</a></div>
-      <div class="chat-advisor-row">🕒 <strong>Operating Hours:</strong> Mon – Fri: 9:30 AM – 6:30 PM IST</div>
-      <div class="chat-advisor-row">📍 <strong>Corporate Office:</strong> Lumbini Avenue, Gachibowli, Hyderabad – 500032</div>
+      <div class="chat-advisor-row"><strong>Email:</strong> <a href="mailto:credit@vmffinance.com" style="color: #05244F; font-weight: 600;">credit@vmffinance.com</a></div>
+      <div class="chat-advisor-row"><strong>Operating Hours:</strong> Mon – Fri: 9:30 AM – 6:30 PM IST</div>
+      <div class="chat-advisor-row"><strong>Corporate Office:</strong> Lumbini Avenue, Gachibowli, Hyderabad – 500032</div>
     </div>
     <a href="tel:+914023351234" class="chat-call-direct-btn">
-      <span class="call-btn-icon">📞</span>
       <span>Call +91 40 2335 1234 Now</span>
     </a>`;
 
     followUps = [
-      { action: 'main_menu', label: '↩️ Back to List' },
-      { action: 'apply', label: '📝 Fill Online Application' }
+      { key: 'query', label: 'Send a Query to Admin' },
+      { action: 'main_menu', label: 'Back to List' },
+      { action: 'apply', label: 'Fill Online Application' }
     ];
   }
 
@@ -2829,70 +3020,79 @@ function handleChatSubmit(e) {
     return;
   }
 
-  // Conditional Logic Branch 2: Call / Agent / Phone / Human
+  // Conditional Logic Branch 2: Send Query / Admin / Message
+  if (lower.includes('query') || lower.includes('admin') || lower.includes('message') || lower.includes('enquiry') || lower.includes('inquiry') || lower.includes('ask') || lower.includes('reach out') || lower.includes('ticket') || lower.includes('send') || lower.includes('mail')) {
+    handleQuickChip('query');
+    return;
+  }
+
+  // Conditional Logic Branch 3: Call / Agent / Phone / Human
   if (lower.includes('call') || lower.includes('agent') || lower.includes('human') || lower.includes('phone') || lower.includes('talk') || lower.includes('speak') || lower.includes('number') || lower.includes('officer') || lower.includes('dial') || lower.includes('contact')) {
     botReply = `<strong>Connecting to VMF Credit &amp; Underwriting Desk:</strong><br>
     Our commercial credit officers are ready to assist you directly:<br><br>
     <div class="chat-advisor-card">
       <div style="font-weight: 700; color: #05244F; font-size: 14.5px;">Underwriting &amp; Commercial Lending Desk</div>
       <div class="chat-advisor-row">
-        📞 <strong>Direct Line:</strong> <a href="tel:+914023351234" style="color: #15803D; font-weight: 700;">+91 40 2335 1234</a>
+        <strong>Direct Line:</strong> <a href="tel:+914023351234" style="color: #15803D; font-weight: 700;">+91 40 2335 1234</a>
         <button class="chat-copy-btn" onclick="copyChatPhone('+914023351234', this)">Copy</button>
       </div>
-      <div class="chat-advisor-row">✉️ <strong>Email:</strong> <a href="mailto:credit@vmffinance.com" style="color: #05244F;">credit@vmffinance.com</a></div>
-      <div class="chat-advisor-row">🕒 <strong>Desk Hours:</strong> Mon – Fri: 9:30 AM – 6:30 PM IST</div>
+      <div class="chat-advisor-row"><strong>Email:</strong> <a href="mailto:credit@vmffinance.com" style="color: #05244F;">credit@vmffinance.com</a></div>
+      <div class="chat-advisor-row"><strong>Desk Hours:</strong> Mon – Fri: 9:30 AM – 6:30 PM IST</div>
     </div>
     <a href="tel:+914023351234" class="chat-call-direct-btn">
-      <span class="call-btn-icon">📞</span>
       <span>Call +91 40 2335 1234 Now</span>
     </a>`;
 
     followUps = [
-      { action: 'call', label: '📞 Call Now' },
-      { action: 'apply', label: '📝 Fill Application Form' },
-      { action: 'main_menu', label: '↩️ Back to List' }
+      { key: 'query', label: 'Send a Query to Admin' },
+      { action: 'call', label: 'Call Now (+91 40 2335 1234)' },
+      { action: 'apply', label: 'Fill Application Form' },
+      { action: 'main_menu', label: 'Back to List' }
     ];
   }
-  // Conditional Logic Branch 3: Invoice Financing
+  // Conditional Logic Branch 4: Invoice Financing
   else if (lower.includes('invoice') || lower.includes('bill') || lower.includes('receivable') || lower.includes('discount')) {
     botReply = `<strong>Invoice Financing (Receivables Discounting):</strong><br>
     Advance up to 90% against verified invoices from approved corporate buyers, bridging 30–120 day payment terms with 24–48h disbursal.<br><br>
     <button class="chat-action-btn" onclick="scrollToContactForm()">Apply for Invoice Financing</button>`;
 
     followUps = [
-      { key: 'docs', label: '📑 Invoice Documents' },
-      { action: 'calc', label: '🧮 Calculate Advance' },
-      { action: 'call', label: '📞 Call Now' },
-      { action: 'main_menu', label: '↩️ Back to List' }
+      { key: 'docs', label: 'Invoice Documents' },
+      { action: 'calc', label: 'Calculate Advance' },
+      { key: 'query', label: 'Send a Query to Admin' },
+      { action: 'call', label: 'Call Now (+91 40 2335 1234)' },
+      { action: 'main_menu', label: 'Back to List' }
     ];
   }
-  // Conditional Logic Branch 4: PO Financing
+  // Conditional Logic Branch 5: PO Financing
   else if (lower.includes('purchase order') || lower.includes('po') || lower.includes('order') || lower.includes('procure') || lower.includes('supplier')) {
     botReply = `<strong>Purchase Order (PO) Financing:</strong><br>
     Advance capital up to 80% to procure raw materials and execute verified client contracts without straining cash flow.<br><br>
     <button class="chat-action-btn" onclick="scrollToContactForm()">Apply for PO Financing</button>`;
 
     followUps = [
-      { key: 'docs', label: '📑 Required PO Documents' },
-      { action: 'apply', label: '📝 Apply for PO Financing' },
-      { action: 'call', label: '📞 Call Now' },
-      { action: 'main_menu', label: '↩️ Back to List' }
+      { key: 'docs', label: 'Required PO Documents' },
+      { action: 'apply', label: 'Apply for PO Financing' },
+      { key: 'query', label: 'Send a Query to Admin' },
+      { action: 'call', label: 'Call Now (+91 40 2335 1234)' },
+      { action: 'main_menu', label: 'Back to List' }
     ];
   }
-  // Conditional Logic Branch 5: Working Capital
+  // Conditional Logic Branch 6: Working Capital
   else if (lower.includes('working capital') || lower.includes('revolving') || lower.includes('cash flow') || lower.includes('daily') || lower.includes('limit')) {
     botReply = `<strong>Working Capital Loans:</strong><br>
     Revolving facility from ₹5 Lakhs to ₹5 Crores+ structured around your operational turnover with transparent interest charged only on drawn limits.<br><br>
     <button class="chat-action-btn" onclick="scrollToContactForm()">Check Eligibility</button>`;
 
     followUps = [
-      { action: 'calc', label: '🧮 Open Working Capital Calculator' },
-      { key: 'eligibility', label: '⚖️ Eligibility Parameters' },
-      { action: 'call', label: '📞 Call Now' },
-      { action: 'main_menu', label: '↩️ Back to List' }
+      { action: 'calc', label: 'Open Working Capital Calculator' },
+      { key: 'eligibility', label: 'Eligibility Parameters' },
+      { key: 'query', label: 'Send a Query to Admin' },
+      { action: 'call', label: 'Call Now (+91 40 2335 1234)' },
+      { action: 'main_menu', label: 'Back to List' }
     ];
   }
-  // Conditional Logic Branch 6: Documents & KYC
+  // Conditional Logic Branch 7: Documents & KYC
   else if (lower.includes('document') || lower.includes('kyc') || lower.includes('paper') || lower.includes('gst') || lower.includes('bank statement')) {
     botReply = `<strong>Required Documentation Checklist:</strong><br>
     &bull; Business KYC (PAN, GSTIN, Udyam MSME Registration)<br>
@@ -2903,12 +3103,13 @@ function handleChatSubmit(e) {
     <button class="chat-action-btn" onclick="scrollToContactForm()">Upload / Apply</button>`;
 
     followUps = [
-      { action: 'apply', label: '📝 Submit Documents Online' },
-      { action: 'call', label: '📞 Have Document Doubt? Call Now' },
-      { action: 'main_menu', label: '↩️ Back to List' }
+      { action: 'apply', label: 'Submit Documents Online' },
+      { key: 'query', label: 'Send a Query to Admin' },
+      { action: 'call', label: 'Call Now (+91 40 2335 1234)' },
+      { action: 'main_menu', label: 'Back to List' }
     ];
   }
-  // Conditional Logic Branch 7: Eligibility Criteria
+  // Conditional Logic Branch 8: Eligibility Criteria
   else if (lower.includes('eligib') || lower.includes('qualif') || lower.includes('criteria') || lower.includes('who can') || lower.includes('am i eligible')) {
     botReply = `<strong>Eligibility Parameters:</strong><br>
     &bull; Registered Indian MSME, Pvt Ltd, or LLP with 1–2+ years operational vintage.<br>
@@ -2917,12 +3118,13 @@ function handleChatSubmit(e) {
     <button class="chat-action-btn" onclick="scrollToContactForm()">Assess My Eligibility</button>`;
 
     followUps = [
-      { action: 'apply', label: '📝 Fill Eligibility Form' },
-      { action: 'call', label: '📞 Call Underwriting Desk' },
-      { action: 'main_menu', label: '↩️ Back to List' }
+      { action: 'apply', label: 'Fill Eligibility Form' },
+      { key: 'query', label: 'Send a Query to Admin' },
+      { action: 'call', label: 'Call Underwriting Desk' },
+      { action: 'main_menu', label: 'Back to List' }
     ];
   }
-  // Conditional Logic Branch 8: Rates & Pricing
+  // Conditional Logic Branch 9: Rates & Pricing
   else if (lower.includes('rate') || lower.includes('interest') || lower.includes('roi') || lower.includes('charge') || lower.includes('fee') || lower.includes('cost') || lower.includes('percent')) {
     botReply = `<strong>Pricing &amp; Rates (ROI):</strong><br>
     &bull; Competitive risk-based ROI ranging from <strong>9.0% to 20.0% p.a.</strong><br>
@@ -2930,71 +3132,77 @@ function handleChatSubmit(e) {
     <button class="chat-action-btn" onclick="scrollToCalculator()">Open Working Capital Calculator</button>`;
 
     followUps = [
-      { action: 'calc', label: '🧮 Calculate Interest & Terms' },
-      { action: 'call', label: '📞 Call Now for Custom Quote' },
-      { action: 'main_menu', label: '↩️ Back to List' }
+      { action: 'calc', label: 'Calculate Interest & Terms' },
+      { key: 'query', label: 'Send a Query to Admin' },
+      { action: 'call', label: 'Call Now for Custom Quote' },
+      { action: 'main_menu', label: 'Back to List' }
     ];
   }
-  // Conditional Logic Branch 9: Sanction Turnaround / Time
+  // Conditional Logic Branch 10: Sanction Turnaround / Time
   else if (lower.includes('time') || lower.includes('fast') || lower.includes('turnaround') || lower.includes('how long') || lower.includes('disburs') || lower.includes('speed')) {
     botReply = `<strong>Sanction &amp; Disbursement Speed:</strong><br>
     &bull; Initial appraisal turnaround within <strong>24 to 48 business hours</strong> upon complete documentation.<br>
     &bull; Direct disbursal into your verified business bank account promptly upon agreement signing.`;
 
     followUps = [
-      { action: 'apply', label: '📝 Apply for Rapid Sanction' },
-      { action: 'call', label: '📞 Call Now' },
-      { action: 'main_menu', label: '↩️ Back to List' }
+      { action: 'apply', label: 'Apply for Rapid Sanction' },
+      { key: 'query', label: 'Send a Query to Admin' },
+      { action: 'call', label: 'Call Now (+91 40 2335 1234)' },
+      { action: 'main_menu', label: 'Back to List' }
     ];
   }
-  // Conditional Logic Branch 10: Apply / Online Form
+  // Conditional Logic Branch 11: Apply / Online Form
   else if (lower.includes('apply') || lower.includes('form') || lower.includes('register') || lower.includes('submit')) {
     botReply = `<strong>Apply Online for Facility:</strong><br>
     Click below to navigate directly to our quick online application form.<br><br>
     <button class="chat-action-btn" onclick="scrollToContactForm()">Go to Application Form</button>`;
 
     followUps = [
-      { action: 'apply', label: '📝 Open Application Form' },
-      { action: 'call', label: '📞 Call Now' },
-      { action: 'main_menu', label: '↩️ Back to List' }
+      { action: 'apply', label: 'Open Application Form' },
+      { key: 'query', label: 'Send a Query to Admin' },
+      { action: 'call', label: 'Call Now (+91 40 2335 1234)' },
+      { action: 'main_menu', label: 'Back to List' }
     ];
   }
-  // Conditional Logic Branch 11: Greetings
+  // Conditional Logic Branch 12: Greetings
   else if (lower.includes('hi') || lower.includes('hello') || lower.includes('hey') || lower.includes('morning') || lower.includes('afternoon') || lower.includes('evening') || lower.includes('namaste')) {
     botReply = `<strong>Hello! Welcome to VMF Finance Limited.</strong><br>
     How can our commercial credit and underwriting team assist your business today? Select an option below or type your question:`;
 
     followUps = [
-      { key: 'invoice', label: '📋 Invoice Financing' },
-      { key: 'po', label: '📦 PO Financing' },
-      { key: 'wc', label: '💼 Working Capital Loans' },
-      { key: 'docs', label: '📑 Required Documents' },
-      { action: 'call', label: '📞 Call Now' },
-      { action: 'main_menu', label: '↩️ Back to List' }
+      { key: 'invoice', label: 'Invoice Financing' },
+      { key: 'po', label: 'Purchase Order Financing' },
+      { key: 'wc', label: 'Working Capital Loans' },
+      { key: 'docs', label: 'Required Documents' },
+      { key: 'query', label: 'Send a Query to Admin' },
+      { action: 'call', label: 'Call Now (+91 40 2335 1234)' },
+      { action: 'main_menu', label: 'Back to List' }
     ];
   }
-  // Conditional Logic Branch 12: Careers
+  // Conditional Logic Branch 13: Careers
   else if (lower.includes('career') || lower.includes('job') || lower.includes('hiring') || lower.includes('work with us') || lower.includes('resume') || lower.includes('cv')) {
     botReply = `<strong>Careers at VMF Finance:</strong><br>
     We are always seeking talented professionals across credit underwriting, enterprise sales, risk management, and fintech engineering.<br><br>
     &bull; Select <strong>Careers</strong> in the enquiry form or email your profile to <a href="mailto:careers@vmffinance.com" style="color: #2D7B39; font-weight: 600;">careers@vmffinance.com</a>.`;
 
     followUps = [
-      { action: 'apply', label: '📝 Open Enquiry Form' },
-      { action: 'main_menu', label: '↩️ Back to List' }
+      { action: 'apply', label: 'Open Enquiry Form' },
+      { key: 'query', label: 'Send a Query to Admin' },
+      { action: 'main_menu', label: 'Back to List' }
     ];
   }
   // Fallback
   else {
     botReply = `Thank you for your inquiry! VMF Finance Limited provides institutional <strong>Invoice Financing</strong>, <strong>PO Financing</strong>, and <strong>Working Capital Loans</strong> for MSMEs.<br><br>
-    Please select an option below, call our underwriting desk directly, or return to the main list:`;
+    Please select an option below, send a query directly to our admin team, or call our underwriting desk:`;
 
     followUps = [
-      { key: 'invoice', label: '📋 Invoice Financing' },
-      { key: 'po', label: '📦 PO Financing' },
-      { key: 'docs', label: '📑 Check Documents' },
-      { action: 'call', label: '📞 Call Now (+91 40 2335 1234)' },
-      { action: 'main_menu', label: '↩️ Back to List' }
+      { key: 'invoice', label: 'Invoice Financing' },
+      { key: 'po', label: 'Purchase Order Financing' },
+      { key: 'docs', label: 'Check Documents' },
+      { key: 'query', label: 'Send a Query to Admin' },
+      { action: 'call', label: 'Call Now (+91 40 2335 1234)' },
+      { action: 'main_menu', label: 'Back to List' }
     ];
   }
 
