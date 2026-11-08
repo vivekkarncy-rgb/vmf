@@ -2923,7 +2923,7 @@ reveal-wrapper[mode="section"] {
 }
 
 .fixed-side-rail.visible {
-  opacity: 0.6 !important; /* 60% opacity */
+  opacity: 0.3 !important; /* 30% opacity */
   visibility: visible !important;
 }
 
