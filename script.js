@@ -2876,70 +2876,70 @@ const INDUSTRY_ITEMS = [
     title: '<span class="title-line">Manufacturing &</span><span class="title-line">Engineering</span>',
     subtitle: 'Precision parts, heavy fabrication & industrial machinery',
     image: 'assets/industry-1.jpg',
-    iconSvg: `<img src="assets/industry-icon-1.png" alt="Manufacturing &amp; Engineering Icon" width="58" height="58" />`
+    iconSvg: `<svg width="52" height="52" viewBox="0 0 24 24" fill="#FFFFFF" aria-hidden="true"><path d="M20.1 9.221c-1.81 0-2.55-1.28-1.65-2.85.52-.91.21-2.07-.7-2.59l-1.73-.99c-.79-.47-1.81-.19-2.28.6l-.11.19c-.9 1.57-2.38 1.57-3.29 0l-.11-.19a1.641 1.641 0 00-2.26-.6l-1.73.99c-.91.52-1.22 1.69-.7 2.6.91 1.56.17 2.84-1.64 2.84-1.04 0-1.9.85-1.9 1.9v1.76c0 1.04.85 1.9 1.9 1.9 1.81 0 2.55 1.28 1.64 2.85-.52.91-.21 2.07.7 2.59l1.73.99c.79.47 1.81.19 2.28-.6l.11-.19c.9-1.57 2.38-1.57 3.29 0l.11.19c.47.79 1.49 1.07 2.28.6l1.73-.99c.91-.52 1.22-1.69.7-2.59-.91-1.57-.17-2.85 1.64-2.85 1.04 0 1.9-.85 1.9-1.9v-1.76a1.92 1.92 0 00-1.91-1.9zm-8.1 6.03c-1.79 0-3.25-1.46-3.25-3.25s1.46-3.25 3.25-3.25 3.25 1.46 3.25 3.25-1.46 3.25-3.25 3.25z"/></svg>`
   },
   {
     id: 'automotive',
     title: '<span class="title-line">Auto Components &</span><span class="title-line">Industrial</span>',
     subtitle: 'Tier-1 & Tier-2 automotive ancillaries & precision assemblies',
     image: 'assets/industry-2.jpg',
-    iconSvg: `<img src="assets/industry-icon-2.png" alt="Auto Components &amp; Industrial Icon" width="58" height="58" />`
+    iconSvg: `<svg width="52" height="52" viewBox="0 0 24 24" fill="#FFFFFF" aria-hidden="true"><path d="M21.75 7.998c0 .41-.34.75-.75.75H3c-.41 0-.75-.34-.75-.75s.34-.75.75-.75h1.02l.38-1.81c.36-1.75 1.11-3.36 4.09-3.36h7.02c2.98 0 3.73 1.61 4.09 3.36l.38 1.81H21c.41 0 .75.34.75.75zM22.182 13.66c-.15-1.65-.59-3.41-3.8-3.41H5.621c-3.21 0-3.64 1.76-3.8 3.41l-.56 6.09c-.07.76.18 1.52.7 2.09.53.58 1.28.91 2.08.91h1.88c1.62 0 1.93-.93 2.13-1.54l.2-.6c.23-.69.29-.86 1.19-.86h5.12c.9 0 .93.1 1.19.86l.2.6c.2.61.51 1.54 2.13 1.54h1.88c.79 0 1.55-.33 2.08-.91.52-.57.77-1.33.7-2.09l-.56-6.09zm-13.18 2.09h-3c-.41 0-.75-.34-.75-.75s.34-.75.75-.75h3c.41 0 .75.34.75.75s-.34.75-.75.75zm9 0h-3c-.41 0-.75-.34-.75-.75s.34-.75.75-.75h3c.41 0 .75.34.75.75s-.34.75-.75.75z"/></svg>`
   },
   {
     id: 'textiles',
     title: '<span class="title-line">Textiles & Consumer</span><span class="title-line">Products</span>',
     subtitle: 'Yarn spinning, weaving, finished apparel & fashion exports',
     image: 'assets/industry-3.jpg',
-    iconSvg: `<img src="assets/industry-icon-3.png" alt="Textiles &amp; Consumer Products Icon" width="58" height="58" />`
+    iconSvg: `<svg width="52" height="52" viewBox="0 0 24 24" fill="#FFFFFF" aria-hidden="true"><path d="M16 8.75c-.41 0-.75-.34-.75-.75V4.5c0-1.08-.67-1.75-1.75-1.75h-3c-1.08 0-1.75.67-1.75 1.75V8c0 .41-.34.75-.75.75s-.75-.34-.75-.75V4.5c0-1.91 1.34-3.25 3.25-3.25h3c1.91 0 3.25 1.34 3.25 3.25V8c0 .41-.34.75-.75.75z"/> <path d="M8 17.78a.749.749 0 110-1.5h11.76c.3 0 .53-.26.5-.56l-.68-5.69C19.34 8.09 19 6.5 15.6 6.5H8.4c-3.4 0-3.74 1.59-3.97 3.53l-.9 7.5C3.24 19.99 4 22 7.51 22h8.98c3.16 0 4.09-1.63 4.04-3.75a.49.49 0 00-.5-.47H8z"/></svg>`
   },
   {
     id: 'fmcg',
     title: '<span class="title-line">FMCG & Wholesale</span><span class="title-line">Distribution</span>',
     subtitle: 'High-frequency inventory financing & merchant supply chains',
     image: 'assets/industry-4.jpg',
-    iconSvg: `<img src="assets/industry-icon-4.png" alt="FMCG &amp; Wholesale Distribution Icon" width="58" height="58" />`
+    iconSvg: `<svg width="52" height="52" viewBox="0 0 24 24" fill="#FFFFFF" aria-hidden="true"><path d="M22.36 8.27l-.29-2.77c-.42-3.02-1.79-4.25-4.72-4.25H6.59c-2.94 0-4.3 1.23-4.73 4.28l-.27 2.75c-.1 1.07.19 2.11.82 2.92.76.99 1.93 1.55 3.23 1.55 1.26 0 2.47-.63 3.23-1.64A3.754 3.754 0 0012 12.75c1.29 0 2.42-.6 3.11-1.6.77.99 1.96 1.6 3.2 1.6 1.33 0 2.53-.59 3.28-1.63.6-.8.87-1.81.77-2.85zM11.35 16.66a2.495 2.495 0 00-2.23 2.49v2.74c0 .27.22.49.49.49h4.77c.27 0 .49-.22.49-.49V19.5c.01-2.09-1.22-3.08-3.52-2.84z"/> <path d="M21.37 14.398v2.98c0 2.76-2.24 5-5 5a.49.49 0 01-.49-.49v-2.39c0-1.28-.39-2.28-1.15-2.96-.67-.61-1.58-.91-2.71-.91-.25 0-.5.01-.77.04a3.485 3.485 0 00-3.13 3.48v2.74c0 .27-.22.49-.49.49-2.76 0-5-2.24-5-5v-2.96a1 1 0 011.34-.94c.27.09.54.16.82.2.12.02.25.04.37.04.16.02.32.03.48.03 1.16 0 2.3-.43 3.2-1.17.86.74 1.98 1.17 3.16 1.17 1.19 0 2.29-.41 3.15-1.15.9.73 2.02 1.15 3.16 1.15.18 0 .36-.01.53-.03a4.818 4.818 0 001.21-.26.997.997 0 011.32.94z"/></svg>`
   },
   {
     id: 'agriculture',
     title: '<span class="title-line">Agriculture & Food</span><span class="title-line">Processing</span>',
     subtitle: 'Cold chain storage, agro-commodities & packaged food products',
     image: 'assets/industry-5.jpg',
-    iconSvg: `<img src="assets/industry-icon-5.png" alt="Agriculture &amp; Food Processing Icon" width="58" height="58" />`
+    iconSvg: `<svg width="52" height="52" viewBox="0 0 24 24" fill="#FFFFFF" aria-hidden="true"><path d="M16.17 10.06H7.83c-1.18 0-1.59-.79-.9-1.75l4.17-5.84c.49-.7 1.31-.7 1.8 0l4.17 5.84c.69.96.28 1.75-.9 1.75z"/> <path d="M17.59 17.999H6.41c-1.58 0-2.12-1.05-1.19-2.33l3.99-5.61h5.58l3.99 5.61c.93 1.28.39 2.33-1.19 2.33zM12.75 18v4c0 .41-.34.75-.75.75s-.75-.34-.75-.75v-4h1.5z"/></svg>`
   },
   {
     id: 'pharma',
     title: '<span class="title-line">Pharmaceuticals &</span><span class="title-line">Healthcare</span>',
     subtitle: 'Active ingredients, formulations, diagnostic tools & medical equipment',
     image: 'assets/industry-6.jpg',
-    iconSvg: `<img src="assets/industry-icon-6.png" alt="Pharmaceuticals &amp; Healthcare Icon" width="58" height="58" />`
+    iconSvg: `<svg width="52" height="52" viewBox="0 0 24 24" fill="#FFFFFF" aria-hidden="true"><path d="M22 7.81v4.69h-4.08c-.12-.01-.38-.16-.44-.27l-1.04-1.97c-.41-.78-1.12-1.22-1.88-1.18-.76.04-1.41.55-1.74 1.38l-1.38 3.46-.2-.52c-.49-1.27-1.89-2.23-3.27-2.23L2 11.2V7.81C2 4.17 4.17 2 7.81 2h8.38C19.83 2 22 4.17 22 7.81z"/> <path d="M22 16.189v-2.19h-4.08c-.67 0-1.46-.48-1.77-1.07l-1.04-1.97c-.28-.53-.68-.5-.9.05l-2.3 5.81c-.25.65-.67.65-.93 0l-1.14-2.88c-.27-.7-1.11-1.27-1.86-1.27l-5.98.03v3.49c0 3.58 2.1 5.74 5.63 5.8.11.01.23.01.34.01h8c.15 0 .3 0 .44-.01 3.51-.08 5.59-2.23 5.59-5.8zM2 12.7v3.31c-.02-.32-.03-.66-.03-1.01v-2.3H2z"/></svg>`
   },
   {
     id: 'infrastructure',
     title: '<span class="title-line">Infrastructure &</span><span class="title-line">Building Materials</span>',
     subtitle: 'Structural steel, precast concrete, cement & engineering contracting',
     image: 'assets/industry-7.jpg',
-    iconSvg: `<img src="assets/industry-icon-7.png" alt="Infrastructure &amp; Building Materials Icon" width="58" height="58" />`
+    iconSvg: `<svg width="52" height="52" viewBox="0 0 24 24" fill="#FFFFFF" aria-hidden="true"><path d="M10.6 4.15c0 .19-.16.35-.35.35H9.12C6.96 4.5 5.2 6.26 5.2 8.42v9.23c0 .19-.16.35-.35.35h-.7C2.96 18 2 17.04 2 15.85V4.15C2 2.96 2.96 2 4.15 2h4.3c1.19 0 2.15.96 2.15 2.15zM22 4.15v11.7c0 1.19-.96 2.15-2.15 2.15h-.63c-.19 0-.35-.16-.35-.35V8.42c0-2.16-1.76-3.92-3.92-3.92h-1.2c-.19 0-.35-.16-.35-.35 0-1.19.96-2.15 2.15-2.15h4.3C21.04 2 22 2.96 22 4.15z"/> <path d="M14.95 6H9.12C7.78 6 6.7 7.08 6.7 8.42v11.16C6.7 20.92 7.78 22 9.12 22h1.63c.28 0 .5-.22.5-.5V19c0-.41.34-.75.75-.75s.75.34.75.75v2.5c0 .28.22.5.5.5h1.71c1.33 0 2.41-1.08 2.41-2.41V8.42c0-1.34-1.08-2.42-2.42-2.42zM14 14.75h-4c-.41 0-.75-.34-.75-.75s.34-.75.75-.75h4c.41 0 .75.34.75.75s-.34.75-.75.75zm0-3h-4c-.41 0-.75-.34-.75-.75s.34-.75.75-.75h4c.41 0 .75.34.75.75s-.34.75-.75.75z"/></svg>`
   },
   {
     id: 'chemicals',
     title: '<span class="title-line">Chemicals, Paper &</span><span class="title-line">Packaging</span>',
     subtitle: 'Specialty polymers, corrugated packaging & sustainable materials',
     image: 'assets/industry-8.jpg',
-    iconSvg: `<img src="assets/industry-icon-8.png" alt="Chemicals, Paper &amp; Packaging Icon" width="58" height="58" />`
+    iconSvg: `<svg width="52" height="52" viewBox="0 0 24 24" fill="#FFFFFF" aria-hidden="true"><path d="M17.6 5.311l-5.65-3.04a2.02 2.02 0 00-1.91 0L4.4 5.311c-.41.23-.67.67-.67 1.15 0 .49.25.93.67 1.15l5.65 3.04a2 2 0 001.9 0l5.65-3.04c.41-.22.67-.66.67-1.15 0-.48-.26-.92-.67-1.15zM9.12 11.71L3.87 9.09A1.286 1.286 0 002 10.24v4.96c0 .86.48 1.63 1.25 2.02l5.25 2.62c.18.09.38.14.58.14.23 0 .47-.07.68-.19.38-.24.61-.65.61-1.1v-4.96c-.01-.86-.49-1.63-1.25-2.02zM20 10.24v2.46c-.48-.14-.99-.2-1.5-.2-1.36 0-2.69.47-3.74 1.31-1.44 1.13-2.26 2.84-2.26 4.69 0 .49.06.98.19 1.45-.15-.02-.3-.08-.44-.17-.38-.23-.61-.64-.61-1.09v-4.96c0-.86.48-1.63 1.24-2.02l5.25-2.62A1.286 1.286 0 0120 10.24z"/> <path d="M21.98 15.67a4.46 4.46 0 00-3.48-1.65c-1.06 0-2.04.37-2.81.99A4.448 4.448 0 0014 18.52 4.5 4.5 0 0015.66 22h.01c.77.64 1.76 1.02 2.83 1.02 1.14 0 2.17-.42 2.96-1.12A4.5 4.5 0 0023 18.52c0-1.08-.38-2.08-1.02-2.85zm-1.22 2.29l-2.4 2.22c-.14.13-.33.2-.51.2-.19 0-.38-.07-.53-.22l-1.11-1.11a.754.754 0 010-1.06c.29-.29.77-.29 1.06 0l.6.6 1.87-1.73c.3-.28.78-.26 1.06.04.29.31.27.78-.04 1.06z"/></svg>`
   },
   {
     id: 'logistics',
     title: '<span class="title-line">Logistics, Transport</span><span class="title-line">& Warehousing</span>',
     subtitle: 'Commercial freight fleets, multimodal hubs & fulfillment storage',
     image: 'assets/industry-9.jpg',
-    iconSvg: `<img src="assets/industry-icon-9.png" alt="Logistics, Transport &amp; Warehousing Icon" width="58" height="58" />`
+    iconSvg: `<svg width="52" height="52" viewBox="0 0 24 24" fill="#FFFFFF" aria-hidden="true"><path d="M21.5 15.5c.28 0 .5.22.5.5v1c0 1.66-1.34 3-3 3 0-1.65-1.35-3-3-3s-3 1.35-3 3h-2c0-1.65-1.35-3-3-3s-3 1.35-3 3c-1.66 0-3-1.34-3-3v-2c0-.55.45-1 1-1h9.5a2.5 2.5 0 002.5-2.5V6c0-.55.45-1 1-1h.84c.72 0 1.38.39 1.74 1.01l.64 1.12c.09.16-.03.37-.22.37a2.5 2.5 0 00-2.5 2.5v3a2.5 2.5 0 002.5 2.5h2.5z"/> <path d="M8 22a2 2 0 100-4 2 2 0 000 4zM16 22a2 2 0 100-4 2 2 0 000 4zM22 12.53V14h-3c-.55 0-1-.45-1-1v-3c0-.55.45-1 1-1h1.29l1.45 2.54c.17.3.26.64.26.99zM13.08 2H5.69C3.65 2 2 3.65 2 5.69v6.38c0 .55.45 1 1 1h9.15c1.02 0 1.85-.83 1.85-1.85v-8.3c0-.51-.41-.92-.92-.92zm-3.01 5.07L7.98 9.09c-.15.14-.34.21-.52.21-.19 0-.38-.07-.52-.21l-1.01-.96a.758.758 0 01-.02-1.07c.28-.3.76-.3 1.06-.02l.49.47 1.57-1.52c.3-.29.77-.28 1.06.02.29.3.28.77-.02 1.06z"/></svg>`
   },
   {
     id: 'techservices',
     title: '<span class="title-line">IT & Professional</span><span class="title-line">Services</span>',
     subtitle: 'Enterprise software exports, digital consulting & engineering R&D',
     image: 'assets/industry-10.jpg',
-    iconSvg: `<img src="assets/industry-icon-10.png" alt="IT &amp; Professional Services Icon" width="58" height="58" />`
+    iconSvg: `<svg width="52" height="52" viewBox="0 0 24 24" fill="#FFFFFF" aria-hidden="true"><path d="M21 10H3c-.55 0-1 .45-1 1v5.19c0 .2.01.4.03.6.2 3.08 2.1 4.98 5.18 5.18.2.02.4.03.6.03h8.38c.2 0 .4-.01.6-.03 3.08-.2 4.98-2.1 5.18-5.18.02-.2.03-.4.03-.6V11c0-.55-.45-1-1-1zM8 16.15c.34.5.8.91 1.33 1.18.38.18.53.63.34 1.01-.13.26-.4.41-.67.41-.11 0-.23-.03-.33-.08-.78-.38-1.44-.97-1.91-1.68-.4-.6-.4-1.38 0-1.98.47-.71 1.13-1.3 1.91-1.68.37-.19.82-.04 1 .33.19.38.04.83-.34 1.01-.53.27-.99.68-1.33 1.18-.06.09-.06.21 0 .3zm9.45.84c-.48.71-1.14 1.3-1.91 1.68a.742.742 0 01-1-.33.745.745 0 01.33-1.01c.54-.27 1-.68 1.33-1.18a.24.24 0 000-.3c-.33-.5-.79-.91-1.33-1.18a.745.745 0 01-.33-1.01c.18-.37.63-.52 1-.33.77.38 1.43.97 1.91 1.68.4.6.4 1.38 0 1.98zM22 7.81V8c0 .55-.45 1-1 1L3 9.01c-.55 0-1-.45-1-1v-.2c0-.2.01-.4.03-.6.2-3.08 2.1-4.98 5.18-5.18.2-.02.4-.03.6-.03h8.38c.2 0 .4.01.6.03 3.08.2 4.98 2.1 5.18 5.18.02.2.03.4.03.6z"/></svg>`
   }
 ];
 
