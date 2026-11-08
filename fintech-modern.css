@@ -2451,6 +2451,34 @@ reveal-wrapper[mode="section"] {
     display: none !important;
   }
 
+  /* Mobile: About Section Text & Badge Left Alignment */
+  .about-intro-col,
+  .about-lead-text {
+    text-align: left !important;
+    margin-left: 0 !important;
+  }
+
+  .about-svg-badge-row {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 16px !important;
+    align-items: center !important;
+    text-align: left !important;
+    margin-top: 22px !important;
+  }
+
+  .about-svg-badge-row > div {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    text-align: left !important;
+  }
+
+  .about-svg-badge-row span {
+    display: block !important;
+    text-align: left !important;
+  }
+
   /* Mobile: Hero Heading Size set to 26px */
   .hero-h1 {
     font-size: 26px !important;
