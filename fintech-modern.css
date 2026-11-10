@@ -2063,20 +2063,21 @@ section:not(.prefooter-journey-sec):not(.contact-section) h2,
   min-width: 520px;
 }
 
-.policy-callout-box {
-  background: #EFF6FF;
-  border-left: 4px solid #2563EB;
-  padding: 14px 18px;
-  border-radius: 0 8px 8px 0;
-  margin: 16px 0;
-  font-size: 13.5px;
-  color: #1E3A8A;
+.policy-callout-box,
+.policy-callout-green {
+  background: transparent !important;
+  border: none !important;
+  border-left: none !important;
+  padding: 6px 0 !important;
+  margin: 14px 0 !important;
+  font-size: 14.5px !important;
+  line-height: 1.68 !important;
+  color: #334155 !important;
 }
 
-.policy-callout-green {
-  background: #F0FDF4;
-  border-left: 4px solid #16A34A;
-  color: #14532D;
+.policy-callout-box strong,
+.policy-callout-green strong {
+  color: #05244F !important;
 }
 
 .contact-section {

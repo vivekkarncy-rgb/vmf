@@ -392,7 +392,7 @@ const policyRegistry = {
 
       <div class="policy-section-title">6. Recovery &amp; Resolution Mechanism</div>
       <p><strong>SARFAESI Act:</strong> Authorised Officer (AO) appointed. Demand notice issued post-NPA; 7 days to reply to objections; 30 days notice of sale; maximum 6 months turnaround for entire proceedings.</p>
-      <p><strong>Willful Defaulters:</strong> Deliberate non-payment despite capacity, diversion of funds, or siphoning. Classified irrespective of amount internally; accounts &ge; &rupee;25 lac reported quarterly to CIBIL and RBI. Executive Risk Committee (ERC) reviews cases for criminal prosecution.</p>
+      <p><strong>Willful Defaulters:</strong> Deliberate non-payment despite capacity, diversion of funds, or siphoning. Classified irrespective of amount internally; accounts &ge; ₹25 lac reported quarterly to CIBIL and RBI. Executive Risk Committee (ERC) reviews cases for criminal prosecution.</p>
       <p><strong>Tools for Recovery:</strong> Restructuring (5&ndash;7 years viability window), Corrective Action Plan (CAP) for MSMEs (Rectification within 6 months; Restructuring for Standard/SMA/Sub-Standard with promoter personal guarantee), Settlements/Compromise (OTS: minimum 25% upfront, balance in 1 yr with PLR interest). OTS Approval Matrix: &lt; INR 5,000 Head Credit; &ge; INR 5,000 Credit Committee. Forced sale value benchmarks; RMCB approval for deviations.</p>
       <p><strong>Legal Action:</strong> SARFAESI Act, 2002; arbitration under Arbitration and Conciliation Act, 2015; Civil Courts / DRT; winding up petitions and IBC insolvency proceedings.</p>
       <p><strong>Write-off:</strong> Permitted when borrower has no attachable assets or income. Approved by RMCB and ratified by the Board.</p>
@@ -541,7 +541,7 @@ const policyRegistry = {
       </div>
 
       <div class="policy-callout-green">
-        <strong>Coverage under Integrated Ombudsman Scheme, 2021:</strong> Covers customers of all Deposit taking NBFCs and NBFCs with asset size &ge; &rupee;100 crore with customer interface.
+        <strong>Coverage under Integrated Ombudsman Scheme, 2021:</strong> Covers customers of all Deposit taking NBFCs and NBFCs with asset size &ge; ₹100 crore with customer interface.
       </div>
 
       <div class="policy-section-title">Principal Nodal Officer Details</div>
@@ -566,7 +566,7 @@ const policyRegistry = {
       <p>Complainants may lodge grievances online at <a href="https://cms.rbi.org.in" target="_blank" rel="noopener noreferrer" style="color: #05244F; font-weight: 700; text-decoration: underline;">https://cms.rbi.org.in</a> or write to the Centralized Receipt and Processing Centre (CRPC), RBI if unresolved by VMF within 30 days.</p>
       <ul style="padding-left: 20px; margin-bottom: 14px; line-height: 1.65;">
         <li>Regulated Entity must file written response within <strong>15 days</strong>.</li>
-        <li>Ombudsman compensation powers: up to <strong>&rupee; 20 Lakh</strong> for consequential loss + up to <strong>&rupee; 1 Lakh</strong> for loss of time, expenses, harassment and mental anguish.</li>
+        <li>Ombudsman compensation powers: up to <strong>₹ 20 Lakh</strong> for consequential loss + up to <strong>₹ 1 Lakh</strong> for loss of time, expenses, harassment and mental anguish.</li>
         <li>Appeals before Appellate Authority within <strong>30 days</strong> of Award receipt.</li>
       </ul>
 
@@ -856,7 +856,7 @@ const policyRegistry = {
 
       <div class="policy-section-title">6. Statutory Reporting to FIU-IND &amp; Record Maintenance</div>
       <ul style="padding-left: 20px; margin-bottom: 14px; line-height: 1.65;">
-        <li><strong>Cash Transaction Reports (CTR):</strong> Individual cash transactions &gt; &rupee;10 Lakhs (or integrally connected) submitted monthly to Director, FIU-IND by 15th of succeeding month.</li>
+        <li><strong>Cash Transaction Reports (CTR):</strong> Individual cash transactions &gt; ₹10 Lakhs (or integrally connected) submitted monthly to Director, FIU-IND by 15th of succeeding month.</li>
         <li><strong>Suspicious Transaction Reports (STR):</strong> Submitted to FIU-IND within 7 working days of establishing suspicion without tipping off the client.</li>
         <li><strong>Counterfeit Currency Reports (CCR):</strong> Detection of fake Indian currency reported by 15th of succeeding month.</li>
         <li><strong>Principal Officer:</strong> Designated senior officer operating from Head Office responsible for FIU-IND liaison and fraud reporting. Address: <em>Director, FIU-IND, 6th Floor, Hotel Samrat, Chanakyapuri, New Delhi &ndash; 110021</em>.</li>
@@ -903,7 +903,7 @@ const policyRegistry = {
         <li>Person of integrity possessing relevant expertise and experience.</li>
         <li>Not a promoter of the company or its holding, subsidiary, or associate company; not related to promoters or directors.</li>
         <li>No pecuniary relationship (other than director remuneration or transactions &le; 10% of total income) during the preceding 2 financial years or current year.</li>
-        <li>Relatives do not hold securities &gt; &rupee;50 Lakhs or &gt; 2% of paid-up capital; not indebted &gt; &rupee;50 Lakhs; have not provided guarantees &gt; &rupee;50 Lakhs.</li>
+        <li>Relatives do not hold securities &gt; ₹50 Lakhs or &gt; 2% of paid-up capital; not indebted &gt; ₹50 Lakhs; have not provided guarantees &gt; ₹50 Lakhs.</li>
         <li>Neither director nor relative has held position of KMP/employee in preceding 3 years, nor been partner/employee of the statutory audit firm or legal/consulting firm with transactions &ge; 10% gross turnover.</li>
         <li>Does not hold, together with relatives, 2% or more of total voting power.</li>
       </ul>
@@ -1035,7 +1035,7 @@ const policyRegistry = {
             <tr><td>Selling or otherwise disposing of, or buying, property of any kind</td><td><strong>10% or more of Net Worth</strong> of the Company</td></tr>
             <tr><td>Leasing of property of any kind</td><td><strong>10% or more of Turnover</strong> of the Company</td></tr>
             <tr><td>Availing or rendering of any services</td><td><strong>10% or more of Turnover</strong> of the Company</td></tr>
-            <tr><td>Appointment to any office or place of profit in company/subsidiary/associate</td><td>Monthly remuneration exceeding <strong>&rupee; 2,50,000/-</strong></td></tr>
+            <tr><td>Appointment to any office or place of profit in company/subsidiary/associate</td><td>Monthly remuneration exceeding <strong>₹ 2,50,000/-</strong></td></tr>
             <tr><td>Remuneration for underwriting subscription of securities / derivatives</td><td>Exceeding <strong>1% of Net Worth</strong></td></tr>
           </tbody>
         </table>
@@ -1046,7 +1046,7 @@ const policyRegistry = {
       <ul style="padding-left: 20px; margin-bottom: 14px; line-height: 1.65;">
         <li>Transactions entered in the ordinary course of business on an arm&rsquo;s length basis are exempt from Board/shareholder approval under Section 188.</li>
         <li>Transactions between holding company and wholly-owned subsidiary whose accounts are consolidated are exempt.</li>
-        <li><strong>Audit Committee Omnibus Approval:</strong> Granted for repetitive ordinary-course transactions for up to 1 financial year. Where need cannot be foreseen, omnibus approval permitted up to <strong>&rupee; 1 Crore per transaction</strong>. Omnibus approval prohibited for selling/disposing company undertakings.</li>
+        <li><strong>Audit Committee Omnibus Approval:</strong> Granted for repetitive ordinary-course transactions for up to 1 financial year. Where need cannot be foreseen, omnibus approval permitted up to <strong>₹ 1 Crore per transaction</strong>. Omnibus approval prohibited for selling/disposing company undertakings.</li>
       </ul>
 
       <div class="policy-section-title">4. Director &amp; KMP Disclosure Obligations (Annexure 1)</div>
