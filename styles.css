@@ -5514,6 +5514,42 @@ scramble-text {
   margin: 0;
 }
 
+/* About Section Trust Highlights (Desktop: Step-by-Step Vertical Stack, Increased Size) */
+.about-svg-badge-row {
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.about-svg-badge-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--navy);
+  letter-spacing: -0.015em;
+  text-align: left;
+  line-height: 1.3;
+}
+
+.about-badge-icon-box {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: rgba(45, 123, 57, 0.08);
+  border: 1px solid rgba(45, 123, 57, 0.16);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--green);
+}
+
+
 /* Right Column: Vision & Mission Simple Text Blocks */
 .about-vm-col {
   display: flex;

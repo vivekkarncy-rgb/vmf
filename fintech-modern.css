@@ -2617,6 +2617,19 @@ reveal-wrapper[mode="section"] {
   .about-svg-badge-item span {
     display: block !important;
     text-align: left !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+  }
+
+  .about-badge-icon-box {
+    width: 32px !important;
+    height: 32px !important;
+    border-radius: 8px !important;
+  }
+
+  .about-badge-icon-box svg {
+    width: 17px !important;
+    height: 17px !important;
   }
 
   /* Mobile: Hero Heading Size set to 32px */
