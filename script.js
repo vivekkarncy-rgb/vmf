@@ -367,195 +367,51 @@ const policyRegistry = {
       <p>The quality and performances of advances have a direct bearing on the profitability of VMF. Despite an efficient credit appraisal, disbursement and monitoring mechanism, problems can still arise due to various factors and give scope for Non-Performing Assets (NPA). These factors may be internal or external.</p>
       <p><strong>Key objectives of the policy are:</strong></p>
       <ul style="padding-left: 20px; margin-bottom: 14px; line-height: 1.65;">
-        <li>The Policy is aimed at strengthening the management and recovery of NPAs and proactive initiatives to closely monitor existing accounts.</li>
-        <li>The Policy continues to lay stress on the present system of early identification and reporting of all existing and potential problem loans in preventing the incidence of NPAs.</li>
-        <li>The Loan Review Mechanism to be triggered on detection of early warning signals to ensure an effective and quicker response for correction.</li>
-        <li>The Policy emphasizes a broad approach, including critical parameters to be taken into account, towards the collection, recovery and resolution of loans through rehabilitation, compromise settlements etc.</li>
-        <li>The Policy also proposes an approach for cleansing of our NPA portfolio through judicious write-offs.</li>
-        <li>The Policy aims at improving internal efficiency of the recovery machinery and thus enhance the profitability of the Company.</li>
+        <li>Strengthening the management and recovery of NPAs and proactive initiatives to closely monitor existing accounts.</li>
+        <li>Present system of early identification and reporting of all existing and potential problem loans in preventing NPA incidence.</li>
+        <li>Loan Review Mechanism triggered on detection of early warning signals for effective correction.</li>
+        <li>Collection, recovery and resolution of loans through rehabilitation, compromise settlements etc.</li>
+        <li>Cleansing of NPA portfolio through judicious write-offs.</li>
+        <li>Improving internal efficiency of the recovery machinery and enhancing Company profitability.</li>
       </ul>
-      <p><strong>Following are the guiding principles for this policy:</strong></p>
-      <ul style="padding-left: 20px; margin-bottom: 14px; line-height: 1.65;">
-        <li>VMF&rsquo;s recovery procedure will be based on legal and acceptable practices.</li>
-        <li>VMF will treat its defaulters with respect and dignity while being focussed on recovery.</li>
-        <li>VMF will follow only ethical practices and will not resort to unduly coercive tactics in the process of recovery of NPAs.</li>
-        <li>VMF will not initiate any legal or recovery measures including repossession of the security without giving due notice to the borrower in writing. VMF will follow all such procedures as required under law for recovery/repossession of the security.</li>
-        <li>Repossession of security will be only at recovery of dues and not to deprive the borrower of the security. Repossession, valuation and realization of security will be always done in a fair and transparent manner.</li>
-      </ul>
+      <p><strong>Guiding principles:</strong> Recovery based on legal and acceptable practices; treat defaulters with respect and dignity; strictly non-coercive tactics; prior written notice before legal or recovery action/repossession; repossession only for recovery of dues in a fair and transparent manner.</p>
 
       <div class="policy-section-title">3. Policy Review &amp; Approval Process</div>
-      <p>The Policy would be reviewed and updated at least on an annual basis by the Head-Credit with a sign off from the Head-Risk and Compliance and the MD &amp; CEO. The reviewed and updated policy would be submitted to Risk Management Committee of the Board (&ldquo;RMCB&rdquo;) for recommendation and approval of the Board. The minutes of meeting of the committee and the Board would be documented.</p>
+      <p>Reviewed and updated at least annually by Head-Credit with sign-off from Head-Risk and Compliance and MD &amp; CEO, submitted to Risk Management Committee of the Board (&ldquo;RMCB&rdquo;) for recommendation and Board approval.</p>
 
       <div class="policy-section-title">4. Key Definitions</div>
-      <p><strong>Default:</strong> Default is considered to have occurred when an asset is classified as non-performing asset (&lsquo;NPA&rsquo;). All defaults will be recorded in accordance with the reference definition of default detailed in the Credit Management Policy.</p>
-      <p><strong>Non-performing assets (NPA):</strong> An asset, including a leased asset, becomes non-performing when it ceases to generate income for the Company. A &ldquo;Non-performing Asset&rdquo; (NPA) is a loan or an advance where:</p>
-      <ul style="padding-left: 20px; margin-bottom: 14px; line-height: 1.65;">
-        <li>Interest and/or instalment of principal remain overdue for a period of more than 90 days in respect of a Term Loan.</li>
-        <li>The account remains &lsquo;out of order&rsquo;, in respect of an Overdraft/Cash Credit (OD/CC).</li>
-        <li>The bill remains overdue for a period of more than 90 days in the case of Bills purchased and discounted.</li>
-        <li>The instalment of principal or interest thereon remains overdue for two crop seasons for short duration crops.</li>
-        <li>The instalment of principal or interest thereon remains overdue for one crop season for long duration crops.</li>
-        <li>The amount of liquidity facility remains outstanding for more than 90 days, in respect of a Securitization transaction undertaken in terms of guidelines on securitization dated February 1, 2006.</li>
-        <li>In respect of derivative transactions, the overdue receivables representing positive mark-to-market value of a derivative contract, if these remain unpaid for a period of 90 days from the specified due date for payment.</li>
-        <li>Any amount to be received remains overdue for a period of more than 90 days in respect of other accounts.</li>
-      </ul>
-      <p><strong>&lsquo;Out of Order&rsquo; status:</strong> An account should be treated as &lsquo;out of order&rsquo; if the outstanding balance remains continuously in excess of the sanctioned limit/drawing power. In cases where the outstanding balance in the principal operating account is less than the sanctioned limit/drawing power, but there are no credits continuously for 90 days as on the date of Balance Sheet or credits are not enough to cover the interest debited during the same period, these accounts should be treated as &lsquo;out of order&rsquo;.</p>
-      <p><strong>Overdue:</strong> Any amount due to the Company under any credit facility is &lsquo;overdue&rsquo; if it is not paid on the due date fixed by the Company.</p>
+      <p><strong>Default:</strong> Asset classified as NPA in accordance with the Credit Management Policy.</p>
+      <p><strong>Non-performing assets (NPA):</strong> Loan/advance where interest/instalment remains overdue for &gt; 90 days for Term Loans; account remains &lsquo;out of order&rsquo; for OD/CC; bill remains overdue for &gt; 90 days; crop loan overdues (1 or 2 seasons); securitization liquidity facility &gt; 90 days; derivative contracts positive MTM &gt; 90 days; any amount overdue &gt; 90 days for other accounts.</p>
+      <p><strong>&lsquo;Out of Order&rsquo; status:</strong> Continuous outstanding balance in excess of sanctioned limit/drawing power, or no credits continuously for 90 days / insufficient credits to cover interest.</p>
+      <p><strong>Overdue:</strong> Any amount due not paid on the due date fixed by the Company.</p>
 
       <div class="policy-section-title">5. Collections</div>
-      <div class="policy-subsection-title">5.1. Introduction</div>
-      <p>The Collections &amp; Recovery policy of VMF is built around dignity and respect to customers. The Company will not follow policies that are unduly coercive in collection of dues. The policy is built on courtesy, fair treatment and persuasion. VMF believes in following fair practices with regard to collection of dues and thereby fostering customer confidence and long-term relationship.</p>
-      <p>The repayment schedule for any loan sanctioned by VMF will be fixed taking into account paying capacity and cash flow pattern of the borrower. VMF will keep the customer informed of the method of calculation of interest and how the Equated Monthly Instalments (EMI) or payments through any other mode of repayment will be appropriated against interest and principal due from the customers. VMF would expect the customers to adhere to the repayment schedule agreed to and approach VMF for assistance and guidance in case of genuine difficulty in meeting repayment obligations.</p>
-
-      <div class="policy-subsection-title">5.2. Collection Mechanisms</div>
-      <p><strong>5.2.1. Giving notice to borrowers:</strong> While written communications, telephonic reminders or visits by VMF&rsquo;s representatives to the borrower&rsquo;s place or residence will be used as loan follow up measures, VMF will not initiate any legal or other recovery measures including repossession of the secured assets without giving due notice in writing. Any genuine difficulties expressed/disputes raised by the customer will be considered by VMF before initiating recovery measures. The Company will follow all such procedures as required under law for recovery / repossession of secured assets.</p>
-      <p><strong>5.2.2. Repossession of Secured assets:</strong> Repossession of secured assets is aimed at recovery of dues and not to deprive the borrower of the secured assets. The recovery process through repossession of secured assets will involve repossession, valuation of secured assets and realisation of secured assets through appropriate means. All these would be carried out in a fair and transparent manner. Repossession will be done only after issuing the notice as detailed above. Due process of law will be followed while taking repossession of the secured assets. VMF will take all reasonable care for ensuring the safety and security of the secured assets after taking custody, in the ordinary course of the business and necessary cost will be charged to borrower.</p>
-      <p><strong>5.2.3. Valuation &amp; sale of secured assets:</strong> Valuation and sale of secured assets repossessed by VMF will be carried out as per law and in a fair and transparent manner. VMF will have right to recover from the borrower the balance due if any, after sale of secured assets. Excess amount if any, obtained on sale of the secured assets shall be paid to the person entitled thereto in accordance with his rights and interests, after meeting all the related expenses, provided VMF is not having any other claims against the customer. The Company&rsquo;s right to general lien and its implications will be made clear to the borrower while executing the loan documents.</p>
-      <p>In the case of hypothecated assets after taking possession if no payment is forthcoming, a sale notice of 7 days&rsquo; time to respond will be sent to the borrower. Thereafter VMF will arrange for sale of the hypothecated assets in such manner as deemed fit by VMF. In respect of cases under SARFAESI Act as per the provisions of the Act, 30 days&rsquo; notice of sale will be sent. When public auction or by tender is envisaged, the same will be published in two leading newspapers out of which one is in local vernacular paper.</p>
-      <p><strong>5.2.4. Opportunity for the borrower to take back the secured assets:</strong> VMF will resort to repossession of secured assets only for the purpose of realization of its dues as the last resort and not with intention of depriving the borrower of the secured assets. Accordingly, VMF will be willing to consider handing over possession of secured assets to the borrower after repossession and before concluding sale transaction of the secured assets, provided VMF dues are cleared in full. If satisfied with the genuineness of borrower&rsquo;s inability to pay the loan instalments as per the schedule, which resulted in the repossession of secured assets, VMF may consider handing over the secured assets after receiving the instalments in arrears. However, this would be subject to giving an undertaking by the borrower to repay the remaining instalments / dues in future and to maintain the loan account as performing asset until closure of the account as per the terms of the loan agreement(s) to the satisfaction of VMF.</p>
-      <p>If the amounts are repaid, either as stipulated by VMF or dues settled as agreed to, possession of seized assets will be handed back to the borrower within 7 days after date of permission from the competent authority of VMF or Court/DRT concerned if recovery proceedings are filed and pending before such forums.</p>
-
-      <div class="policy-subsection-title">5.3. Product-Specific Collection Guidelines (Retail &amp; MSME Loans)</div>
-      <p>An Officer to represent VMF in collection or/ and secured assets repossession would follow the guidelines set out below:</p>
-      <ul style="padding-left: 20px; margin-bottom: 14px; line-height: 1.65;">
-        <li>The customer would be contacted ordinarily at the place of his / her choice and in the absence of any specified place, at the place of his / her residence and if unavailable at his / her residence, at the place of business / occupation.</li>
-        <li>Identity and authority of persons authorised to represent the Company for follow up and recovery of dues would be made known to the borrowers at the first instance. VMF staff or any person authorised to represent the Company in collection of dues or / and secured assets repossession will identify himself / herself and display the authority letter issued by VMF upon request.</li>
-        <li>VMF would respect privacy of its borrowers.</li>
-        <li>VMF is committed to ensure that all written and verbal communication with its borrowers will be in simple business language and the Company will adopt civil manners for interaction with borrowers.</li>
-        <li>Normally VMF&rsquo;s representatives will contact the borrower between <strong>0700 hrs and 1900 hrs</strong>, unless the special circumstance of his / her business or occupation requires VMF to contact at a different time.</li>
-        <li>Borrower&rsquo;s request to avoid calls at a particular time or at a particular place would be honoured as far as possible.</li>
-        <li>VMF will document the efforts made for the recovery of dues and the copies of communication sent to customers, if any, will be kept on record.</li>
-        <li>Inappropriate occasions such as bereavement in the family or such other calamitous occasions will be avoided for making calls / visits to collect dues.</li>
-      </ul>
+      <p><strong>5.1. Introduction:</strong> Built around dignity, respect, courtesy, fair treatment and persuasion. Repayment schedules fixed taking into account paying capacity and cash flow patterns.</p>
+      <p><strong>5.2. Collection Mechanisms:</strong> Prior written notice required before legal measures or repossession. Hypothecated asset repossession followed by 7-day sale notice; SARFAESI asset sale followed by 30-day notice with publication in two leading newspapers (one local vernacular). Opportunity given to borrower to reclaim repossessed assets within 7 days upon full settlement of arrears.</p>
+      <p><strong>5.3. Retail &amp; MSME Guidelines:</strong> Contacts made at customer's place of choice/residence/business; identity verification with VMF authority letter; customer privacy respected; calling hours strictly between <strong>0700 hrs and 1900 hrs</strong>; avoiding inappropriate occasions like bereavement.</p>
 
       <div class="policy-section-title">6. Recovery &amp; Resolution Mechanism</div>
-      <div class="policy-subsection-title">6.1. Introduction</div>
-      <p>Continuous and focused follow-up on daily basis is the underlying principle for good recovery and also for identifying genuine problems of the borrowal units so that timely assistance can be extended to correct any temporary mismatch of the cash flow / review of repayment schedule etc. Endeavour should be to prevent the asset from becoming NPA rather than applying remedial measures at post NPA stage. Timely restructuring / rehabilitation in deserving cases should be ensured.</p>
-      <p>The Company shall introduce MIS to monitor overdue and rephased accounts closely. The Company may opt for One Time Settlement where chances of entire recovery are remote / time consuming. The Company may consider Sale of NPA assets to ARCs/Banks/FIs. The Company will enforce the provisions of identifying and declaring Willful defaulters in accordance with RBI guidelines.</p>
-
-      <div class="policy-subsection-title">6.2. Engagement of Recovery Agents</div>
-      <p>VMF may utilize the services of recovery agents for collection of dues and repossession of securities. Recovery agents will be appointed as per regulatory guidelines issued in this regard:</p>
-      <ul style="padding-left: 20px; margin-bottom: 14px; line-height: 1.65;">
-        <li>The name and address of all Recovery Agents on VMF&rsquo;s approved panel will be placed on their website for information.</li>
-        <li>Only recovery agents from the approved panels will be engaged by VMF.</li>
-        <li>In case the Company engages service of such recovery/enforcement/seizure agent for any recovery case, the identity of the agent will be disclosed to the borrower.</li>
-        <li>The recovery agents engaged by VMF will be required to follow a strict code of conduct covering their dealings with customers.</li>
-      </ul>
-
-      <div class="policy-subsection-title">6.3. Invoking the Provisions of SARFAESI Act</div>
-      <p>The Securitisation and Reconstruction of Financial Assets and Enforcement of Security Interest Act, 2002 (SARFAESI Act) are applicable for only secured loans, and if invoked promptly and followed up diligently, act as a powerful deterrent to errant borrowers.</p>
-      <p>The moment a SARFAESI proposal is approved; Authorised Officer (AO) shall be identified who should assume ownership of the account. It is the responsibility of the AO to ensure that the time frame for taking SARFAESI proceedings forward are strictly adhered to:</p>
-      <ul style="padding-left: 20px; margin-bottom: 14px; line-height: 1.65;">
-        <li>Demand notice should be issued after the account being classified as NPA.</li>
-        <li>If, after issuance of the demand notice, the borrower raises any objection, the AO may make changes or modifications in the demand notice and serve a revised notice within 7 days from the date of receipt of the objection.</li>
-        <li>If the amount mentioned in the demand notice is not received within the time frame specified therein, the AO shall take necessary action to take possession of the security.</li>
-        <li>After taking possession, and before sale, the AO shall obtain the estimated value of the security.</li>
-        <li>The AO shall serve to the borrower a notice of 30 days for sale of the security.</li>
-        <li>The entire process has to be taken to its logical end within a maximum period of 6 months.</li>
-      </ul>
-
-      <div class="policy-subsection-title">6.3.1. Identification of Non-Willful Individual Default of VMF</div>
-      <p>The Company shall view sympathetically all genuine cases of non-wilful defaults due to sickness in the family, seasonal variation in the family income, sudden cash needs, late payment of salary, slowdown in business etc. Regional Managers shall be delegated powers to allow time up to 30 days to regularize such Accounts. The decision for re-phasement of the loan account will be taken centrally by the Credit Committee. In exceptional cases and deserving cases, the total term of the loan shall be extended by the Head Micro Banking and Head Retail Assets.</p>
-
-      <div class="policy-subsection-title">6.3.2. Identification of Willful Defaulters of VMF</div>
-      <p>As per the scheme framed by RBI with effect from 01.04.1999, banks/FIs are required to submit the list of suit filed accounts of willful defaulters of &rupee;25 lac and above as at end of every quarter to CIBIL and/or any other credit information company and the quarterly list of wilful defaulters of &rupee;25 lac and above where suit has not been filed to RBI. However, VMF shall classify willful defaulters irrespective of the amount outstanding, for internal purposes.</p>
-      <p>A &ldquo;willful default&rdquo; would be deemed to have occurred if any of the following events is noted:</p>
-      <ul style="padding-left: 20px; margin-bottom: 14px; line-height: 1.65;">
-        <li>The unit has defaulted in meeting its payment/repayment obligations to the lender even when it has the capacity to honor the said obligations.</li>
-        <li>The unit has defaulted in meeting its obligations and has not utilized the finance for specific purposes but has diverted funds for other purposes.</li>
-        <li>The unit has defaulted and has siphoned off funds so that funds have not been utilized for specific purpose, nor are funds available in the form of other assets.</li>
-      </ul>
-      <p>Classification is evaluated from legal angle and placed before the Executive Risk Committee (ERC). If fit for prosecution, criminal proceedings shall be initiated. Reporting of willful defaulters to authorities like RBI/CIBIL shall be completed per regulatory mandates.</p>
-
-      <div class="policy-subsection-title">6.4. Tools for Recovery</div>
-      <p>VMF shall use any of the following broad methods for management of problem accounts: (1) Restructuring, rephasement and rehabilitation; (2) Settlements / compromise; (3) Legal Action &amp; recovery; (4) Write-off.</p>
-
-      <p><strong>6.4.1. Restructuring, Rephasement &amp; Rehabilitation:</strong> Focuses on accounts where borrower is willing to repay but lacks immediate capacity. Viability timeline is up to 5&ndash;7 years. Corrective Action Plan (CAP) for MSMEs includes <em>Rectification</em> (regularised within 6 months, borrower-driven) and <em>Restructuring</em> (available for Standard, SMA, or Sub-Standard assets with personal guarantees of promoters).</p>
-
-      <p><strong>6.4.2. Settlement / Compromise (OTS):</strong> Negotiated settlement where VMF agrees to accept an amount less than total contractual dues. In case of OTS paid in instalments, VMF recovers at least 25% upfront, and the balance within one year together with interest at Prime Lending Rate (PLR).</p>
-
-      <div class="policy-table-wrapper">
-        <table>
-          <thead>
-            <tr>
-              <th>Loan Amount (INR)</th>
-              <th>Approved by</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Loan amount &lt; INR 5,000</strong></td>
-              <td>Head Credit</td>
-            </tr>
-            <tr>
-              <td><strong>Loan amount &gt;= INR 5,000</strong></td>
-              <td>Credit Committee</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <p style="font-size: 13.5px; color: #475569;">In case of compromise settlements, normally the amount of settlement shall be at least equal to the net balance or an amount close to the Forced Sale Value of the immovable property securities, whichever is less. Any deviation shall be with the permission of the RMCB.</p>
-
-      <p><strong>6.4.3. Legal Action &amp; Recovery:</strong> Legal action is initiated as a last resort under SARFAESI Act, 2002, or arbitration pursuant to the Arbitration and Conciliation Act, 2015. For hypothecated assets: notice of 15&ndash;60 days to regularize; seizure within 30 days after expiry of notice; valuation within 30 days of seizure; disposal within 90 days. Suits in Civil Courts/DRTs, winding-up petitions, and insolvency proceedings under IBC may be initiated where necessary.</p>
-
-      <p><strong>6.4.4. Write off / Waiving of Legal Action:</strong> Waiver of legal action and write-off permitted only when authorized functionary is satisfied borrower has no attachable assets or income. All write-offs must be approved by RMCB and ratified by the Board.</p>
+      <p><strong>SARFAESI Act:</strong> Authorised Officer (AO) appointed. Demand notice issued post-NPA; 7 days to reply to objections; 30 days notice of sale; maximum 6 months turnaround for entire proceedings.</p>
+      <p><strong>Willful Defaulters:</strong> Deliberate non-payment despite capacity, diversion of funds, or siphoning. Classified irrespective of amount internally; accounts &ge; &rupee;25 lac reported quarterly to CIBIL and RBI. Executive Risk Committee (ERC) reviews cases for criminal prosecution.</p>
+      <p><strong>Tools for Recovery:</strong> Restructuring (5&ndash;7 years viability window), Corrective Action Plan (CAP) for MSMEs (Rectification within 6 months; Restructuring for Standard/SMA/Sub-Standard with promoter personal guarantee), Settlements/Compromise (OTS: minimum 25% upfront, balance in 1 yr with PLR interest). OTS Approval Matrix: &lt; INR 5,000 Head Credit; &ge; INR 5,000 Credit Committee. Forced sale value benchmarks; RMCB approval for deviations.</p>
+      <p><strong>Legal Action:</strong> SARFAESI Act, 2002; arbitration under Arbitration and Conciliation Act, 2015; Civil Courts / DRT; winding up petitions and IBC insolvency proceedings.</p>
+      <p><strong>Write-off:</strong> Permitted when borrower has no attachable assets or income. Approved by RMCB and ratified by the Board.</p>
 
       <div class="policy-section-title">Annexure 1: Roles &amp; Responsibilities of Recovery Agents</div>
       <ul style="padding-left: 20px; margin-bottom: 14px; line-height: 1.65;">
-        <li>Assist VMF in direct recovery, seizure &amp; disposal of secured assets, or negotiating settlements adopting legally permissible means.</li>
-        <li>Agents must carry and display Identity Cards and limit role strictly to entrusted NPA accounts.</li>
-        <li>Take possession, draw inventory, and arrange security measures.</li>
-        <li>Identify bidders to participate in sale and effect sale in transparent manner.</li>
-        <li>Liaison with Government Agencies, Municipal Authorities, Registration Authorities, Court/DRT Recovery Officers.</li>
-        <li>Ascertain particulars of legal heirs of deceased borrowers, guarantors, or mortgagors.</li>
-        <li>Representatives must have undergone training and obtained certificates from <strong>IIBF</strong> as per RBI guidelines.</li>
-        <li>Agencies must maintain infrastructure for recording conversations with borrowers.</li>
-        <li>Recoveries must be accepted by cheques and drafts drawn in favour of the Company only &ndash; strictly zero cash collections.</li>
-        <li>Maintain strict confidentiality of borrower records. No right to sub-delegate or appoint sub-agents.</li>
-        <li>Mandatory pre-employment Police verification of all staff; mandatory re-verification every 2 years.</li>
-        <li>Strict adherence to VMF&rsquo;s Model Code of Conduct for Collection of dues and Repossession of Secured Assets.</li>
+        <li>Identity cards mandatory; role limited strictly to entrusted NPA accounts.</li>
+        <li>Representatives must have undergone training and obtained certificates from <strong>IIBF</strong>.</li>
+        <li>Infrastructure for recording conversations with borrowers.</li>
+        <li>Recoveries accepted by cheques and drafts only in favour of Company &ndash; strictly zero cash.</li>
+        <li>Pre-employment Police verification and mandatory re-verification every 2 years.</li>
+        <li>Strict adherence to Company's Model Code of Conduct.</li>
       </ul>
-
-      <div class="policy-section-title">Annexure 2: Abbreviations</div>
-      <div class="policy-table-wrapper">
-        <table>
-          <thead>
-            <tr><th>Abbr.</th><th>Description</th><th>Abbr.</th><th>Description</th></tr>
-          </thead>
-          <tbody>
-            <tr><td><strong>NPA</strong></td><td>Non-Performing Assets</td><td><strong>CEO</strong></td><td>Chief Executive Officer</td></tr>
-            <tr><td><strong>VMF</strong></td><td>VMF Finance Limited</td><td><strong>JLG</strong></td><td>Joint Liability Group</td></tr>
-            <tr><td><strong>EMI</strong></td><td>Easy Monthly Instalment</td><td><strong>ARC</strong></td><td>Asset Reconstruction Company</td></tr>
-            <tr><td><strong>FI</strong></td><td>Financial Institutions</td><td><strong>DRT</strong></td><td>Debt Recovery Tribunal</td></tr>
-            <tr><td><strong>CMS</strong></td><td>Cash Management Services</td><td><strong>SMA</strong></td><td>Special Mention Account</td></tr>
-            <tr><td><strong>CAP</strong></td><td>Corrective Action Plan</td><td><strong>OTS</strong></td><td>One Time Settlement</td></tr>
-          </tbody>
-        </table>
-      </div>
 
       <div class="policy-section-title">Annexure &ndash; I: Version Control Table</div>
       <div class="policy-table-wrapper">
         <table>
-          <thead>
-            <tr>
-              <th>Version No.</th>
-              <th>Approval Date</th>
-              <th>Effective Date</th>
-              <th>Version Change Details</th>
-              <th>Version Owner</th>
-              <th>Approved By</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>2026_V1</strong></td>
-              <td>01-Oct-2026</td>
-              <td>01-Oct-2026</td>
-              <td>First Release</td>
-              <td>Business, Credit &amp; Risk, Compliance</td>
-              <td>Board of Directors</td>
-            </tr>
-          </tbody>
+          <thead><tr><th>Version</th><th>Approval Date</th><th>Effective Date</th><th>Details</th><th>Owner</th><th>Approved By</th></tr></thead>
+          <tbody><tr><td><strong>2026_V1</strong></td><td>01-Oct-2026</td><td>01-Oct-2026</td><td>First Release</td><td>Business, Credit &amp; Risk, Compliance</td><td>Board of Directors</td></tr></tbody>
         </table>
       </div>`
   },
@@ -576,79 +432,40 @@ const policyRegistry = {
         </div>
         <div class="policy-table-wrapper" style="margin-top: 14px;">
           <table>
-            <thead>
-              <tr>
-                <th>Regulatory Reference Circular</th>
-                <th>Issue Date</th>
-              </tr>
-            </thead>
+            <thead><tr><th>Regulatory Reference Circular</th><th>Issue Date</th></tr></thead>
             <tbody>
-              <tr>
-                <td>RBI/2014-15/299 DNBR (PD) CC.No.002/03.10.001/2014-15</td>
-                <td>November 10, 2014</td>
-              </tr>
-              <tr>
-                <td>RBI/2014-15/552 DNBR (PD) CC.No. 029/03.10.001/2014-15</td>
-                <td>April 10, 2015</td>
-              </tr>
+              <tr><td>RBI/2014-15/299 DNBR (PD) CC.No.002/03.10.001/2014-15</td><td>November 10, 2014</td></tr>
+              <tr><td>RBI/2014-15/552 DNBR (PD) CC.No. 029/03.10.001/2014-15</td><td>April 10, 2015</td></tr>
             </tbody>
           </table>
         </div>
       </div>
 
-      <div class="policy-section-title">1. Preamble</div>
-      <p>The Board of Directors (the &ldquo;Board&rdquo;) of VMF Finance Limited (&ldquo;VMF&rdquo;) has adopted the following policy with regard to ascertaining the Fit and Proper criteria of Directors at the time of their appointment and on continuing basis as defined below.</p>
-      <p>This Policy will be applicable to the Company. This Policy is to ensure that the Directors of the Company who are responsible for steering the affairs of the Company are fit and proper, besides having the necessary qualifications.</p>
+      <div class="policy-section-title">1. Preamble &amp; Purpose</div>
+      <p>Framed under the &lsquo;Revised Regulatory Framework for NBFC&rsquo; issued by RBI. Ensures Directors responsible for steering VMF are fit and proper, possessing requisite qualifications, technical expertise, integrity, and track record.</p>
 
-      <div class="policy-section-title">2. Purpose</div>
-      <p>This Policy has been framed as required under &lsquo;Revised Regulatory Framework for NBFC&rsquo; issued by the Reserve Bank of India (&ldquo;RBI&rdquo;) vide its circular no. RBI/2014-15/299 DNBR (PD) CC.No.002/03.10.001/2014-15 dated November 10, 2014 and subsequent circular no. RBI/2014-15/552 DNBR (PD) CC.No. 029/03.10.001/2014-15 dated April 10, 2015 (&ldquo;RBI Circular&rdquo;).</p>
-      <p>This Policy intends to establish a system/process in place for undertaking due diligence of persons before appointing them on the Board and on continuing basis by ascertaining their suitability for the post on basis their qualifications, technical expertise, track record, integrity etc.</p>
-
-      <div class="policy-section-title">3. Policy Framework &amp; Procedures</div>
-      <p>The Company, while appointing/re-appointing directors, shall ensure that the procedures mentioned below are followed:</p>
+      <div class="policy-section-title">2. Policy Procedures</div>
       <ul style="padding-left: 20px; margin-bottom: 14px; line-height: 1.65;">
-        <li>The Company shall undertake a process of due diligence to determine the suitability of the person for appointment / continuing to hold appointment as a director on the Board, based upon qualification, expertise, track record, integrity and other &lsquo;fit and proper&rsquo; criteria.</li>
-        <li>To comply with the above, the necessary information and declaration from the proposed/ existing Directors shall be obtained in the format as specified in Annexure 1 or any subsequent amendments as prescribed by the RBI from time to time.</li>
-        <li>The process of due diligence along with scrutiny of the declarations shall be undertaken by the Board at the time of appointment / renewal of appointment. Accordingly, the Board shall decide on the acceptance or otherwise of the Directors.</li>
-        <li>Every year as on <strong>31st March</strong>, a simple declaration from the directors shall be obtained that the information already provided has not undergone change and wherever there is any change, requisite details are furnished by them forthwith.</li>
-        <li>It shall be ensured that a <strong>&lsquo;Deed of Covenant&rsquo;</strong> is executed with the nominated/ elected directors as per the format specified in Annexure 2 or any subsequent amendments as prescribed by the RBI.</li>
-        <li>The Board shall be authorized to undertake any action/ steps required to be taken to comply with the requirements prescribed under the RBI Circular or any amendments thereof.</li>
-        <li>The Board shall be vested with the authority to identify candidates for appointment to the Board of Directors. In evaluating the suitability of a person for appointment / continuing to hold appointment as a Director, the Board will take into account apart from others his eligibility, qualification, expertise, track record, integrity and other &lsquo;fit and proper&rsquo; criteria as may be determined from time to time.</li>
+        <li>Due diligence process to determine suitability at appointment and renewal.</li>
+        <li>Information and declarations obtained in Annexure 1 format.</li>
+        <li>Annual declaration obtained from all Directors every year as on <strong>31st March</strong> confirming information has not undergone change.</li>
+        <li>Execution of <strong>&lsquo;Deed of Covenant&rsquo;</strong> with nominated/elected Directors (Annexure 2).</li>
+        <li>Nomination and Remuneration Committee (NRC) constituted under Companies Act, 2013.</li>
       </ul>
 
       <div class="policy-section-title">Fit &amp; Proper Evaluation Criteria</div>
-      <p>The various &lsquo;Fit and Proper&rsquo; criteria which need to be reviewed by the Board before an appointment of a person as Director or after a person is appointed as Director on continuing basis shall include the following:</p>
       <ul style="padding-left: 20px; margin-bottom: 14px; line-height: 1.65;">
-        <li>Whether the Person is qualified to be appointed as Director or not attracting any disqualifications as prescribed under various provisions of Companies Act, 2013, and the rules made thereunder and entered by the Company with Stock Exchanges.</li>
-        <li>Whether any Proceedings have been initiated against the person in the past and / or pending as on date involving any civil, criminal, economic offence, taxation authorities or relating to any other regulatory body such as SEBI, IRDA, MCA etc.</li>
-        <li>Whether the person or the entities in which he is interested have been subject to any investigation at the instance of any Government Department or Agency.</li>
-        <li>Whether the person or the entities in which the person is interested have been prosecuted / convicted for the violation of any economic laws and regulations.</li>
+        <li>No disqualification under Companies Act, 2013 or Stock Exchange agreements.</li>
+        <li>No past or pending civil, criminal, economic offence, taxation, or regulatory proceedings (SEBI, IRDA, MCA, etc.).</li>
+        <li>No investigations at the instance of Government Agencies.</li>
+        <li>No prosecution/conviction for violation of economic laws and regulations.</li>
       </ul>
-      <p>The Board will assess and evaluate the eligibility of the person based on the above mentioned Fit and Proper criteria before appointment or any renewal, and subsequently on a continuing basis. The Board may form a <strong>&lsquo;Nomination and Remuneration Committee&rsquo; (NRC)</strong> under the provisions of Companies Act, 2013, and vest relevant powers with the NRC.</p>
 
       <div class="policy-section-title">Annexure &ndash; I: Version Control Table</div>
       <div class="policy-table-wrapper">
         <table>
-          <thead>
-            <tr>
-              <th>Version No.</th>
-              <th>Approval Date</th>
-              <th>Effective Date</th>
-              <th>Version Change Details</th>
-              <th>Version Owner</th>
-              <th>Approved By</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>2026_V1</strong></td>
-              <td>01-Oct-2026</td>
-              <td>01-Oct-2026</td>
-              <td>First Release</td>
-              <td>Compliance Officer</td>
-              <td>Board of Directors</td>
-            </tr>
-          </tbody>
+          <thead><tr><th>Version</th><th>Approval Date</th><th>Effective Date</th><th>Details</th><th>Owner</th><th>Approved By</th></tr></thead>
+          <tbody><tr><td><strong>2026_V1</strong></td><td>01-Oct-2026</td><td>01-Oct-2026</td><td>First Release</td><td>Compliance Officer</td><td>Board of Directors</td></tr></tbody>
         </table>
       </div>`
   },
@@ -669,105 +486,31 @@ const policyRegistry = {
         </div>
         <div class="policy-table-wrapper" style="margin-top: 14px;">
           <table>
-            <thead>
-              <tr>
-                <th>Regulatory Reference Circular</th>
-                <th>Issue Date</th>
-              </tr>
-            </thead>
+            <thead><tr><th>Regulatory Reference Circular</th><th>Issue Date</th></tr></thead>
             <tbody>
-              <tr>
-                <td>RBI/DoR/2023-24/106, DoR.FIN.REC.No.45/03.10.119/2023-24 Master Direction &ndash; Reserve Bank of India (Non-Banking Financial Company &ndash; Scale Based Regulation) Directions, 2023</td>
-                <td>October 19, 2023</td>
-              </tr>
-              <tr>
-                <td>RBI/2015-16/16 DNBR (PD) CC.No.054/03.10.119/2015-16 Master Circular &ndash; Fair Practices Code, 2015</td>
-                <td>July 01, 2015</td>
-              </tr>
+              <tr><td>RBI/DoR/2023-24/106 Master Direction &ndash; Scale Based Regulation Directions, 2023</td><td>October 19, 2023</td></tr>
+              <tr><td>RBI/2015-16/16 Master Circular &ndash; Fair Practices Code, 2015</td><td>July 01, 2015</td></tr>
             </tbody>
           </table>
         </div>
       </div>
 
-      <div class="policy-section-title">Introduction &amp; Objective</div>
-      <p>This Fair Practices Code (&ldquo;Code&rdquo;) is formulated in line with the Reserve Bank of India (RBI) guidelines for NBFCs, with the objective of promoting fair, transparent, and ethical practices in dealing with customers.</p>
-      <p>The Code outlines the standards VMF Finance Limited (&ldquo;VMF&rdquo;/&ldquo;The Company&rdquo;) will follow in offering financial products and services, enabling customers to make informed decisions. It applies to all loan products sanctioned and disbursed by the Company. VMF shall ensure adherence across all functions, including marketing, loan origination, processing, servicing, and collections.</p>
-
-      <div class="policy-section-title">Fair Practice Code Standards</div>
-      <div class="policy-subsection-title">1. Applications for Loans and Their Processing</div>
+      <div class="policy-section-title">Introduction &amp; Core Standards</div>
+      <p>Formulated in line with RBI guidelines to promote fair, transparent, and ethical customer practices across loan origination, processing, servicing, and collections.</p>
       <ul style="padding-left: 20px; margin-bottom: 14px; line-height: 1.65;">
-        <li>All communications to the customer shall be in English language or vernacular language understood by the customer. In relation to institutional clients, business is conducted in English. For Supply Chain Finance / Working Capital Finance / Demand Loans, vernacular language is used as preferred.</li>
-        <li>Loan application forms include all essential information affecting customer interests to allow meaningful comparison with other NBFCs and informed decision-making.</li>
-        <li>Loan application forms explicitly specify the checklist of documents required to be submitted.</li>
-        <li>VMF provides a written acknowledgement for all loan applications indicating the timeframe within which applications will be disposed of. Customers receive regular status updates via sales personnel and can check anytime via customer care phone / email.</li>
+        <li><strong>Applications &amp; Processing:</strong> Communications in English or vernacular. Loan applications include necessary comparison information, required document checklists, and written acknowledgements specifying disposal timeframes.</li>
+        <li><strong>Appraisal &amp; Sanctions:</strong> Written Sanction Letter conveys sanctioned amount, annualized interest rate, terms and conditions. Loan agreements furnished with all enclosures. Full compliance with RBI circular on <strong>&lsquo;Key Facts Statement (KFS) for Loans &amp; Advances&rsquo; dated April 15, 2024</strong>.</li>
+        <li><strong>Disbursement &amp; Rate Changes:</strong> Notice given of changes in terms; rate and charge changes applied strictly <strong>prospectively</strong>. Release of all securities upon loan closure.</li>
+        <li><strong>Excessive Interest Regulation:</strong> Board-approved interest rate model based on cost of funds, margin, and risk premium. Disclosed on website and sanction letter. Strictly annualized rates. <strong>Zero capitalization of penal charges</strong>.</li>
+        <li><strong>Non-Harassment:</strong> Non-interference in customer affairs; no muscle power or odd-hour calls; staff trained for professional courtesy.</li>
+        <li><strong>Grievance Redressal:</strong> Display of Grievance Redressal Officer (GRO) contact details. Unresolved complaints beyond 30 days appealable to Regional Office of DNBS, RBI.</li>
       </ul>
-
-      <div class="policy-subsection-title">2. Loan Appraisal and Terms / Conditions</div>
-      <ul style="padding-left: 20px; margin-bottom: 14px; line-height: 1.65;">
-        <li>VMF conveys in writing in English by means of a Sanction Letter the sanctioned loan amount, annualized rate of interest, method of application, and terms and conditions, maintaining written acceptance from the customer on record.</li>
-        <li>VMF furnishes a copy of the loan agreement along with all enclosures quoted in the agreement to all customers at the time of sanction / disbursement.</li>
-        <li>VMF strictly complies with the instructions contained in the circular on <strong>&lsquo;Key Facts Statement (KFS) for Loans &amp; Advances&rsquo; dated April 15, 2024</strong>, as amended from time to time.</li>
-      </ul>
-
-      <div class="policy-subsection-title">3. Usage of Vernacular Language &amp; Mode of Communication</div>
-      <p>While English is the base language for all products, transactions requiring vernacular language to cater to customer needs will be actioned accordingly. All communications are made in English, and upon customer&rsquo;s written request, VMF will make the FPC available in regional/vernacular languages.</p>
-
-      <div class="policy-subsection-title">4. Disbursement of Loans Including Changes in Terms and Conditions</div>
-      <ul style="padding-left: 20px; margin-bottom: 14px; line-height: 1.65;">
-        <li>VMF gives notice to customers in English or vernacular of any change in terms and conditions including disbursement schedule, interest rates, service charges, prepayment charges, etc.</li>
-        <li>Changes in interest rates and charges are effected strictly <strong>prospectively</strong>. A suitable condition is incorporated into all loan agreements.</li>
-        <li>Decisions to recall / accelerate payment or performance are strictly in consonance with the loan agreement.</li>
-        <li>VMF releases all securities on repayment of all dues or realization of outstanding amounts, subject to any legitimate right or lien for other claims with due written notice.</li>
-      </ul>
-
-      <div class="policy-subsection-title">5. Regulation of Excessive Interest Charged</div>
-      <ul style="padding-left: 20px; margin-bottom: 14px; line-height: 1.65;">
-        <li>The Board adopts an interest rate model taking into account cost of funds, margin, and risk premium to determine lending rates.</li>
-        <li>The rate of interest and approach for gradation of risk are disclosed in application forms, communicated explicitly in sanction letters, and published on the website (<strong>www.vmffinance.com</strong> / <strong>karncy.com</strong>).</li>
-        <li>All interest rates are strictly <strong>annualized rates</strong>.</li>
-        <li>There is <strong>zero capitalization of penal/default charges</strong> &ndash; penalty for delayed payment is charged purely as penal charges.</li>
-      </ul>
-
-      <div class="policy-subsection-title">6. General Practice &amp; Non-Harassment</div>
-      <ul style="padding-left: 20px; margin-bottom: 14px; line-height: 1.65;">
-        <li>VMF refrains from interference in customer affairs except as provided under contractual terms.</li>
-        <li>Requests for transfer of account are conveyed within reasonable time under transparent contractual terms.</li>
-        <li>In recovery of loans, VMF strictly prohibits undue harassment, persistently bothering customers at odd hours, or use of muscle power. A defined process per the laws of the land is enforced.</li>
-        <li>Staff is adequately trained to deal with customers with courtesy, empathy, and professional dignity.</li>
-      </ul>
-
-      <div class="policy-subsection-title">7. Responsibility of Board of Directors &amp; Grievance Redressal</div>
-      <p>The Board of Directors lays down an appropriate grievance redressal mechanism ensuring all disputes are heard and disposed of. The Board periodically reviews compliance of the FPC and functioning of the grievance mechanism. Customers are informed that if a grievance is not resolved within <strong>one month (30 days)</strong>, they may appeal to the Officer-in-Charge of the Regional Office of DNBS of RBI.</p>
-
-      <div class="policy-section-title">Key Commitments to Customers</div>
-      <p><strong>Dealing with Customers:</strong> Act fairly, honestly, and reasonably; assist customers with clear explanations in understandable language; explain product features, KYC norms, and operating channels.</p>
-      <p><strong>Terms &amp; Conditions:</strong> Clear, plain language; prospective application of fee revisions; transparent set-off notices; promotional material that is truthful, balanced, and never misleading.</p>
-      <p><strong>Confidentiality:</strong> Treat all personal/commercial information as private and confidential, except where statutory/regulatory duty requires disclosure or where prior written customer consent is given.</p>
-      <p style="font-size: 13px; color: #64748B;">*In the event of Force Majeure, VMF will make all reasonable efforts to fulfill commitments to the highest possible extent.</p>
 
       <div class="policy-section-title">Annexure &ndash; I: Version Control Table</div>
       <div class="policy-table-wrapper">
         <table>
-          <thead>
-            <tr>
-              <th>Version No.</th>
-              <th>Approval Date</th>
-              <th>Effective Date</th>
-              <th>Version Change Details</th>
-              <th>Version Owner</th>
-              <th>Approved By</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>2026_V1</strong></td>
-              <td>01-Oct-2026</td>
-              <td>01-Oct-2026</td>
-              <td>First Release</td>
-              <td>Compliance Officer</td>
-              <td>Board of Directors</td>
-            </tr>
-          </tbody>
+          <thead><tr><th>Version</th><th>Approval Date</th><th>Effective Date</th><th>Details</th><th>Owner</th><th>Approved By</th></tr></thead>
+          <tbody><tr><td><strong>2026_V1</strong></td><td>01-Oct-2026</td><td>01-Oct-2026</td><td>First Release</td><td>Compliance Officer</td><td>Board of Directors</td></tr></tbody>
         </table>
       </div>`
   },
@@ -788,41 +531,24 @@ const policyRegistry = {
         </div>
         <div class="policy-table-wrapper" style="margin-top: 14px;">
           <table>
-            <thead>
-              <tr>
-                <th>Regulatory Reference Circular</th>
-                <th>Subject</th>
-              </tr>
-            </thead>
+            <thead><tr><th>Regulatory Reference</th><th>Subject</th></tr></thead>
             <tbody>
-              <tr>
-                <td>RBI/2012-13/50 DBOD No.Leg.BC. 21 /09.07.006/2012-13</td>
-                <td>Grievance Redressal Mechanism in NBFCs</td>
-              </tr>
-              <tr>
-                <td>Reserve Bank &ndash; Integrated Ombudsman Scheme, 2021</td>
-                <td>Comprehensive Alternative Dispute Redressal Mechanism</td>
-              </tr>
+              <tr><td>RBI/2012-13/50 DBOD No.Leg.BC. 21 /09.07.006/2012-13</td><td>Grievance Redressal Mechanism in NBFCs</td></tr>
+              <tr><td>Reserve Bank &ndash; Integrated Ombudsman Scheme, 2021</td><td>Alternative Dispute Redressal Mechanism</td></tr>
             </tbody>
           </table>
         </div>
       </div>
 
       <div class="policy-callout-green">
-        <strong>Coverage under Integrated Ombudsman Scheme, 2021:</strong> The Scheme covers customers of all Deposit taking NBFCs and NBFCs with asset size &gt;= &rupee;100 crore with customer interface (excluding IFC, CIC, Infrastructure Debt Fund and NBFCs under liquidation).
+        <strong>Coverage under Integrated Ombudsman Scheme, 2021:</strong> Covers customers of all Deposit taking NBFCs and NBFCs with asset size &ge; &rupee;100 crore with customer interface.
       </div>
 
       <div class="policy-section-title">Principal Nodal Officer Details</div>
       <div class="policy-table-wrapper">
         <table>
           <thead>
-            <tr>
-              <th>Nodal Officer</th>
-              <th>Designation &amp; Jurisdiction</th>
-              <th>Office Address</th>
-              <th>Contact Numbers</th>
-              <th>Email ID</th>
-            </tr>
+            <tr><th>Nodal Officer</th><th>Designation &amp; Jurisdiction</th><th>Office Address</th><th>Contact Numbers</th><th>Email ID</th></tr>
           </thead>
           <tbody>
             <tr>
@@ -836,63 +562,43 @@ const policyRegistry = {
         </table>
       </div>
 
-      <div class="policy-section-title">Key Definitions under Ombudsman Scheme</div>
+      <div class="policy-section-title">Procedure for Filing Complaint &amp; Ombudsman Powers</div>
+      <p>Complainants may lodge grievances online at <a href="https://cms.rbi.org.in" target="_blank" rel="noopener noreferrer" style="color: #05244F; font-weight: 700; text-decoration: underline;">https://cms.rbi.org.in</a> or write to the Centralized Receipt and Processing Centre (CRPC), RBI if unresolved by VMF within 30 days.</p>
       <ul style="padding-left: 20px; margin-bottom: 14px; line-height: 1.65;">
-        <li><strong>&ldquo;Appellate Authority&rdquo;:</strong> The Executive Director in-Charge of the Department of the Reserve Bank administering the Scheme.</li>
-        <li><strong>&ldquo;Authorised Representative&rdquo;:</strong> A person, other than an advocate, duly appointed and authorised in writing to represent the complainant before the Ombudsman.</li>
-        <li><strong>&ldquo;Deficiency in Service&rdquo;:</strong> A shortcoming or an inadequacy in any financial service which the Regulated Entity is required to provide statutorily or otherwise, which may or may not result in financial loss or damage to the customer.</li>
-        <li><strong>&ldquo;Regulated Entity&rdquo;:</strong> A bank, Non-Banking Financial Company, System Participant, or Credit Information Company as defined in the Scheme.</li>
+        <li>Regulated Entity must file written response within <strong>15 days</strong>.</li>
+        <li>Ombudsman compensation powers: up to <strong>&rupee; 20 Lakh</strong> for consequential loss + up to <strong>&rupee; 1 Lakh</strong> for loss of time, expenses, harassment and mental anguish.</li>
+        <li>Appeals before Appellate Authority within <strong>30 days</strong> of Award receipt.</li>
       </ul>
-
-      <div class="policy-section-title">Grounds &amp; Procedure for Filing a Complaint</div>
-      <p>Any customer aggrieved by an act or omission of a Regulated Entity resulting in deficiency in service may file a complaint under the Scheme personally or through an authorized representative.</p>
-      <p><strong>A complaint under the Scheme shall lie when:</strong></p>
-      <ul style="padding-left: 20px; margin-bottom: 14px; line-height: 1.65;">
-        <li>The complainant had made a written complaint to the Regulated Entity, and the complaint was rejected wholly/partly, or complainant is not satisfied, or has not received any reply within <strong>30 days</strong>.</li>
-        <li>The complaint is made to the Ombudsman within <strong>one year</strong> after receiving the reply, or within <strong>1 year and 30 days</strong> from the date of the complaint if no reply was received.</li>
-      </ul>
-      <p><strong>Lodging Portal:</strong> Complaints can be lodged online through the RBI portal: <a href="https://cms.rbi.org.in" target="_blank" rel="noopener noreferrer" style="color: #05244F; font-weight: 700; text-decoration: underline;">https://cms.rbi.org.in</a> or submitted physically/electronically to the Centralized Receipt and Processing Centre (CRPC) of RBI.</p>
-
-      <div class="policy-section-title">Resolution, Award &amp; Appeals</div>
-      <p><strong>Resolution SLA:</strong> The Regulated Entity must file its written version and enclosing documents within <strong>15 days</strong> before the Ombudsman.</p>
-      <p><strong>Award Powers:</strong> The Ombudsman may pass an Award directing the Regulated Entity to pay compensation for consequential loss up to <strong>&rupee; 20 Lakh</strong> (exclusive of the dispute amount) and up to <strong>&rupee; 1 Lakh</strong> for loss of complainant&rsquo;s time, expenses, harassment and mental anguish.</p>
-      <p><strong>Appeals:</strong> Either party aggrieved by an Award or closure may prefer an appeal before the Appellate Authority within <strong>30 days</strong> of receipt of the Award.</p>
 
       <div class="policy-section-title">Official Addresses of all 22 RBI Ombudsmen Across India</div>
       <div class="policy-table-wrapper">
         <table>
           <thead>
-            <tr>
-              <th style="width: 5%;">No.</th>
-              <th style="width: 15%;">Centre</th>
-              <th>Name &amp; Address of the Office of RBI Ombudsman</th>
-              <th style="width: 20%;">Contact / STD</th>
-              <th style="width: 15%;">Email</th>
-            </tr>
+            <tr><th>No.</th><th>Centre</th><th>Office Address</th><th>STD / Tel</th><th>Email</th></tr>
           </thead>
           <tbody>
-            <tr><td>1</td><td><strong>Ahmedabad</strong></td><td>C/o Reserve Bank of India, 4th Floor, "Riverfront House", Behind H.K. Arts College, Between Gandhi &amp; Nehru Bridge, Riverfront Road - West, Ahmedabad - 380 009</td><td>STD: 079<br>Tel: 26582357</td><td>crpc@rbi.org.in</td></tr>
-            <tr><td>2</td><td><strong>Bengaluru</strong></td><td>C/o Reserve Bank of India, 10/3/8, Nrupathunga Road, Bengaluru - 560 001</td><td>STD: 080<br>Tel: 22277660 / 22180221</td><td>crpc@rbi.org.in</td></tr>
-            <tr><td>3</td><td><strong>Bhopal</strong></td><td>C/o Reserve Bank of India, Hoshangabad Road, Post Box No. 32, Bhopal - 462 011</td><td>STD: 0755<br>Tel: 2573772 / 2573779</td><td>crpc@rbi.org.in</td></tr>
-            <tr><td>4</td><td><strong>Bhubaneswar</strong></td><td>C/o Reserve Bank of India, Pt. Jawaharlal Nehru Marg, Bhubaneswar - 751 001</td><td>STD: 0674<br>Tel: 2396420 / 2396207</td><td>crpc@rbi.org.in</td></tr>
-            <tr><td>5</td><td><strong>Chandigarh</strong></td><td>C/o Reserve Bank of India, 4th Floor, Sector 17, Chandigarh</td><td>STD: 0172<br>Tel: 2721109 / 2721011</td><td>crpc@rbi.org.in</td></tr>
-            <tr><td>6</td><td><strong>Chennai</strong></td><td>C/o Reserve Bank of India, Fort Glacis, Chennai - 600 001</td><td>STD: 044<br>Tel: 25395964</td><td>crpc@rbi.org.in</td></tr>
-            <tr><td>7</td><td><strong>Dehradun</strong></td><td>C/o Reserve Bank of India, 74/1 G.M.V.N. Building, 1st floor, Rajpur Road, Dehradun - 248 001</td><td>STD: 0135<br>Tel: 2742006</td><td>crpc@rbi.org.in</td></tr>
-            <tr><td>8</td><td><strong>Guwahati</strong></td><td>C/o Reserve Bank of India, Station Road, Pan Bazar, Guwahati - 781 001</td><td>STD: 0361<br>Tel: 2542556</td><td>crpc@rbi.org.in</td></tr>
-            <tr><td>9</td><td><strong>Hyderabad</strong></td><td>C/o Reserve Bank of India, 6-1-56, Secretariat Road, Saifabad, Hyderabad - 500 004</td><td>STD: 040<br>Tel: 23210013</td><td>crpc@rbi.org.in</td></tr>
-            <tr><td>10</td><td><strong>Jaipur</strong></td><td>C/o Reserve Bank of India, 4th floor Rambagh Circle, Tonk Road, Jaipur - 302 004</td><td>STD: 0141<br>Tel: 2577931</td><td>crpc@rbi.org.in</td></tr>
-            <tr><td>11</td><td><strong>Jammu</strong></td><td>C/o Reserve Bank of India, Rail Head Complex, Jammu - 180 012</td><td>STD: 0191<br>Tel: 2477905</td><td>crpc@rbi.org.in</td></tr>
-            <tr><td>12</td><td><strong>Kanpur</strong></td><td>C/o Reserve Bank of India, M. G. Road, Post Box No. 82, Kanpur - 208 001</td><td>STD: 0512<br>Tel: 2305174 / 2303004</td><td>crpc@rbi.org.in</td></tr>
-            <tr><td>13</td><td><strong>Kolkata</strong></td><td>C/o Reserve Bank of India, 15, Netaji Subhash Road, Kolkata - 700 001</td><td>STD: 033<br>Tel: 22310217</td><td>crpc@rbi.org.in</td></tr>
-            <tr><td>14</td><td><strong>Mumbai (I)</strong></td><td>C/o Reserve Bank of India, 4th Floor, RBI Byculla Office Building, Opp. Mumbai Central Railway Station, Byculla, Mumbai - 400 008</td><td>STD: 022<br>Tel: 23022028</td><td>crpc@rbi.org.in</td></tr>
-            <tr><td>15</td><td><strong>Mumbai (II)</strong></td><td>C/o Reserve Bank of India, 4th Floor, RBI Byculla Office Building, Opp. Mumbai Central Railway Station, Byculla, Mumbai - 400 008</td><td>STD: 022<br>Tel: 23001483</td><td>crpc@rbi.org.in</td></tr>
-            <tr><td>16</td><td><strong>Patna</strong></td><td>C/o Reserve Bank of India, Patna - 800 001</td><td>STD: 0612<br>Tel: 2322569 / 2323734</td><td>crpc@rbi.org.in</td></tr>
-            <tr><td>17</td><td><strong>New Delhi (I)</strong></td><td>C/o Reserve Bank of India, Sansad Marg, New Delhi</td><td>STD: 011<br>Tel: 23725445</td><td>crpc@rbi.org.in</td></tr>
-            <tr><td>18</td><td><strong>New Delhi (II)</strong></td><td>C/o Reserve Bank of India, Sansad Marg, New Delhi</td><td>STD: 011<br>Tel: 23724856</td><td>crpc@rbi.org.in</td></tr>
-            <tr><td>19</td><td><strong>New Delhi (III)</strong></td><td>C/o Reserve Bank of India, Sansad Marg, New Delhi</td><td>STD: 011<br>Tel: 23715393</td><td>crpc@rbi.org.in</td></tr>
-            <tr><td>20</td><td><strong>Raipur</strong></td><td>C/o Reserve Bank of India, 54/949, Shubhashish Parisar, Satya Prem Vihar, Mahadev Ghat Road, Sundar Nagar, Raipur - 492 013</td><td>STD: 0771<br>Tel: 2244246</td><td>crpc@rbi.org.in</td></tr>
-            <tr><td>21</td><td><strong>Ranchi</strong></td><td>C/o Reserve Bank of India, 4th Floor, Pragati Sadan, RRDA Building, Kutchery Road, Ranchi, Jharkhand - 834 001</td><td>STD: 0651<br>Tel: 8521346222 / 9771863111</td><td>crpc@rbi.org.in</td></tr>
-            <tr><td>22</td><td><strong>Thiruvananthapuram</strong></td><td>C/o Reserve Bank of India, Bakery Junction, Thiruvananthapuram - 695 033</td><td>STD: 0471<br>Tel: 2326769</td><td>crpc@rbi.org.in</td></tr>
+            <tr><td>1</td><td><strong>Ahmedabad</strong></td><td>C/o RBI, 4th Floor, "Riverfront House", Behind H.K. Arts College, Riverfront Road - West, Ahmedabad - 380 009</td><td>079-26582357</td><td>crpc@rbi.org.in</td></tr>
+            <tr><td>2</td><td><strong>Bengaluru</strong></td><td>C/o RBI, 10/3/8, Nrupathunga Road, Bengaluru - 560 001</td><td>080-22277660</td><td>crpc@rbi.org.in</td></tr>
+            <tr><td>3</td><td><strong>Bhopal</strong></td><td>C/o RBI, Hoshangabad Road, Post Box No. 32, Bhopal - 462 011</td><td>0755-2573772</td><td>crpc@rbi.org.in</td></tr>
+            <tr><td>4</td><td><strong>Bhubaneswar</strong></td><td>C/o RBI, Pt. Jawaharlal Nehru Marg, Bhubaneswar - 751 001</td><td>0674-2396420</td><td>crpc@rbi.org.in</td></tr>
+            <tr><td>5</td><td><strong>Chandigarh</strong></td><td>C/o RBI, 4th Floor, Sector 17, Chandigarh</td><td>0172-2721109</td><td>crpc@rbi.org.in</td></tr>
+            <tr><td>6</td><td><strong>Chennai</strong></td><td>C/o RBI, Fort Glacis, Chennai - 600 001</td><td>044-25395964</td><td>crpc@rbi.org.in</td></tr>
+            <tr><td>7</td><td><strong>Dehradun</strong></td><td>C/o RBI, 74/1 G.M.V.N. Building, 1st floor, Rajpur Road, Dehradun - 248 001</td><td>0135-2742006</td><td>crpc@rbi.org.in</td></tr>
+            <tr><td>8</td><td><strong>Guwahati</strong></td><td>C/o RBI, Station Road, Pan Bazar, Guwahati - 781 001</td><td>0361-2542556</td><td>crpc@rbi.org.in</td></tr>
+            <tr><td>9</td><td><strong>Hyderabad</strong></td><td>C/o RBI, 6-1-56, Secretariat Road, Saifabad, Hyderabad - 500 004</td><td>040-23210013</td><td>crpc@rbi.org.in</td></tr>
+            <tr><td>10</td><td><strong>Jaipur</strong></td><td>C/o RBI, 4th floor Rambagh Circle, Tonk Road, Jaipur - 302 004</td><td>0141-2577931</td><td>crpc@rbi.org.in</td></tr>
+            <tr><td>11</td><td><strong>Jammu</strong></td><td>C/o RBI, Rail Head Complex, Jammu - 180 012</td><td>0191-2477905</td><td>crpc@rbi.org.in</td></tr>
+            <tr><td>12</td><td><strong>Kanpur</strong></td><td>C/o RBI, M. G. Road, Post Box No. 82, Kanpur - 208 001</td><td>0512-2305174</td><td>crpc@rbi.org.in</td></tr>
+            <tr><td>13</td><td><strong>Kolkata</strong></td><td>C/o RBI, 15, Netaji Subhash Road, Kolkata - 700 001</td><td>033-22310217</td><td>crpc@rbi.org.in</td></tr>
+            <tr><td>14</td><td><strong>Mumbai (I)</strong></td><td>C/o RBI, 4th Floor, Byculla Office Building, Opp. Mumbai Central Railway Station, Mumbai - 400 008</td><td>022-23022028</td><td>crpc@rbi.org.in</td></tr>
+            <tr><td>15</td><td><strong>Mumbai (II)</strong></td><td>C/o RBI, 4th Floor, Byculla Office Building, Opp. Mumbai Central Railway Station, Mumbai - 400 008</td><td>022-23001483</td><td>crpc@rbi.org.in</td></tr>
+            <tr><td>16</td><td><strong>Patna</strong></td><td>C/o RBI, Patna - 800 001</td><td>0612-2322569</td><td>crpc@rbi.org.in</td></tr>
+            <tr><td>17</td><td><strong>New Delhi (I)</strong></td><td>C/o RBI, Sansad Marg, New Delhi</td><td>011-23725445</td><td>crpc@rbi.org.in</td></tr>
+            <tr><td>18</td><td><strong>New Delhi (II)</strong></td><td>C/o RBI, Sansad Marg, New Delhi</td><td>011-23724856</td><td>crpc@rbi.org.in</td></tr>
+            <tr><td>19</td><td><strong>New Delhi (III)</strong></td><td>C/o RBI, Sansad Marg, New Delhi</td><td>011-23715393</td><td>crpc@rbi.org.in</td></tr>
+            <tr><td>20</td><td><strong>Raipur</strong></td><td>C/o RBI, 54/949, Shubhashish Parisar, Satya Prem Vihar, Mahadev Ghat Road, Raipur - 492 013</td><td>0771-2244246</td><td>crpc@rbi.org.in</td></tr>
+            <tr><td>21</td><td><strong>Ranchi</strong></td><td>C/o RBI, 4th Floor, Pragati Sadan, RRDA Building, Kutchery Road, Ranchi - 834 001</td><td>0651-8521346222</td><td>crpc@rbi.org.in</td></tr>
+            <tr><td>22</td><td><strong>Thiruvananthapuram</strong></td><td>C/o RBI, Bakery Junction, Thiruvananthapuram - 695 033</td><td>0471-2326769</td><td>crpc@rbi.org.in</td></tr>
           </tbody>
         </table>
       </div>
@@ -900,26 +606,8 @@ const policyRegistry = {
       <div class="policy-section-title">Annexure &ndash; I: Version Control Table</div>
       <div class="policy-table-wrapper">
         <table>
-          <thead>
-            <tr>
-              <th>Version No.</th>
-              <th>Approval Date</th>
-              <th>Effective Date</th>
-              <th>Version Change Details</th>
-              <th>Version Owner</th>
-              <th>Approved By</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>2026_V1</strong></td>
-              <td>01-Oct-2026</td>
-              <td>01-Oct-2026</td>
-              <td>First Release</td>
-              <td>Compliance Officer</td>
-              <td>Board of Directors</td>
-            </tr>
-          </tbody>
+          <thead><tr><th>Version</th><th>Approval Date</th><th>Effective Date</th><th>Details</th><th>Owner</th><th>Approved By</th></tr></thead>
+          <tbody><tr><td><strong>2026_V1</strong></td><td>01-Oct-2026</td><td>01-Oct-2026</td><td>First Release</td><td>Compliance Officer</td><td>Board of Directors</td></tr></tbody>
         </table>
       </div>`
   },
@@ -940,156 +628,54 @@ const policyRegistry = {
         </div>
         <div class="policy-table-wrapper" style="margin-top: 14px;">
           <table>
-            <thead>
-              <tr>
-                <th>Regulatory Reference</th>
-                <th>Subject</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Regulation 45.11 &amp; 45.12 of Reserve Bank of India Master Directions &ndash; Non-Banking Financial Company &ndash; Scale Based Regulation Directions, 2023</td>
-                <td>Regulation of excessive interest charged &amp; Complaints about excessive interest charged by NBFCs</td>
-              </tr>
-            </tbody>
+            <thead><tr><th>Regulatory Reference</th><th>Subject</th></tr></thead>
+            <tbody><tr><td>Regulation 45.11 &amp; 45.12 of RBI Master Directions &ndash; Scale Based Regulation Directions, 2023</td><td>Regulation of excessive interest charged by NBFCs</td></tr></tbody>
           </table>
         </div>
       </div>
 
-      <div class="policy-section-title">Introduction &amp; Objective</div>
-      <p>Pursuant to Master Directions &ndash; Scale Based Regulation Directions, 2023 issued by RBI, this Interest Rate Policy lays down clear guidelines for operational personnel and decision-makers (including Credit Committee) while determining the rate of interest and fees charged to borrowers in a transparent and open manner.</p>
-
       <div class="policy-callout-green">
         <strong style="font-size: 15px;">Marginal Cost of Funds based Lending Rate (MCLR): 12.00%</strong><br>
-        The current MCLR of VMF Finance Limited is <strong>12.00%</strong>. The interest on loan/debt investments offered by the Company cannot be lower than the MCLR. Prior approval from the Credit Committee is required if loans are offered lower than MCLR. Reset frequency is quarterly by the Whole Time Director.
+        The current MCLR is <strong>12.00%</strong>. Loans offered cannot be lower than MCLR without Credit Committee prior approval. Reset frequency is quarterly by the Whole Time Director.
       </div>
 
-      <div class="policy-section-title">Establishing an Interest Rate &amp; Gradation of Risk</div>
-      <p>The interest rate applicable to each loan account within the applicable range is assessed on a case-specific basis based on:</p>
-      <ul style="padding-left: 20px; margin-bottom: 14px; line-height: 1.65;">
-        <li><strong>Tenor of the Loan:</strong> Structure, monthly/quarterly repayment terms, moratorium period, bullet payments.</li>
-        <li><strong>Internal and External Costs of Funds:</strong> Rate at which debt funds are raised plus internal return on equity expectations.</li>
-        <li><strong>Internal Cost Loading:</strong> Complexity of transaction, capital risk weightage, operational and administrative costs.</li>
-        <li><strong>Credit Risk:</strong> Bad debt provisioning based on credit strength, accounting standards, and NBFC prudential norms.</li>
-        <li><strong>Structuring Premium:</strong> Premium applied for unique structural, security or collateral elements.</li>
-        <li><strong>Gradation of Risk:</strong> Profile/market reputation of borrower, facility type, LTV, relationship tenure, historical performance, cash flow forecasts, and primary/secondary collateral quality.</li>
-      </ul>
-
-      <div class="policy-section-title">Schedule of Indicative Lending Rates &amp; Commercial Charges</div>
+      <div class="policy-section-title">Schedule of Indicative Lending Rates</div>
       <div class="policy-table-wrapper">
         <table>
-          <thead>
-            <tr>
-              <th>Lending Assets / Sector</th>
-              <th>Range of Annualized Interest Rate (p.a.)</th>
-              <th>Effective Indicative Ceiling</th>
-            </tr>
-          </thead>
+          <thead><tr><th>Lending Assets / Sector</th><th>Range of Annualized Interest Rate (p.a.)</th><th>Effective Indicative Ceiling</th></tr></thead>
           <tbody>
-            <tr>
-              <td><strong>A) MSME / SME Companies</strong></td>
-              <td>Up to 6% p.a. over and above MCLR</td>
-              <td><strong>Up to 18.00% p.a.</strong></td>
-            </tr>
-            <tr>
-              <td><strong>B) Supply Chain Finance &ndash; Sales Invoice Financing</strong></td>
-              <td>Up to 12% p.a. over and above MCLR</td>
-              <td><strong>Up to 24.00% p.a.</strong></td>
-            </tr>
-            <tr>
-              <td><strong>C) Supply Chain Finance &ndash; Purchase Invoice Financing</strong></td>
-              <td>Up to 8% p.a. over and above MCLR</td>
-              <td><strong>Up to 20.00% p.a.</strong></td>
-            </tr>
-            <tr>
-              <td><strong>D) Working Capital Finance</strong></td>
-              <td>Up to 6% p.a. over and above MCLR</td>
-              <td><strong>Up to 18.00% p.a.</strong></td>
-            </tr>
+            <tr><td><strong>A) MSME / SME Companies</strong></td><td>Up to 6% p.a. over and above MCLR</td><td><strong>Up to 18.00% p.a.</strong></td></tr>
+            <tr><td><strong>B) Supply Chain Finance &ndash; Sales Invoice Financing</strong></td><td>Up to 12% p.a. over and above MCLR</td><td><strong>Up to 24.00% p.a.</strong></td></tr>
+            <tr><td><strong>C) Supply Chain Finance &ndash; Purchase Invoice Financing</strong></td><td>Up to 8% p.a. over and above MCLR</td><td><strong>Up to 20.00% p.a.</strong></td></tr>
+            <tr><td><strong>D) Working Capital Finance</strong></td><td>Up to 6% p.a. over and above MCLR</td><td><strong>Up to 18.00% p.a.</strong></td></tr>
           </tbody>
         </table>
       </div>
-      <p style="font-size: 13px; color: #64748B;">*In exceptional circumstances, based on specific credit/risk perception, rates may fall outside the indicated range upon Credit Committee approval.</p>
 
       <div class="policy-subsection-title">Comprehensive Schedule of Ancillary Charges</div>
       <div class="policy-table-wrapper">
         <table>
-          <thead>
-            <tr>
-              <th style="width: 30%;">Fee Component</th>
-              <th style="width: 25%;">Applicable Rate / Range</th>
-              <th>Terms &amp; Approval Governance</th>
-            </tr>
-          </thead>
+          <thead><tr><th>Fee Component</th><th>Applicable Rate / Range</th><th>Terms &amp; Governance</th></tr></thead>
           <tbody>
-            <tr>
-              <td><strong>Appraisal &amp; Upfront Charges</strong></td>
-              <td>0% &ndash; 3% of loan amount</td>
-              <td>Agreed with borrower on a case-by-case basis; communicated in term sheet.</td>
-            </tr>
-            <tr>
-              <td><strong>Security Deposit / Reserves</strong></td>
-              <td>Up to 30% of loan amount</td>
-              <td>Form of deposit, escrow account, DSRA, or ISRA.</td>
-            </tr>
-            <tr>
-              <td><strong>Backend Charges</strong></td>
-              <td>Up to 0% &ndash; 2% of loan amount</td>
-              <td>Waiver subject to Investment Committee approval.</td>
-            </tr>
-            <tr>
-              <td><strong>Prepayment Charges</strong></td>
-              <td>Up to 0% &ndash; 4% of prepayment</td>
-              <td>Waiver subject to Investment Committee approval.</td>
-            </tr>
-            <tr>
-              <td><strong>Penal / Default Charges</strong></td>
-              <td>1% &ndash; 2% per month on defaulted amount</td>
-              <td>Charged for period of default; up to 2% p.a. for non-financial defaults. Non-capitalized; strictly as penal charges.</td>
-            </tr>
-            <tr>
-              <td><strong>Delayed Documentation Fee</strong></td>
-              <td>0% &ndash; 2% per month of loan amount</td>
-              <td>Levied if definitive documents not executed within 30&ndash;75 days of term sheet.</td>
-            </tr>
-            <tr>
-              <td><strong>Legal &amp; Diligence Cost</strong></td>
-              <td>At actuals</td>
-              <td>Borne by borrower (or by Company in special approved cases).</td>
-            </tr>
-            <tr>
-              <td><strong>Operational / Banking Charges</strong></td>
-              <td>At actuals</td>
-              <td>Cheque bouncing, part disbursement, cheque swaps, RTGS remittance, No Due Certificates, NOC, and statutory duties.</td>
-            </tr>
+            <tr><td><strong>Appraisal &amp; Upfront Charges</strong></td><td>0% &ndash; 3% of loan amount</td><td>Agreed on case-by-case basis; communicated in term sheet.</td></tr>
+            <tr><td><strong>Security Deposit / Reserves</strong></td><td>Up to 30% of loan amount</td><td>Deposit, escrow account, DSRA, or ISRA.</td></tr>
+            <tr><td><strong>Backend Charges</strong></td><td>Up to 0% &ndash; 2% of loan amount</td><td>Waiver subject to Investment Committee approval.</td></tr>
+            <tr><td><strong>Prepayment Charges</strong></td><td>Up to 0% &ndash; 4% of prepayment</td><td>Waiver subject to Investment Committee approval.</td></tr>
+            <tr><td><strong>Penal / Default Charges</strong></td><td>1% &ndash; 2% per month on defaulted amount</td><td>Charged for period of default; up to 2% p.a. for non-financial defaults. Non-capitalized.</td></tr>
+            <tr><td><strong>Delayed Documentation Fee</strong></td><td>0% &ndash; 2% per month of loan amount</td><td>Levied if documents not executed within 30&ndash;75 days of term sheet.</td></tr>
+            <tr><td><strong>Legal &amp; Diligence Cost</strong></td><td>At actuals</td><td>Borne by borrower (or Company in special cases).</td></tr>
+            <tr><td><strong>Operational / Banking Charges</strong></td><td>At actuals</td><td>Cheque bounce, part disbursement, cheque swaps, RTGS, No Due Certificate, NOC.</td></tr>
           </tbody>
         </table>
       </div>
 
-      <div class="policy-section-title">Procedural Aspects &amp; Communication</div>
-      <p>The Company communicates to borrowers via Term Sheet: loan amount, annualized rate of interest, default charges, and major covenants. Revisions are communicated through website publication, email, SMS, or written letters with <strong>strictly prospective effect</strong>. Claims for refund or waiver of penal charges are entertained only under the sole discretion of the Company.</p>
-
       <div class="policy-section-title">Responsibility Matrix</div>
       <div class="policy-table-wrapper">
         <table>
-          <thead>
-            <tr>
-              <th>Action</th>
-              <th>Owner</th>
-              <th>Review Frequency</th>
-            </tr>
-          </thead>
+          <thead><tr><th>Action</th><th>Owner</th><th>Review Frequency</th></tr></thead>
           <tbody>
-            <tr>
-              <td>Review of VMF MCLR</td>
-              <td>Business Team</td>
-              <td>Quarterly</td>
-            </tr>
-            <tr>
-              <td>Review of Risks and Charges</td>
-              <td>Credit Team</td>
-              <td>Annual / As needed</td>
-            </tr>
+            <tr><td>Review of VMF MCLR</td><td>Business Team</td><td>Quarterly</td></tr>
+            <tr><td>Review of Risks and Charges</td><td>Credit Team</td><td>Annual / As needed</td></tr>
           </tbody>
         </table>
       </div>
@@ -1097,26 +683,380 @@ const policyRegistry = {
       <div class="policy-section-title">Annexure &ndash; I: Version Control Table</div>
       <div class="policy-table-wrapper">
         <table>
-          <thead>
-            <tr>
-              <th>Version No.</th>
-              <th>Approval Date</th>
-              <th>Effective Date</th>
-              <th>Version Change Details</th>
-              <th>Version Owner</th>
-              <th>Approved By</th>
-            </tr>
-          </thead>
+          <thead><tr><th>Version</th><th>Approval Date</th><th>Effective Date</th><th>Details</th><th>Owner</th><th>Approved By</th></tr></thead>
+          <tbody><tr><td><strong>2026_V1</strong></td><td>01-Oct-2026</td><td>01-Oct-2026</td><td>First Release</td><td>Head of Credit</td><td>Board of Directors</td></tr></tbody>
+        </table>
+      </div>`
+  },
+  'whistle-blower-policy': {
+    title: "Whistle Blower Policy & Vigil Mechanism",
+    content: `<div class="policy-doc-control-card">
+        <div class="policy-badge-row">
+          <span class="policy-badge policy-badge-navy">Version: 2026_V1</span>
+          <span class="policy-badge policy-badge-green">Effective Date: 01-Oct-2026</span>
+          <span class="policy-badge policy-badge-gray">Confidentiality: Public</span>
+          <span class="policy-badge policy-badge-navy">Board Approved</span>
+        </div>
+        <div style="font-size: 13.5px; color: #475569; margin-top: 8px; line-height: 1.6;">
+          <strong>Policy Owner:</strong> Compliance &bull; 
+          <strong>Date of Last Review:</strong> 01-Oct-2026 &bull; 
+          <strong>Applicable Departments:</strong> Management &amp; Directors; Compliance &bull; 
+          <strong>Reviewed &amp; Approved by:</strong> Board of Directors
+        </div>
+        <div class="policy-table-wrapper" style="margin-top: 14px;">
+          <table>
+            <thead><tr><th>Regulatory Reference</th><th>Issue Date</th></tr></thead>
+            <tbody><tr><td>Circular RBI/2006-2007/328</td><td>April 18, 2007</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="policy-section-title">1. Introduction &amp; Objectives</div>
+      <p>The Company has adopted the Code of Ethics &amp; Business Conduct, which lays down the principles and standards governing the actions of the Company and its employees. Any actual or potential violation of the Code, howsoever insignificant, is a matter of serious concern. Formulated under Section 177 of the Companies Act, 2013 and RBI guidelines, this Policy enables directors and employees to report genuine concerns, actual or suspected fraud, or unethical conduct without fear of punishment or unfair treatment.</p>
+
+      <div class="policy-section-title">2. Scope of Malpractices Covered</div>
+      <ul style="padding-left: 20px; margin-bottom: 14px; line-height: 1.65;">
+        <li>Abuse of authority and breach of contract.</li>
+        <li>Negligence causing substantial and specific danger to public health and safety.</li>
+        <li>Manipulation of company data/records and procurement fraud.</li>
+        <li>Financial irregularities, deficiencies in internal controls, deliberate error in preparation of financial statements, or misrepresentation.</li>
+        <li>Wastage or misappropriation of company funds/assets.</li>
+        <li>Proliferation of confidential/proprietary commercial information.</li>
+        <li>Deliberate violation of law/regulation or breach of approved Company Policy.</li>
+      </ul>
+
+      <div class="policy-section-title">3. Reporting Procedure &amp; Channels (Annexure I)</div>
+      <p>All Protected Disclosures should be in writing, typed or legibly written in English, forwarded under a covering letter bearing the identity of the Whistle Blower. Anonymous disclosures will not be entertained.</p>
+      
+      <div class="policy-table-wrapper">
+        <table>
+          <thead><tr><th>Designated Authority</th><th>Contact Person</th><th>Address &amp; Office</th><th>Official Email ID</th></tr></thead>
           <tbody>
             <tr>
-              <td><strong>2026_V1</strong></td>
-              <td>01-Oct-2026</td>
-              <td>01-Oct-2026</td>
-              <td>First Release</td>
-              <td>Head of Credit</td>
-              <td>Board of Directors</td>
+              <td><strong>Nodal Officer</strong></td>
+              <td>Mr. Srinivasa Rao Palla</td>
+              <td>6&ndash;3&ndash;883/2/A, Tejaswi Plaza, Panjagutta, Hyderabad, Telangana &ndash; 500082</td>
+              <td><code style="color: #15803D; font-weight: 700; background: #DCFCE7; padding: 2px 6px; border-radius: 4px;">srinivas.palla@vmffinance.com</code></td>
+            </tr>
+            <tr>
+              <td><strong>Chairman of the Board</strong></td>
+              <td>Mr. Siva Krishna Kolli</td>
+              <td>6&ndash;3&ndash;883/2/A, Tejaswi Plaza, Panjagutta, Hyderabad, Telangana &ndash; 500082</td>
+              <td><code style="color: #15803D; font-weight: 700; background: #DCFCE7; padding: 2px 6px; border-radius: 4px;">krishna@vmffinance.com</code></td>
+            </tr>
+            <tr>
+              <td><strong>General Compliance Reporting</strong></td>
+              <td>Compliance Desk (24 Hours)</td>
+              <td>VMF Finance Limited, Panjagutta, Hyderabad &ndash; 500082</td>
+              <td><code style="color: #15803D; font-weight: 700; background: #DCFCE7; padding: 2px 6px; border-radius: 4px;">compliance@vmffinance.com</code></td>
             </tr>
           </tbody>
+        </table>
+      </div>
+
+      <div class="policy-section-title">4. Investigation Process &amp; SLAs</div>
+      <ul style="padding-left: 20px; margin-bottom: 14px; line-height: 1.65;">
+        <li>Nodal Officer in consultation with Director determines validity of complaint within <strong>10 working days</strong>.</li>
+        <li>Investigation Committee completes the inquiry within <strong>30 working days</strong> (not to exceed 90 days).</li>
+        <li>Board / Audit Committee makes decision based on findings and takes prompt corrective disciplinary action.</li>
+        <li>Documentation, evidence, and investigation reports maintained for a minimum of <strong>3 years</strong>.</li>
+        <li>Nodal Officer submits quarterly compliance reports to the Board/Audit Committee.</li>
+      </ul>
+
+      <div class="policy-section-title">5. Whistle Blower Protection</div>
+      <p>The identity of the Whistle Blower is kept strictly confidential. VMF guarantees complete protection against retaliation, threat, intimidation, transfer, demotion, or refusal of promotion. Protection is not available for knowingly false or malicious allegations, which will attract severe disciplinary action.</p>
+
+      <div class="policy-section-title">Annexure &ndash; I: Version Control Table</div>
+      <div class="policy-table-wrapper">
+        <table>
+          <thead><tr><th>Version</th><th>Approval Date</th><th>Effective Date</th><th>Details</th><th>Owner</th><th>Approved By</th></tr></thead>
+          <tbody><tr><td><strong>2026_V1</strong></td><td>01-Oct-2026</td><td>01-Oct-2026</td><td>First Release</td><td>Compliance Officer</td><td>Board of Directors</td></tr></tbody>
+        </table>
+      </div>`
+  },
+  'kyc-aml-policy': {
+    title: "KYC and Anti-Money Laundering (AML) Policy",
+    content: `<div class="policy-doc-control-card">
+        <div class="policy-badge-row">
+          <span class="policy-badge policy-badge-navy">Version: 2026_V1</span>
+          <span class="policy-badge policy-badge-green">Effective Date: 01-Oct-2026</span>
+          <span class="policy-badge policy-badge-gray">Confidentiality: Public</span>
+          <span class="policy-badge policy-badge-navy">Board Approved</span>
+        </div>
+        <div style="font-size: 13.5px; color: #475569; margin-top: 8px; line-height: 1.6;">
+          <strong>Policy Owner:</strong> Head of Credit &bull; 
+          <strong>Date of Last Review:</strong> 01-Oct-2026 &bull; 
+          <strong>Applicable Departments:</strong> Business &amp; Investments, Credit &amp; Risk, Operations &amp; Legal &bull; 
+          <strong>Reviewed &amp; Approved by:</strong> Board of Directors
+        </div>
+        <div class="policy-table-wrapper" style="margin-top: 14px;">
+          <table>
+            <thead><tr><th>Regulatory Reference</th><th>Circular / Direction</th></tr></thead>
+            <tbody><tr><td>RBI/DBR/2015-16/18</td><td>Master Direction DBR.AML.BC.No.81/14.01.001/2015-16 &amp; PMLA Rules, 2005</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="policy-section-title">1. Objectives &amp; Four Key Pillars</div>
+      <p>Prevents VMF from being used intentionally or unintentionally by criminal elements for money laundering or terrorist financing. Four core elements:</p>
+      <ol style="padding-left: 20px; margin-bottom: 14px; line-height: 1.65;">
+        <li><strong>Customer Acceptance Policy (CAP)</strong></li>
+        <li><strong>Customer Identification Procedures (CIP)</strong></li>
+        <li><strong>Monitoring of Transactions</strong></li>
+        <li><strong>Risk Management</strong></li>
+      </ol>
+
+      <div class="policy-section-title">2. Customer Acceptance Guidelines</div>
+      <ul style="padding-left: 20px; margin-bottom: 14px; line-height: 1.65;">
+        <li>No loan account opened in anonymous, fictitious, or Benami names.</li>
+        <li>No account opened where Customer Due Diligence (CDD) cannot be applied due to non-cooperation or unreliable documents.</li>
+        <li>Screening ensures identity does not match any person/entity on RBI / UN Security Council sanctions lists.</li>
+        <li>Digital signatures on e-documents verified per Information Technology Act, 2000.</li>
+        <li>Decision-making functions are never outsourced.</li>
+      </ul>
+
+      <div class="policy-section-title">3. Risk Level Categorization</div>
+      <div class="policy-table-wrapper">
+        <table>
+          <thead><tr><th>Risk Category</th><th>Profile Characteristics</th><th>Due Diligence Standard</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><strong>Level-I (Low Risk)</strong></td>
+              <td>Well-governed corporates, salaried employees with defined salary structures, Government employees, statutory bodies, self-employed with steady track record.</td>
+              <td>Standard Customer Due Diligence (CDD)</td>
+            </tr>
+            <tr>
+              <td><strong>Level-II (Medium Risk)</strong></td>
+              <td>Higher than average risk based on industry background, country of origin, complex transaction volume.</td>
+              <td>Enhanced Due Diligence (EDD)</td>
+            </tr>
+            <tr>
+              <td><strong>Level-III (High Risk)</strong></td>
+              <td>Politically Exposed Persons (PEPs) within or outside country, non-face-to-face clients, trusts, societies, NGOs, charities, high net-worth individuals, obscure funding sources.</td>
+              <td>Intensive Enhanced Due Diligence; Credit Committee approval required for PEP accounts.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="policy-section-title">4. Periodic Updation of KYC (RBI Mandate)</div>
+      <div class="policy-table-wrapper">
+        <table>
+          <thead><tr><th>Risk Tier</th><th>Mandatory KYC Re-verification Frequency</th></tr></thead>
+          <tbody>
+            <tr><td><strong>High Risk Customers</strong></td><td>Once in every <strong>2 years</strong></td></tr>
+            <tr><td><strong>Medium Risk Customers</strong></td><td>Once in every <strong>8 years</strong></td></tr>
+            <tr><td><strong>Low Risk Customers</strong></td><td>Once in every <strong>10 years</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="policy-section-title">5. Video-Customer Identification Procedure (V-CIP)</div>
+      <p>Undertaken in compliance with Clause 18 of amended KYC Master Direction for customer on-boarding, conversion of OTP-based e-KYC accounts, and periodic KYC updation. Banking Correspondents (BCs) may facilitate at customer end, but ultimate due diligence responsibility remains with VMF.</p>
+
+      <div class="policy-section-title">6. Statutory Reporting to FIU-IND &amp; Record Maintenance</div>
+      <ul style="padding-left: 20px; margin-bottom: 14px; line-height: 1.65;">
+        <li><strong>Cash Transaction Reports (CTR):</strong> Individual cash transactions &gt; &rupee;10 Lakhs (or integrally connected) submitted monthly to Director, FIU-IND by 15th of succeeding month.</li>
+        <li><strong>Suspicious Transaction Reports (STR):</strong> Submitted to FIU-IND within 7 working days of establishing suspicion without tipping off the client.</li>
+        <li><strong>Counterfeit Currency Reports (CCR):</strong> Detection of fake Indian currency reported by 15th of succeeding month.</li>
+        <li><strong>Principal Officer:</strong> Designated senior officer operating from Head Office responsible for FIU-IND liaison and fraud reporting. Address: <em>Director, FIU-IND, 6th Floor, Hotel Samrat, Chanakyapuri, New Delhi &ndash; 110021</em>.</li>
+        <li><strong>Designated Director:</strong> Nominated by the Board to ensure overall PMLA compliance. (Principal Officer cannot be Designated Director).</li>
+        <li><strong>Record Preservation:</strong> All transaction records and client identity records preserved for a minimum of <strong>10 years</strong>.</li>
+      </ul>
+
+      <div class="policy-section-title">Annexure &ndash; I: Version Control Table</div>
+      <div class="policy-table-wrapper">
+        <table>
+          <thead><tr><th>Version</th><th>Approval Date</th><th>Effective Date</th><th>Details</th><th>Owner</th><th>Approved By</th></tr></thead>
+          <tbody><tr><td><strong>2026_V1</strong></td><td>01-Oct-2026</td><td>01-Oct-2026</td><td>First Release</td><td>Head of Credit</td><td>Board of Directors</td></tr></tbody>
+        </table>
+      </div>`
+  },
+  'independent-directors-policy': {
+    title: "Policy for Independent Directors",
+    content: `<div class="policy-doc-control-card">
+        <div class="policy-badge-row">
+          <span class="policy-badge policy-badge-navy">Version: 2026_V1</span>
+          <span class="policy-badge policy-badge-green">Effective Date: 01-Oct-2026</span>
+          <span class="policy-badge policy-badge-gray">Confidentiality: Public</span>
+          <span class="policy-badge policy-badge-navy">Board Approved</span>
+        </div>
+        <div style="font-size: 13.5px; color: #475569; margin-top: 8px; line-height: 1.6;">
+          <strong>Policy Owner:</strong> Compliance &bull; 
+          <strong>Date of Last Review:</strong> 01-Oct-2026 &bull; 
+          <strong>Applicable Departments:</strong> Management &amp; Directors; Compliance &bull; 
+          <strong>Reviewed &amp; Approved by:</strong> Board of Directors
+        </div>
+        <div class="policy-table-wrapper" style="margin-top: 14px;">
+          <table>
+            <thead><tr><th>Regulatory Reference</th><th>Circular / Direction</th></tr></thead>
+            <tbody><tr><td>RBI/DOR/2025-26/149</td><td>DOR.HGG.GOV. No.68/29.67.001/2025-26 &amp; Companies Act, 2013</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="policy-section-title">1. Introduction &amp; Independence Standards</div>
+      <p>An Independent Director is a non-executive director with no relationship of any kind with VMF, its Group, or Management that might influence or reasonably be perceived to influence their capacity to exercise independent judgment. Governed under Section 149 read with Schedule IV of the Companies Act, 2013.</p>
+
+      <div class="policy-section-title">2. Criteria of Independence (Section 149(6))</div>
+      <ul style="padding-left: 20px; margin-bottom: 14px; line-height: 1.65;">
+        <li>Person of integrity possessing relevant expertise and experience.</li>
+        <li>Not a promoter of the company or its holding, subsidiary, or associate company; not related to promoters or directors.</li>
+        <li>No pecuniary relationship (other than director remuneration or transactions &le; 10% of total income) during the preceding 2 financial years or current year.</li>
+        <li>Relatives do not hold securities &gt; &rupee;50 Lakhs or &gt; 2% of paid-up capital; not indebted &gt; &rupee;50 Lakhs; have not provided guarantees &gt; &rupee;50 Lakhs.</li>
+        <li>Neither director nor relative has held position of KMP/employee in preceding 3 years, nor been partner/employee of the statutory audit firm or legal/consulting firm with transactions &ge; 10% gross turnover.</li>
+        <li>Does not hold, together with relatives, 2% or more of total voting power.</li>
+      </ul>
+
+      <div class="policy-section-title">3. Terms of Appointment &amp; Directorship Limits</div>
+      <ul style="padding-left: 20px; margin-bottom: 14px; line-height: 1.65;">
+        <li>Appointed for a consecutive term of up to <strong>5 years</strong>; eligible for reappointment upon special resolution.</li>
+        <li>Maximum tenure: <strong>2 consecutive terms</strong> (cooling-off period of 3 years before subsequent eligibility).</li>
+        <li>Subject to statutory cap of maximum <strong>20 company directorships</strong>. Not liable to retire by rotation.</li>
+        <li>Formalized via Letter of Appointment specified in Schedule IV of the Act.</li>
+        <li>Company maintains <strong>Directors&rsquo; and Officers&rsquo; (D&amp;O) Liability Insurance</strong> covering the full term of appointment.</li>
+      </ul>
+
+      <div class="policy-section-title">4. Roles, Duties &amp; Annual Independent Meeting</div>
+      <p>Independent Directors hold at least <strong>one meeting each financial year</strong> without the presence of non-independent directors or management to evaluate Board performance, Chairperson performance, and timeliness of information flow. They oversee auditor independence, examine financial statements, evaluate internal financial controls, and recommend CSR policies under Schedule VII.</p>
+
+      <div class="policy-section-title">Annexure 1: Declaration of Independence Format</div>
+      <p style="font-size: 13.5px; color: #475569;">Annual declaration executed confirming compliance with all criteria under Section 149(6) of the Companies Act, 2013 addressed to Board of Directors, VMF Finance Limited, 6&ndash;3&ndash;883/2/A, Tejaswi Plaza, Panjagutta, Hyderabad, Telangana &ndash; 500082.</p>
+
+      <div class="policy-section-title">Annexure &ndash; I: Version Control Table</div>
+      <div class="policy-table-wrapper">
+        <table>
+          <thead><tr><th>Version</th><th>Approval Date</th><th>Effective Date</th><th>Details</th><th>Owner</th><th>Approved By</th></tr></thead>
+          <tbody><tr><td><strong>2026_V1</strong></td><td>01-Oct-2026</td><td>01-Oct-2026</td><td>First Release</td><td>Compliance Officer</td><td>Board of Directors</td></tr></tbody>
+        </table>
+      </div>`
+  },
+  'privacy-policy': {
+    title: "Privacy Policy & Digital Lending Data Protection",
+    content: `<div class="policy-doc-control-card">
+        <div class="policy-badge-row">
+          <span class="policy-badge policy-badge-navy">Version: 2026_V1</span>
+          <span class="policy-badge policy-badge-green">Effective Date: 01-Oct-2026</span>
+          <span class="policy-badge policy-badge-gray">Confidentiality: Public</span>
+          <span class="policy-badge policy-badge-navy">Board Approved</span>
+        </div>
+        <div style="font-size: 13.5px; color: #475569; margin-top: 8px; line-height: 1.6;">
+          <strong>Policy Owner:</strong> Head of Credit &bull; 
+          <strong>Date of Last Review:</strong> 01-Oct-2026 &bull; 
+          <strong>Applicable Departments:</strong> Compliance, IT &amp; Operations &bull; 
+          <strong>Reviewed &amp; Approved by:</strong> Board of Directors
+        </div>
+        <div class="policy-table-wrapper" style="margin-top: 14px;">
+          <table>
+            <thead><tr><th>Regulatory Framework</th><th>Legislation / Circular</th></tr></thead>
+            <tbody>
+              <tr><td>IT Rules 2011</td><td>Information Technology (Reasonable Security Practices and Sensitive Personal Data) Rules, 2011</td></tr>
+              <tr><td>IT Rules 2021</td><td>Information Technology (Intermediary Guidelines and Digital Media Ethics Code) Rules, 2021</td></tr>
+              <tr><td>RBI Digital Lending</td><td>Reserve Bank of India (Digital Lending) Directions, 2025</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="policy-section-title">1. Corporate Identity &amp; Scope</div>
+      <p>Owned and operated by VMF Finance Limited, registered office: <em>6&ndash;3&ndash;883/2/A, Tejaswi Plaza, Panjagutta, Hyderabad, Telangana &ndash; 500082</em>; Website: <a href="https://www.vmffinance.com" target="_blank" rel="noopener noreferrer" style="color: #05244F; font-weight: 700;">www.vmffinance.com</a>.</p>
+
+      <div class="policy-section-title">2. Information Collected &amp; Device Permission Restraints</div>
+      <ul style="padding-left: 20px; margin-bottom: 14px; line-height: 1.65;">
+        <li><strong>Provided by User:</strong> Name, address, date of birth, contact details, PAN, redacted Aadhaar, employment and financial data, bank statements.</li>
+        <li><strong>Collected with Consent:</strong> Device metadata, installed application metadata (for credit scoring), transactional SMS from 6-digit alphanumeric senders, camera/microphone strictly for Video KYC, GPS for address validation.</li>
+        <li><strong>Strict Exclusion:</strong> VMF explicitly does <strong>NOT access mobile phone files and media, contact lists, call logs, or telephony functions</strong>.</li>
+      </ul>
+
+      <div class="policy-section-title">3. Data Retention &amp; SOP for Data Purge</div>
+      <p>Customer data retained during account validity and as required under statutory norms. System and application audit logs maintained for at least <strong>8 years</strong> per RBI directives. Users may request data modification/deletion through the VMF app or website; requests processed via VMF&rsquo;s Standard Operating Procedure for Data Purge within <strong>30&ndash;90 days</strong>.</p>
+
+      <div class="policy-section-title">4. Mandatory Reporting to all 4 Licensed CICs</div>
+      <p>All credit facilities availed through VMF, regardless of size or tenor, are reported to all four licensed Credit Information Companies in India: <strong>TransUnion CIBIL</strong>, <strong>Experian</strong>, <strong>CRIF High Mark</strong>, and <strong>Equifax</strong>.</p>
+
+      <div class="policy-section-title">5. Authorised List of Third-Party Service Providers</div>
+      <div class="policy-table-wrapper">
+        <table>
+          <thead><tr><th>Third-Party Service Provider</th><th>Type of Service Provided</th><th>Data Shared</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Protean eGov Technologies Limited</strong></td><td>Online PAN verification services</td><td>Personal Identifiable Information (PII) Data</td></tr>
+            <tr><td><strong>Equifax Credit Information Services Pvt Ltd</strong></td><td>Credit information products</td><td>Personal Identifiable Information (PII) Data</td></tr>
+            <tr><td><strong>TransUnion CIBIL Limited</strong></td><td>Credit information products</td><td>Personal Identifiable Information (PII) Data</td></tr>
+            <tr><td><strong>Perfios Software Solutions Private Limited</strong></td><td>VKYC, Bank Statement Analysis, GST Data</td><td>Personal Identifiable Information (PII) Data</td></tr>
+            <tr><td><strong>CERSAI</strong> (Central Registry of Securitisation Asset Reconstruction &amp; Security Interest of India)</td><td>Centralized registry to record, verify, and track security interests on assets</td><td>Personal Identifiable Information (PII) Data</td></tr>
+            <tr><td><strong>Experian Credit Information Co. of India Pvt Ltd</strong></td><td>Credit information utility</td><td>Personal Identifiable Information (PII) Data</td></tr>
+            <tr><td><strong>Digiotech Solutions Private Limited</strong></td><td>Electronic/Physical NACH mandate registrations, UPI Autopay</td><td>Personal Identifiable Information (PII) Data</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="policy-section-title">Annexure &ndash; I: Version Control Table</div>
+      <div class="policy-table-wrapper">
+        <table>
+          <thead><tr><th>Version</th><th>Approval Date</th><th>Effective Date</th><th>Details</th><th>Owner</th><th>Approved By</th></tr></thead>
+          <tbody><tr><td><strong>2026_V1</strong></td><td>01-Oct-2026</td><td>01-Oct-2026</td><td>First Release</td><td>Head of Credit</td><td>Board of Directors</td></tr></tbody>
+        </table>
+      </div>`
+  },
+  'related-party-transactions': {
+    title: "Related Party Transactions Framework",
+    content: `<div class="policy-doc-control-card">
+        <div class="policy-badge-row">
+          <span class="policy-badge policy-badge-navy">Version: 2026_V1</span>
+          <span class="policy-badge policy-badge-green">Effective Date: 01-Oct-2026</span>
+          <span class="policy-badge policy-badge-gray">Confidentiality: Private</span>
+          <span class="policy-badge policy-badge-navy">Board Approved</span>
+        </div>
+        <div style="font-size: 13.5px; color: #475569; margin-top: 8px; line-height: 1.6;">
+          <strong>Policy Owner:</strong> Compliance &bull; 
+          <strong>Date of Last Review:</strong> 01-Oct-2026 &bull; 
+          <strong>Applicable Departments:</strong> Management &amp; Directors; Compliance &bull; 
+          <strong>Reviewed &amp; Approved by:</strong> Board of Directors
+        </div>
+        <div class="policy-table-wrapper" style="margin-top: 14px;">
+          <table>
+            <thead><tr><th>Regulatory Reference</th><th>Circular / Direction</th></tr></thead>
+            <tbody><tr><td>RBI/2025-26/179</td><td>DOR.CRE.REC.380/07-02-008/2025-26 &amp; Section 188 Companies Act, 2013</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="policy-section-title">1. Introduction &amp; Arm's Length Governance</div>
+      <p>Related Party Transactions (RPTs) refer to transactions defined under Section 188 of the Companies Act, 2013 with related parties under Section 2(76) &amp; 2(77), and Accounting Standard AS-18. Framework ensures high corporate governance, arm&rsquo;s-length pricing, and conflict-of-interest prevention.</p>
+
+      <div class="policy-section-title">2. Approval Process &amp; Shareholder Thresholds</div>
+      <p>Board consent is mandatory for all RPTs. Transactions exceeding the statutory thresholds below require prior shareholder approval by Ordinary Resolution:</p>
+
+      <div class="policy-table-wrapper">
+        <table>
+          <thead><tr><th>Nature of Transaction</th><th>Statutory Threshold Limit</th></tr></thead>
+          <tbody>
+            <tr><td>Sale, purchase or supply of any goods or materials</td><td><strong>10% or more of Turnover</strong> of the Company</td></tr>
+            <tr><td>Selling or otherwise disposing of, or buying, property of any kind</td><td><strong>10% or more of Net Worth</strong> of the Company</td></tr>
+            <tr><td>Leasing of property of any kind</td><td><strong>10% or more of Turnover</strong> of the Company</td></tr>
+            <tr><td>Availing or rendering of any services</td><td><strong>10% or more of Turnover</strong> of the Company</td></tr>
+            <tr><td>Appointment to any office or place of profit in company/subsidiary/associate</td><td>Monthly remuneration exceeding <strong>&rupee; 2,50,000/-</strong></td></tr>
+            <tr><td>Remuneration for underwriting subscription of securities / derivatives</td><td>Exceeding <strong>1% of Net Worth</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size: 13px; color: #64748B;">*Turnover and Net Worth computed on basis of audited financial statements of preceding financial year. Unapproved transactions must be ratified within 3 months or become voidable.</p>
+
+      <div class="policy-section-title">3. Exemptions &amp; Omnibus Approvals</div>
+      <ul style="padding-left: 20px; margin-bottom: 14px; line-height: 1.65;">
+        <li>Transactions entered in the ordinary course of business on an arm&rsquo;s length basis are exempt from Board/shareholder approval under Section 188.</li>
+        <li>Transactions between holding company and wholly-owned subsidiary whose accounts are consolidated are exempt.</li>
+        <li><strong>Audit Committee Omnibus Approval:</strong> Granted for repetitive ordinary-course transactions for up to 1 financial year. Where need cannot be foreseen, omnibus approval permitted up to <strong>&rupee; 1 Crore per transaction</strong>. Omnibus approval prohibited for selling/disposing company undertakings.</li>
+      </ul>
+
+      <div class="policy-section-title">4. Director &amp; KMP Disclosure Obligations (Annexure 1)</div>
+      <p>Every Director and Key Managerial Personnel must submit an annual declaration disclosing: list of relatives, partnership firms, private companies (as director/member), public companies (where holding &gt; 2% shares with relatives), and bodies corporate whose boards act on their instructions. Interested directors must abstain from participating or voting on relevant agenda items.</p>
+
+      <div class="policy-section-title">Annexure &ndash; I: Version Control Table</div>
+      <div class="policy-table-wrapper">
+        <table>
+          <thead><tr><th>Version</th><th>Approval Date</th><th>Effective Date</th><th>Details</th><th>Owner</th><th>Approved By</th></tr></thead>
+          <tbody><tr><td><strong>2026_V1</strong></td><td>01-Oct-2026</td><td>01-Oct-2026</td><td>First Release</td><td>Compliance Officer</td><td>Board of Directors</td></tr></tbody>
         </table>
       </div>`
   },
@@ -1142,7 +1082,7 @@ const policyRegistry = {
       <div class="policy-section-title">Multi-Factor Evaluation Criteria</div>
       <ul style="padding-left: 20px; margin-bottom: 14px; line-height: 1.65;">
         <li><strong>Commercial Authenticity:</strong> Genuine invoices, verified purchase orders, e-way bills, and debtor acceptance.</li>
-        <li><strong>Debtor Creditworthiness:</strong> Financial strength, payment track record, and rating of corporate corporate anchor / buyers.</li>
+        <li><strong>Debtor Creditworthiness:</strong> Financial strength, payment track record, and rating of corporate anchor / buyers.</li>
         <li><strong>Banking Conduct:</strong> 12 months bank statements verifying debit/credit turnaround, return ratios, and cash-flow alignment.</li>
         <li><strong>KYC &amp; Promoter Integrity:</strong> Assessment of promoter pedigree, civil litigation checks, CIBIL commercial records, and statutory GST compliance.</li>
       </ul>
@@ -1150,49 +1090,6 @@ const policyRegistry = {
       <div class="policy-callout-box">
         *Security, personal/corporate guarantees, receivable assignment, or escrow/DSRA mechanisms may be required depending on facility structure. Every financing proposal is subject to due diligence, credit sanction, and mutually agreed definitive documentation.
       </div>`
-  },
-  'kyc-aml-policy': {
-    title: "KYC & Anti-Money Laundering (AML) Policy",
-    content: `<div class="policy-doc-control-card">
-        <div class="policy-badge-row">
-          <span class="policy-badge policy-badge-navy">Version: 2026_V1</span>
-          <span class="policy-badge policy-badge-green">Effective Date: 01-Oct-2026</span>
-          <span class="policy-badge policy-badge-gray">Confidentiality: Public</span>
-          <span class="policy-badge policy-badge-navy">Board Approved</span>
-        </div>
-        <div style="font-size: 13.5px; color: #475569; margin-top: 8px; line-height: 1.6;">
-          <strong>Policy Owner:</strong> Compliance Officer &bull; 
-          <strong>Applicable:</strong> All Departments &bull; 
-          <strong>Governing Law:</strong> Prevention of Money Laundering Act (PMLA), 2002 &amp; RBI Master Directions on KYC
-        </div>
-      </div>
-
-      <div class="policy-section-title">Customer Due Diligence (CDD) Standards</div>
-      <p>VMF complies with the Prevention of Money Laundering Act (PMLA), 2002 and RBI KYC Master Directions. Prior to credit sanction, all applicants must submit verified business registration (Certificate of Incorporation / Partnership Deed / Udyam Certificate), PAN, GSTIN, registered address proof, and identify Natural Persons qualifying as Ultimate Beneficial Owners (UBO).</p>
-
-      <div class="policy-section-title">Ongoing Transaction Monitoring</div>
-      <p>Credit facilities are disbursed and repaid solely through verifiable institutional banking channels to prevent financial fraud and ensure complete commercial authenticity.</p>`
-  },
-  'privacy-policy': {
-    title: "Privacy, Data Protection & Commercial Confidentiality",
-    content: `<div class="policy-doc-control-card">
-        <div class="policy-badge-row">
-          <span class="policy-badge policy-badge-navy">Version: 2026_V1</span>
-          <span class="policy-badge policy-badge-green">Effective Date: 01-Oct-2026</span>
-          <span class="policy-badge policy-badge-gray">Confidentiality: Public</span>
-          <span class="policy-badge policy-badge-navy">Board Approved</span>
-        </div>
-        <div style="font-size: 13.5px; color: #475569; margin-top: 8px; line-height: 1.6;">
-          <strong>Policy Owner:</strong> Compliance &bull; 
-          <strong>Governing Law:</strong> Digital Personal Data Protection Act, 2023 &amp; RBI IT Framework
-        </div>
-      </div>
-
-      <div class="policy-section-title">Confidentiality of Commercial Information</div>
-      <p>We understand that trade invoices, supplier contracts, purchase orders, buyer lists, and bank statements represent sensitive commercial property. VMF maintains rigorous physical, technical, and operational safeguards to protect customer data.</p>
-
-      <div class="policy-section-title">Restricted Information Sharing</div>
-      <p>Borrower financial records are accessed strictly for credit appraisal, facility servicing, statutory reporting to authorized Credit Information Companies (CIBIL, Experian, CRIF High Mark, Equifax), and compliance with judicial or regulatory authorities under applicable laws.</p>`
   },
   'statutory-declarations': {
     title: "Statutory Regulatory Declarations & Caveat",
