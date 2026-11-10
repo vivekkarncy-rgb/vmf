@@ -1123,6 +1123,7 @@ const policyRegistry = {
 };
 
 function openPolicyModal(policyId) {
+  closeDropdowns();
   const policy = policyRegistry[policyId] || policyRegistry['underwriting-policy'];
   const modal = document.getElementById('policyModal');
   const titleEl = document.getElementById('policyModalTitle');
@@ -1167,14 +1168,48 @@ function initPolicyDropdown() {
 
   if (!dropdown || !trigger) return;
 
+  let closeTimer = null;
+
+  function openMenu() {
+    if (closeTimer) {
+      clearTimeout(closeTimer);
+      closeTimer = null;
+    }
+    dropdown.classList.add('open');
+    trigger.setAttribute('aria-expanded', 'true');
+  }
+
+  function scheduleCloseMenu() {
+    if (closeTimer) clearTimeout(closeTimer);
+    closeTimer = setTimeout(() => {
+      dropdown.classList.remove('open');
+      trigger.setAttribute('aria-expanded', 'false');
+    }, 280);
+  }
+
+  // Smooth hover support with debounce buffer for desktop
+  dropdown.addEventListener('mouseenter', () => {
+    if (window.innerWidth > 768) {
+      openMenu();
+    }
+  });
+
+  dropdown.addEventListener('mouseleave', () => {
+    if (window.innerWidth > 768) {
+      scheduleCloseMenu();
+    }
+  });
+
   trigger.addEventListener('click', (e) => {
     e.stopPropagation();
+    if (closeTimer) clearTimeout(closeTimer);
     const isOpen = dropdown.classList.toggle('open');
     trigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
   });
 
   document.addEventListener('click', (e) => {
     if (!dropdown.contains(e.target)) {
+      if (closeTimer) clearTimeout(closeTimer);
       dropdown.classList.remove('open');
       trigger.setAttribute('aria-expanded', 'false');
     }
