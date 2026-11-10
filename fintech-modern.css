@@ -1985,6 +1985,100 @@ section:not(.prefooter-journey-sec):not(.contact-section) h2,
 .policy-modal-body td {
   background: #FFFFFF;
 }
+
+/* Institutional Policy Document Hierarchy & Modern Layout */
+.policy-doc-control-card {
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin-bottom: 24px;
+}
+
+.policy-badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.policy-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+.policy-badge-navy {
+  background: #05244F;
+  color: #FFFFFF;
+}
+
+.policy-badge-green {
+  background: #DCFCE7;
+  color: #15803D;
+  border: 1px solid #86EFAC;
+}
+
+.policy-badge-gray {
+  background: #E2E8F0;
+  color: #334155;
+}
+
+.policy-section-title {
+  color: #05244F;
+  font-size: 17px;
+  font-weight: 800;
+  margin: 26px 0 12px 0;
+  padding-bottom: 6px;
+  border-bottom: 2px solid #E2E8F0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.policy-subsection-title {
+  color: #0F172A;
+  font-size: 15px;
+  font-weight: 700;
+  margin: 18px 0 8px 0;
+}
+
+.policy-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 14px 0 20px 0;
+  border-radius: 8px;
+  border: 1px solid #E2E8F0;
+}
+
+.policy-table-wrapper table {
+  margin: 0 !important;
+  width: 100%;
+  min-width: 520px;
+}
+
+.policy-callout-box {
+  background: #EFF6FF;
+  border-left: 4px solid #2563EB;
+  padding: 14px 18px;
+  border-radius: 0 8px 8px 0;
+  margin: 16px 0;
+  font-size: 13.5px;
+  color: #1E3A8A;
+}
+
+.policy-callout-green {
+  background: #F0FDF4;
+  border-left: 4px solid #16A34A;
+  color: #14532D;
+}
+
 .contact-section {
   background: transparent !important;
 }
