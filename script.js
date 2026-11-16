@@ -4681,7 +4681,6 @@ function updateWorkingCapitalCalc() {
       <div class="wc-result-row">
         <div class="wc-res-label">Estimated Interest Cost</div>
         <div class="wc-res-value">${formatIndianCurrency(interestCost)}</div>
-        <div class="wc-res-meta">At ${roi.toFixed(1)}% p.a. over ${days} days</div>
       </div>
       <div class="wc-result-row">
         <div class="wc-res-label">Estimated Net Proceeds</div>
@@ -4730,7 +4729,6 @@ function updateWorkingCapitalCalc() {
       <div class="wc-result-row">
         <div class="wc-res-label">Estimated Interest Cost</div>
         <div class="wc-res-value">${formatIndianCurrency(interestCost)}</div>
-        <div class="wc-res-meta">At ${roi.toFixed(1)}% p.a. over ${days} days</div>
       </div>
       <div class="wc-result-row">
         <div class="wc-res-label">Total Repayment</div>
@@ -4764,7 +4762,6 @@ function updateWorkingCapitalCalc() {
       <div class="wc-result-row">
         <div class="wc-res-label">Estimated Interest Cost</div>
         <div class="wc-res-value">${formatIndianCurrency(interestCost)}</div>
-        <div class="wc-res-meta">At ${roi.toFixed(1)}% p.a. over ${days} days</div>
       </div>
       <div class="wc-result-row">
         <div class="wc-res-label">Estimated Total Repayment</div>

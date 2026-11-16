@@ -898,7 +898,6 @@
             <div>
               <div class="wc-calc-heading-area">
                 <h2 class="wc-calc-title">Working Capital Calculator</h2>
-                <p class="wc-calc-subtitle">Estimate eligible funding, interest cost, and net disbursements across our short-term financing products (30–90 days).</p>
               </div>
 
               <!-- Facility Selector Tabs -->
@@ -915,7 +914,6 @@
                   <div class="wc-slider-top">
                     <div>
                       <span class="wc-slider-label">Invoice Value</span>
-                      <div class="wc-slider-hint">Total gross value of your verified sales invoice.</div>
                     </div>
                     <span class="wc-slider-value" id="calcInvoiceValueDisplay">₹ 10,00,000</span>
                   </div>
@@ -953,7 +951,6 @@
                   <div class="wc-slider-top">
                     <div>
                       <span class="wc-slider-label">Purchase Order Value</span>
-                      <div class="wc-slider-hint">Total confirmed purchase order value from your corporate buyer.</div>
                     </div>
                     <span class="wc-slider-value" id="calcPoValueDisplay">₹ 20,00,000</span>
                   </div>
@@ -1004,7 +1001,6 @@
                   <div class="wc-slider-top">
                     <div>
                       <span class="wc-slider-label">Working Capital Required</span>
-                      <div class="wc-slider-hint">Direct liquidity requirement for operational cash-flow needs.</div>
                     </div>
                     <span class="wc-slider-value" id="calcWcValueDisplay">₹ 25,00,000</span>
                   </div>
@@ -1023,7 +1019,6 @@
                   <div class="wc-slider-top">
                     <div>
                       <span class="wc-slider-label">Annual Interest Rate (%)</span>
-                      <div class="wc-slider-hint">10%–50% per annum (pro-rated over selected tenure)</div>
                     </div>
                     <span class="wc-slider-value" id="calcRoiDisplay" style="color: #15803D; font-weight: 800;">20.0% p.a.</span>
                   </div>
@@ -1039,7 +1034,6 @@
                   <div class="wc-slider-top">
                     <div>
                       <span class="wc-slider-label">Tenure Selection</span>
-                      <div class="wc-slider-hint">Financing cycle (30–90 days)</div>
                     </div>
                     <span class="wc-slider-value" id="calcTenorDisplay" style="font-size: 20px; color: var(--vmf-navy);">60 Days</span>
                   </div>
@@ -1055,7 +1049,6 @@
             <!-- Right Column: Results & Instant Action -->
             <div class="wc-calc-results-card">
               <div>
-                <div class="wc-facility-badge" id="calcFacilityBadge">Invoice Financing Estimate</div>
                 <!-- Dynamic Results List -->
                 <div id="calcResultsContent">
                   <!-- Injected via updateWorkingCapitalCalc() -->
@@ -1063,11 +1056,18 @@
               </div>
 
               <div>
-                <!-- Calculation Formula and Fee Transparency -->
+                <!-- Fee Transparency -->
                 <div class="wc-calc-summary-footer">
-                  <div class="wc-calc-formula-tag">
-                    Formula: <code>Interest = (Principal × Rate × Days) / 36500</code>
+                  <div class="wc-calc-fee-tag">
+                    <span>Processing fee: <strong>Not included</strong></span>
                   </div>
+                </div>
+
+                <button type="button" class="wc-calc-apply-btn" onclick="applyWithCalculatorEstimate()">
+                  <span>Apply with this Estimate</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.5" d="M8.91 19.92l6.52-6.52c.77-.77.77-2.03 0-2.8L8.91 4.08"/></svg>
+                </button>
+              </div>
                   <div class="wc-calc-fee-tag">
                     <span>Processing fee: <strong>Not included</strong></span>
                   </div>
