@@ -149,7 +149,7 @@ function openApplyWithSim() {
   const inv = invInput ? invInput.value : '50';
   let facName = 'Invoice Financing';
   if (currentFacility === 'po') facName = 'Purchase Order Financing';
-  if (currentFacility === 'wc') facName = 'Working Capital Loans';
+  if (currentFacility === 'wc') facName = 'Working Capital Financing';
 
   openApplyModal(facName + ' (Simulated Amount: ₹ ' + inv + 'L)');
 }
@@ -191,7 +191,7 @@ const originalProductData = {
     applyBtnText: "Apply Now"
   },
   wc: {
-    title: "Working Capital Loans",
+    title: "Working Capital Financing",
     chip: "Operational Liquidity",
     pitch: "Finance your daily business needs",
     desc: "Cover cash gaps, stock purchases, and daily expenses with funding aligned to your cash flow.",
@@ -200,10 +200,10 @@ const originalProductData = {
       { num: "1", title: "Information Submission", desc: "The applicant submits business, financial and KYC information." },
       { num: "2", title: "Financial & Conduct Check", desc: "VMF assesses financial performance, banking conduct, existing obligations, cash flows and capacity." },
       { num: "3", title: "Pricing & Sizing", desc: "Proposed facility amount, pricing, tenure, repayment schedule and security requirements determined." },
-      { num: "4", title: "Sanction & Disclosure", desc: "The borrower receives sanction terms and transparent loan agreement schedule before entering loan arrangement." },
-      { num: "5", title: "Disbursement & Servicing", desc: "Disbursement and repayment follow executed loan documents per applicable credit policies." }
+      { num: "4", title: "Sanction & Disclosure", desc: "The borrower receives sanction terms and transparent facility agreement schedule before entering financing arrangement." },
+      { num: "5", title: "Disbursement & Servicing", desc: "Disbursement and repayment follow executed facility documents per applicable credit policies." }
     ],
-    note: "Facility availability, loan structure and terms depend on the applicant's eligibility and VMF's applicable credit policies.",
+    note: "Facility availability, financing structure and terms depend on the applicant's eligibility and VMF's applicable credit policies.",
     applyBtnText: "Apply Now"
   }
 };
@@ -218,7 +218,7 @@ let currentExploreKey = 'inv';
 const facilityLabels = {
   inv: "Invoice Financing",
   po: "Purchase Order Financing",
-  wc: "Working Capital Loans"
+  wc: "Working Capital Financing"
 };
 
 function openExploreStepsModal(key) {
@@ -3359,7 +3359,7 @@ function showChatMainMenu(echoUser = true) {
   const mainFollowUps = [
     { key: 'invoice', label: 'Invoice Financing' },
     { key: 'po', label: 'Purchase Order Financing' },
-    { key: 'wc', label: 'Working Capital Loans' },
+    { key: 'wc', label: 'Working Capital Financing' },
     { key: 'docs', label: 'Required Documents Checklist' },
     { key: 'eligibility', label: 'Eligibility & Limits' },
     { key: 'rates', label: 'Pricing & Sanction Turnaround' },
@@ -3438,8 +3438,8 @@ function handleQuickChip(topic) {
       { action: 'main_menu', label: 'Back to List' }
     ];
   } else if (topic === 'wc') {
-    userText = "What are your Working Capital Loans?";
-    botReply = `<strong>Structured Working Capital Loans:</strong><br>
+    userText = "What is your Working Capital Financing?";
+    botReply = `<strong>Structured Working Capital Financing:</strong><br>
     Dependable revolving credit lines designed to bridge operational gaps, manage seasonal inventory, and support regular payroll.<br><br>
     &bull; <strong>Facility Ticket Sizes:</strong> From ₹5 Lakhs to ₹5 Crores+.<br>
     &bull; <strong>Transparent Interest:</strong> Interest calculated strictly on the utilized amount, not the sanctioned limit.<br>
@@ -3787,7 +3787,7 @@ function handleChatSubmit(e) {
   }
   // Conditional Logic Branch 6: Working Capital
   else if (lower.includes('working capital') || lower.includes('revolving') || lower.includes('cash flow') || lower.includes('daily') || lower.includes('limit')) {
-    botReply = `<strong>Working Capital Loans:</strong><br>
+    botReply = `<strong>Working Capital Financing:</strong><br>
     Revolving facility from ₹5 Lakhs to ₹5 Crores+ structured around your operational turnover with transparent interest charged only on drawn limits.<br><br>
     <button class="chat-action-btn" onclick="scrollToContactForm()">Check Eligibility</button>`;
 
@@ -3879,7 +3879,7 @@ function handleChatSubmit(e) {
     followUps = [
       { key: 'invoice', label: 'Invoice Financing' },
       { key: 'po', label: 'Purchase Order Financing' },
-      { key: 'wc', label: 'Working Capital Loans' },
+      { key: 'wc', label: 'Working Capital Financing' },
       { key: 'docs', label: 'Required Documents' },
       { key: 'query', label: 'Send a Query to Team' },
       { action: 'call', label: 'Call Now (+91 40 2335 1234)' },
@@ -3900,7 +3900,7 @@ function handleChatSubmit(e) {
   }
   // Fallback
   else {
-    botReply = `Thank you for your inquiry! VMF Finance Limited provides institutional <strong>Invoice Financing</strong>, <strong>PO Financing</strong>, and <strong>Working Capital Loans</strong> for MSMEs.<br><br>
+    botReply = `Thank you for your inquiry! VMF Finance Limited provides institutional <strong>Invoice Financing</strong>, <strong>PO Financing</strong>, and <strong>Working Capital Financing</strong> for MSMEs.<br><br>
     Please select an option below, send a query directly to our team, or call our underwriting desk:`;
 
     followUps = [
@@ -4602,7 +4602,7 @@ function setCalcFacility(btn, facilityName) {
 
   if (invoiceInputs) invoiceInputs.style.display = (facilityName === 'Invoice Financing') ? 'block' : 'none';
   if (poInputs) poInputs.style.display = (facilityName === 'Purchase Order Financing') ? 'block' : 'none';
-  if (wcInputs) wcInputs.style.display = (facilityName === 'Working Capital Loan') ? 'block' : 'none';
+  if (wcInputs) wcInputs.style.display = (facilityName === 'Working Capital Financing' || facilityName === 'Working Capital Loan') ? 'block' : 'none';
 
   // Default tenure setup if switching to match example
   const tenorSlider = document.getElementById('calcTenorSlider');
@@ -4736,7 +4736,7 @@ function updateWorkingCapitalCalc() {
         <div class="wc-res-meta">Principal + estimated interest upon buyer settlement</div>
       </div>
     `;
-  } else if (currentCalcFacility === 'Working Capital Loan') {
+  } else if (currentCalcFacility === 'Working Capital Financing' || currentCalcFacility === 'Working Capital Loan') {
     if (badge) badge.textContent = 'Working Capital Estimate';
 
     const wcSlider = document.getElementById('calcWcValueSlider');
@@ -4831,7 +4831,7 @@ function applyWithCalculatorEstimate() {
     const interest = calcSimpleInterest(wcVal, roiNum, daysNum);
     const totalRepay = wcVal + interest;
 
-    facilityParamText = `Eligibility Assessment Request (Working Capital Loan):\n` +
+    facilityParamText = `Eligibility Assessment Request (Working Capital Financing):\n` +
       `- Requested Funding Amount: ${formatIndianCurrency(wcVal)}\n` +
       `- Annual Interest Rate: ${roi}\n` +
       `- Tenure: ${days}\n` +
