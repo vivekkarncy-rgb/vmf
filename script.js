@@ -3448,7 +3448,7 @@ function handleQuickChip(topic) {
     <button class="chat-action-btn" onclick="scrollToContactForm()">Check Working Capital Eligibility</button>`;
 
     followUps = [
-      { action: 'calc', label: 'Open Working Capital Calculator' },
+      { action: 'calc', label: 'Open Estimate Calculator' },
       { key: 'eligibility', label: 'Eligibility Parameters' },
       { key: 'query', label: 'Send a Query to Team' },
       { action: 'call', label: 'Call Now (+91 40 2335 1234)' },
@@ -3792,7 +3792,7 @@ function handleChatSubmit(e) {
     <button class="chat-action-btn" onclick="scrollToContactForm()">Check Eligibility</button>`;
 
     followUps = [
-      { action: 'calc', label: 'Open Working Capital Calculator' },
+      { action: 'calc', label: 'Open Estimate Calculator' },
       { key: 'eligibility', label: 'Eligibility Parameters' },
       { key: 'query', label: 'Send a Query to Team' },
       { action: 'call', label: 'Call Now (+91 40 2335 1234)' },
@@ -3836,7 +3836,7 @@ function handleChatSubmit(e) {
     botReply = `<strong>Pricing &amp; Rates (ROI):</strong><br>
     &bull; Competitive risk-based ROI ranging from <strong>9.0% to 20.0% p.a.</strong><br>
     &bull; Transparent documented sanction letter with zero hidden charges.<br><br>
-    <button class="chat-action-btn" onclick="scrollToCalculator()">Open Working Capital Calculator</button>`;
+    <button class="chat-action-btn" onclick="scrollToCalculator()">Open Estimate Calculator</button>`;
 
     followUps = [
       { action: 'calc', label: 'Calculate Interest & Terms' },
