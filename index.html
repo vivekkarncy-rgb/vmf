@@ -898,6 +898,7 @@
             <div>
               <div class="wc-calc-heading-area">
                 <h2 class="wc-calc-title">Working Capital Calculator</h2>
+                <p class="wc-calc-subtitle">Estimate eligible funding, interest cost, and net disbursements across our short-term financing products (30–90 days).</p>
               </div>
 
               <!-- Facility Selector Tabs -->
@@ -907,62 +908,176 @@
                 <button type="button" class="wc-tab-btn" data-facility="Working Capital Loan" onclick="setCalcFacility(this, 'Working Capital Loan')">Working Capital</button>
               </div>
 
-              <!-- Slider 1: Facility Amount -->
-              <div class="wc-slider-block">
-                <div class="wc-slider-top">
-                  <span class="wc-slider-label">Facility Amount</span>
-                  <span class="wc-slider-value" id="calcAmountDisplay">₹ 50 Lakhs</span>
+              <!-- Tab 1 Inputs: Invoice Financing -->
+              <div id="calcInvoiceInputs" class="calc-tab-panel">
+                <!-- Slider: Invoice Value -->
+                <div class="wc-slider-block">
+                  <div class="wc-slider-top">
+                    <div>
+                      <span class="wc-slider-label">Invoice Value</span>
+                      <div class="wc-slider-hint">Total gross value of your verified sales invoice.</div>
+                    </div>
+                    <span class="wc-slider-value" id="calcInvoiceValueDisplay">₹ 10,00,000</span>
+                  </div>
+                  <input type="range" id="calcInvoiceValueSlider" class="wc-range-input" min="100000" max="50000000" step="50000" value="1000000" oninput="updateWorkingCapitalCalc()">
+                  <div class="wc-slider-range-limits">
+                    <span>₹1 Lakh</span>
+                    <span>₹5 Crores+</span>
+                  </div>
                 </div>
-                <input type="range" id="calcAmountSlider" class="wc-range-input" min="500000" max="50000000" step="500000" value="5000000" oninput="updateWorkingCapitalCalc()">
-                <div style="display: flex; justify-content: space-between; font-size: 12px; color: var(--vmf-text-muted); margin-top: 6px;">
-                  <span>₹5 Lakhs</span>
-                  <span>₹5 Crores+</span>
+
+                <!-- Slider: Advance Percentage (%) -->
+                <div class="wc-slider-block">
+                  <div class="wc-slider-top">
+                    <div>
+                      <span class="wc-slider-label">Advance Percentage (%)</span>
+                      <div class="wc-slider-hint">Percentage of your invoice value eligible for funding.</div>
+                    </div>
+                    <span class="wc-slider-value" id="calcAdvancePercentDisplay">90%</span>
+                  </div>
+                  <input type="range" id="calcAdvancePercentSlider" class="wc-range-input" min="50" max="95" step="1" value="90" oninput="updateWorkingCapitalCalc()">
+                  <div class="wc-slider-range-limits">
+                    <span>50%</span>
+                    <span>95%</span>
+                  </div>
+                  <div class="wc-calc-field-disclaimer">
+                    Indicative funding percentage based on your invoice value. The final advance amount is subject to financier approval following business verification and credit assessment.
+                  </div>
                 </div>
               </div>
 
-              <!-- Slider 2: Rate of Interest (ROI) -->
-              <div class="wc-slider-block">
-                <div class="wc-slider-top">
-                  <span class="wc-slider-label">Interest Rate (p.a.)</span>
-                  <span class="wc-slider-value" id="calcRoiDisplay" style="color: #15803D; font-weight: 800;">12.0% p.a.</span>
+              <!-- Tab 2 Inputs: PO Financing -->
+              <div id="calcPoInputs" class="calc-tab-panel" style="display: none;">
+                <!-- Slider: Purchase Order Value -->
+                <div class="wc-slider-block">
+                  <div class="wc-slider-top">
+                    <div>
+                      <span class="wc-slider-label">Purchase Order Value</span>
+                      <div class="wc-slider-hint">Total confirmed purchase order value from your corporate buyer.</div>
+                    </div>
+                    <span class="wc-slider-value" id="calcPoValueDisplay">₹ 20,00,000</span>
+                  </div>
+                  <input type="range" id="calcPoValueSlider" class="wc-range-input" min="200000" max="50000000" step="100000" value="2000000" oninput="onPoValueChange()">
+                  <div class="wc-slider-range-limits">
+                    <span>₹2 Lakhs</span>
+                    <span>₹5 Crores+</span>
+                  </div>
                 </div>
-                <input type="range" id="calcRoiSlider" class="wc-range-input" min="9" max="20" step="0.5" value="12" oninput="updateWorkingCapitalCalc()">
-                <div style="display: flex; justify-content: space-between; font-size: 12px; color: var(--vmf-text-muted); margin-top: 6px;">
-                  <span>9%</span>
-                  <span>20%</span>
+
+                <!-- Slider: Fulfilment Cost -->
+                <div class="wc-slider-block">
+                  <div class="wc-slider-top">
+                    <div>
+                      <span class="wc-slider-label">Fulfilment Cost</span>
+                      <div class="wc-slider-hint">Expected procurement &amp; operational cost to complete order.</div>
+                    </div>
+                    <span class="wc-slider-value" id="calcFulfilmentCostDisplay">₹ 14,00,000</span>
+                  </div>
+                  <input type="range" id="calcFulfilmentCostSlider" class="wc-range-input" min="100000" max="2000000" step="50000" value="1400000" oninput="updateWorkingCapitalCalc()">
+                  <div class="wc-slider-range-limits">
+                    <span>₹1 Lakh</span>
+                    <span id="calcFulfilmentMaxLimitDisplay">₹20,00,000 (PO Max)</span>
+                  </div>
+                </div>
+
+                <!-- Slider: Funding Percentage (%) -->
+                <div class="wc-slider-block">
+                  <div class="wc-slider-top">
+                    <div>
+                      <span class="wc-slider-label">Funding Percentage (%)</span>
+                      <div class="wc-slider-hint">Percentage of fulfilment cost funded by VMF.</div>
+                    </div>
+                    <span class="wc-slider-value" id="calcPoFundingPercentDisplay">80%</span>
+                  </div>
+                  <input type="range" id="calcPoFundingPercentSlider" class="wc-range-input" min="50" max="90" step="1" value="80" oninput="updateWorkingCapitalCalc()">
+                  <div class="wc-slider-range-limits">
+                    <span>50%</span>
+                    <span>90%</span>
+                  </div>
                 </div>
               </div>
 
-              <!-- Slider 3: Tenure Duration -->
-              <div class="wc-slider-block" style="margin-bottom: 0;">
-                <div class="wc-slider-top">
-                  <span class="wc-slider-label">Tenure</span>
-                  <span class="wc-slider-value" id="calcTenorDisplay" style="font-size: 18px; color: var(--vmf-navy);">60 Days</span>
+              <!-- Tab 3 Inputs: Working Capital Loans -->
+              <div id="calcWcInputs" class="calc-tab-panel" style="display: none;">
+                <!-- Slider: Working Capital Required -->
+                <div class="wc-slider-block">
+                  <div class="wc-slider-top">
+                    <div>
+                      <span class="wc-slider-label">Working Capital Required</span>
+                      <div class="wc-slider-hint">Direct liquidity requirement for operational cash-flow needs.</div>
+                    </div>
+                    <span class="wc-slider-value" id="calcWcValueDisplay">₹ 25,00,000</span>
+                  </div>
+                  <input type="range" id="calcWcValueSlider" class="wc-range-input" min="500000" max="50000000" step="100000" value="2500000" oninput="updateWorkingCapitalCalc()">
+                  <div class="wc-slider-range-limits">
+                    <span>₹5 Lakhs</span>
+                    <span>₹5 Crores+</span>
+                  </div>
                 </div>
-                <input type="range" id="calcTenorSlider" class="wc-range-input" min="30" max="120" step="15" value="60" oninput="updateWorkingCapitalCalc()">
-                <div style="display: flex; justify-content: space-between; font-size: 12px; color: var(--vmf-text-muted); margin-top: 6px;">
-                  <span>30 Days</span>
-                  <span>120 Days</span>
+              </div>
+
+              <!-- Common Inputs: Annual Interest Rate (%) and Tenure -->
+              <div class="calc-common-inputs">
+                <!-- Slider: Annual Interest Rate (%) -->
+                <div class="wc-slider-block">
+                  <div class="wc-slider-top">
+                    <div>
+                      <span class="wc-slider-label">Annual Interest Rate (%)</span>
+                      <div class="wc-slider-hint">10%–50% per annum (pro-rated over selected tenure)</div>
+                    </div>
+                    <span class="wc-slider-value" id="calcRoiDisplay" style="color: #15803D; font-weight: 800;">20.0% p.a.</span>
+                  </div>
+                  <input type="range" id="calcRoiSlider" class="wc-range-input" min="10" max="50" step="0.5" value="20" oninput="updateWorkingCapitalCalc()">
+                  <div class="wc-slider-range-limits">
+                    <span>10% p.a.</span>
+                    <span>50% p.a.</span>
+                  </div>
+                </div>
+
+                <!-- Slider: Tenure Selection -->
+                <div class="wc-slider-block" style="margin-bottom: 0;">
+                  <div class="wc-slider-top">
+                    <div>
+                      <span class="wc-slider-label">Tenure Selection</span>
+                      <div class="wc-slider-hint">Financing cycle (30–90 days)</div>
+                    </div>
+                    <span class="wc-slider-value" id="calcTenorDisplay" style="font-size: 20px; color: var(--vmf-navy);">60 Days</span>
+                  </div>
+                  <input type="range" id="calcTenorSlider" class="wc-range-input" min="30" max="90" step="1" value="60" oninput="updateWorkingCapitalCalc()">
+                  <div class="wc-slider-range-limits">
+                    <span>30 Days</span>
+                    <span>90 Days</span>
+                  </div>
                 </div>
               </div>
             </div>
 
             <!-- Right Column: Results & Instant Action -->
             <div class="wc-calc-results-card">
-              <div class="wc-result-row">
-                <div class="wc-res-label">Estimated Advance</div>
-                <div class="wc-res-value highlight-emerald" id="calcAdvanceDisplay">₹ 45,00,000</div>
+              <div>
+                <div class="wc-facility-badge" id="calcFacilityBadge">Invoice Financing Estimate</div>
+                <!-- Dynamic Results List -->
+                <div id="calcResultsContent">
+                  <!-- Injected via updateWorkingCapitalCalc() -->
+                </div>
               </div>
 
-              <div class="wc-result-row">
-                <div class="wc-res-label">Estimated Financing Cost</div>
-                <div class="wc-res-value" id="calcCostDisplay">₹ 88,767</div>
-              </div>
+              <div>
+                <!-- Calculation Formula and Fee Transparency -->
+                <div class="wc-calc-summary-footer">
+                  <div class="wc-calc-formula-tag">
+                    Formula: <code>Interest = (Principal × Rate × Days) / 36500</code>
+                  </div>
+                  <div class="wc-calc-fee-tag">
+                    <span>Processing fee: <strong>Not included</strong></span>
+                  </div>
+                </div>
 
-              <button type="button" class="wc-calc-apply-btn" onclick="applyWithCalculatorEstimate()">
-                <span>Check Eligibility</span>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.5" d="M8.91 19.92l6.52-6.52c.77-.77.77-2.03 0-2.8L8.91 4.08"/></svg>
-              </button>
+                <button type="button" class="wc-calc-apply-btn" onclick="applyWithCalculatorEstimate()">
+                  <span>Apply with this Estimate</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.5" d="M8.91 19.92l6.52-6.52c.77-.77.77-2.03 0-2.8L8.91 4.08"/></svg>
+                </button>
+              </div>
             </div>
           </div>
         </div>

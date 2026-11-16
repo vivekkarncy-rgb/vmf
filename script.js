@@ -4576,15 +4576,18 @@ if (document.readyState === 'loading') {
    ------------------------------------------------------------ */
 let currentCalcFacility = 'Invoice Financing';
 
+function formatIndianNumber(num) {
+  return Math.round(num).toLocaleString('en-IN');
+}
+
 function formatIndianCurrency(num) {
-  if (num >= 10000000) {
-    const cr = (num / 10000000).toFixed(2).replace(/\.00$/, '');
-    return `₹ ${cr} Crore${cr > 1 ? 's' : ''}`;
-  } else if (num >= 100000) {
-    const lk = (num / 100000).toFixed(2).replace(/\.00$/, '');
-    return `₹ ${lk} Lakh${lk > 1 ? 's' : ''}`;
-  }
-  return `₹ ${num.toLocaleString('en-IN')}`;
+  return `₹ ${formatIndianNumber(num)}`;
+}
+
+// Simple interest formula: (Principal * Rate * Days) / 36500
+function calcSimpleInterest(principal, annualRatePercent, days) {
+  if (!principal || !annualRatePercent || !days) return 0;
+  return Math.round((principal * annualRatePercent * days) / 36500);
 }
 
 function setCalcFacility(btn, facilityName) {
@@ -4592,59 +4595,257 @@ function setCalcFacility(btn, facilityName) {
   const tabs = document.querySelectorAll('#wcFacilityTabs .wc-tab-btn');
   tabs.forEach(t => t.classList.remove('active'));
   if (btn) btn.classList.add('active');
+
+  const invoiceInputs = document.getElementById('calcInvoiceInputs');
+  const poInputs = document.getElementById('calcPoInputs');
+  const wcInputs = document.getElementById('calcWcInputs');
+
+  if (invoiceInputs) invoiceInputs.style.display = (facilityName === 'Invoice Financing') ? 'block' : 'none';
+  if (poInputs) poInputs.style.display = (facilityName === 'Purchase Order Financing') ? 'block' : 'none';
+  if (wcInputs) wcInputs.style.display = (facilityName === 'Working Capital Loan') ? 'block' : 'none';
+
+  // Default tenure setup if switching to match example
+  const tenorSlider = document.getElementById('calcTenorSlider');
+  if (tenorSlider) {
+    if (facilityName === 'Invoice Financing') {
+      tenorSlider.value = 60;
+    } else {
+      tenorSlider.value = 90;
+    }
+  }
+
+  updateWorkingCapitalCalc();
+}
+
+function onPoValueChange() {
+  const poSlider = document.getElementById('calcPoValueSlider');
+  const fulSlider = document.getElementById('calcFulfilmentCostSlider');
+  const maxLimitDisplay = document.getElementById('calcFulfilmentMaxLimitDisplay');
+
+  if (poSlider && fulSlider) {
+    const poVal = parseFloat(poSlider.value) || 2000000;
+    fulSlider.max = poVal;
+    if (parseFloat(fulSlider.value) > poVal) {
+      fulSlider.value = poVal;
+    }
+    if (maxLimitDisplay) {
+      maxLimitDisplay.textContent = `${formatIndianCurrency(poVal)} (PO Max)`;
+    }
+  }
   updateWorkingCapitalCalc();
 }
 
 function updateWorkingCapitalCalc() {
-  const amountSlider = document.getElementById('calcAmountSlider');
   const roiSlider = document.getElementById('calcRoiSlider');
   const tenorSlider = document.getElementById('calcTenorSlider');
-  
-  const amountDisplay = document.getElementById('calcAmountDisplay');
   const roiDisplay = document.getElementById('calcRoiDisplay');
   const tenorDisplay = document.getElementById('calcTenorDisplay');
-  const advanceDisplay = document.getElementById('calcAdvanceDisplay');
-  const costDisplay = document.getElementById('calcCostDisplay');
+  const badge = document.getElementById('calcFacilityBadge');
+  const resultsContainer = document.getElementById('calcResultsContent');
 
-  if (!amountSlider || !advanceDisplay) return;
+  if (!resultsContainer) return;
 
-  const amount = parseFloat(amountSlider.value) || 5000000;
-  const roi = parseFloat(roiSlider ? roiSlider.value : 12);
-  const tenor = parseInt(tenorSlider ? tenorSlider.value : 60, 10);
+  const roi = parseFloat(roiSlider ? roiSlider.value : 20);
+  const days = parseInt(tenorSlider ? tenorSlider.value : 60, 10);
 
-  if (amountDisplay) amountDisplay.textContent = formatIndianCurrency(amount);
   if (roiDisplay) roiDisplay.textContent = `${roi.toFixed(1)}% p.a.`;
-  if (tenorDisplay) tenorDisplay.textContent = `${tenor} Days`;
+  if (tenorDisplay) tenorDisplay.textContent = `${days} Days`;
 
-  // Advance percentage based on facility
-  let advanceRate = 0.90; // Default 90% for Invoice Financing
-  if (currentCalcFacility === 'Purchase Order Financing') {
-    advanceRate = 0.80; // 80% on PO
+  if (currentCalcFacility === 'Invoice Financing') {
+    if (badge) badge.textContent = 'Invoice Financing Estimate';
+
+    const invSlider = document.getElementById('calcInvoiceValueSlider');
+    const advSlider = document.getElementById('calcAdvancePercentSlider');
+    const invDisplay = document.getElementById('calcInvoiceValueDisplay');
+    const advDisplay = document.getElementById('calcAdvancePercentDisplay');
+
+    const invoiceVal = parseFloat(invSlider ? invSlider.value : 1000000);
+    const advancePct = parseFloat(advSlider ? advSlider.value : 90);
+
+    if (invDisplay) invDisplay.textContent = formatIndianCurrency(invoiceVal);
+    if (advDisplay) advDisplay.textContent = `${advancePct}%`;
+
+    // Eligible funding amount (Principal)
+    const principal = Math.round(invoiceVal * (advancePct / 100));
+    // Estimated interest cost = (Principal * Rate * Days) / 36500
+    const interestCost = calcSimpleInterest(principal, roi, days);
+    // Estimated net proceeds = Principal - Interest
+    const netProceeds = principal - interestCost;
+
+    resultsContainer.innerHTML = `
+      <div class="wc-result-row">
+        <div class="wc-res-label">Eligible Funding Amount</div>
+        <div class="wc-res-value highlight-emerald">${formatIndianCurrency(principal)}</div>
+        <div class="wc-res-meta">${advancePct}% advance on ${formatIndianCurrency(invoiceVal)} invoice</div>
+      </div>
+      <div class="wc-result-row">
+        <div class="wc-res-label">Estimated Interest Cost</div>
+        <div class="wc-res-value">${formatIndianCurrency(interestCost)}</div>
+        <div class="wc-res-meta">At ${roi.toFixed(1)}% p.a. over ${days} days</div>
+      </div>
+      <div class="wc-result-row">
+        <div class="wc-res-label">Estimated Net Proceeds</div>
+        <div class="wc-res-value highlight-cyan">${formatIndianCurrency(netProceeds)}</div>
+        <div class="wc-res-meta">Disbursed net of estimated financing cost</div>
+      </div>
+    `;
+  } else if (currentCalcFacility === 'Purchase Order Financing') {
+    if (badge) badge.textContent = 'PO Financing Estimate';
+
+    const poSlider = document.getElementById('calcPoValueSlider');
+    const fulSlider = document.getElementById('calcFulfilmentCostSlider');
+    const fundSlider = document.getElementById('calcPoFundingPercentSlider');
+    const poDisplay = document.getElementById('calcPoValueDisplay');
+    const fulDisplay = document.getElementById('calcFulfilmentCostDisplay');
+    const fundDisplay = document.getElementById('calcPoFundingPercentDisplay');
+
+    const poVal = parseFloat(poSlider ? poSlider.value : 2000000);
+    const fulCost = parseFloat(fulSlider ? fulSlider.value : 1400000);
+    const fundingPct = parseFloat(fundSlider ? fundSlider.value : 80);
+
+    if (poDisplay) poDisplay.textContent = formatIndianCurrency(poVal);
+    if (fulDisplay) fulDisplay.textContent = formatIndianCurrency(fulCost);
+    if (fundDisplay) fundDisplay.textContent = `${fundingPct}%`;
+
+    // Estimated funding amount
+    const fundingAmount = Math.round(fulCost * (fundingPct / 100));
+    // Business contribution
+    const businessContribution = fulCost - fundingAmount;
+    // Estimated interest cost
+    const interestCost = calcSimpleInterest(fundingAmount, roi, days);
+    // Total repayment
+    const totalRepayment = fundingAmount + interestCost;
+
+    resultsContainer.innerHTML = `
+      <div class="wc-result-row">
+        <div class="wc-res-label">Estimated Funding Amount</div>
+        <div class="wc-res-value highlight-emerald">${formatIndianCurrency(fundingAmount)}</div>
+        <div class="wc-res-meta">${fundingPct}% of ${formatIndianCurrency(fulCost)} fulfilment cost</div>
+      </div>
+      <div class="wc-result-row">
+        <div class="wc-res-label">Business Contribution</div>
+        <div class="wc-res-value highlight-amber">${formatIndianCurrency(businessContribution)}</div>
+        <div class="wc-res-meta">${(100 - fundingPct).toFixed(0)}% business self-contribution margin</div>
+      </div>
+      <div class="wc-result-row">
+        <div class="wc-res-label">Estimated Interest Cost</div>
+        <div class="wc-res-value">${formatIndianCurrency(interestCost)}</div>
+        <div class="wc-res-meta">At ${roi.toFixed(1)}% p.a. over ${days} days</div>
+      </div>
+      <div class="wc-result-row">
+        <div class="wc-res-label">Total Repayment</div>
+        <div class="wc-res-value">${formatIndianCurrency(totalRepayment)}</div>
+        <div class="wc-res-meta">Principal + estimated interest upon buyer settlement</div>
+      </div>
+    `;
   } else if (currentCalcFacility === 'Working Capital Loan') {
-    advanceRate = 0.85; // 85% on WC
-  }
+    if (badge) badge.textContent = 'Working Capital Estimate';
 
-  const estimatedAdvance = Math.round(amount * advanceRate);
-  advanceDisplay.textContent = formatIndianCurrency(estimatedAdvance);
+    const wcSlider = document.getElementById('calcWcValueSlider');
+    const wcDisplay = document.getElementById('calcWcValueDisplay');
 
-  // Interest cost for the cycle = (Advance * (ROI / 100) * (Tenor / 365))
-  const interestCost = Math.round(estimatedAdvance * (roi / 100) * (tenor / 365));
-  if (costDisplay) {
-    costDisplay.textContent = formatIndianCurrency(interestCost);
+    const wcVal = parseFloat(wcSlider ? wcSlider.value : 2500000);
+
+    if (wcDisplay) wcDisplay.textContent = formatIndianCurrency(wcVal);
+
+    // Requested funding amount
+    const principal = wcVal;
+    // Estimated interest cost
+    const interestCost = calcSimpleInterest(principal, roi, days);
+    // Estimated total repayment
+    const totalRepayment = principal + interestCost;
+
+    resultsContainer.innerHTML = `
+      <div class="wc-result-row">
+        <div class="wc-res-label">Requested Funding Amount</div>
+        <div class="wc-res-value highlight-emerald">${formatIndianCurrency(principal)}</div>
+        <div class="wc-res-meta">Working capital facility principal</div>
+      </div>
+      <div class="wc-result-row">
+        <div class="wc-res-label">Estimated Interest Cost</div>
+        <div class="wc-res-value">${formatIndianCurrency(interestCost)}</div>
+        <div class="wc-res-meta">At ${roi.toFixed(1)}% p.a. over ${days} days</div>
+      </div>
+      <div class="wc-result-row">
+        <div class="wc-res-label">Estimated Total Repayment</div>
+        <div class="wc-res-value">${formatIndianCurrency(totalRepayment)}</div>
+        <div class="wc-res-meta">Principal + estimated interest due at maturity</div>
+      </div>
+    `;
   }
 }
 
 function applyWithCalculatorEstimate() {
-  const amountSlider = document.getElementById('calcAmountSlider');
   const roiSlider = document.getElementById('calcRoiSlider');
   const tenorSlider = document.getElementById('calcTenorSlider');
-  const amount = amountSlider ? formatIndianCurrency(parseFloat(amountSlider.value)) : '₹ 50 Lakhs';
-  const roi = roiSlider ? `${parseFloat(roiSlider.value).toFixed(1)}% p.a.` : '12.0% p.a.';
-  const tenor = tenorSlider ? tenorSlider.value : '60';
+  const roi = roiSlider ? `${parseFloat(roiSlider.value).toFixed(1)}% p.a.` : '20.0% p.a.';
+  const days = tenorSlider ? `${tenorSlider.value} Days` : '60 Days';
+  const daysNum = parseInt(tenorSlider ? tenorSlider.value : 60, 10);
+  const roiNum = parseFloat(roiSlider ? roiSlider.value : 20);
+
+  let facilityParamText = '';
+
+  if (currentCalcFacility === 'Invoice Financing') {
+    const invSlider = document.getElementById('calcInvoiceValueSlider');
+    const advSlider = document.getElementById('calcAdvancePercentSlider');
+    const invVal = parseFloat(invSlider ? invSlider.value : 1000000);
+    const advPct = parseFloat(advSlider ? advSlider.value : 90);
+    const principal = Math.round(invVal * (advPct / 100));
+    const interest = calcSimpleInterest(principal, roiNum, daysNum);
+    const net = principal - interest;
+
+    facilityParamText = `Eligibility Assessment Request (Invoice Financing):\n` +
+      `- Invoice Value: ${formatIndianCurrency(invVal)}\n` +
+      `- Advance Percentage: ${advPct}%\n` +
+      `- Eligible Funding Amount: ${formatIndianCurrency(principal)}\n` +
+      `- Annual Interest Rate: ${roi}\n` +
+      `- Tenure: ${days}\n` +
+      `- Estimated Interest Cost: ${formatIndianCurrency(interest)}\n` +
+      `- Estimated Net Proceeds: ${formatIndianCurrency(net)}\n` +
+      `*(Processing fee: Not included)*\n\n` +
+      `Please verify our eligibility and contact me with preliminary financing terms.`;
+  } else if (currentCalcFacility === 'Purchase Order Financing') {
+    const poSlider = document.getElementById('calcPoValueSlider');
+    const fulSlider = document.getElementById('calcFulfilmentCostSlider');
+    const fundSlider = document.getElementById('calcPoFundingPercentSlider');
+    const poVal = parseFloat(poSlider ? poSlider.value : 2000000);
+    const fulCost = parseFloat(fulSlider ? fulSlider.value : 1400000);
+    const fundPct = parseFloat(fundSlider ? fundSlider.value : 80);
+    const fundingAmount = Math.round(fulCost * (fundPct / 100));
+    const contribution = fulCost - fundingAmount;
+    const interest = calcSimpleInterest(fundingAmount, roiNum, daysNum);
+    const totalRepay = fundingAmount + interest;
+
+    facilityParamText = `Eligibility Assessment Request (PO Financing):\n` +
+      `- Purchase Order Value: ${formatIndianCurrency(poVal)}\n` +
+      `- Fulfilment Cost: ${formatIndianCurrency(fulCost)}\n` +
+      `- Funding Percentage: ${fundPct}%\n` +
+      `- Estimated Funding Amount: ${formatIndianCurrency(fundingAmount)}\n` +
+      `- Business Contribution: ${formatIndianCurrency(contribution)}\n` +
+      `- Annual Interest Rate: ${roi}\n` +
+      `- Tenure: ${days}\n` +
+      `- Estimated Interest Cost: ${formatIndianCurrency(interest)}\n` +
+      `- Total Repayment: ${formatIndianCurrency(totalRepay)}\n` +
+      `*(Processing fee: Not included)*\n\n` +
+      `Please verify our eligibility and contact me with preliminary financing terms.`;
+  } else {
+    const wcSlider = document.getElementById('calcWcValueSlider');
+    const wcVal = parseFloat(wcSlider ? wcSlider.value : 2500000);
+    const interest = calcSimpleInterest(wcVal, roiNum, daysNum);
+    const totalRepay = wcVal + interest;
+
+    facilityParamText = `Eligibility Assessment Request (Working Capital Loan):\n` +
+      `- Requested Funding Amount: ${formatIndianCurrency(wcVal)}\n` +
+      `- Annual Interest Rate: ${roi}\n` +
+      `- Tenure: ${days}\n` +
+      `- Estimated Interest Cost: ${formatIndianCurrency(interest)}\n` +
+      `- Estimated Total Repayment: ${formatIndianCurrency(totalRepay)}\n` +
+      `*(Processing fee: Not included)*\n\n` +
+      `Please verify our eligibility and contact me with preliminary financing terms.`;
+  }
 
   scrollToContactForm();
 
-  // Populate contact form fields
   setTimeout(() => {
     const enquirySelect = document.getElementById('contactEnquiryType');
     if (enquirySelect) {
@@ -4652,7 +4853,7 @@ function applyWithCalculatorEstimate() {
     }
     const messageBox = document.getElementById('contactMessage');
     if (messageBox) {
-      messageBox.value = `Eligibility Assessment Request:\n- Required Facility: ${amount}\n- Facility Type: ${currentCalcFacility}\n- Desired ROI: ${roi}\n- Expected Tenure: ${tenor} Days\n\nPlease check our eligibility and contact me with preliminary terms.`;
+      messageBox.value = facilityParamText;
     }
   }, 400);
 }
@@ -4672,6 +4873,7 @@ function applyForProduct(facilityName) {
 }
 
 window.setCalcFacility = setCalcFacility;
+window.onPoValueChange = onPoValueChange;
 window.updateWorkingCapitalCalc = updateWorkingCapitalCalc;
 window.applyWithCalculatorEstimate = applyWithCalculatorEstimate;
 window.applyForProduct = applyForProduct;
