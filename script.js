@@ -4724,7 +4724,6 @@ function updateWorkingCapitalCalc() {
       <div class="wc-result-row">
         <div class="wc-res-label">Business Contribution</div>
         <div class="wc-res-value highlight-amber">${formatIndianCurrency(businessContribution)}</div>
-        <div class="wc-res-meta">${(100 - fundingPct).toFixed(0)}% business self-contribution margin</div>
       </div>
       <div class="wc-result-row">
         <div class="wc-res-label">Estimated Interest Cost</div>
@@ -4733,7 +4732,6 @@ function updateWorkingCapitalCalc() {
       <div class="wc-result-row">
         <div class="wc-res-label">Total Repayment</div>
         <div class="wc-res-value">${formatIndianCurrency(totalRepayment)}</div>
-        <div class="wc-res-meta">Principal + estimated interest upon buyer settlement</div>
       </div>
     `;
   } else if (currentCalcFacility === 'Working Capital Financing' || currentCalcFacility === 'Working Capital Loan') {
@@ -4766,7 +4764,6 @@ function updateWorkingCapitalCalc() {
       <div class="wc-result-row">
         <div class="wc-res-label">Estimated Total Repayment</div>
         <div class="wc-res-value">${formatIndianCurrency(totalRepayment)}</div>
-        <div class="wc-res-meta">Principal + estimated interest due at maturity</div>
       </div>
     `;
   }
