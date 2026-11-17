@@ -4660,7 +4660,7 @@ function updateWorkingCapitalCalc() {
     const advDisplay = document.getElementById('calcAdvancePercentDisplay');
 
     const invoiceVal = parseFloat(invSlider ? invSlider.value : 1000000);
-    const advancePct = parseFloat(advSlider ? advSlider.value : 90);
+    const advancePct = parseFloat(advSlider ? advSlider.value : 80);
 
     if (invDisplay) invDisplay.textContent = formatIndianCurrency(invoiceVal);
     if (advDisplay) advDisplay.textContent = `${advancePct}%`;
@@ -4783,7 +4783,7 @@ function applyWithCalculatorEstimate() {
     const invSlider = document.getElementById('calcInvoiceValueSlider');
     const advSlider = document.getElementById('calcAdvancePercentSlider');
     const invVal = parseFloat(invSlider ? invSlider.value : 1000000);
-    const advPct = parseFloat(advSlider ? advSlider.value : 90);
+    const advPct = parseFloat(advSlider ? advSlider.value : 80);
     const principal = Math.round(invVal * (advPct / 100));
     const interest = calcSimpleInterest(principal, roiNum, daysNum);
     const net = principal - interest;
